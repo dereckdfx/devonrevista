@@ -870,73 +870,6 @@
             </div>
         </div>
 
-        <!-- Título TÚ GUÍA PARA DESCUBRIR MÉXICO -->
-        <div class="max-w-7xl mx-auto px-6 mt-16 md:mt-24 mb-6">
-            <div class="border-t border-b border-gray-200 py-3 md:py-4 flex justify-between items-center">
-                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase" style="font-family: 'Jost', sans-serif;">
-                    TÚ GUÍA PARA DESCUBRIR MÉXICO
-                </h2>
-                <!-- Flechas de navegación del carrusel -->
-                <div class="flex gap-4 text-gray-400">
-                    <button class="hover:text-black transition-colors" onclick="document.getElementById('guia-mexico-scroll').scrollBy({left: -300, behavior: 'smooth'})">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    </button>
-                    <button class="hover:text-black transition-colors" onclick="document.getElementById('guia-mexico-scroll').scrollBy({left: 300, behavior: 'smooth'})">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carrusel Guía México -->
-        <div class="w-full max-w-7xl mx-auto px-6 mb-12 overflow-hidden">
-            <div id="guia-mexico-scroll" class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-4 no-scrollbar scroll-smooth">
-                
-                <!-- Card 1: CDMX -->
-                <div class="w-[85%] md:w-[45%] lg:w-[31.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
-                    <div class="relative overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/68de9d8ec8833f016cb85336/1:1/w_1600,c_limit/que-hacer-en-la-cdmx-guia-vogue-mexico.jpg" alt="Guía CDMX" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
-                    </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Qué hacer en CDMX: La guía Vogue para redescubrirla en 2026</h3>
-                </div>
-
-                <!-- Card 2: Monterrey -->
-                <div class="w-[85%] md:w-[45%] lg:w-[31.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
-                    <div class="relative overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6a207601b391027998369ccb/1:1/w_1600,c_limit/MONTERREY-COVER.jpg" alt="Guía Monterrey" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
-                    </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Qué hacer en Monterrey: Vogue te comparte la guía (imperdible) para descubrirla</h3>
-                </div>
-
-                <!-- Card 3: Guadalajara -->
-                <div class="w-[85%] md:w-[45%] lg:w-[31.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
-                    <div class="relative overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/697909579f1a2c50783dc54c/1:1/w_1600,c_limit/que-hacer-en-guadalajara.jpg" alt="Guía Guadalajara" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
-                    </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Qué hacer en Guadalajara: La guía Vogue para descubrirla</h3>
-                </div>
-
-                <!-- Card 4: Restaurantes -->
-                <div class="w-[85%] md:w-[45%] lg:w-[31.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
-                    <div class="relative overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/67db7989b7f61a024861a785/1:1/w_1600,c_limit/fabiola-escobosa-chef-de-cana-en-cdmx-con-estrella-michelin.jpg" alt="Restaurantes CDMX" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
-                    </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Los mejores restaurantes en la Ciudad de México</h3>
-                </div>
-
-            </div>
-
-            <!-- Indicadores de Paginación (Puntos) -->
-            <div class="flex justify-center items-center gap-2 mt-4 md:mt-6 mb-2">
-                <button id="dot-0" class="w-1.5 h-1.5 rounded-full bg-black transition-colors" onclick="scrollToSlide(0)" aria-label="Ir a la primera página"></button>
-                <button id="dot-1" class="w-1.5 h-1.5 rounded-full bg-gray-200 transition-colors" onclick="scrollToSlide(1)" aria-label="Ir a la segunda página"></button>
-            </div>
-        </div>
-
         <!-- Título ESTILO DE VIDA (Nueva Sección) -->
         <div class="max-w-7xl mx-auto px-6 mt-10 md:mt-16 mb-6">
             <div class="border-t border-b border-gray-200 py-3 md:py-4">
@@ -1263,20 +1196,6 @@
         }
         function closeAll() { hideOverlay(); }
 
-        // --- Lógica del Carrusel (Puntos de Paginación) ---
-        window.scrollToSlide = function(pageIndex) {
-            const scrollContainer = document.getElementById('guia-mexico-scroll');
-            if (!scrollContainer) return;
-            
-            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-            
-            if (pageIndex === 0) {
-                scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                scrollContainer.scrollTo({ left: maxScroll, behavior: 'smooth' });
-            }
-        };
-
         // --- 7. Selector de País (Footer) ---
         const countryBtn = document.getElementById('country-selector-btn');
         const countryDropdown = document.getElementById('country-dropdown');
@@ -1400,23 +1319,6 @@
             }, 1800); 
 
             // --- Actualizar Puntos de Paginación al hacer scroll manual en el carrusel ---
-            const guiaScroll = document.getElementById('guia-mexico-scroll');
-            const dot0 = document.getElementById('dot-0');
-            const dot1 = document.getElementById('dot-1');
-
-            if (guiaScroll && dot0 && dot1) {
-                guiaScroll.addEventListener('scroll', () => {
-                    const maxScroll = guiaScroll.scrollWidth - guiaScroll.clientWidth;
-                    const currentScroll = guiaScroll.scrollLeft;
-                    
-                    if (currentScroll < maxScroll / 2) {
-                        dot0.classList.replace('bg-gray-200', 'bg-black');
-                        dot1.classList.replace('bg-black', 'bg-gray-200');
-                    } else {
-                        dot0.classList.replace('bg-black', 'bg-gray-200');
-                        dot1.classList.replace('bg-gray-200', 'bg-black');
-                    }
-                });
             }
 
         });
