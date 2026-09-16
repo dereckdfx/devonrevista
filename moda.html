@@ -230,6 +230,187 @@
             </div>
         </div>
     </header>
+    <!-- Devon World Milano countdown -->
+    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Devon World Milano">
+        <style>
+            #devon-world-countdown.devon-world-countdown {
+                width: 100%;
+                background: #000;
+                color: #fff;
+                font-family: 'Jost', system-ui, sans-serif;
+            }
+            #devon-world-countdown .dwc-inner {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 18px 24px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px 28px;
+            }
+            #devon-world-countdown .dwc-left {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                min-width: 180px;
+            }
+            #devon-world-countdown .dwc-brand {
+                font-family: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+                font-weight: 700;
+                font-size: 22px;
+                letter-spacing: 0.06em;
+                line-height: 1.05;
+                text-transform: uppercase;
+            }
+            #devon-world-countdown .dwc-brand .dwc-milano {
+                display: block;
+                font-family: 'Jost', system-ui, sans-serif;
+                font-weight: 500;
+                font-size: 10px;
+                letter-spacing: 0.28em;
+                margin-top: 2px;
+            }
+            #devon-world-countdown .dwc-datetime {
+                font-size: 11px;
+                font-weight: 400;
+                letter-spacing: 0.02em;
+                opacity: 0.95;
+            }
+            #devon-world-countdown .dwc-center {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 10px;
+                flex: 1 1 auto;
+            }
+            #devon-world-countdown .dwc-unit {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 52px;
+            }
+            #devon-world-countdown .dwc-num {
+                font-size: 28px;
+                font-weight: 500;
+                letter-spacing: 0.04em;
+                line-height: 1;
+                font-variant-numeric: tabular-nums;
+            }
+            #devon-world-countdown .dwc-label {
+                margin-top: 6px;
+                font-size: 10px;
+                font-weight: 400;
+                letter-spacing: 0.04em;
+                opacity: 0.9;
+            }
+            #devon-world-countdown .dwc-sep {
+                font-size: 26px;
+                font-weight: 400;
+                line-height: 1;
+                padding-bottom: 16px;
+                opacity: 0.85;
+            }
+            #devon-world-countdown .dwc-right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                min-width: 140px;
+            }
+            #devon-world-countdown .dwc-btn {
+                display: inline-block;
+                border: 1px solid #fff;
+                color: #fff;
+                background: transparent;
+                padding: 10px 18px;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: default;
+                pointer-events: none;
+            }
+            #devon-world-countdown .dwc-live {
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+            }
+            @media (max-width: 768px) {
+                #devon-world-countdown .dwc-inner {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 16px 16px 18px;
+                }
+                #devon-world-countdown .dwc-left { align-items: center; }
+                #devon-world-countdown .dwc-num { font-size: 22px; }
+                #devon-world-countdown .dwc-brand { font-size: 18px; }
+                #devon-world-countdown .dwc-unit { min-width: 44px; }
+            }
+        </style>
+        <div class="dwc-inner">
+            <div class="dwc-left">
+                <div class="dwc-brand">DEVON WORLD<span class="dwc-milano">MILANO</span></div>
+                <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
+            </div>
+            <div class="dwc-center" aria-live="polite">
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
+                    <span class="dwc-label">Días</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
+                    <span class="dwc-label">Horas</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
+                    <span class="dwc-label">Minutos</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
+                    <span class="dwc-label">Segundos</span>
+                </div>
+            </div>
+            <div class="dwc-right">
+                <span class="dwc-btn">¡MUY PRONTO!</span>
+                <span class="dwc-live">EN VIVO EN DEVON</span>
+            </div>
+        </div>
+        <script>
+        (function () {
+            var daysEl = document.getElementById('devon-world-countdown-days');
+            var hoursEl = document.getElementById('devon-world-countdown-hours');
+            var minsEl = document.getElementById('devon-world-countdown-mins');
+            var secsEl = document.getElementById('devon-world-countdown-secs');
+            if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+            function pad(n) { return (n < 10 ? '0' : '') + n; }
+            function targetMs() {
+                // 2026-09-22 12:00:00 America/Mexico_City (CST, UTC-6; no DST in 2026)
+                return Date.UTC(2026, 8, 22, 18, 0, 0);
+            }
+            function tick() {
+                var diff = Math.max(0, targetMs() - Date.now());
+                var totalSec = Math.floor(diff / 1000);
+                var days = Math.floor(totalSec / 86400);
+                var hours = Math.floor((totalSec % 86400) / 3600);
+                var mins = Math.floor((totalSec % 3600) / 60);
+                var secs = totalSec % 60;
+                daysEl.textContent = pad(days);
+                hoursEl.textContent = pad(hours);
+                minsEl.textContent = pad(mins);
+                secsEl.textContent = pad(secs);
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+        </script>
+    </div>
+
 
     <!-- Pestañas Superiores (Solo Móvil) -->
     <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
@@ -274,56 +455,56 @@
         <section class="max-w-7xl mx-auto px-6 mb-20">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <!-- Featured (Large) -->
-                <a href="rio-fashion-week.html" class="lg:col-span-8 group cursor-pointer flex flex-col">
-                    <div class="relative w-full aspect-[4/3] lg:aspect-[16/9] overflow-hidden mb-4">
-                        <img src="https://media.vogue.mx/photos/69ec351d28bd53d8bef0e129/3:4/w_960,c_limit/rio-fashion-week-2026-.jpg" class="object-cover object-center lg:object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" alt="Rio Fashion Week">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-                    <h3 class="text-3xl lg:text-4xl font-medium leading-tight mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">El regreso de Rio Fashion Week es un triunfo necesario para la moda latina</h3>
-                    <span class="text-[10px] uppercase text-gray-400">Por Luz García</span>
-                </a>
+                <a class="lg:col-span-8 group cursor-pointer flex flex-col" href="rio-fashion-week.html">
+<div class="relative w-full aspect-[4/3] lg:aspect-[16/9] overflow-hidden mb-4">
+<img alt="Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias" class="object-cover object-center lg:object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a982a3279614eecea40e1ac/3:4/w_1024,c_limit/moda-oton%25CC%2583o-invierno-2026-tendencias.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
+<h3 class="text-3xl lg:text-4xl font-medium leading-tight mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Luz García</span>
+</a>
 
                 <!-- Side Stack (2 items) -->
                 <div class="lg:col-span-4 flex flex-col gap-8 md:grid md:grid-cols-2 lg:flex lg:flex-col">
-                    <a href="constanza-zamora.html" class="group flex flex-col cursor-pointer">
-                        <div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
-                            <img src="https://media.vogue.mx/photos/69e91d7b9c5cf00f4dbd18b0/1:1/w_640,c_limit/constanza-zamora-modelo-oaxaquen%CC%83a-fotos-enrique-leyva.jpg" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" alt="Constanza Zamora">
-                        </div>
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-                        <h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Conoce a Constanza Zamora, la modelo de la costa de Oaxaca que se abre camino en la moda internacional</h3>
-                        <span class="text-[10px] uppercase text-gray-400">Por Luz García</span>
-                    </a>
+                    <a class="group flex flex-col cursor-pointer" href="constanza-zamora.html">
+<div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
+<img alt="Blusas en tendencia de Otoño-Invierno 2026: Boho, de flores, drapeadas y más" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a8fc1ef8cc8cf85a8fde502/1:1/w_640,c_limit/Blusas-tendencias-Dolce-Gabbana-otono-invierno-2026.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
+<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Blusas en tendencia de Otoño-Invierno 2026: Boho, de flores, drapeadas y más</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Melisa Vargas</span>
+</a>
                     
-                    <a href="stella-mccartney.html" class="group flex flex-col cursor-pointer">
-                        <div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
-                            <img src="https://media.vogue.mx/photos/69e12b6f33af0168b6a09cd7/1:1/w_640,c_limit/2023-H&M_SMC-PR-Portrait-A4-RGB-260217_4.jpg" class="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" alt="Stella McCartney">
-                        </div>
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-                        <h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Stella McCartney vuelve a colaborar con esta marca icónica, 20 años después</h3>
-                        <span class="text-[10px] uppercase text-gray-400">Por Liam Hess</span>
-                    </a>
+                    <a class="group flex flex-col cursor-pointer" href="stella-mccartney.html">
+<div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
+<img alt="Faldas en tendencia de Otoño-Invierno 2026: Largas, drapeadas, plisadas y más" class="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a919ff8b88e9602291768d3/1:1/w_640,c_limit/Faldas-tendencias-christian-dior-otono-invierno-2026.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
+<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Faldas en tendencia de Otoño-Invierno 2026: Largas, drapeadas, plisadas y más</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Melisa Vargas</span>
+</a>
                 </div>
             </div>
             
             <!-- Bottom row (2 items) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <a href="vestidos-flores.html" class="group flex flex-col cursor-pointer">
-                    <div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
-                        <img src="https://media.vogue.mx/photos/6952d340bb9c9febc67d6ecc/1:1/w_640,c_limit/ToryBurch_NYFW_SS26_backstage_acielle_18.jpg" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" alt="Vestidos de flores">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-                    <h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Los vestidos de flores más bonitos y elegantes para llevar en Primavera-Verano 2026</h3>
-                    <span class="text-[10px] uppercase text-gray-400">Por Renata Joffre</span>
-                </a>
+                <a class="group flex flex-col cursor-pointer" href="vestidos-flores.html">
+<div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
+<img alt="Todos los jeans en tendencia de Otoño-Invierno 2026" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a8e2c0bfad7ce9bf4d023c5/1:1/w_640,c_limit/Jeans-tendencia-stella-mccartney-otono-invierno-2026.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
+<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Todos los jeans en tendencia de Otoño-Invierno 2026</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Melisa Vargas</span>
+</a>
 
-                <a href="sandalias-colombianas.html" class="group flex flex-col cursor-pointer">
-                    <div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
-                        <img src="https://media.vogue.mx/photos/69deddd1444f8a825e2e8e50/1:1/w_640,c_limit/%20sandalias-colombianas-color-cafe-elegantes.jpg" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" alt="Sandalias colombianas">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-                    <h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Las sandalias colombianas color café más elegantes para llevar con vestidos en primavera 2026</h3>
-                    <span class="text-[10px] uppercase text-gray-400">Por Melisa Vargas</span>
-                </a>
+                <a class="group flex flex-col cursor-pointer" href="sandalias-colombianas.html">
+<div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
+<img alt="Pantalones en tendencia de Otoño-Invierno 2026: Acampanados, boho, cargo y más" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa02e3407362e2a92d7617f/1:1/w_640,c_limit/pantalones-en-tendencia-de-oton%25CC%2583o-invierno-2026.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
+<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Pantalones en tendencia de Otoño-Invierno 2026: Acampanados, boho, cargo y más</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Melisa Vargas</span>
+</a>
             </div>
         </section>
 
