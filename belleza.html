@@ -210,6 +210,187 @@
             </div>
         </div>
     </header>
+    <!-- Devon World Milano countdown -->
+    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Devon World Milano">
+        <style>
+            #devon-world-countdown.devon-world-countdown {
+                width: 100%;
+                background: #000;
+                color: #fff;
+                font-family: 'Jost', system-ui, sans-serif;
+            }
+            #devon-world-countdown .dwc-inner {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 18px 24px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px 28px;
+            }
+            #devon-world-countdown .dwc-left {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                min-width: 180px;
+            }
+            #devon-world-countdown .dwc-brand {
+                font-family: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+                font-weight: 700;
+                font-size: 22px;
+                letter-spacing: 0.06em;
+                line-height: 1.05;
+                text-transform: uppercase;
+            }
+            #devon-world-countdown .dwc-brand .dwc-milano {
+                display: block;
+                font-family: 'Jost', system-ui, sans-serif;
+                font-weight: 500;
+                font-size: 10px;
+                letter-spacing: 0.28em;
+                margin-top: 2px;
+            }
+            #devon-world-countdown .dwc-datetime {
+                font-size: 11px;
+                font-weight: 400;
+                letter-spacing: 0.02em;
+                opacity: 0.95;
+            }
+            #devon-world-countdown .dwc-center {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 10px;
+                flex: 1 1 auto;
+            }
+            #devon-world-countdown .dwc-unit {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 52px;
+            }
+            #devon-world-countdown .dwc-num {
+                font-size: 28px;
+                font-weight: 500;
+                letter-spacing: 0.04em;
+                line-height: 1;
+                font-variant-numeric: tabular-nums;
+            }
+            #devon-world-countdown .dwc-label {
+                margin-top: 6px;
+                font-size: 10px;
+                font-weight: 400;
+                letter-spacing: 0.04em;
+                opacity: 0.9;
+            }
+            #devon-world-countdown .dwc-sep {
+                font-size: 26px;
+                font-weight: 400;
+                line-height: 1;
+                padding-bottom: 16px;
+                opacity: 0.85;
+            }
+            #devon-world-countdown .dwc-right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                min-width: 140px;
+            }
+            #devon-world-countdown .dwc-btn {
+                display: inline-block;
+                border: 1px solid #fff;
+                color: #fff;
+                background: transparent;
+                padding: 10px 18px;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: default;
+                pointer-events: none;
+            }
+            #devon-world-countdown .dwc-live {
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+            }
+            @media (max-width: 768px) {
+                #devon-world-countdown .dwc-inner {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 16px 16px 18px;
+                }
+                #devon-world-countdown .dwc-left { align-items: center; }
+                #devon-world-countdown .dwc-num { font-size: 22px; }
+                #devon-world-countdown .dwc-brand { font-size: 18px; }
+                #devon-world-countdown .dwc-unit { min-width: 44px; }
+            }
+        </style>
+        <div class="dwc-inner">
+            <div class="dwc-left">
+                <div class="dwc-brand">DEVON WORLD<span class="dwc-milano">MILANO</span></div>
+                <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
+            </div>
+            <div class="dwc-center" aria-live="polite">
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
+                    <span class="dwc-label">Días</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
+                    <span class="dwc-label">Horas</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
+                    <span class="dwc-label">Minutos</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
+                    <span class="dwc-label">Segundos</span>
+                </div>
+            </div>
+            <div class="dwc-right">
+                <span class="dwc-btn">¡MUY PRONTO!</span>
+                <span class="dwc-live">EN VIVO EN DEVON</span>
+            </div>
+        </div>
+        <script>
+        (function () {
+            var daysEl = document.getElementById('devon-world-countdown-days');
+            var hoursEl = document.getElementById('devon-world-countdown-hours');
+            var minsEl = document.getElementById('devon-world-countdown-mins');
+            var secsEl = document.getElementById('devon-world-countdown-secs');
+            if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+            function pad(n) { return (n < 10 ? '0' : '') + n; }
+            function targetMs() {
+                // 2026-09-22 12:00:00 America/Mexico_City (CST, UTC-6; no DST in 2026)
+                return Date.UTC(2026, 8, 22, 18, 0, 0);
+            }
+            function tick() {
+                var diff = Math.max(0, targetMs() - Date.now());
+                var totalSec = Math.floor(diff / 1000);
+                var days = Math.floor(totalSec / 86400);
+                var hours = Math.floor((totalSec % 86400) / 3600);
+                var mins = Math.floor((totalSec % 3600) / 60);
+                var secs = totalSec % 60;
+                daysEl.textContent = pad(days);
+                hoursEl.textContent = pad(hours);
+                minsEl.textContent = pad(mins);
+                secsEl.textContent = pad(secs);
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+        </script>
+    </div>
+
 
     <!-- Pestañas Superiores (Solo Móvil) -->
     <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
@@ -241,83 +422,73 @@
             <!-- Primeros 2 Artículos -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
                 <!-- Artículo 1 -->
-                <a href="ducharse-a-oscuras.html" class="flex flex-col group cursor-pointer h-full">
-                    <div class="w-full aspect-[4/5] md:aspect-square overflow-hidden mb-5 bg-gray-100 relative">
-                        <img src="https://media.vogue.mx/photos/69ef82115c42a5ae5a07fb6b/3:4/w_960,c_limit/ducha-oscuridad-ban%CC%83arse-sin-luz-beneficios.jpg" alt="Ducharse a oscuras" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
-                    <h3 class="text-xl md:text-2xl font-serif text-black leading-snug mb-5 group-hover:text-gray-600 transition-colors">
-                        Ducharse a oscuras antes de dormir, todos los beneficios de una regadera sin luz
-                    </h3>
-                    <div class="mt-auto flex flex-col pt-2">
-                        <span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR TATIANA DIAS</span>
-                        <span class="text-[11px] text-gray-600 font-sans">27 de abril de 2026</span>
-                    </div>
-                </a>
+                <a class="flex flex-col group cursor-pointer h-full" href="ducharse-a-oscuras.html">
+<div class="w-full aspect-[4/5] md:aspect-square overflow-hidden mb-5 bg-gray-100 relative">
+<img alt="Tendencias de belleza para Otoño-Invierno 2026: Peinados, cabello, cejas y ma…" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a99c32e15a998b8c6e4a3de/16:9/w_1600,c_limit/tendencias-de-belleza-oton%25CC%2583o-invierno-2026.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
+<h3 class="text-xl md:text-2xl font-serif text-black leading-snug mb-5 group-hover:text-gray-600 transition-colors">Tendencias de belleza para Otoño-Invierno 2026: Peinados, cabello, cejas y maquillaje</h3>
+<div class="mt-auto flex flex-col pt-2">
+<span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR MARÍA DIEZ</span>
+<span class="text-[11px] text-gray-600 font-sans">2 de septiembre de 2026</span>
+</div>
+</a>
 
                 <!-- Artículo 2 -->
-                <a href="mejor-yogurt.html" class="flex flex-col group cursor-pointer h-full">
-                    <div class="w-full aspect-[4/5] md:aspect-square overflow-hidden mb-5 bg-gray-100 relative">
-                        <img src="https://media.vogue.mx/photos/69ebe6dfb130b703c93f4011/1:1/w_640,c_limit/yogurt-desayuno-alto-en-proteina.jpg" alt="Mejor yogurt" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
-                    <h3 class="text-xl md:text-2xl font-serif text-black leading-snug mb-5 group-hover:text-gray-600 transition-colors">
-                        Este es el mejor yogurt para un desayuno alto en proteína, según una nutrióloga
-                    </h3>
-                    <div class="mt-auto flex flex-col pt-2">
-                        <span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR MARÍA DIEZ</span>
-                        <span class="text-[11px] text-gray-600 font-sans">24 de abril de 2026</span>
-                    </div>
-                </a>
+                <a class="flex flex-col group cursor-pointer h-full" href="mejor-yogurt.html">
+<div class="w-full aspect-[4/5] md:aspect-square overflow-hidden mb-5 bg-gray-100 relative">
+<img alt="Los peinados de moda para Otoño-Invierno 2026: Las expertas los llevan así" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a99e74bda43a69a3b64975f/16:9/w_1600,c_limit/peinados-moda-oton%25CC%2583o-invierno-2026-chloe.jpeg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
+<h3 class="text-xl md:text-2xl font-serif text-black leading-snug mb-5 group-hover:text-gray-600 transition-colors">Los peinados de moda para Otoño-Invierno 2026: Las expertas los llevan así</h3>
+<div class="mt-auto flex flex-col pt-2">
+<span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR MARÍA DIEZ</span>
+<span class="text-[11px] text-gray-600 font-sans">3 de septiembre de 2026</span>
+</div>
+</a>
             </div>
 
             <!-- Siguientes 3 Artículos -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 
                 <!-- Artículo 3 -->
-                <a href="unas-amarillas.html" class="flex flex-col group cursor-pointer h-full">
-                    <div class="w-full aspect-square overflow-hidden mb-5 bg-gray-100 relative">
-                        <img src="https://media.vogue.mx/photos/69ef9ede828268656d93513d/1:1/w_640,c_limit/manicura-color-amarillo.jpg" alt="Uñas amarillo" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
-                    <h3 class="text-base md:text-[17px] font-medium text-black leading-snug mb-5 font-sans group-hover:text-gray-600 transition-colors">
-                        Ideas de buen gusto para llevar las uñas color amarillo que serán tendencia en mayo 2026
-                    </h3>
-                    <div class="mt-auto flex flex-col pt-2">
-                        <span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR MARÍA DIEZ</span>
-                        <span class="text-[11px] text-gray-600 font-sans">27 de abril de 2026</span>
-                    </div>
-                </a>
+                <a class="flex flex-col group cursor-pointer h-full" href="unas-amarillas.html">
+<div class="w-full aspect-square overflow-hidden mb-5 bg-gray-100 relative">
+<img alt="12 alimentos sorprendentes que, sin darte cuenta, están full de proteínas" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/673f668647a5cf70452a0fde/16:9/w_1600,c_limit/regla-40-30-30-cenar-energia-comidas-picos-de-glucosa.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
+<h3 class="text-base md:text-[17px] font-medium text-black leading-snug mb-5 font-sans group-hover:text-gray-600 transition-colors">12 alimentos sorprendentes que, sin darte cuenta, están full de proteínas</h3>
+<div class="mt-auto flex flex-col pt-2">
+<span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR CHLOE BURCHAM</span>
+<span class="text-[11px] text-gray-600 font-sans">3 de septiembre de 2026</span>
+</div>
+</a>
 
                 <!-- Artículo 4 -->
-                <a href="tratamiento-coreano.html" class="flex flex-col group cursor-pointer h-full">
-                    <div class="w-full aspect-square overflow-hidden mb-5 bg-gray-100 relative">
-                        <img src="https://media.vogue.mx/photos/69ebc1f7492617eddff1be52/1:1/w_640,c_limit/PDRN-de-salmon.jpg" alt="Tratamiento coreano" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
-                    <h3 class="text-base md:text-[17px] font-medium text-black leading-snug mb-5 font-sans group-hover:text-gray-600 transition-colors">
-                        El tratamiento coreano que visiblemente me ayudó a reducir las arrugas de mi piel e hidratarla intensamente
-                    </h3>
-                    <div class="mt-auto flex flex-col pt-2">
-                        <span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR KARINA GONZÁLEZ ULLOA</span>
-                        <span class="text-[11px] text-gray-600 font-sans">24 de abril de 2026</span>
-                    </div>
-                </a>
+                <a class="flex flex-col group cursor-pointer h-full" href="tratamiento-coreano.html">
+<div class="w-full aspect-square overflow-hidden mb-5 bg-gray-100 relative">
+<img alt="Sumergí la cara en agua fría cada mañana durante dos semanas: Así cambió mi s…" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a96fb041a8d716e4eaba7a6/16:9/w_1600,c_limit/cara-agua-helada.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
+<h3 class="text-base md:text-[17px] font-medium text-black leading-snug mb-5 font-sans group-hover:text-gray-600 transition-colors">Sumergí la cara en agua fría cada mañana durante dos semanas: Así cambió mi sistema nervioso</h3>
+<div class="mt-auto flex flex-col pt-2">
+<span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR DAISY JONES</span>
+<span class="text-[11px] text-gray-600 font-sans">1 de septiembre de 2026</span>
+</div>
+</a>
 
                 <!-- Artículo 5 -->
-                <a href="aceites-esenciales.html" class="flex flex-col group cursor-pointer h-full">
-                    <div class="w-full aspect-square overflow-hidden mb-5 bg-gray-100 relative">
-                        <img src="https://media.vogue.mx/photos/69eacb77ca74c051da139a0f/1:1/w_640,c_limit/aceites-que-funcionan-como-perfumes.jpg" alt="Aceites esenciales" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out">
-                    </div>
-                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
-                    <h3 class="text-base md:text-[17px] font-medium text-black leading-snug mb-5 font-sans group-hover:text-gray-600 transition-colors">
-                        7 aceites esenciales que funcionan como perfumes (y que además mejoran tu estado de ánimo)
-                    </h3>
-                    <div class="mt-auto flex flex-col pt-2">
-                        <span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR MARÍA DIEZ</span>
-                        <span class="text-[11px] text-gray-600 font-sans">23 de abril de 2026</span>
-                    </div>
-                </a>
+                <a class="flex flex-col group cursor-pointer h-full" href="aceites-esenciales.html">
+<div class="w-full aspect-square overflow-hidden mb-5 bg-gray-100 relative">
+<img alt="Peinados de los años 80: 12 estilos que regresan a las tendencias de verano 2026" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a8f5c1f9a7d0b620b4bc9fc/16:9/w_1600,c_limit/peinados-an%25CC%2583os-80-brooke-shields.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-black mb-3 font-sans">BELLEZA</span>
+<h3 class="text-base md:text-[17px] font-medium text-black leading-snug mb-5 font-sans group-hover:text-gray-600 transition-colors">Peinados de los años 80: 12 estilos que regresan a las tendencias de verano 2026</h3>
+<div class="mt-auto flex flex-col pt-2">
+<span class="text-[9px] font-bold tracking-[0.15em] uppercase text-black mb-1.5 font-sans">POR MARÍA DIEZ</span>
+<span class="text-[11px] text-gray-600 font-sans">26 de agosto de 2026</span>
+</div>
+</a>
 
             </div>
         </section>

@@ -233,6 +233,188 @@
         </div>
     </header>
 
+    <!-- Devon World Milano countdown -->
+    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Devon World Milano">
+        <style>
+            #devon-world-countdown.devon-world-countdown {
+                width: 100%;
+                background: #000;
+                color: #fff;
+                font-family: 'Jost', system-ui, sans-serif;
+            }
+            #devon-world-countdown .dwc-inner {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 18px 24px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px 28px;
+            }
+            #devon-world-countdown .dwc-left {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                min-width: 180px;
+            }
+            #devon-world-countdown .dwc-brand {
+                font-family: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+                font-weight: 700;
+                font-size: 22px;
+                letter-spacing: 0.06em;
+                line-height: 1.05;
+                text-transform: uppercase;
+            }
+            #devon-world-countdown .dwc-brand .dwc-milano {
+                display: block;
+                font-family: 'Jost', system-ui, sans-serif;
+                font-weight: 500;
+                font-size: 10px;
+                letter-spacing: 0.28em;
+                margin-top: 2px;
+            }
+            #devon-world-countdown .dwc-datetime {
+                font-size: 11px;
+                font-weight: 400;
+                letter-spacing: 0.02em;
+                opacity: 0.95;
+            }
+            #devon-world-countdown .dwc-center {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 10px;
+                flex: 1 1 auto;
+            }
+            #devon-world-countdown .dwc-unit {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 52px;
+            }
+            #devon-world-countdown .dwc-num {
+                font-size: 28px;
+                font-weight: 500;
+                letter-spacing: 0.04em;
+                line-height: 1;
+                font-variant-numeric: tabular-nums;
+            }
+            #devon-world-countdown .dwc-label {
+                margin-top: 6px;
+                font-size: 10px;
+                font-weight: 400;
+                letter-spacing: 0.04em;
+                opacity: 0.9;
+            }
+            #devon-world-countdown .dwc-sep {
+                font-size: 26px;
+                font-weight: 400;
+                line-height: 1;
+                padding-bottom: 16px;
+                opacity: 0.85;
+            }
+            #devon-world-countdown .dwc-right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                min-width: 140px;
+            }
+            #devon-world-countdown .dwc-btn {
+                display: inline-block;
+                border: 1px solid #fff;
+                color: #fff;
+                background: transparent;
+                padding: 10px 18px;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: default;
+                pointer-events: none;
+            }
+            #devon-world-countdown .dwc-live {
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+            }
+            @media (max-width: 768px) {
+                #devon-world-countdown .dwc-inner {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 16px 16px 18px;
+                }
+                #devon-world-countdown .dwc-left { align-items: center; }
+                #devon-world-countdown .dwc-num { font-size: 22px; }
+                #devon-world-countdown .dwc-brand { font-size: 18px; }
+                #devon-world-countdown .dwc-unit { min-width: 44px; }
+            }
+        </style>
+        <div class="dwc-inner">
+            <div class="dwc-left">
+                <div class="dwc-brand">DEVON WORLD<span class="dwc-milano">MILANO</span></div>
+                <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
+            </div>
+            <div class="dwc-center" aria-live="polite">
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
+                    <span class="dwc-label">Días</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
+                    <span class="dwc-label">Horas</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
+                    <span class="dwc-label">Minutos</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
+                    <span class="dwc-label">Segundos</span>
+                </div>
+            </div>
+            <div class="dwc-right">
+                <span class="dwc-btn">¡MUY PRONTO!</span>
+                <span class="dwc-live">EN VIVO EN DEVON</span>
+            </div>
+        </div>
+        <script>
+        (function () {
+            var daysEl = document.getElementById('devon-world-countdown-days');
+            var hoursEl = document.getElementById('devon-world-countdown-hours');
+            var minsEl = document.getElementById('devon-world-countdown-mins');
+            var secsEl = document.getElementById('devon-world-countdown-secs');
+            if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+            function pad(n) { return (n < 10 ? '0' : '') + n; }
+            function targetMs() {
+                // 2026-09-22 12:00:00 America/Mexico_City (CST, UTC-6; no DST in 2026)
+                return Date.UTC(2026, 8, 22, 18, 0, 0);
+            }
+            function tick() {
+                var diff = Math.max(0, targetMs() - Date.now());
+                var totalSec = Math.floor(diff / 1000);
+                var days = Math.floor(totalSec / 86400);
+                var hours = Math.floor((totalSec % 86400) / 3600);
+                var mins = Math.floor((totalSec % 3600) / 60);
+                var secs = totalSec % 60;
+                daysEl.textContent = pad(days);
+                hoursEl.textContent = pad(hours);
+                minsEl.textContent = pad(mins);
+                secsEl.textContent = pad(secs);
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+        </script>
+    </div>
+
+
     <!-- Pestañas Superiores (Solo Móvil) -->
     <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
         <a href="loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">

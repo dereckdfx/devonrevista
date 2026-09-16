@@ -230,6 +230,187 @@
             </div>
         </div>
     </header>
+    <!-- Devon World Milano countdown -->
+    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Devon World Milano">
+        <style>
+            #devon-world-countdown.devon-world-countdown {
+                width: 100%;
+                background: #000;
+                color: #fff;
+                font-family: 'Jost', system-ui, sans-serif;
+            }
+            #devon-world-countdown .dwc-inner {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 18px 24px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px 28px;
+            }
+            #devon-world-countdown .dwc-left {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                min-width: 180px;
+            }
+            #devon-world-countdown .dwc-brand {
+                font-family: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+                font-weight: 700;
+                font-size: 22px;
+                letter-spacing: 0.06em;
+                line-height: 1.05;
+                text-transform: uppercase;
+            }
+            #devon-world-countdown .dwc-brand .dwc-milano {
+                display: block;
+                font-family: 'Jost', system-ui, sans-serif;
+                font-weight: 500;
+                font-size: 10px;
+                letter-spacing: 0.28em;
+                margin-top: 2px;
+            }
+            #devon-world-countdown .dwc-datetime {
+                font-size: 11px;
+                font-weight: 400;
+                letter-spacing: 0.02em;
+                opacity: 0.95;
+            }
+            #devon-world-countdown .dwc-center {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                gap: 10px;
+                flex: 1 1 auto;
+            }
+            #devon-world-countdown .dwc-unit {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 52px;
+            }
+            #devon-world-countdown .dwc-num {
+                font-size: 28px;
+                font-weight: 500;
+                letter-spacing: 0.04em;
+                line-height: 1;
+                font-variant-numeric: tabular-nums;
+            }
+            #devon-world-countdown .dwc-label {
+                margin-top: 6px;
+                font-size: 10px;
+                font-weight: 400;
+                letter-spacing: 0.04em;
+                opacity: 0.9;
+            }
+            #devon-world-countdown .dwc-sep {
+                font-size: 26px;
+                font-weight: 400;
+                line-height: 1;
+                padding-bottom: 16px;
+                opacity: 0.85;
+            }
+            #devon-world-countdown .dwc-right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                min-width: 140px;
+            }
+            #devon-world-countdown .dwc-btn {
+                display: inline-block;
+                border: 1px solid #fff;
+                color: #fff;
+                background: transparent;
+                padding: 10px 18px;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: default;
+                pointer-events: none;
+            }
+            #devon-world-countdown .dwc-live {
+                font-size: 10px;
+                font-weight: 500;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+            }
+            @media (max-width: 768px) {
+                #devon-world-countdown .dwc-inner {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 16px 16px 18px;
+                }
+                #devon-world-countdown .dwc-left { align-items: center; }
+                #devon-world-countdown .dwc-num { font-size: 22px; }
+                #devon-world-countdown .dwc-brand { font-size: 18px; }
+                #devon-world-countdown .dwc-unit { min-width: 44px; }
+            }
+        </style>
+        <div class="dwc-inner">
+            <div class="dwc-left">
+                <div class="dwc-brand">DEVON WORLD<span class="dwc-milano">MILANO</span></div>
+                <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
+            </div>
+            <div class="dwc-center" aria-live="polite">
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
+                    <span class="dwc-label">Días</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
+                    <span class="dwc-label">Horas</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
+                    <span class="dwc-label">Minutos</span>
+                </div>
+                <span class="dwc-sep" aria-hidden="true">:</span>
+                <div class="dwc-unit">
+                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
+                    <span class="dwc-label">Segundos</span>
+                </div>
+            </div>
+            <div class="dwc-right">
+                <span class="dwc-btn">¡MUY PRONTO!</span>
+                <span class="dwc-live">EN VIVO EN DEVON</span>
+            </div>
+        </div>
+        <script>
+        (function () {
+            var daysEl = document.getElementById('devon-world-countdown-days');
+            var hoursEl = document.getElementById('devon-world-countdown-hours');
+            var minsEl = document.getElementById('devon-world-countdown-mins');
+            var secsEl = document.getElementById('devon-world-countdown-secs');
+            if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+            function pad(n) { return (n < 10 ? '0' : '') + n; }
+            function targetMs() {
+                // 2026-09-22 12:00:00 America/Mexico_City (CST, UTC-6; no DST in 2026)
+                return Date.UTC(2026, 8, 22, 18, 0, 0);
+            }
+            function tick() {
+                var diff = Math.max(0, targetMs() - Date.now());
+                var totalSec = Math.floor(diff / 1000);
+                var days = Math.floor(totalSec / 86400);
+                var hours = Math.floor((totalSec % 86400) / 3600);
+                var mins = Math.floor((totalSec % 3600) / 60);
+                var secs = totalSec % 60;
+                daysEl.textContent = pad(days);
+                hoursEl.textContent = pad(hours);
+                minsEl.textContent = pad(mins);
+                secsEl.textContent = pad(secs);
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+        </script>
+    </div>
+
 
     <!-- Pestañas Superiores (Solo Móvil) -->
     <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
@@ -263,48 +444,40 @@
 
         <!-- Sección: Artículo Overlay Principal -->
         <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 md:mt-24 mb-12">
-            <a href="#" class="relative w-full block group overflow-hidden cursor-pointer" style="height: 65vh; min-height: 450px; max-height: 600px;">
-                <img 
-                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop" 
-                    alt="Espacio Devon Experiencia" 
-                    class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div class="absolute inset-0 flex flex-col items-center justify-end text-center pb-12 md:pb-16 px-4 md:px-12 z-10">
-                    <span class="text-white text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-4 font-sans">
-                        MODA
+            <a class="relative w-full block group overflow-hidden cursor-pointer" href="#" style="height: 65vh; min-height: 450px; max-height: 600px;">
+<img alt="Estas son las prendas y accesorios imperdibles de Espacio Devon Holiday Editi…" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/673cb692dd1d72eb31562697/1:1/w_1600,c_limit/espacio-vogue-holiday-edition-2024.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-end text-center pb-12 md:pb-16 px-4 md:px-12 z-10">
+<span class="text-white text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-4 font-sans">MODA</span>
+<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-medium max-w-4xl leading-tight mb-8" style="font-family: 'Jost', sans-serif;">Estas son las prendas y accesorios imperdibles de Espacio Devon Holiday Edition 2024</h2>
+<span class="text-white text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-3 font-sans">
+                        LUZ GARCÍA
                     </span>
-                    <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-medium max-w-4xl leading-tight mb-8" style="font-family: 'Jost', sans-serif;">
-                        Espacio Devon: La exclusiva experiencia de compras que debes de conocer
-                    </h2>
-                    <span class="text-white text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-3 font-sans">
-                        ATENEA MORALES DE LA CRUZ
-                    </span>
-                </div>
-            </a>
+</div>
+</a>
         </section>
 
         <!-- Grid 3 Columnas: Artículos Secundarios -->
         <section class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-12">
             <!-- Artículo 2 -->
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4">
-                    <img src="https://media.vogue.mx/photos/673cb692dd1d72eb31562697/1:1/w_1600,c_limit/espacio-vogue-holiday-edition-2024.jpg" alt="Prendas y accesorios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">MODA</span>
-                <h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Estas son las prendas y accesorios imperdibles de Espacio Devon Holiday Edition 2024</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Luz García</span>
-            </a>
+            <a class="flex flex-col group cursor-pointer" href="#">
+<div class="overflow-hidden aspect-[4/5] mb-4">
+<img alt="Las mejores marcas de belleza que verás en Espacio Devon México 2023" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6466a179bd9c2fed3df3036d/1:1/w_1600,c_limit/marcas-de-belleza-espacio-vogue-2023jpg.jpg"/>
+</div>
+<span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">BELLEZA</span>
+<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Las mejores marcas de belleza que verás en Espacio Devon México 2023</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Lorena Meouchi</span>
+</a>
             
             <!-- Artículo 3 -->
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4">
-                    <img src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?q=80&w=800&auto=format&fit=crop" alt="Accesorios marcas latinas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">SHOPPING</span>
-                <h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Los accesorios (de marcas latinas) que puedes comprar en Espacio Devon</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por María Villarreal</span>
-            </a>
+            <a class="flex flex-col group cursor-pointer" href="#">
+<div class="overflow-hidden aspect-[4/5] mb-4">
+<img alt="Di con los básicos para verano (de marcas latinoamericanas) que no faltarán e…" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/646a73eb19a85350ba142d39/1:1/w_1600,c_limit/ropa-en-tendencia-para-verano-2023.jpg"/>
+</div>
+<span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">MODA</span>
+<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Di con los básicos para verano (de marcas latinoamericanas) que no faltarán en mi clóset esta temporada</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Fernanda Pérez Sánchez</span>
+</a>
 
             <!-- Artículo 4 -->
             <a href="#" class="flex flex-col group cursor-pointer">
