@@ -232,7 +232,7 @@
     </header>
 
     <!-- Devon World Milano countdown -->
-    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Vogue World Milano">
+    <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
         <style>
             @font-face {
                 font-family: VogueAvantGarde;
@@ -497,29 +497,11 @@
                 </a>
                 <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
             </div>
-            <div class="dwc-center" aria-live="polite">
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
-                    <span class="dwc-label">Días</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
-                    <span class="dwc-label">Horas</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
-                    <span class="dwc-label">Minutos</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
-                    <span class="dwc-label">Segundos</span>
-                </div>
+                                    <div class="dwc-center" aria-live="polite">
+                <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
             </div>
-            <div class="dwc-right">
-                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">¡Muy pronto!</a>
+<div class="dwc-right">
+                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">EN VIVO</a>
                 <a class="dwc-live" href="https://www.vogue.mx">EN VIVO EN VOGUE.MX</a>
             </div>
         </div>
@@ -527,12 +509,12 @@
         (function () {
             var root = document.getElementById('devon-world-countdown');
             if (!root) return;
+            var center = root.querySelector('.dwc-center');
+            var btn = root.querySelector('.dwc-btn');
             var daysEl = document.getElementById('devon-world-countdown-days');
             var hoursEl = document.getElementById('devon-world-countdown-hours');
             var minsEl = document.getElementById('devon-world-countdown-mins');
             var secsEl = document.getElementById('devon-world-countdown-secs');
-            var center = root.querySelector('.dwc-center');
-            if (!daysEl || !hoursEl || !minsEl || !secsEl || !center) return;
             var TARGET_MS = 1790100000000; // 2026-09-22 12:00:00 America/Mexico_City
             var TIME_UP = 'EN VIVO: Vogue World Milán';
             var ended = false;
@@ -540,18 +522,26 @@
             function showLive() {
                 if (ended) return;
                 ended = true;
-                center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (center) center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (btn) {
+                    btn.textContent = 'EN VIVO';
+                    btn.setAttribute('href', 'https://www.vogue.mx/vogue-world');
+                }
+                root.classList.add('is-live');
+                root.setAttribute('aria-label', TIME_UP);
             }
             function tick() {
-                var diff = TARGET_MS - Date.now();
-                if (diff <= 0) {
-                    daysEl.textContent = '00';
-                    hoursEl.textContent = '00';
-                    minsEl.textContent = '00';
-                    secsEl.textContent = '00';
+                var now = Date.now();
+                if (now >= TARGET_MS) {
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minsEl) minsEl.textContent = '00';
+                    if (secsEl) secsEl.textContent = '00';
                     showLive();
                     return;
                 }
+                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+                var diff = TARGET_MS - now;
                 var totalSec = Math.floor(diff / 1000);
                 var days = Math.floor(totalSec / 86400);
                 var hours = Math.floor((totalSec % 86400) / 3600);
@@ -562,8 +552,13 @@
                 minsEl.textContent = pad(mins);
                 secsEl.textContent = pad(secs);
             }
-            tick();
-            setInterval(tick, 1000);
+            // Harden: go LIVE immediately when past target (no wait for interval)
+            if (Date.now() >= TARGET_MS) {
+                showLive();
+            } else {
+                tick();
+                setInterval(tick, 1000);
+            }
         })();
         </script>
     </div>
@@ -605,8 +600,8 @@
         <section class="max-w-7xl mx-auto px-4 md:px-6 mt-4 mb-12">
             <a href="#" class="relative w-full block group overflow-hidden cursor-pointer bg-gray-200" style="height: 65vh; min-height: 450px; max-height: 600px;">
                 <img 
-                    src="https://media.vogue.mx/photos/6aa73922869d6dde459f3b63/1:1/w_1600,c_limit/practical-magic-2.jpg" 
-                    alt="Los 64 estrenos de películas más esperadas de 2026" 
+                    src="https://media.vogue.mx/photos/6ab2bd20b8cb4c9ea6708316/16:9/w_1600,c_limit/jennifer-lopez-vogue-world-milano-2026.jpeg" 
+                    alt="TODAS las celebridades en Vogue World 2026" 
                     class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -615,12 +610,12 @@
                         RED CARPET
                     </span>
                     <h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-medium max-w-4xl leading-tight mb-8" style="font-family: 'Jost', sans-serif;">
-                        Los 64 estrenos de películas más esperadas de 2026
+                        TODAS las celebridades en Vogue World 2026
                     </h2>
                     <span class="text-white text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-3 font-sans">
-                        POR DEVON
+                        POR HANNAH JACKSON
                     </span>
-                    <span class="text-white text-[10px] md:text-xs font-sans uppercase tracking-wider">15 de marzo de 2026</span>
+                    <span class="text-white text-[10px] md:text-xs font-sans uppercase tracking-wider">22 de septiembre de 2026</span>
                 </div>
             </a>
         </section>
@@ -629,38 +624,38 @@
         <section class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20">
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa73df1869d6dde459f3b69/1:1/w_1600,c_limit/mal-de-amores-series-2026.jpg" alt="Las 38 series de televisión más esperadas de 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2bba1f009fa00a86e051d/2:3/w_1920,c_limit/_Q6A0069_EY6wn1Al_20260922070132.jpg" alt="Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Las 38 series de televisión más esperadas de 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Audrey Noble</span>
             </a>
             
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/69e9046383f1411f9ca5d0c5/1:1/w_1600,c_limit/diego-luna-mexico-86.jpg" alt="México 86: Diego Luna y Karla Souza protagonizan la película basada en el Mundial de 1986" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2d0dab15ca4d41858405b/2:3/w_1920,c_limit/jennifer-lopez-vogue-world-2026-vestido-an%25CC%2583os-50.jpg" alt="Jennifer Lopez brilla con un vestido elegante de los años 50 y zapatos pumps en Vogue World 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">México 86: Diego Luna y Karla Souza protagonizan la película basada en el Mundial de 1986</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Jennifer Lopez brilla con un vestido elegante de los años 50 y zapatos pumps en Vogue World 2026</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6971517013ab4a80a3c3482c/1:1/w_1600,c_limit/heated-rivarly-estreno.jpg" alt="Si amaste Off Campus, estas 8 series no pueden faltar en tu lista" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab144091f3bed077142ea67/1:1/w_1920,c_limit/VO1026_Bardia_VW_02.jpg" alt="¿Qué es (exactamente) Vogue World?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Si amaste Off Campus, estas 8 series no pueden faltar en tu lista</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">¿Qué es (exactamente) Vogue World?</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Luz García</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/699deb53398dace638b938fe/1:1/w_1600,c_limit/matt-damon-la-odisea.jpg" alt="La Odisea: La adaptación de Christopher Nolan llega en 2026 con Matt Damon, Anne Hathaway y más" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab30b5e69f087d2306cc596/4:3/w_1024,c_limit/adria-arjona-vogue-world-2026-zapatos-de-tacon.jpg" alt="Adria Arjona deslumbra con los zapatos de tacón T-Bar más elegantes de Vogue World 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">La Odisea: La adaptación de Christopher Nolan llega en 2026 con Matt Damon, Anne Hathaway y más</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Adria Arjona deslumbra con los zapatos de tacón T-Bar más elegantes de Vogue World 2026</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Audrey Noble</span>
             </a>
         </section>
 
@@ -678,6 +673,98 @@
             <!-- Fila 1 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2ecb4de37d5e458ee4cd8/4:3/w_1024,c_limit/vogue-world-2026-milano-2.jpg" alt="Los peinados italianos que dominaron Vogue World 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Los peinados italianos que dominaron Vogue World 2026</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2e5f0fd948e8636ac8b10/1:1/w_640,c_limit/vogue-world-milan.jpg" alt="Los vestidos de colores elegantes que vimos en Vogue World 2026 (y que son tendencia este otoño)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Los vestidos de colores elegantes que vimos en Vogue World 2026 (y que son tendencia este otoño)</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Max Berlinger</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2d78b22e406c96c9e0887/1:1/w_640,c_limit/SDA18929_9CDMrQQ8_20260922081117.jpeg" alt="La técnica italaiana de uñas conquistó Vogue World 2026: Milán con las manicuras más elegantes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">La técnica italaiana de uñas conquistó Vogue World 2026: Milán con las manicuras más elegantes</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por María Diez</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2e3d7de37d5e458ee4ca0/1:1/w_640,c_limit/SDAL6682_9BZGW71v_20260922090642.jpeg" alt="Estas fueron todas las supermodelos que desfilaron en Vogue World 2026 Milán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Estas fueron todas las supermodelos que desfilaron en Vogue World 2026 Milán</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Hannah Jackson</span>
+            </a>
+
+            <!-- Fila 2 -->
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2da8b724a3a546880a03b/1:1/w_640,c_limit/ana-de-la-reguera-vogue-world-2026.jpg" alt="Ana de la Reguera conquista Vogue World 2026 con un vestido peruano que tomó 3 meses en hacerse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">15 de septiembre de 2026</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Ana de la Reguera conquista Vogue World 2026 con un vestido peruano que tomó 3 meses en hacerse</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2bd20b8cb4c9ea6708316/16:9/w_1600,c_limit/jennifer-lopez-vogue-world-milano-2026.jpeg" alt="TODAS las celebridades en Vogue World 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">TODAS las celebridades en Vogue World 2026</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2bba1f009fa00a86e051d/2:3/w_1920,c_limit/_Q6A0069_EY6wn1Al_20260922070132.jpg" alt="Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Veronica Cristino</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/69e9046383f1411f9ca5d0c5/1:1/w_1600,c_limit/diego-luna-mexico-86.jpg" alt="México 86: Diego Luna y Karla Souza protagonizan la película basada en el Mundial de 1986" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">México 86: Diego Luna y Karla Souza protagonizan la película basada en el Mundial de 1986</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <!-- Fila 3 -->
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6971517013ab4a80a3c3482c/1:1/w_1600,c_limit/heated-rivarly-estreno.jpg" alt="Si amaste Off Campus, estas 8 series no pueden faltar en tu lista" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Si amaste Off Campus, estas 8 series no pueden faltar en tu lista</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/699deb53398dace638b938fe/1:1/w_1600,c_limit/matt-damon-la-odisea.jpg" alt="La Odisea: La adaptación de Christopher Nolan llega en 2026 con Matt Damon, Anne Hathaway y más" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">La Odisea: La adaptación de Christopher Nolan llega en 2026 con Matt Damon, Anne Hathaway y más</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
                     <img src="https://media.vogue.mx/photos/6a163c9a3c566ca90fc0cc66/1:1/w_1600,c_limit/toy-story-5-personajes.jpg" alt="Toy Story 5: todo sobre el regreso de la película que marcó nuestra infancia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
@@ -691,99 +778,7 @@
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
                 <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todo lo que sabemos sobre la temporada 3 de La Casa del Dragón</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a82184fda4cea387c3dbb42/1:1/w_640,c_limit/dragones-la-casa-del-dragon.jpg" alt="Guía razonable de dragones para entender House of the Dragon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Guía razonable de dragones para entender House of the Dragon</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Michel Mejía</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/630141bac315fee9d0245696/1:1/w_640,c_limit/rhys-ifans-house-of-the-dragon.jpg" alt="¿Quiénes mueren en House of the Dragon?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">¿Quiénes mueren en House of the Dragon?</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
-            </a>
-
-            <!-- Fila 2 -->
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa99f6c7c661c9f213ec2b5/1:1/w_1600,h_1200,c_limit/2295298457.jpg" alt="Selena Gómez se despide del corte de cabello bob y regresa a su cabello largo y ondulado como del 2016" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">15 de septiembre de 2026</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Selena Gómez se despide del corte de cabello bob y regresa a su cabello largo y ondulado como del 2016</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Lenny Coynault</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa83ff61d8cf6533158bbe2/1:1/w_1600,h_1200,c_limit/_2211.jpg" alt="Michelle Salas en el Festival de Venecia 2026: Las imágenes exclusivas de su viaje y su elegante vestido de encaje" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Michelle Salas en el Festival de Venecia 2026: Las imágenes exclusivas de su viaje y su elegante vestido de encaje</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Fernanda Pérez Sánchez</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa98eb10ee662d074286305/1:1/w_1600,h_1200,c_limit/latin-grammys-2026.jpg" alt="Todo sobre los Latin Grammys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todo sobre los Latin Grammys 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa8904690520ee7ebae3d2d/1:1/w_1600,h_1200,c_limit/2295301561" alt="Todas las celebridades en la alfombra roja de los Emmys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todas las celebridades en la alfombra roja de los Emmys 2026</h3>
                 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
-            </a>
-
-            <!-- Fila 3 -->
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa8a221fa3c76aae97f0c34/1:1/w_1600,h_1200,c_limit/GettyImages-2295299339.jpg" alt="Los mejores vestidos de los Emmys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Los mejores vestidos de los Emmys 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Christian Allaire</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa899f606ffedf9073aaca2/1:1/w_1600,h_1200,c_limit/emmys-2026-ganadores.jpg" alt="Todos los ganadores de los Emmys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todos los ganadores de los Emmys 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Fernanda Pérez Sánchez</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa896b03c672e48e3851779/1:1/w_1600,h_1200,c_limit/2294835910.jpg" alt="Zendaya deslumbra con un vestido de brillantes y un nuevo corte de cabello pixie en los Emmys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Zendaya deslumbra con un vestido de brillantes y un nuevo corte de cabello pixie en los Emmys 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Margaux Anbouba</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa889c590520ee7ebae3c71/1:1/w_1600,h_1200,c_limit/emmys-2026-todo-sobre-los-premios.jpg" alt="Todo sobre los Emmys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todo sobre los Emmys 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Fernanda Pérez Sánchez</span>
             </a>
         </section>
 
@@ -801,150 +796,150 @@
             <!-- Fila 1 -->
             <a href="#" class="flex flex-col group cursor-pointer lg:col-span-2">
                 <div class="overflow-hidden aspect-[4/3] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa88790dd76ba94aaed6da4/1:1/w_1600,h_1200,c_limit/emmys-2026-donde-ver.jpg" alt="Te decimos en dónde y a qué hora ver los Emmys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6a82184fda4cea387c3dbb42/1:1/w_640,c_limit/dragones-la-casa-del-dragon.jpg" alt="Guía razonable de dragones para entender House of the Dragon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Te decimos en dónde y a qué hora ver los Emmys 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
+                <h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Guía razonable de dragones para entender House of the Dragon</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer lg:col-span-2">
                 <div class="overflow-hidden aspect-[4/3] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa8834fdd76ba94aaed6d45/1:1/w_1600,h_1200,c_limit/2295298457" alt="Selena Gómez brilla como nunca con este vestido dorado en los Emmys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/630141bac315fee9d0245696/1:1/w_640,c_limit/rhys-ifans-house-of-the-dragon.jpg" alt="¿Quiénes mueren en House of the Dragon?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Selena Gómez brilla como nunca con este vestido dorado en los Emmys 2026</h3>
+                <h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">¿Quiénes mueren en House of the Dragon?</h3>
                 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Hannah Jackson</span>
             </a>
 
             <!-- Fila 2 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a9ed32c71767b948338a1fd/1:1/w_1600,h_1200,c_limit/GettyImages-2293833577.jpg" alt="Todas las celebridades en la alfombra roja del Festival de Cine de Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2d7adb15ca4d418584085/1:1/w_1600,h_1200,c_limit/Vogue%2520World%2520Batch%25201%2520by%2520Acielle%2520STYLEDUMONDE0K3A0023FullRes.jpg" alt="TODO lo que NO viste de Vogue World 2026 Milán, está aquí" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todas las celebridades en la alfombra roja del Festival de Cine de Venecia 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Eleonora Giordani</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">TODO lo que NO viste de Vogue World 2026 Milán, está aquí</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Anna Cafolla</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa722a293c893122c06c16a/1:1/w_1600,h_1200,c_limit/mal-de-amores-diferencias-entre-el-libro-y-serie.jpg" alt="Encontramos todas las diferencias entre la serie Mal de Amores y el libro de Ángeles Mastretta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2d5b4cfabd28718be3b64/1:1/w_1600,h_1200,c_limit/Beatrice-Borromeo-Vogue-World-Milano-2026-(4).jpg" alt="Beatrice Borromeo es la reina de Vogue World 2026: Milán con sandalias negras y falda drapeada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Encontramos todas las diferencias entre la serie Mal de Amores y el libro de Ángeles Mastretta</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Michel Mejía</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa59bacf4fc88d9ea7b505c/1:1/w_1600,h_1200,c_limit/ganadores-festival-de-cine-de-venecia-2026.jpg" alt="Los ganadores del Festival de Venecia 2026: Lista completa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Los ganadores del Festival de Venecia 2026: Lista completa</h3>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Beatrice Borromeo es la reina de Vogue World 2026: Milán con sandalias negras y falda drapeada</h3>
                 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Giacomo Aricò</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa2600a4ab138cedc8269f8/1:1/w_1600,h_1200,c_limit/practical-magic-2-entrevista.jpg" alt="Joey King y Maisie Williams hablan de Practical Magic 2, el poder de ser mujer y la importancia de romper traumas genracionales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6aad822c0575c7181dbd9f1c/1:1/w_1600,h_1200,c_limit/-story-inline%2520copy%2520(20).jpg" alt="El significado real tras el final de Vogue World 2026 en Milán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Joey King y Maisie Williams hablan de Practical Magic 2, el poder de ser mujer y la importancia de romper traumas genracionales</h3>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">El significado real tras el final de Vogue World 2026 en Milán</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2bec103071250da6d6fe9/1:1/w_1600,h_1200,c_limit/jennifer-lopez-vogue-world-milan-2026.jpeg" alt="Jennifer Lopez conquista Vogue World 2026 con un peinado y maquillaje de inspiración italiana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Jennifer Lopez conquista Vogue World 2026 con un peinado y maquillaje de inspiración italiana</h3>
                 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Michel Mejía</span>
             </a>
 
             <!-- Fila 3 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6aa18b82340a506d2ab7c232/1:1/w_1600,h_1200,c_limit/Pene%25CC%2581lope-Cruz-Festival-de-Venecia-2026.jpg" alt="Penélope Cruz gana en el Festival de Venecia 2026 con el vestido francés color rojo más elegante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2ced2de37d5e458ee4c2b/1:1/w_1600,h_1200,c_limit/covervw%2520(1).png" alt="Alicia Keys fue la invitada especial en Vogue World 2026: Milán con un vestido hecho para ella" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Penélope Cruz gana en el Festival de Venecia 2026 con el vestido francés color rojo más elegante</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Giulio Solfrizzi</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Alicia Keys fue la invitada especial en Vogue World 2026: Milán con un vestido hecho para ella</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Corinne Corci</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a8f4b28924cd8571893524c/1:1/w_1600,h_1200,c_limit/bunker-pelicula.jpg" alt="Bunker, la película con Penelope Cruz y Javier Bardem que participa en el Festival de Cine de Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2ce4d638e3199d903544c/1:1/w_1600,h_1200,c_limit/VO1026_Bardia_VW_02.jpeg" alt="La belleza italiana estuvo detrás de los looks en la pasarela de Vogue World 2026 en Milán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Bunker, la película con Penelope Cruz y Javier Bardem que participa en el Festival de Cine de Venecia 2026</h3>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">La belleza italiana estuvo detrás de los looks en la pasarela de Vogue World 2026 en Milán</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
+            </a>
+
+            <a href="#" class="flex flex-col group cursor-pointer">
+                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
+                    <img src="https://media.vogue.mx/photos/6ab2cd6c74fe3bea996c9844/1:1/w_1600,h_1200,c_limit/SDA19237_XkQAs6Kd_20260922082401.jpg" alt="Cardi B lució sandalias negras de tacón con el vestido más colorido de la pasarela en Vogue World 2026: Milán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
+                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Cardi B lució sandalias negras de tacón con el vestido más colorido de la pasarela en Vogue World 2026: Milán</h3>
                 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a8e217798a8d83d3a3daaab/1:1/w_1600,h_1200,c_limit/hombre-al-agua-pelicula.jpg" alt="Hombre al agua: La película dirigida por Gael García y protagonizada por Ricky Martin lleva al Festival de Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2cbb3280303e9a9be6e59/1:1/w_1600,h_1200,c_limit/j-balvin-vogue-world-2026.jpg" alt="J Balvin luce el traje sastre más barroco con botines negros Vogue World 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Hombre al agua: La película dirigida por Gael García y protagonizada por Ricky Martin lleva al Festival de Venecia 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
-            </a>
-
-            <a href="#" class="flex flex-col group cursor-pointer">
-                <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a9f24e9d74f95adc47cde49/1:1/w_1600,h_1200,c_limit/GettyImages-2293710834.jpg" alt="Las joyas más impresionantes de la alfombra roja del Festival de Cine de Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                </div>
-                <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Las joyas más impresionantes de la alfombra roja del Festival de Cine de Venecia 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Laura Hawkins</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">J Balvin luce el traje sastre más barroco con botines negros Vogue World 2026</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Fernanda Pérez Sánchez</span>
             </a>
 
             <!-- Fila 4 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a9cd94069f0c8e9902f4951/1:1/w_1600,h_1200,c_limit/primetime-festival-de-venecia-2026.jpg" alt="Primetime: La película del Festival de Venecia 2026 que podría darle su primer Oscar a Robert Pattinson" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6ab2c7262f17427a134041a6/1:1/w_1600,h_1200,c_limit/_Q6A0845_PAMfQRY2_20260922075733.jpg" alt="Dakota Johnson impacta con sandalias de moño y vestido transparente en Vogue World 2026: Milán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Primetime: La película del Festival de Venecia 2026 que podría darle su primer Oscar a Robert Pattinson</h3>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Dakota Johnson impacta con sandalias de moño y vestido transparente en Vogue World 2026: Milán</h3>
                 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a9c872c7fdf9e49fbe037e0/1:1/w_1600,h_1200,c_limit/GettyImages-2293468966.jpg" alt="Amal Clooney es la más elegante con sandalias de tiras gruesas y vestido de “lunares” rojos en Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/68be2ee3465f91fe3b3b06f4/1:1/w_1600,h_1200,c_limit/VMAS-2025-2234202042.jpg" alt="Todo lo que debes saber sobre los MTV VMAs 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Amal Clooney es la más elegante con sandalias de tiras gruesas y vestido de “lunares” rojos en Venecia 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por María Munsuri</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todo lo que debes saber sobre los MTV VMAs 2026</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Fernanda Pérez Sánchez</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a9c53a285c97503d6e7571b/1:1/w_1600,h_1200,c_limit/MMWT%2520#32_CLAIRE%2520DENIS_BTS%2520IMAGE_PH_BRIGITTE%2520LACOMBE%2520(4).jpg" alt="Kim Gordon y Suzanne Lindon hablan sobre el cine, la amistad y su colaboración con Claire Denis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6aae3a791207c2205da941e5/1:1/w_1600,h_1200,c_limit/monstruo-la-historia-de-lizzie-borden-serie.jpg" alt="El caso real detrás de Monstruo: La historia de Lizzie Borden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Kim Gordon y Suzanne Lindon hablan sobre el cine, la amistad y su colaboración con Claire Denis</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Liam Hess</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">El caso real detrás de Monstruo: La historia de Lizzie Borden</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a99d920a5db92f491a9fbd3/1:1/w_1600,h_1200,c_limit/wild-horse-nine-pelicula.jpg" alt="Wild Horse Nine: La película sobre el Golpe de Estado en Chile que recibió una ovación de 14 minutos en el Festival de Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6aaecbccd2f2c763ac8e8b04/1:1/w_1600,h_1200,c_limit/mal-de-amores-reparto-completo.jpg" alt="¿Quién es quién en Mal de amores? Estos son los actores y personajes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Wild Horse Nine: La película sobre el Golpe de Estado en Chile que recibió una ovación de 14 minutos en el Festival de Venecia 2026</h3>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">¿Quién es quién en Mal de amores? Estos son los actores y personajes</h3>
                 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
             </a>
 
             <!-- Fila 5 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a9c46a8bf1e93dd8428037f/1:1/w_1600,h_1200,c_limit/Mariana-Di-Girolamo-Chanel-Festival-de-Venecia-2026-2.jpg" alt="Mariana Di Girolamo apostó por un romántico look con falda y corsé en el Festival de Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6aaec54a348827c028fa0121/1:1/w_1600,h_1200,c_limit/enfrentados-marfil-pelicula.jpg" alt="Así es Enfrentados: Marfil, la adaptación de la novela de Mercedes Ron con Ester Expósito y Hugo Diego García" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Mariana Di Girolamo apostó por un romántico look con falda y corsé en el Festival de Venecia 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Atenea Morales de la Cruz</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Así es Enfrentados: Marfil, la adaptación de la novela de Mercedes Ron con Ester Expósito y Hugo Diego García</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4 bg-gray-200">
-                    <img src="https://media.vogue.mx/photos/6a9c46137a04187f1d982741/1:1/w_1600,h_1200,c_limit/georgina-rodriguez-festival-de-cine-de-venecia-2026.jpg" alt="Georgina Rodríguez le da un giro al ‘power suit’ en la alfombra roja del Festival de Venecia 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6a9437aadaeb470a766b41df/1:1/w_1600,h_1200,c_limit/rosalia-concierto-lux-mexico.jpg" alt="Todos los nominados a los Latin Grammys 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">RED CARPET</span>
-                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Georgina Rodríguez le da un giro al ‘power suit’ en la alfombra roja del Festival de Venecia 2026</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por María Munsuri</span>
+                <h3 class="text-lg font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Todos los nominados a los Latin Grammys 2026</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Miguel Vicencio</span>
             </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">

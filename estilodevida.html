@@ -231,7 +231,7 @@
         </div>
     </header>
     <!-- Devon World Milano countdown -->
-    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Vogue World Milano">
+    <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
         <style>
             @font-face {
                 font-family: VogueAvantGarde;
@@ -496,29 +496,11 @@
                 </a>
                 <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
             </div>
-            <div class="dwc-center" aria-live="polite">
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
-                    <span class="dwc-label">Días</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
-                    <span class="dwc-label">Horas</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
-                    <span class="dwc-label">Minutos</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
-                    <span class="dwc-label">Segundos</span>
-                </div>
+                                    <div class="dwc-center" aria-live="polite">
+                <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
             </div>
-            <div class="dwc-right">
-                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">¡Muy pronto!</a>
+<div class="dwc-right">
+                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">EN VIVO</a>
                 <a class="dwc-live" href="https://www.vogue.mx">EN VIVO EN VOGUE.MX</a>
             </div>
         </div>
@@ -526,12 +508,12 @@
         (function () {
             var root = document.getElementById('devon-world-countdown');
             if (!root) return;
+            var center = root.querySelector('.dwc-center');
+            var btn = root.querySelector('.dwc-btn');
             var daysEl = document.getElementById('devon-world-countdown-days');
             var hoursEl = document.getElementById('devon-world-countdown-hours');
             var minsEl = document.getElementById('devon-world-countdown-mins');
             var secsEl = document.getElementById('devon-world-countdown-secs');
-            var center = root.querySelector('.dwc-center');
-            if (!daysEl || !hoursEl || !minsEl || !secsEl || !center) return;
             var TARGET_MS = 1790100000000; // 2026-09-22 12:00:00 America/Mexico_City
             var TIME_UP = 'EN VIVO: Vogue World Milán';
             var ended = false;
@@ -539,18 +521,26 @@
             function showLive() {
                 if (ended) return;
                 ended = true;
-                center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (center) center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (btn) {
+                    btn.textContent = 'EN VIVO';
+                    btn.setAttribute('href', 'https://www.vogue.mx/vogue-world');
+                }
+                root.classList.add('is-live');
+                root.setAttribute('aria-label', TIME_UP);
             }
             function tick() {
-                var diff = TARGET_MS - Date.now();
-                if (diff <= 0) {
-                    daysEl.textContent = '00';
-                    hoursEl.textContent = '00';
-                    minsEl.textContent = '00';
-                    secsEl.textContent = '00';
+                var now = Date.now();
+                if (now >= TARGET_MS) {
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minsEl) minsEl.textContent = '00';
+                    if (secsEl) secsEl.textContent = '00';
                     showLive();
                     return;
                 }
+                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+                var diff = TARGET_MS - now;
                 var totalSec = Math.floor(diff / 1000);
                 var days = Math.floor(totalSec / 86400);
                 var hours = Math.floor((totalSec % 86400) / 3600);
@@ -561,8 +551,13 @@
                 minsEl.textContent = pad(mins);
                 secsEl.textContent = pad(secs);
             }
-            tick();
-            setInterval(tick, 1000);
+            // Harden: go LIVE immediately when past target (no wait for interval)
+            if (Date.now() >= TARGET_MS) {
+                showLive();
+            } else {
+                tick();
+                setInterval(tick, 1000);
+            }
         })();
         </script>
     </div>
@@ -601,13 +596,13 @@
         <!-- Sección: Artículo Overlay Principal (Música) -->
         <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 md:mt-24 mb-12">
             <a class="relative w-full block group overflow-hidden cursor-pointer" href="#" style="height: 65vh; min-height: 450px; max-height: 600px;">
-<img alt="Qué hacer en Medellín: La guía Vogue para descubrirla" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6882b7bb1d580acb6b360c79/1:1/w_1600,c_limit/Que-hacer-en-Medellin.jpg"/>
+<img alt="Milán, la guía Vogue para dejarse llevar por esta elegante ciudad italiana" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a70b05b4efc981bade3d8dc/1:1/w_1600,c_limit/VOGUEMX-GUIA-MILAN.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 <div class="absolute inset-0 flex flex-col items-center justify-end text-center pb-12 md:pb-16 px-4 md:px-12 z-10">
 <span class="text-white text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-4 font-sans">
                         ESTILO DE VIDA
                     </span>
-<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-medium max-w-4xl leading-tight mb-8" style="font-family: 'Jost', sans-serif;">Qué hacer en Medellín: La guía Vogue para descubrirla</h2>
+<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-medium max-w-4xl leading-tight mb-8" style="font-family: 'Jost', sans-serif;">Milán, la guía Vogue para dejarse llevar por esta elegante ciudad italiana</h2>
 </div>
 </a>
         </section>
@@ -616,17 +611,17 @@
         <section class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-20">
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] md:aspect-[3/2] mb-4">
-<img alt="Qué hacer en Ciudad de Panamá: La guía Vogue para descubrirla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/68d74d3172eccabe646684ba/1:1/w_1600,c_limit/Que-hacer-en-Panama-La-guia-Vogue-para-descubrirla.jpg"/>
+<img alt="Florencia, la guía Vogue para conocerla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a5fc6085b100150c84d550f/1:1/w_1600,c_limit/VOGUEMX-GUIA-FLORENCIA.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-2xl md:text-3xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Qué hacer en Ciudad de Panamá: La guía Vogue para descubrirla</h3>
+<h3 class="text-2xl md:text-3xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Florencia, la guía Vogue para conocerla</h3>
 </a>
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] md:aspect-[3/2] mb-4">
-<img alt="Qué hacer en Bolivia: La guía Vogue para descubrirla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/68ddff3717c5d9aeb3f6d160/1:1/w_1600,c_limit/que-hacer-en-bolivia.jpg"/>
+<img alt="Roma: la guía Vogue para conocerla, hoteles, restaurantes y los planes que no puedes perderte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a70ac6326c61477d7e0b046/1:1/w_1600,c_limit/VOGUEMX-GUIA-ROMA-.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-2xl md:text-3xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Qué hacer en Bolivia: La guía Vogue para descubrirla</h3>
+<h3 class="text-2xl md:text-3xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Roma: la guía Vogue para conocerla, hoteles, restaurantes y los planes que no puedes perderte</h3>
 </a>
         </section>
 
@@ -643,15 +638,15 @@
         <section class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20">
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="Los 8 mejores confesionarios de Rosalía en el LUX Tour seleccionados por Vogue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a948f6f37f17e0e78b16b57/1:1/w_1600,c_limit/confesionarios-de-rosalia.jpg"/>
+<img alt="Venecia, la guia Vogue para descubrir La Serenissima" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a5f82b223d3fa586e670337/1:1/w_1600,c_limit/VOGUEMX-GUIA-VENECIA.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Los 8 mejores confesionarios de Rosalía en el LUX Tour seleccionados por Vogue</h3>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Venecia, la guia Vogue para descubrir La Serenissima</h3>
 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
 </a>
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="Nicholas y Maki de &amp;TEAM hablan con Vogue sobre el futuro del grupo y su duet…" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a8b393d58604963bb39152a/1:1/w_1600,c_limit/andteam-entrevista.jpg"/>
+<img alt="Nicholas y Maki de &amp;TEAM hablan con Vogue sobre el futuro del grupo y su duet…" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab1c8c60c7ed239c578566a/1:1/w_1600,c_limit/luis-miguel-tour-2027.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
 <h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Nicholas y Maki de &amp;TEAM hablan con Vogue sobre el futuro del grupo y su dueto con Santos Bravos</h3>
@@ -659,18 +654,18 @@
 </a>
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="Tiffany Young: Sobre su álbum debut, un nuevo comienzo y ser fan de Guillermo del Toro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a89c4e3938912bdeaf0eef9/1:1/w_1600,c_limit/tiffany-young-entrevista.jpg"/>
+<img alt="Así fue el primer concierto de la residencia de Shakira en Madrid: “Los años más felices de mi vida los pasé aquí”" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aaed3207e4fc9273d2ac19f/1:1/w_1600,c_limit/shakira-concierto-madrid.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Tiffany Young: Sobre su álbum debut, un nuevo comienzo y ser fan de Guillermo del Toro</h3>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Así fue el primer concierto de la residencia de Shakira en Madrid: “Los años más felices de mi vida los pasé aquí”</h3>
 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
 </a>
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="“Tiene que sentirse bien, pero también tiene que sentirse correcto”: Jungle nos habla sobre el universo creativo detrás de Sunshine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a677e45911454224b6fd77f/1:1/w_1600,c_limit/jungle-2.jpg"/>
+<img alt="Los 8 mejores confesionarios de Rosalía en el LUX Tour seleccionados por Vogue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a948f6f37f17e0e78b16b57/1:1/w_1600,c_limit/confesionarios-de-rosalia.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">“Tiene que sentirse bien, pero también tiene que sentirse correcto”: Jungle nos habla sobre el universo creativo detrás de Sunshine</h3>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Los 8 mejores confesionarios de Rosalía en el LUX Tour seleccionados por Vogue</h3>
 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
 </a>
         </section>
@@ -688,35 +683,35 @@
         <section class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20">
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="¿A qué sabrían las pinceladas de Frida Kahlo? Este chef mexicano crea un menú inspirado en la icónica pintora" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/69ea714ffe247d54a3708b88/1:1/w_1600,c_limit/Frida%2520Kahlo%2520-%2520Untitled%2520Self-portrait%2520with%2520thorn%2520necklace%2520and%2520hummingbird.jpg"/>
+<img alt="Luis Miguel anuncia su tour 2027: Esto es lo que se sabe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a8b393d58604963bb39152a/1:1/w_1600,c_limit/andteam-entrevista.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">¿A qué sabrían las pinceladas de Frida Kahlo? Este chef mexicano crea un menú inspirado en la icónica pintora</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Nicholas y Maki de &TEAM hablan con Vogue sobre el futuro del grupo y su dueto con Santos Bravos</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por María Villarreal</span>
 </a>
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="¿Qué tiene de especial la carne de Wagyu?, esta chef japonesa en México nos responde" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/69f0d33cab4f174cdce77e27/1:1/w_1600,c_limit/JPARK26_HYATT_WAGYU%252011.jpg"/>
+<img alt="10 preguntas esenciales sobre gastronomía con la chef mexicana Martha Ortiz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a99836175612819576f4249/4:3/w_1024,c_limit/003_TUCHDELUNA.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">¿Qué tiene de especial la carne de Wagyu?, esta chef japonesa en México nos responde</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">10 preguntas esenciales sobre gastronomía con la chef mexicana Martha Ortiz</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Paulina Rincón</span>
 </a>
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="10 preguntas esenciales sobre gastronomía con el chef mexicano Eduardo “Lalo” García" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/690a461fbd2305820ba3624b/1:1/w_1600,c_limit/16062020-IMG_5379.jpg"/>
+<img alt="Fabiola Escobosa: La chef que nunca se detiene" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa7aa95fa45f12eca25f38e/4:3/w_1024,c_limit/Fabiola-Escobosa2.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">10 preguntas esenciales sobre gastronomía con el chef mexicano Eduardo “Lalo” García</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Fabiola Escobosa: La chef que nunca se detiene</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Devon</span>
 </a>
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="Ellas son las chefs que redefinen el mundo culinario de la Ciudad de México en 2025" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/67db68163ac2c2489333b511/1:1/w_1600,c_limit/lorea-olavarri-chef-de-errre-restaunte-de-cdmx-con-estrella-michelin.jpg"/>
+<img alt="La chef mexicana Lula Martín del Campo: “El comensal siempre tiene que irse mejor de lo que llegó”" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/673393f630f1f53f99b459ca/1:1/w_640,c_limit/Historias-de-Grandeza-Cre%25CC%2581dito-American-Express-(4).jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Ellas son las chefs que redefinen el mundo culinario de la Ciudad de México en 2025</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Abena Anim-Somuah</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">La chef mexicana Lula Martín del Campo: “El comensal siempre tiene que irse mejor de lo que llegó”</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
 </a>
         </section>
 
@@ -732,19 +727,19 @@
         <section class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] mb-4">
-<img alt="Olga Sinclair sobre el tiempo, el color y la evolución de su obra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa1893685acaf48056d0071/1:1/w_1600,c_limit/olga-sinclair.jpg"/>
+<img alt="Ocho restaurantes clásicos e imperdibles de comida mexicana en Ciudad de México" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa80a1994ce9bb022e2c31c/1:1/w_640,c_limit/68968747c1b7d71c1671a09d_San%2520Angel%2520Inn%2520-%2520Restaurante%2520(9).jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">DEVON PARA FREDERIQUE CONSTANT</span>
-<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Olga Sinclair sobre el tiempo, el color y la evolución de su obra</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Amira Saim</span>
+<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Ocho restaurantes clásicos e imperdibles de comida mexicana en Ciudad de México</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Paulina Rincón</span>
 </a>
             
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] mb-4">
-<img alt="Raíces, fibras del alma: la venezolana Gilda Strano y el hilo que teje la memoria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a9c73de69f0c8e9902f4801/1:1/w_1600,c_limit/DSC04258.jpg"/>
+<img alt="En Los Ángeles, este restaurante está cambiando el cómo se come" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a358360bf643b0e03a0a6d0/1:1/w_640,c_limit/Ardor-Mai-Tai-Baba-The-West-Hollywood-EDITION-Los-Angeles.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Raíces, fibras del alma: la venezolana Gilda Strano y el hilo que teje la memoria</h3>
+<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">En Los Ángeles, este restaurante está cambiando el cómo se come</h3>
 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
 </a>
 
@@ -759,20 +754,20 @@
 
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] mb-4">
-<img alt="Gama Week 2026: Fin de semana de galerías de arte en la CDMX del 3 al 6 de septiembre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a989a27c1a29463dea2757b/1:1/w_1600,c_limit/2.%2520Hermanos,%25202026,%2520Oil%2520and%2520acrylic%2520on%2520canvas,%2520150cm%2520x%2520120cm.jpeg"/>
+<img alt="Nota, el sabor italiano de Chicago, pero con sofisticado acento latino" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab1937274122e765e30b1d0/1:1/w_640,c_limit/nota-fabianml-014.JPG"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Gama Week 2026: Fin de semana de galerías de arte en la CDMX del 3 al 6 de septiembre</h3>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Nota, el sabor italiano de Chicago, pero con sofisticado acento latino</h3>
 <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
 </a>
 
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] mb-4">
-<img alt="Recordando a Yayoi Kusama, la artista que con sus infinitos lunares demostró que el arte puede salvar vidas." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a904cace32923b36fb92883/1:1/w_1600,c_limit/1485709170.jpg"/>
+<img alt="Olga Sinclair sobre el tiempo, el color y la evolución de su obra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa1893685acaf48056d0071/1:1/w_1600,c_limit/olga-sinclair.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Recordando a Yayoi Kusama, la artista que con sus infinitos lunares demostró que el arte puede salvar vidas.</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Francesca Faccani</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Olga Sinclair sobre el tiempo, el color y la evolución de su obra</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Amira Saim</span>
 </a>
 
             <a href="#" class="flex flex-col group cursor-pointer">
@@ -798,29 +793,29 @@
         <section class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20">
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] mb-4">
-<img alt="Horóscopo de hoy: 15 de septiembre de 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa82cdc869d6dde459f4018/1:1/w_1600,c_limit/horoscopo-de-hoy-martes-15-de-septiembre-de-2026.jpg"/>
+<img alt="Raíces, fibras del alma: la venezolana Gilda Strano y el hilo que teje la memoria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a9c73de69f0c8e9902f4801/1:1/w_1600,c_limit/DSC04258.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Horóscopo de hoy: 15 de septiembre de 2026</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Mereath Astrology</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Raíces, fibras del alma: la venezolana Gilda Strano y el hilo que teje la memoria</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Francesca Faccani</span>
 </a>
             
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] mb-4">
-<img alt="Horóscopo de hoy: 14 de septiembre de 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a9f07f896eddfac26a5ccbe/1:1/w_1600,c_limit/horoscopo-de-hoy-lunes-14-de-septiembre-de-2026.jpg"/>
+<img alt="Gama Week 2026: Fin de semana de galerías de arte en la CDMX del 3 al 6 de septiembre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a989a27c1a29463dea2757b/1:1/w_1600,c_limit/2.%2520Hermanos,%25202026,%2520Oil%2520and%2520acrylic%2520on%2520canvas,%2520150cm%2520x%2520120cm.jpeg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Horóscopo de hoy: 14 de septiembre de 2026</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Mereath Astrology</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Gama Week 2026: Fin de semana de galerías de arte en la CDMX del 3 al 6 de septiembre</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
 </a>
 
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/3] mb-4">
-<img alt="Horóscopo de hoy: 13 de septiembre de 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a9f032e391d8c54204ba9ce/1:1/w_1600,c_limit/horoscopo-de-hoy-domingo-13-de-septiembre-de-2026.jpg"/>
+<img alt="Recordando a Yayoi Kusama, la artista que con sus infinitos lunares demostró que el arte puede salvar vidas." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a904cace32923b36fb92883/1:1/w_1600,c_limit/1485709170.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2 font-sans">ESTILO DE VIDA</span>
-<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Horóscopo de hoy: 13 de septiembre de 2026</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Mereath Astrology</span>
+<h3 class="text-lg md:text-xl font-medium text-black leading-snug mb-3 font-sans group-hover:text-gray-600 transition-colors">Recordando a Yayoi Kusama, la artista que con sus infinitos lunares demostró que el arte puede salvar vidas.</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Ramón Barreto</span>
 </a>
         </section>
 

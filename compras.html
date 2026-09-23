@@ -218,9 +218,9 @@
         <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
         <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
             <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
-                <a href="moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
                 <a href="belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
-                <a href="estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
                 <a href="compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
                 <a href="redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
                 <a href="hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
@@ -231,7 +231,7 @@
         </div>
     </header>
     <!-- Devon World Milano countdown -->
-    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Vogue World Milano">
+    <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
         <style>
             @font-face {
                 font-family: VogueAvantGarde;
@@ -496,29 +496,11 @@
                 </a>
                 <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
             </div>
-            <div class="dwc-center" aria-live="polite">
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
-                    <span class="dwc-label">Días</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
-                    <span class="dwc-label">Horas</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
-                    <span class="dwc-label">Minutos</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
-                    <span class="dwc-label">Segundos</span>
-                </div>
+                                    <div class="dwc-center" aria-live="polite">
+                <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
             </div>
-            <div class="dwc-right">
-                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">¡Muy pronto!</a>
+<div class="dwc-right">
+                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">EN VIVO</a>
                 <a class="dwc-live" href="https://www.vogue.mx">EN VIVO EN VOGUE.MX</a>
             </div>
         </div>
@@ -526,12 +508,12 @@
         (function () {
             var root = document.getElementById('devon-world-countdown');
             if (!root) return;
+            var center = root.querySelector('.dwc-center');
+            var btn = root.querySelector('.dwc-btn');
             var daysEl = document.getElementById('devon-world-countdown-days');
             var hoursEl = document.getElementById('devon-world-countdown-hours');
             var minsEl = document.getElementById('devon-world-countdown-mins');
             var secsEl = document.getElementById('devon-world-countdown-secs');
-            var center = root.querySelector('.dwc-center');
-            if (!daysEl || !hoursEl || !minsEl || !secsEl || !center) return;
             var TARGET_MS = 1790100000000; // 2026-09-22 12:00:00 America/Mexico_City
             var TIME_UP = 'EN VIVO: Vogue World Milán';
             var ended = false;
@@ -539,18 +521,26 @@
             function showLive() {
                 if (ended) return;
                 ended = true;
-                center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (center) center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (btn) {
+                    btn.textContent = 'EN VIVO';
+                    btn.setAttribute('href', 'https://www.vogue.mx/vogue-world');
+                }
+                root.classList.add('is-live');
+                root.setAttribute('aria-label', TIME_UP);
             }
             function tick() {
-                var diff = TARGET_MS - Date.now();
-                if (diff <= 0) {
-                    daysEl.textContent = '00';
-                    hoursEl.textContent = '00';
-                    minsEl.textContent = '00';
-                    secsEl.textContent = '00';
+                var now = Date.now();
+                if (now >= TARGET_MS) {
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minsEl) minsEl.textContent = '00';
+                    if (secsEl) secsEl.textContent = '00';
                     showLive();
                     return;
                 }
+                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+                var diff = TARGET_MS - now;
                 var totalSec = Math.floor(diff / 1000);
                 var days = Math.floor(totalSec / 86400);
                 var hours = Math.floor((totalSec % 86400) / 3600);
@@ -561,8 +551,13 @@
                 minsEl.textContent = pad(mins);
                 secsEl.textContent = pad(secs);
             }
-            tick();
-            setInterval(tick, 1000);
+            // Harden: go LIVE immediately when past target (no wait for interval)
+            if (Date.now() >= TARGET_MS) {
+                showLive();
+            } else {
+                tick();
+                setInterval(tick, 1000);
+            }
         })();
         </script>
     </div>
@@ -628,17 +623,17 @@
             <!-- Artículo 3 -->
             <a class="flex flex-col group cursor-pointer" href="#">
 <div class="overflow-hidden aspect-[4/5] mb-4">
-<img alt="Así se vivió Espacio Vogue Miami: Runway Edition 2026, un encuentro de moda beachwear y Resort Wear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a1cc3dd5d807ada6282e757/1:1/w_1600,h_1200,c_limit/espacio-vogue-miami-swim.jpg"/>
+<img alt="Di con los básicos para verano (de marcas latinoamericanas) que no faltarán en mi clóset esta temporada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/646a73eb19a85350ba142d39/1:1/w_1600,c_limit/ropa-en-tendencia-para-verano-2023.jpg"/>
 </div>
 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">MODA</span>
-<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Di con los básicos para verano (de marcas latinoamericanas) que no faltarán en mi clóset esta temporada</h3>
-<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Fernanda Pérez Sánchez</span>
+<h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Conoce las 36 marcas participantes en Espacio Vogue Monterrey 2026</h3>
+<span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Mayela Rico</span>
 </a>
 
             <!-- Artículo 4 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/5] mb-4">
-                    <img src="https://media.vogue.mx/photos/6a2874f82f18fe2820857a93/1:1/w_1600,h_1200,c_limit/Tendencias-de-peinado-en-Swim-Week-Shark-Beauty.jpg" alt="Las tendencias de peinado que dominaron los looks de Espacio Vogue Miami: Runway Edition 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6aac5e9cae6801608e61a2d0/1:1/w_1600,h_1200,c_limit/AMAD0464%25202.jpg" alt="Conoce las 36 marcas participantes en Espacio Vogue Monterrey 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">BELLEZA</span>
                 <h3 class="text-xl md:text-2xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Las tendencias de peinado que dominaron los looks de Espacio Vogue Miami: Runway Edition 2026</h3>
@@ -651,7 +646,7 @@
             <!-- Artículo 5 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/3] md:aspect-[3/2] mb-4">
-                    <img src="https://media.vogue.mx/photos/646a73eb19a85350ba142d39/1:1/w_1600,c_limit/ropa-en-tendencia-para-verano-2023.jpg" alt="Básicos para verano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6a2874f82f18fe2820857a93/1:1/w_1600,h_1200,c_limit/Tendencias-de-peinado-en-Swim-Week-Shark-Beauty.jpg" alt="Las tendencias de peinado que dominaron los looks de Espacio Vogue Miami: Runway Edition 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">MODA</span>
                 <h3 class="text-2xl md:text-3xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Di con los básicos para verano (de marcas latinoamericanas) que no faltarán en mi clóset esta temporada</h3>
@@ -661,11 +656,11 @@
             <!-- Artículo 6 -->
             <a href="#" class="flex flex-col group cursor-pointer">
                 <div class="overflow-hidden aspect-[4/3] md:aspect-[3/2] mb-4">
-                    <img src="https://media.vogue.mx/photos/69d8070ff11636301450efec/1:1/w_1600,h_1200,c_limit/karla-martinez-de-salas-espacio-vogue.jpg" alt="¡Así se vivieron los mejores momentos de Espacio Vogue 2026!" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="https://media.vogue.mx/photos/6a1cc3dd5d807ada6282e757/1:1/w_1600,h_1200,c_limit/espacio-vogue-miami-swim.jpg" alt="Así se vivió Espacio Vogue Miami: Runway Edition 2026, un encuentro de moda beachwear y Resort Wear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
                 <span class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-3 font-sans">ESTILO DE VIDA</span>
-                <h3 class="text-2xl md:text-3xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">¡Así se vivieron los mejores momentos de Espacio Vogue 2026!</h3>
-                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por María Diez</span>
+                <h3 class="text-2xl md:text-3xl font-medium text-black leading-snug mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Así se vivió Espacio Vogue Miami: Runway Edition 2026, un encuentro de moda beachwear y Resort Wear</h3>
+                <span class="text-[10px] md:text-xs text-gray-400 font-sans uppercase tracking-wider">Por Redacción Devon</span>
             </a>
         </section>
 

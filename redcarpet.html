@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suscripción | Devon México y Latinoamérica</title>
+    <title>Red Carpet | Devon México y Latinoamérica</title>
     <!-- Ícono de la pestaña (Favicon) -->
     <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
     
@@ -144,15 +144,6 @@
         .link-underline:hover::after {
             width: 100%;
         }
-
-        /* --- Custom Checkbox Estilo Editorial --- */
-        .custom-checkbox-input:checked + .custom-checkbox-box {
-            background-color: currentColor;
-            border-color: black;
-        }
-        .custom-checkbox-input:checked + .custom-checkbox-box svg {
-            display: block;
-        }
     </style>
 </head>
 <body class="bg-white text-black font-sans flex flex-col min-h-screen">
@@ -239,7 +230,6 @@
             </div>
         </div>
     </header>
-
     <!-- Devon World Milano countdown -->
     <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
         <style>
@@ -506,7 +496,7 @@
                 </a>
                 <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
             </div>
-                                    <div class="dwc-center" aria-live="polite">
+                                                <div class="dwc-center" aria-live="polite">
                 <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
             </div>
 <div class="dwc-right">
@@ -583,99 +573,85 @@
         </a>
     </div>
 
-    <main class="w-full flex-1 bg-[#FAFAFA] py-12 md:py-20">
-        
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            
-            <!-- Columna Izquierda: Imagen Editorial inspirada en el PDF -->
-            <div class="w-full order-2 md:order-1 relative group overflow-hidden bg-gray-200 aspect-[3/4] md:aspect-[4/5]">
-                <img 
-                    src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1400&auto=format&fit=crop" 
-                    alt="Modelo Moda Devon" 
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-                />
-            </div>
+    <main class="w-full flex-1 pb-20">
+<!-- Encabezado de Sección: Red Carpet -->
+<section class="max-w-5xl mx-auto px-6 pt-16 md:pt-20 flex flex-col items-center text-center">
+<h1 class="text-5xl md:text-6xl text-black mb-6 font-serif">Red Carpet</h1>
+<p class="text-[14px] md:text-[16px] leading-relaxed text-black max-w-[850px] mb-16 font-serif">
+                Alfombra roja, celebridades y looks de premiación. La cobertura Red Carpet de Devon.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-2 w-full">
+<span class="text-[14px] md:text-[15px] font-medium text-black font-sans">
+                    Suscríbete a nuestra newsletter para recibir lo mejor de Devon en tu correo electrónico.
+                </span>
+<a class="link-underline text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase text-black font-sans mt-2 md:mt-0" href="newsletter.html">
+                    REGISTRARME
+                </a>
+</div>
+</section>
 
-            <!-- Columna Derecha: Contenido y Formulario -->
-            <div class="w-full order-1 md:order-2 flex flex-col justify-center">
-                
-                <h1 class="text-4xl md:text-5xl lg:text-6xl text-black mb-10 font-serif leading-tight">
-                    Devon más cerca de ti: <br/><span class="italic">¡Suscríbete!</span>
-                </h1>
-                
-                <!-- Contenedor del Formulario -->
-                <div id="formContainer" class="w-full transition-opacity duration-500">
-                    <form id="subscriptionForm" action="#" method="POST" class="w-full">
-                    
-                        <!-- Opción de Boletín (Texto del PDF adaptado a Devon) -->
-                        <div class="border-t border-b border-gray-300 py-6 mb-10">
-                            <div class="relative flex items-center justify-center mt-1 mr-5">
-                                <input type="checkbox" class="custom-checkbox-input opacity-0 absolute w-0 h-0" checked>
-                                <div class="custom-checkbox-box w-6 h-6 border-2 border-black flex items-center justify-center transition-colors">
-                                    <svg class="w-4 h-4 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                        <path stroke-linecap="square" stroke-linejoin="miter" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <!-- Contenido del Checkbox -->
-                            <div class="flex-1">
-                                <p class="text-base md:text-lg text-black font-serif leading-relaxed mb-4">
-                                    Todo lo que necesitas saber sobre moda, belleza y estilo de vida, directo en tu email.
-                                </p>
-                                <a href="#" class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors inline-block pb-0.5 border-b border-black">
-                                    VISTA PREVIA &gt;&gt;&gt;
-                                </a>
-                            </div>
-                        </label>
-                    </div>
+<!-- Separador / Título de Categoría: Lo Último -->
+<div class="w-full max-w-7xl mx-auto px-6 mt-16 md:mt-24 mb-8">
+<div class="border-t border-b border-black py-3 md:py-4 flex justify-between items-center">
+<h2 class="text-lg md:text-xl font-medium tracking-widest text-black uppercase" style="font-family: 'Jost', sans-serif;">
+                    LO ÚLTIMO
+                </h2>
+</div>
+</div>
+<!-- Sección: Grid Lo Último -->
+<section class="max-w-7xl mx-auto px-6 mb-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Featured (Large) -->
+<a class="lg:col-span-8 group cursor-pointer flex flex-col" href="https://www.vogue.mx/galeria/celebridades-en-vogue-world-2026">
+<div class="relative w-full aspect-[4/3] lg:aspect-[16/9] overflow-hidden mb-4">
+<img alt="TODAS las celebridades en Vogue World 2026" class="object-cover object-center lg:object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab2bd20b8cb4c9ea6708316/16:9/w_1600,c_limit/jennifer-lopez-vogue-world-milano-2026.jpeg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</span>
+<h3 class="text-3xl lg:text-4xl font-medium leading-tight mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">TODAS las celebridades en Vogue World 2026</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Hannah Jackson</span>
+</a>
+<!-- Side Stack (2 items) -->
+<div class="lg:col-span-4 flex flex-col gap-8 md:grid md:grid-cols-2 lg:flex lg:flex-col">
+<a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/pamela-anderson-corte-de-cabello-bob-rizado-mujeres-de-50-vogue-world-2026-milan">
+<div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
+<img alt="Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab2bba1f009fa00a86e051d/2:3/w_1920,c_limit/_Q6A0069_EY6wn1Al_20260922070132.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</span>
+<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Audrey Noble</span>
+</a>
+<a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/jennifer-lopez-en-vogue-world-2026-con-un-vestido-elegante-y-zapatos-pumps">
+<div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
+<img alt="Jennifer Lopez brilla con un vestido elegante de los años 50 y zapatos pumps en Vogue World 2026" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab2d0dab15ca4d41858405b/2:3/w_1920,c_limit/jennifer-lopez-vogue-world-2026-vestido-an%25CC%2583os-50.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</span>
+<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Jennifer Lopez brilla con un vestido elegante de los años 50 y zapatos pumps en Vogue World 2026</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Luz García</span>
+</a>
+</div>
+</div>
+<!-- Bottom row (2 items) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+<a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/que-es-vogue-world">
+<div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
+<img alt="¿Qué es (exactamente) Vogue World?" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab144091f3bed077142ea67/1:1/w_1920,c_limit/VO1026_Bardia_VW_02.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</span>
+<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">¿Qué es (exactamente) Vogue World?</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Miguel Vicencio</span>
+</a>
+<a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/adria-arjona-con-zapatos-de-tacon-t-bar-elegantes-en-vogue-world-2026">
+<div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
+<img alt="Adria Arjona deslumbra con los zapatos de tacón T-Bar más elegantes de Vogue World 2026" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab30b5e69f087d2306cc596/4:3/w_1024,c_limit/adria-arjona-vogue-world-2026-zapatos-de-tacon.jpg"/>
+</div>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</span>
+<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Adria Arjona deslumbra con los zapatos de tacón T-Bar más elegantes de Vogue World 2026</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Devon</span>
+</a>
+</div>
+</section>
+</main>
 
-                    <!-- Campos y Botón Final -->
-                    <div class="flex flex-col gap-5">
-                        <div>
-                            <label for="email" class="sr-only">Correo electrónico</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                placeholder="Tu correo electrónico" 
-                                class="w-full border border-gray-300 bg-transparent px-5 py-4 text-sm font-sans placeholder-gray-500 focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all"
-                                required
-                            >
-                        </div>
-                        
-                        <button 
-                            type="submit" 
-                            class="w-full bg-black text-white px-8 py-5 text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase hover:bg-[#222] transition-colors mt-2"
-                        >
-                            SUSCRIBIRME
-                        </button>
-
-                        <p class="text-[10px] text-gray-500 font-sans mt-3 text-center md:text-left leading-relaxed">
-                            Al suscribirte, aceptas nuestros <a href="#" class="underline hover:text-black">Términos de Uso</a> y confirmas que has leído nuestro <a href="#" class="underline hover:text-black">Aviso de Privacidad</a>.
-                        </p>
-                    </div>
-
-                    </form>
-                </div>
-
-                <!-- Mensaje de Éxito (Oculto por defecto) -->
-                <div id="successContainer" class="hidden flex-col items-center md:items-start justify-center py-8 opacity-0 transition-opacity duration-500">
-                    <div class="w-16 h-16 rounded-full border-2 border-black flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl text-black font-serif mb-4">¡Gracias por suscribirte!</h2>
-                    <p class="text-base text-gray-600 font-sans text-center md:text-left">
-                        Tu registro ha sido exitoso. Pronto recibirás nuestras últimas novedades directo en tu email.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- FOOTER: Diseño estilo Devon (Basado en Vogue) -->
     <!-- FOOTER: Diseño estilo Vogue -->
     <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
@@ -766,8 +742,9 @@
         </div>
     </footer>
 
-    <!-- SCIPT DE INTERACCIONES GLOBALES -->
+    <!-- SCIPT DE INTERACCIONES GLOBALES (Limpiado para esta sección) -->
     <script>
+        // --- 1. Funciones Globales (Menú Hamburguesa) ---
         const overlay = document.getElementById('overlay');
         const sidebar = document.getElementById('sidebarMenu');
 
@@ -793,47 +770,6 @@
         }
         function closeAll() { hideOverlay(); }
 
-        // --- Lógica de Suscripción (Persistencia con localStorage) ---
-        document.addEventListener("DOMContentLoaded", () => {
-            const formContainer = document.getElementById("formContainer");
-            const successContainer = document.getElementById("successContainer");
-            const subscriptionForm = document.getElementById("subscriptionForm");
-
-            // Función para mostrar el mensaje de éxito
-            const showSuccess = () => {
-                formContainer.classList.add("hidden");
-                successContainer.classList.remove("hidden");
-                successContainer.classList.add("flex");
-                // Pequeño timeout para que la transición de opacidad se note
-                setTimeout(() => {
-                    successContainer.classList.remove("opacity-0");
-                }, 50);
-            };
-
-            // Verificar si el usuario ya se suscribió previamente al cargar la página
-            if (localStorage.getItem("devonSubscribed") === "true") {
-                showSuccess();
-            }
-
-            // Manejar el clic en el botón de suscribirse
-            if (subscriptionForm) {
-                subscriptionForm.addEventListener("submit", (e) => {
-                    e.preventDefault(); // Evitar que la página recargue al mandar el formulario
-                    const emailInput = document.getElementById("email");
-                    
-                    if (emailInput.value.trim() !== "") {
-                        // Guardar el estado de suscripción en el navegador
-                        localStorage.setItem("devonSubscribed", "true");
-                        
-                        // Efecto visual: desvanecer el formulario y mostrar el mensaje
-                        formContainer.classList.add("opacity-0");
-                        setTimeout(() => {
-                            showSuccess();
-                        }, 500); 
-                    }
-                });
-            }
-        });
     </script>
 </body>
 </html>

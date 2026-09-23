@@ -261,7 +261,7 @@
     </header>
 
     <!-- Devon World Milano countdown -->
-    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Vogue World Milano">
+    <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
         <style>
             @font-face {
                 font-family: VogueAvantGarde;
@@ -526,29 +526,11 @@
                 </a>
                 <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
             </div>
-            <div class="dwc-center" aria-live="polite">
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
-                    <span class="dwc-label">Días</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
-                    <span class="dwc-label">Horas</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
-                    <span class="dwc-label">Minutos</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
-                    <span class="dwc-label">Segundos</span>
-                </div>
+                                    <div class="dwc-center" aria-live="polite">
+                <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
             </div>
-            <div class="dwc-right">
-                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">¡Muy pronto!</a>
+<div class="dwc-right">
+                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">EN VIVO</a>
                 <a class="dwc-live" href="https://www.vogue.mx">EN VIVO EN VOGUE.MX</a>
             </div>
         </div>
@@ -556,12 +538,12 @@
         (function () {
             var root = document.getElementById('devon-world-countdown');
             if (!root) return;
+            var center = root.querySelector('.dwc-center');
+            var btn = root.querySelector('.dwc-btn');
             var daysEl = document.getElementById('devon-world-countdown-days');
             var hoursEl = document.getElementById('devon-world-countdown-hours');
             var minsEl = document.getElementById('devon-world-countdown-mins');
             var secsEl = document.getElementById('devon-world-countdown-secs');
-            var center = root.querySelector('.dwc-center');
-            if (!daysEl || !hoursEl || !minsEl || !secsEl || !center) return;
             var TARGET_MS = 1790100000000; // 2026-09-22 12:00:00 America/Mexico_City
             var TIME_UP = 'EN VIVO: Vogue World Milán';
             var ended = false;
@@ -569,18 +551,26 @@
             function showLive() {
                 if (ended) return;
                 ended = true;
-                center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (center) center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (btn) {
+                    btn.textContent = 'EN VIVO';
+                    btn.setAttribute('href', 'https://www.vogue.mx/vogue-world');
+                }
+                root.classList.add('is-live');
+                root.setAttribute('aria-label', TIME_UP);
             }
             function tick() {
-                var diff = TARGET_MS - Date.now();
-                if (diff <= 0) {
-                    daysEl.textContent = '00';
-                    hoursEl.textContent = '00';
-                    minsEl.textContent = '00';
-                    secsEl.textContent = '00';
+                var now = Date.now();
+                if (now >= TARGET_MS) {
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minsEl) minsEl.textContent = '00';
+                    if (secsEl) secsEl.textContent = '00';
                     showLive();
                     return;
                 }
+                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+                var diff = TARGET_MS - now;
                 var totalSec = Math.floor(diff / 1000);
                 var days = Math.floor(totalSec / 86400);
                 var hours = Math.floor((totalSec % 86400) / 3600);
@@ -591,8 +581,13 @@
                 minsEl.textContent = pad(mins);
                 secsEl.textContent = pad(secs);
             }
-            tick();
-            setInterval(tick, 1000);
+            // Harden: go LIVE immediately when past target (no wait for interval)
+            if (Date.now() >= TARGET_MS) {
+                showLive();
+            } else {
+                tick();
+                setInterval(tick, 1000);
+            }
         })();
         </script>
     </div>

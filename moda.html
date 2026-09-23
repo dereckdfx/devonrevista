@@ -231,7 +231,7 @@
         </div>
     </header>
     <!-- Devon World Milano countdown -->
-    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Vogue World Milano">
+    <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
         <style>
             @font-face {
                 font-family: VogueAvantGarde;
@@ -496,29 +496,11 @@
                 </a>
                 <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
             </div>
-            <div class="dwc-center" aria-live="polite">
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
-                    <span class="dwc-label">Días</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
-                    <span class="dwc-label">Horas</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
-                    <span class="dwc-label">Minutos</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
-                    <span class="dwc-label">Segundos</span>
-                </div>
+                                    <div class="dwc-center" aria-live="polite">
+                <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
             </div>
-            <div class="dwc-right">
-                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">¡Muy pronto!</a>
+<div class="dwc-right">
+                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">EN VIVO</a>
                 <a class="dwc-live" href="https://www.vogue.mx">EN VIVO EN VOGUE.MX</a>
             </div>
         </div>
@@ -526,12 +508,12 @@
         (function () {
             var root = document.getElementById('devon-world-countdown');
             if (!root) return;
+            var center = root.querySelector('.dwc-center');
+            var btn = root.querySelector('.dwc-btn');
             var daysEl = document.getElementById('devon-world-countdown-days');
             var hoursEl = document.getElementById('devon-world-countdown-hours');
             var minsEl = document.getElementById('devon-world-countdown-mins');
             var secsEl = document.getElementById('devon-world-countdown-secs');
-            var center = root.querySelector('.dwc-center');
-            if (!daysEl || !hoursEl || !minsEl || !secsEl || !center) return;
             var TARGET_MS = 1790100000000; // 2026-09-22 12:00:00 America/Mexico_City
             var TIME_UP = 'EN VIVO: Vogue World Milán';
             var ended = false;
@@ -539,18 +521,26 @@
             function showLive() {
                 if (ended) return;
                 ended = true;
-                center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (center) center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (btn) {
+                    btn.textContent = 'EN VIVO';
+                    btn.setAttribute('href', 'https://www.vogue.mx/vogue-world');
+                }
+                root.classList.add('is-live');
+                root.setAttribute('aria-label', TIME_UP);
             }
             function tick() {
-                var diff = TARGET_MS - Date.now();
-                if (diff <= 0) {
-                    daysEl.textContent = '00';
-                    hoursEl.textContent = '00';
-                    minsEl.textContent = '00';
-                    secsEl.textContent = '00';
+                var now = Date.now();
+                if (now >= TARGET_MS) {
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minsEl) minsEl.textContent = '00';
+                    if (secsEl) secsEl.textContent = '00';
                     showLive();
                     return;
                 }
+                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+                var diff = TARGET_MS - now;
                 var totalSec = Math.floor(diff / 1000);
                 var days = Math.floor(totalSec / 86400);
                 var hours = Math.floor((totalSec % 86400) / 3600);
@@ -561,8 +551,13 @@
                 minsEl.textContent = pad(mins);
                 secsEl.textContent = pad(secs);
             }
-            tick();
-            setInterval(tick, 1000);
+            // Harden: go LIVE immediately when past target (no wait for interval)
+            if (Date.now() >= TARGET_MS) {
+                showLive();
+            } else {
+                tick();
+                setInterval(tick, 1000);
+            }
         })();
         </script>
     </div>
@@ -574,7 +569,7 @@
             LO ÚLTIMO
         </a>
         <a href="tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
-            TENDENCIAS
+            MODA
         </a>
     </div>
 
@@ -611,55 +606,55 @@
         <section class="max-w-7xl mx-auto px-6 mb-20">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <!-- Featured (Large) -->
-                <a class="lg:col-span-8 group cursor-pointer flex flex-col" href="rio-fashion-week.html">
+                <a class="lg:col-span-8 group cursor-pointer flex flex-col" href="https://www.vogue.mx/articulo/como-ver-en-vivo-vogue-world-2026-milano">
 <div class="relative w-full aspect-[4/3] lg:aspect-[16/9] overflow-hidden mb-4">
-<img alt="Moda Primavera-Verano 2027: Qué se llevará según los mejores desfiles de la Semana de la Moda" class="object-cover object-center lg:object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa995e80ee662d074286363/2:3/w_1920,c_limit/moda-primavera-verano-2027.jpg"/>
+<img alt="Cómo ver EN VIVO Vogue World 2026 desde Milán" class="object-cover object-center lg:object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab144091f3bed077142ea66/1:1/w_1920,c_limit/VO1026_Bardia_VW_04.jpg"/>
 </div>
 <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-<h3 class="text-3xl lg:text-4xl font-medium leading-tight mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Moda Primavera-Verano 2027: Qué se llevará según los mejores desfiles de la Semana de la Moda</h3>
-<span class="text-[10px] uppercase text-gray-400">Por Luz García</span>
+<h3 class="text-3xl lg:text-4xl font-medium leading-tight mb-3 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Cómo ver EN VIVO Vogue World 2026 desde Milán</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Emma Specter</span>
 </a>
 
                 <!-- Side Stack (2 items) -->
                 <div class="lg:col-span-4 flex flex-col gap-8 md:grid md:grid-cols-2 lg:flex lg:flex-col">
-                    <a class="group flex flex-col cursor-pointer" href="constanza-zamora.html">
+                    <a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/los-zapatos-de-tacon-italianos-mas-elegantes-de-vogue-world-2026">
 <div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
-<img alt="Los vestidos de colores de los 80 vuelven con botas, sandalias y zapatos de tacón en septiembre 2026" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa94ef306ffedf9073ab5dd/1:1/w_1920,c_limit/madonna-vestido-de-colores-de-los-80.jpg"/>
+<img alt="Los zapatos de tacón italianos más elegantes de Vogue World 2026" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab2d58d6553d3b6292c20ef/1:1/w_1600,c_limit/dakota-johnson-zapatos-de-tacon-italianos-tendencia-vogue-world-2026.jpg"/>
 </div>
 <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Los vestidos de colores de los 80 vuelven con botas, sandalias y zapatos de tacón en septiembre 2026</h3>
-<span class="text-[10px] uppercase text-gray-400">Por Renata Joffre</span>
+<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Los zapatos de tacón italianos más elegantes de Vogue World 2026</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Anna Cafolla</span>
 </a>
                     
-                    <a class="group flex flex-col cursor-pointer" href="stella-mccartney.html">
+                    <a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/gigi-hadid-con-vestido-patchwork-de-valentino-en-vogue-world-2026">
 <div class="relative w-full aspect-[4/3] overflow-hidden mb-3">
-<img alt="Un vestido con animal print y zapatos de tacón blancos: Bad Gyal conquista New York Fashion Week" class="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa97e4d73107b2d27f6397a/2:3/w_1920,c_limit/bad-gyal-desfile-carolina-herrera.jpg"/>
+<img alt="Gigi Hadid y su increíble vestido de patchwork en Vogue World Milano 2026" class="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab2c96f6553d3b6292c202f/1:1/w_1600,c_limit/_Q6A1210_2zOarG6N_20260922081014.jpeg"/>
 </div>
 <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Un vestido con animal print y zapatos de tacón blancos: Bad Gyal conquista New York Fashion Week</h3>
-<span class="text-[10px] uppercase text-gray-400">Por Fernanda Pérez Sánchez</span>
+<h3 class="text-xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Gigi Hadid y su increíble vestido de patchwork en Vogue World Milano 2026</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Laura Tortora</span>
 </a>
                 </div>
             </div>
             
             <!-- Bottom row (2 items) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <a class="group flex flex-col cursor-pointer" href="vestidos-flores.html">
+                <a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/tenis-que-destacaron-en-london-fashion-week-primavera-verano-2027">
 <div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
-<img alt="Cortes de cabello en tendencia para Otoño-Invierno 2026: fleco francés, shag de los 70, melena XL y más" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6aa327480c67edaf2bb85e2b/2:3/w_1920,c_limit/cortes-de-cabello-oton%25CC%2583o-invierno-2026-chloe.jpeg"/>
+<img alt="5 tenis que destacaron en London Fashion Week Primavera-Verano 2027 y que debes llevar ahora" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab140cc884d3208715320b9/1:1/w_1600,c_limit/LondonFashionweek_SS27_streetstyle_day3_philoh_38.jpg"/>
 </div>
 <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">TENDENCIAS</span>
-<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Cortes de cabello en tendencia para Otoño-Invierno 2026: fleco francés, shag de los 70, melena XL y más</h3>
-<span class="text-[10px] uppercase text-gray-400">Por María Diez</span>
+<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">5 tenis que destacaron en London Fashion Week Primavera-Verano 2027 y que debes llevar ahora</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Alice Cary</span>
 </a>
 
-                <a class="group flex flex-col cursor-pointer" href="sandalias-colombianas.html">
+                <a class="group flex flex-col cursor-pointer" href="https://www.vogue.mx/articulo/amal-clooney-lleva-vestidos-de-colores-y-pantalones-capri-en-otono-2026">
 <div class="relative w-full aspect-[16/9] overflow-hidden mb-3">
-<img alt="Los zapatos de tacón negros de los 80 vuelven con jeans, pantalones y vestidos en otoño 2026" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6a85ebcdfba773b90cf15de1/1:1/w_1920,c_limit/lady-di-un%25CC%2583as-rojas-an%25CC%2583os-80.jpg"/>
+<img alt="Vestidos de colores, pantalones capri y zapatos puntiagudos, Amal Clooney arma el clóset perfecto del otoño 2026" class="object-cover object-center w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out" src="https://media.vogue.mx/photos/6ab29f48cfabd28718be3971/1:1/w_1600,c_limit/amal-clooney-vestidos-otono-2026.jpg"/>
 </div>
 <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</span>
-<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Los zapatos de tacón negros de los 80 vuelven con jeans, pantalones y vestidos en otoño 2026</h3>
-<span class="text-[10px] uppercase text-gray-400">Por Renata Joffre</span>
+<h3 class="text-2xl font-medium leading-tight mb-2 group-hover:text-gray-600 transition-colors" style="font-family: 'Jost', sans-serif;">Vestidos de colores, pantalones capri y zapatos puntiagudos, Amal Clooney arma el clóset perfecto del otoño 2026</h3>
+<span class="text-[10px] uppercase text-gray-400">Por Luz García</span>
 </a>
             </div>
         </section>

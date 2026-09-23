@@ -274,7 +274,7 @@
     </header>
 
     <!-- Devon World Milano countdown -->
-    <div id="devon-world-countdown" class="devon-world-countdown" aria-label="Cuenta regresiva Vogue World Milano">
+    <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
         <style>
             @font-face {
                 font-family: VogueAvantGarde;
@@ -539,29 +539,11 @@
                 </a>
                 <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
             </div>
-            <div class="dwc-center" aria-live="polite">
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-days">00</span>
-                    <span class="dwc-label">Días</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-hours">00</span>
-                    <span class="dwc-label">Horas</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-mins">00</span>
-                    <span class="dwc-label">Minutos</span>
-                </div>
-                <span class="dwc-sep" aria-hidden="true">:</span>
-                <div class="dwc-unit">
-                    <span class="dwc-num" id="devon-world-countdown-secs">00</span>
-                    <span class="dwc-label">Segundos</span>
-                </div>
+                                                <div class="dwc-center" aria-live="polite">
+                <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
             </div>
-            <div class="dwc-right">
-                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">¡Muy pronto!</a>
+<div class="dwc-right">
+                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">EN VIVO</a>
                 <a class="dwc-live" href="https://www.vogue.mx">EN VIVO EN VOGUE.MX</a>
             </div>
         </div>
@@ -569,12 +551,12 @@
         (function () {
             var root = document.getElementById('devon-world-countdown');
             if (!root) return;
+            var center = root.querySelector('.dwc-center');
+            var btn = root.querySelector('.dwc-btn');
             var daysEl = document.getElementById('devon-world-countdown-days');
             var hoursEl = document.getElementById('devon-world-countdown-hours');
             var minsEl = document.getElementById('devon-world-countdown-mins');
             var secsEl = document.getElementById('devon-world-countdown-secs');
-            var center = root.querySelector('.dwc-center');
-            if (!daysEl || !hoursEl || !minsEl || !secsEl || !center) return;
             var TARGET_MS = 1790100000000; // 2026-09-22 12:00:00 America/Mexico_City
             var TIME_UP = 'EN VIVO: Vogue World Milán';
             var ended = false;
@@ -582,18 +564,26 @@
             function showLive() {
                 if (ended) return;
                 ended = true;
-                center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (center) center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
+                if (btn) {
+                    btn.textContent = 'EN VIVO';
+                    btn.setAttribute('href', 'https://www.vogue.mx/vogue-world');
+                }
+                root.classList.add('is-live');
+                root.setAttribute('aria-label', TIME_UP);
             }
             function tick() {
-                var diff = TARGET_MS - Date.now();
-                if (diff <= 0) {
-                    daysEl.textContent = '00';
-                    hoursEl.textContent = '00';
-                    minsEl.textContent = '00';
-                    secsEl.textContent = '00';
+                var now = Date.now();
+                if (now >= TARGET_MS) {
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minsEl) minsEl.textContent = '00';
+                    if (secsEl) secsEl.textContent = '00';
                     showLive();
                     return;
                 }
+                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+                var diff = TARGET_MS - now;
                 var totalSec = Math.floor(diff / 1000);
                 var days = Math.floor(totalSec / 86400);
                 var hours = Math.floor((totalSec % 86400) / 3600);
@@ -604,8 +594,13 @@
                 minsEl.textContent = pad(mins);
                 secsEl.textContent = pad(secs);
             }
-            tick();
-            setInterval(tick, 1000);
+            // Harden: go LIVE immediately when past target (no wait for interval)
+            if (Date.now() >= TARGET_MS) {
+                showLive();
+            } else {
+                tick();
+                setInterval(tick, 1000);
+            }
         })();
         </script>
     </div>
@@ -660,14 +655,14 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
 
                 <!-- Artículo Principal (Izquierda) -->
-                <div class="lg:col-span-6 cursor-pointer group" onclick="window.location.href='#'">
+                <div class="lg:col-span-6 cursor-pointer group" onclick="window.location.href='https://www.vogue.mx/articulo/vogue-world-2026-sera-en-milan'">
                     <div class="relative overflow-hidden w-full h-[550px] lg:h-[100%] min-h-[750px]">
-                        <img src="https://media.vogue.mx/photos/6aa995e80ee662d074286363/2:3/w_1920,c_limit/moda-primavera-verano-2027.jpg" alt="Moda Primavera-Verano 2027: Qué se llevará según los…" class="absolute inset-0 w-full h-full object-cover object-top group-hover:opacity-95 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/69149fd6c3b565d1aba6b3b3/2:3/w_1920,c_limit/VWM_announcement_9x16%2520(3).jpg" alt="Vogue World 2026 será en Milán, Italia, y esto …" class="absolute inset-0 w-full h-full object-cover object-top group-hover:opacity-95 transition-opacity duration-300"/>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent px-6 lg:px-10 pt-40 pb-10 text-white text-center font-geometric flex flex-col items-center">
-                            <p class="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mb-4 text-gray-200">MODA</p>
-                            <h3 class="text-2xl md:text-3xl lg:text-[34px] font-medium leading-[1.2] mb-6 max-w-lg">Moda Primavera-Verano 2027: Qué se llevará según los mejores desfiles de la Semana de la Moda</h3>
-                            <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-300 mb-1">POR LUZ GARCÍA</p>
-                            <p class="text-[11px] font-normal text-gray-300">15 de septiembre de 2026</p>
+                            <p class="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mb-4 text-gray-200">ESTILO DE VIDA</p>
+                            <h3 class="text-2xl md:text-3xl lg:text-[34px] font-medium leading-[1.2] mb-6 max-w-lg">Vogue World 2026 será en Milán, Italia, y esto es TODO lo que debes saber</h3>
+                            <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-300 mb-1">POR DEVON</p>
+                            <p class="text-[11px] font-normal text-gray-300">21 de septiembre de 2026</p>
                         </div>
                     </div>
                 </div>
@@ -675,39 +670,39 @@
                 <!-- Columna Central -->
                 <div class="lg:col-span-3 flex flex-col gap-10 font-geometric">
                     <!-- Devon Ficción (Usando hsl(0,0%,96%) en vez de #f4f4f4) -->
-                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/galeria/celebridades-en-vogue-world-2026'">
                         <div class="overflow-hidden aspect-[4/5] w-full mb-4 bg-[hsl(0,0%,96%)]">
-                            <img src="https://media.vogue.mx/photos/6aa94ef306ffedf9073ab5dd/1:1/w_1920,c_limit/madonna-vestido-de-colores-de-los-80.jpg" alt="Los vestidos de colores de los 80 vuelven con botas,…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                            <img src="https://media.vogue.mx/photos/6ab2bd20b8cb4c9ea6708316/16:9/w_1600,c_limit/jennifer-lopez-vogue-world-milano-2026.jpeg" alt="TODAS las celebridades en Vogue World 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         </div>
-                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</p>
-                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">Los vestidos de colores de los 80 vuelven con botas, sandalias y zapatos de tacón en septiembre 2026</h3>
-                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR RENATA JOFFRE</p>
-                        <p class="text-[11px] font-normal text-gray-500">15 de septiembre de 2026</p>
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</p>
+                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">TODAS las celebridades en Vogue World 2026</h3>
+                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR HANNAH JACKSON</p>
+                        <p class="text-[11px] font-normal text-gray-500">22 de septiembre de 2026</p>
                     </div>
 
                     <!-- Desintoxicar Verduras -->
-                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/como-ver-en-vivo-vogue-world-2026-milano'">
                         <div class="overflow-hidden aspect-[4/5] w-full mb-4">
-                            <img src="https://media.vogue.mx/photos/6aa327480c67edaf2bb85e2b/2:3/w_1920,c_limit/cortes-de-cabello-oton%CC%83o-invierno-2026-chloe.jpeg" alt="Cortes de cabello en tendencia para Otoño-Invierno 2026:…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                            <img src="https://media.vogue.mx/photos/6ab144091f3bed077142ea66/1:1/w_1920,c_limit/VO1026_Bardia_VW_04.jpg" alt="Cómo ver EN VIVO Vogue World 2026 desde Milán" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         </div>
-                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">TENDENCIAS</p>
-                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">Cortes de cabello en tendencia para Otoño-Invierno 2026: fleco francés, shag de los 70, melena XL y más</h3>
-                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR MARÍA DIEZ</p>
-                        <p class="text-[11px] font-normal text-gray-500">10 de septiembre de 2026</p>
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</p>
+                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">Cómo ver EN VIVO Vogue World 2026 desde Milán</h3>
+                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR EMMA SPECTER</p>
+                        <p class="text-[11px] font-normal text-gray-500">21 de septiembre de 2026</p>
                     </div>
                 </div>
 
                 <!-- Columna Derecha -->
                 <div class="lg:col-span-3 flex flex-col gap-10 font-geometric">
                     <!-- Mocasines Japoneses -->
-                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/pamela-anderson-corte-de-cabello-bob-rizado-mujeres-de-50-vogue-world-2026-milan'">
                         <div class="overflow-hidden aspect-[4/5] w-full mb-4">
-                            <img src="https://media.vogue.mx/photos/6aa97e4d73107b2d27f6397a/2:3/w_1920,c_limit/bad-gyal-desfile-carolina-herrera.jpg" alt="Un vestido con animal print y zapatos de tacón blancos: Bad…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                            <img src="https://media.vogue.mx/photos/6ab2bba1f009fa00a86e051d/2:3/w_1920,c_limit/_Q6A0069_EY6wn1Al_20260922070132.jpg" alt="Pamela Anderson luce el corte de cabello bob ri…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         </div>
-                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</p>
-                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3 underline decoration-1 underline-offset-4">Un vestido con animal print y zapatos de tacón blancos: Bad Gyal conquista New York Fashion Week</h3>
-                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR FERNANDA PÉREZ SÁNCHEZ</p>
-                        <p class="text-[11px] font-normal text-gray-500">15 de septiembre de 2026</p>
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</p>
+                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3 underline decoration-1 underline-offset-4">Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán</h3>
+                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR AUDREY NOBLE</p>
+                        <p class="text-[11px] font-normal text-gray-500">22 de septiembre de 2026</p>
                     </div>
 
                     <!-- Van Cleef Ad (Usando hsl(125,27%,92%) en vez de #E5F0E6) -->
@@ -721,11 +716,11 @@
             </div>
         </div>
 
-        <!-- Título FESTIVAL DE VENECIA 2026 -->
+        <!-- Título VOGUE WORLD MILÁN 2026 -->
         <div class="max-w-7xl mx-auto px-6 mt-16 md:mt-24 mb-6">
             <div class="border-t border-b border-gray-200 py-3 md:py-4 flex justify-between items-center">
                 <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase" style="font-family: 'Jost', sans-serif;">
-                    FESTIVAL DE VENECIA 2026
+                    VOGUE WORLD MILÁN 2026
                 </h2>
                 <div class="flex gap-4 text-gray-400">
                     <button type="button" class="hover:text-black transition-colors" onclick="document.getElementById('venecia-scroll').scrollBy({left: -320, behavior: 'smooth'})" aria-label="Anterior">
@@ -738,57 +733,57 @@
             </div>
         </div>
 
-        <!-- Carrusel Festival de Venecia 2026 -->
+        <!-- Carrusel Vogue World Milán 2026 -->
         <div class="w-full max-w-7xl mx-auto px-6 mb-12 overflow-hidden">
             <div id="venecia-scroll" class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-4 no-scrollbar scroll-smooth">
                 
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/vogue-world-2026-sera-en-milan'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://media.vogue.mx/photos/6aa83ff61d8cf6533158bbe2/4:3/w_1024,c_limit/_2211.jpg" alt="Michelle Salas en el Festival de Venecia 2026: Las imágenes exclusivas de su viaje y su elegante vestido de encaje" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/69149fd6c3b565d1aba6b3b3/2:3/w_1920,c_limit/VWM_announcement_9x16%2520(3).jpg" alt="Vogue World 2026 será en Milán, Italia, y esto es TODO lo que debes saber" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <span class="absolute bottom-2 left-2 text-white drop-shadow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="1"></rect><rect x="7" y="9" width="14" height="12" rx="1" fill="rgba(0,0,0,0.25)"></rect></svg></span>
+                    </div>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">ESTILO DE VIDA</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Vogue World 2026 será en Milán, Italia, y esto es TODO lo que debes saber</h3>
+                </div>
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/galeria/celebridades-en-vogue-world-2026'">
+                    <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
+                        <img src="https://media.vogue.mx/photos/6ab2bd20b8cb4c9ea6708316/16:9/w_1600,c_limit/jennifer-lopez-vogue-world-milano-2026.jpeg" alt="TODAS las celebridades en Vogue World 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         <span class="absolute bottom-2 left-2 text-white drop-shadow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="1"></rect><rect x="7" y="9" width="14" height="12" rx="1" fill="rgba(0,0,0,0.25)"></rect></svg></span>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Michelle Salas en el Festival de Venecia 2026: Las imágenes exclusivas de su viaje y su elegante vestido de encaje</h3>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">TODAS las celebridades en Vogue World 2026</h3>
                 </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/como-ver-en-vivo-vogue-world-2026-milano'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://media.vogue.mx/photos/6a9ed32c71767b948338a1fd/4:3/w_1024,c_limit/GettyImages-2293833577.jpg" alt="Todas las celebridades en la alfombra roja del Festival de Cine de Venecia 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
-                        <span class="absolute bottom-2 left-2 text-white drop-shadow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="1"></rect><rect x="7" y="9" width="14" height="12" rx="1" fill="rgba(0,0,0,0.25)"></rect></svg></span>
-                    </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Todas las celebridades en la alfombra roja del Festival de Cine de Venecia 2026</h3>
-                </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
-                    <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://media.vogue.mx/photos/6aa59bacf4fc88d9ea7b505c/1:1/w_640,c_limit/ganadores-festival-de-cine-de-venecia-2026.jpg" alt="Los ganadores del Festival de Venecia 2026: Lista completa" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
-                        
-                    </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Los ganadores del Festival de Venecia 2026: Lista completa</h3>
-                </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
-                    <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://media.vogue.mx/photos/6aa2e2b0cdeb262356701d7c/1:1/w_640,c_limit/penelope-cruz-festival-de-cine-venecia.jpg" alt="Penélope Cruz brilla en el Festival de Cine de Venecia 2026 con un elegante vestido negro y sandalias de tacón" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab144091f3bed077142ea66/1:1/w_1920,c_limit/VO1026_Bardia_VW_04.jpg" alt="Cómo ver EN VIVO Vogue World 2026 desde Milán" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">MODA</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Penélope Cruz brilla en el Festival de Cine de Venecia 2026 con un elegante vestido negro y sandalias de tacón</h3>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Cómo ver EN VIVO Vogue World 2026 desde Milán</h3>
                 </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/pamela-anderson-corte-de-cabello-bob-rizado-mujeres-de-50-vogue-world-2026-milan'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://media.vogue.mx/photos/6aa18b82340a506d2ab7c232/1:1/w_640,c_limit/Pene%25CC%2581lope-Cruz-Festival-de-Venecia-2026.jpg" alt="Penélope Cruz gana en el Festival de Venecia 2026 con el vestido francés color rojo más elegante" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab2bba1f009fa00a86e051d/2:3/w_1920,c_limit/_Q6A0069_EY6wn1Al_20260922070132.jpg" alt="Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Penélope Cruz gana en el Festival de Venecia 2026 con el vestido francés color rojo más elegante</h3>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Pamela Anderson luce el corte de cabello bob rizado más elegante para mujeres de 50+ en Vogue World 2026: Milán</h3>
                 </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/jennifer-lopez-en-vogue-world-2026-con-un-vestido-elegante-y-zapatos-pumps'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://media.vogue.mx/photos/6aa1684d2e7b9ab5683a25fd/1:1/w_640,c_limit/Cartier%2520Mostra%2520Amal%2520Clooney.jpeg" alt="Amal Clooney celebró por todo lo alto en el Festival de Cine de Venecia 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
-                        <span class="absolute bottom-2 left-2 text-white drop-shadow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="1"></rect><rect x="7" y="9" width="14" height="12" rx="1" fill="rgba(0,0,0,0.25)"></rect></svg></span>
+                        <img src="https://media.vogue.mx/photos/6ab2d0dab15ca4d41858405b/2:3/w_1920,c_limit/jennifer-lopez-vogue-world-2026-vestido-an%25CC%2583os-50.jpg" alt="Jennifer Lopez brilla con un vestido elegante de los años 50 y zapatos pumps en Vogue World 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">MODA</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Amal Clooney celebró por todo lo alto en el Festival de Cine de Venecia 2026</h3>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Jennifer Lopez brilla con un vestido elegante de los años 50 y zapatos pumps en Vogue World 2026</h3>
+                </div>
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/que-es-vogue-world'">
+                    <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
+                        <img src="https://media.vogue.mx/photos/6ab144091f3bed077142ea67/1:1/w_1920,c_limit/VO1026_Bardia_VW_02.jpg" alt="¿Qué es (exactamente) Vogue World?" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        
+                    </div>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">¿Qué es (exactamente) Vogue World?</h3>
                 </div>
             </div>
         </div>
@@ -807,47 +802,47 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 font-geometric">
                 
                 <!-- Artículo 1 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/amal-clooney-lleva-vestidos-de-colores-y-pantalones-capri-en-otono-2026'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6a85ebcdfba773b90cf15de1/1:1/w_1920,c_limit/lady-di-un%CC%83as-rojas-an%CC%83os-80.jpg" alt="Los zapatos de tacón negros de los 80 vuelven con jeans,…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab29f48cfabd28718be3971/1:1/w_1600,c_limit/amal-clooney-vestidos-otono-2026.jpg" alt="Vestidos de colores, pantalones capri y zapatos…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Los zapatos de tacón negros de los 80 vuelven con jeans, pantalones y vestidos en otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR RENATA JOFFRE</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">14 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Vestidos de colores, pantalones capri y zapatos puntiagudos, Amal Clooney arma el clóset perfecto del otoño 2026</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR ANNA CAFOLLA</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">22 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 2 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/otono-invierno-2026-ready-to-wear'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa975c2634a668374433308/1:1/w_1600,c_limit/GettyImages-2295006482.jpg" alt="Zapatos blancos y vestido de flores: Alexandra Leclerc y su…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6a982a3279614eecea40e1ac/3:4/w_1024,c_limit/moda-oton%25CC%2583o-invierno-2026-tendencias.jpg" alt="Moda Otoño-Invierno 2026: ¿Qué se llevará? | Te…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Zapatos blancos y vestido de flores: Alexandra Leclerc y su perrito Leo dan lecciones de moda en Madrid</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR TATIANA OJEA</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR LUZ GARCÍA</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">2 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 3 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/blusas-otono-invierno-2026'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa9595e0ee662d074285e01/1:1/w_1600,c_limit/2295334621" alt="Zapatos de tacón rojos y vestido midi de los años 90: Bella…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6a8fc1ef8cc8cf85a8fde502/1:1/w_640,c_limit/Blusas-tendencias-Dolce-Gabbana-otono-invierno-2026.jpg" alt="Blusas en tendencia de Otoño-Invierno 2026: Boh…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Zapatos de tacón rojos y vestido midi de los años 90: Bella Hadid da lecciones de moda vintage</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR ALEXANDRE MARAIN</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Blusas en tendencia de Otoño-Invierno 2026: Boho, de flores, drapeadas y más</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MELISA VARGAS</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">7 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 4 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/faldas-otono-invierno-2026'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa96adb819e892fd8c913d8/1:1/w_1600,c_limit/vestidos-tendencia-oton%CC%83o-invierno-2026.jpg" alt="Vestidos en tendencia de Otoño-Invierno 2026: Boho,…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6a919ff8b88e9602291768d3/1:1/w_640,c_limit/Faldas-tendencias-christian-dior-otono-invierno-2026.jpg" alt="Faldas en tendencia de Otoño-Invierno 2026: Lar…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Vestidos en tendencia de Otoño-Invierno 2026: Boho, lenceros, drapeados y más</h3>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Faldas en tendencia de Otoño-Invierno 2026: Largas, drapeadas, plisadas y más</h3>
                     <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MELISA VARGAS</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">9 de septiembre de 2026</p>
                 </div>
 
             </div>
@@ -875,47 +870,47 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 font-geometric">
                 
                 <!-- Artículo 1 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/mejores-perfumes-italianos-para-mujer'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa9d671ed5ea6b5b59b4fcf/1:1/w_1600,c_limit/colores-de-un%CC%83as-tendencia-oton%CC%83o-invierno-2026.jpg" alt="Colores de uñas en tendencia para Otoño-Invierno 2026: los…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab2a167fd948e8636ac883d/1:1/w_1600,c_limit/mejores-perfumes-italianos-para-mujer.jpg" alt="Estos son nuestros perfumes italianos favoritos" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Colores de uñas en tendencia para Otoño-Invierno 2026: los tonos que reinarán</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MARÍA DIEZ</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Estos son nuestros perfumes italianos favoritos</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MARÍA VILLARREAL</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">22 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 2 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/como-lavarse-el-cabello-como-las-italianas-para-oxigenarlo'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa95892046481e01923f182/1:1/w_1600,c_limit/GettyImages-2293029552.jpg" alt="Cortes de cabello en capas: Cuál llevar, cómo hacerlo y a…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6232150676c95991808bad9b/1:1/w_1600,c_limit/modelo-con-cabello-bonito.jpg" alt="Cómo lavarse el cabello como las italianas, par…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Cortes de cabello en capas: Cuál llevar, cómo hacerlo y a quién le favorece realmente</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR ANA GÁNDARA</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Cómo lavarse el cabello como las italianas, para oxigenar el cuero cabelludo y tener pelo largo</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR ANA MORALES</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">22 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 3 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/que-aceite-esencial-usar-segun-tu-signo-zodiacal-y-tu-ascendente'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa95369634a668374432e65/1:1/w_1600,c_limit/Sunset%20Nails%20Emmy%20Selena%20Gomez.jpg" alt="Uñas Chrome Sunset, la manicura nude cromada en tonos…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab175fa6553d3b6292c19e3/1:1/w_1600,c_limit/aceites-esenciales-segun-tu-signo.jpg" alt="Qué aceite esencial deberías usar según tu sign…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Uñas Chrome Sunset, la manicura nude cromada en tonos cálidos para llevar en otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR BEATRICE ZOCCHI</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Qué aceite esencial deberías usar según tu signo zodiacal y tu ascendente</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR RAMÓN BARRETO</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">21 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 4 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/tendencias-de-belleza-otono-invierno-2026'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa76e345b9aa07f2423adc8/1:1/w_1600,c_limit/SnapInsta.to_807648361_18628552750013678_4908952022122404807_n.jpg" alt="Corte de cabello pixie, Zendaya lo confirma como el estilo…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6a99c32e15a998b8c6e4a3de/16:9/w_1600,c_limit/tendencias-de-belleza-oton%25CC%2583o-invierno-2026.jpg" alt="Tendencias de belleza para Otoño-Invierno 2026:…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Corte de cabello pixie, Zendaya lo confirma como el estilo perfecto para el otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR ANNA CAFOLLA</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">14 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Tendencias de belleza para Otoño-Invierno 2026: Peinados, cabello, cejas y maquillaje</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MARÍA DIEZ</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">2 de septiembre de 2026</p>
                 </div>
 
             </div>
@@ -935,47 +930,47 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 font-geometric">
                 
                 <!-- Artículo 1 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/vogue-world-2026-sera-en-milan'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa82cdc869d6dde459f4018/1:1/w_1600,c_limit/horoscopo-de-hoy-martes-15-de-septiembre-de-2026.jpg" alt="Horóscopo de hoy: 15 de septiembre de 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/69149fd6c3b565d1aba6b3b3/2:3/w_1920,c_limit/VWM_announcement_9x16%2520(3).jpg" alt="Vogue World 2026 será en Milán, Italia, y esto …" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Horóscopo de hoy: 15 de septiembre de 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MEREATH ASTROLOGY</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Vogue World 2026 será en Milán, Italia, y esto es TODO lo que debes saber</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">21 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 2 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/signos-del-zodiaco-con-mas-suerte-y-fortuna-en-temporada-de-libra-2026'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa38c63173dd43cee0298da/1:1/w_1600,c_limit/Flats-Scupted-Crinckle-Piel-Negro-Mujer_2.jpg" alt="Si amas las piezas de diseño de archivo, estos 5 accesorios…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab2963efd948e8636ac8831/1:1/w_1600,c_limit/signos-con-mas-suerte-temporada-libra-2026.jpg" alt="Los signos del zodiaco que tendrán más suerte y…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">DEVON PARA COACH</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Si amas las piezas de diseño de archivo, estos 5 accesorios de Coach serán tu obsesión en otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR ANDREA VILLEGAS</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">15 de septiembre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Los signos del zodiaco que tendrán más suerte y fortuna en esta temporada de Libra 2026</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR SNEHAA KHANNA SAHGAL</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">22 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 3 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/equinoccio-otono-23-septiembre-2026-como-afecta-segun-tu-signo-del-zodiaco'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6aa2413b8f207792e9e75a99/1:1/w_1600,c_limit/vogue-leaders-2026.jpg" alt="Así es como viajar por Latinoamérica nos acerca a sus…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab1a378280303e9a9be6a0a/1:1/w_1600,c_limit/VGMX-Equinoccio.jpg" alt="Equinoccio de otoño del 23 de septiembre de 202…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">DEVON PARA FORA TRAVEL</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Así es como viajar por Latinoamérica nos acerca a sus textiles, sabores y comunidades</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR ANDREA VILLEGAS</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">14 de septiembre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Equinoccio de otoño del 23 de septiembre de 2026: Cómo te afectará según tu signo del zodiaco</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MARIE BLADT</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">22 de septiembre de 2026</p>
                 </div>
 
                 <!-- Artículo 4 -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='#'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='https://www.vogue.mx/articulo/horoscopo-de-hoy-martes-22-de-septiembre-de-2026'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6a99de7bb42e89f88ed5cc3d/1:1/w_1600,c_limit/Lanzamiento-CLA-Mercedes-Benz-2026-1.jpg" alt="Vivimos una noche de diseño, innovación y deseo junto a…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://media.vogue.mx/photos/6ab157550c7ed239c578529f/1:1/w_1600,c_limit/horoscopo-de-hoy-martes-22-de-septiembre-de-2026.jpg" alt="Horóscopo de hoy: 22 de septiembre de 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">DEVON PARA MERCEDES-BENZ</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Vivimos una noche de diseño, innovación y deseo junto a Mercedes-Benz</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR LILIANA GUTIÉRREZ</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">14 de septiembre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Horóscopo de hoy: 22 de septiembre de 2026</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MEREATH ASTROLOGY</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">22 de septiembre de 2026</p>
                 </div>
 
             </div>
