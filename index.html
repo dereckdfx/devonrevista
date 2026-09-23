@@ -173,6 +173,219 @@
             overflow: hidden;
             transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
         }
+    
+        /* Vogue World Milano hero (Vogue.mx-style mobile poster + player) */
+        .vw-hero {
+            position: relative;
+            width: 100%;
+            background: #000;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            max-height: 78vh;
+            min-height: 360px;
+        }
+        @media (max-width: 768px) {
+            .vw-hero { aspect-ratio: 4 / 5; max-height: none; min-height: 520px; }
+        }
+        .vw-hero video.vw-main,
+        .vw-hero iframe.vw-embed {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #000;
+            object-fit: cover;
+            display: block;
+        }
+        .vw-hero video.vw-main::-webkit-media-controls,
+        .vw-hero video.vw-main::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+        .vw-hero.is-poster .vw-main { opacity: 0; pointer-events: none; }
+        .vw-hero.is-playing .vw-poster { opacity: 0; pointer-events: none; visibility: hidden; }
+        .vw-hero.is-playing .vw-chrome { opacity: 1; visibility: visible; }
+        .vw-hero.is-poster .vw-chrome { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        .vw-poster {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+        .vw-poster-media {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #111 center / cover no-repeat;
+        }
+        .vw-poster-scrim {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.58) 100%);
+            pointer-events: none;
+        }
+        .vw-poster-copy {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            padding: 2rem 1.25rem 3rem;
+            max-width: 920px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .vw-tag {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            font-family: Jost, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.65rem;
+            margin-bottom: 1rem;
+        }
+        .vw-headline {
+            font-family: "Bodoni Moda", Didot, "Times New Roman", serif;
+            font-weight: 500;
+            font-size: clamp(1.35rem, 5.2vw, 2.15rem);
+            letter-spacing: 0.01em;
+            line-height: 1.25;
+            color: #fff;
+            margin: 0 0 1.35rem;
+            max-width: 22rem;
+        }
+        @media (min-width: 768px) {
+            .vw-headline { max-width: 36rem; font-size: clamp(1.6rem, 2.4vw, 2.4rem); }
+        }
+        .vw-watch {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: #fff;
+            color: #000;
+            border: 0;
+            border-radius: 0;
+            padding: 0.85rem 1.35rem;
+            font-family: Jost, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+        .vw-watch:hover { background: #f2f2f2; }
+        .vw-watch:active { transform: scale(0.98); }
+        .vw-watch svg { flex-shrink: 0; color: #000; }
+
+        .vw-chrome {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            pointer-events: none;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .vw-chrome-title {
+            pointer-events: none;
+            padding: 1rem 1.15rem;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+            max-width: 80%;
+        }
+        .vw-bar {
+            pointer-events: auto;
+            padding: 0.55rem 0.85rem 0.75rem;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.45) 100%);
+            color: #fff;
+        }
+        .vw-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            width: 100%;
+        }
+        .vw-btn {
+            background: transparent;
+            border: 0;
+            color: #fff;
+            padding: 0.35rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.95;
+        }
+        .vw-btn:hover { opacity: 1; }
+        .vw-time {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+            opacity: 0.95;
+            min-width: 5.5rem;
+        }
+        .vw-progress {
+            flex: 1;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            touch-action: none;
+        }
+        .vw-progress-track {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background: rgba(255,255,255,0.35);
+            border-radius: 1px;
+        }
+        .vw-progress-fill {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 0%;
+            background: #fff;
+            border-radius: 1px;
+        }
+        .vw-progress-knob {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            width: 10px;
+            height: 10px;
+            margin-left: -5px;
+            margin-top: -5px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+        .vw-progress:hover .vw-progress-knob,
+        .vw-progress.is-scrubbing .vw-progress-knob { opacity: 1; }
+        .vw-bar-spacer { flex: 0 0 auto; margin-left: auto; display: flex; align-items: center; gap: 0.15rem; }
+        .vw-hero.is-embed .vw-chrome { display: none; }
+        .vw-hero.is-embed .vw-poster { display: none; }
+        .vw-hero.is-embed .vw-main { display: none; }
+        .vw-hero.is-embed iframe.vw-embed { display: block; }
+        iframe.vw-embed { display: none; }
+
     </style>
 </head>
 <body class="bg-white text-black font-sans flex flex-col min-h-screen">
@@ -273,341 +486,267 @@
         </div>
     </header>
 
-    <!-- Devon World Milano countdown -->
-    <div id="devon-world-countdown" class="devon-world-countdown is-live" aria-label="EN VIVO: Vogue World Milán">
-        <style>
-            @font-face {
-                font-family: VogueAvantGarde;
-                font-weight: 500;
-                font-style: normal;
-                font-display: swap;
-                src: url("https://www.vogue.mx/.design/fonts/Vogue%20Avant%20Garde/VogueAvantGarde-Medium.woff2") format("woff2");
-            }
-            @font-face {
-                font-family: VogueAvantGarde;
-                font-weight: 600;
-                font-style: normal;
-                font-display: swap;
-                src: url("https://www.vogue.mx/.design/fonts/Vogue%20Avant%20Garde/VogueAvantGarde-DemiBold.woff2") format("woff2");
-            }
-            @font-face {
-                font-family: Tajawal;
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-                src: url("https://www.vogue.mx/.design/fonts/Tajawal/Tajawal-Regular.woff2") format("woff2");
-            }
-            #devon-world-countdown.devon-world-countdown {
-                width: 100%;
-                background: #000;
-                color: #fff;
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-            }
-            #devon-world-countdown .dwc-inner {
-                max-width: 1280px;
-                margin: 0 auto;
-                padding: 1.5rem 1rem 1.25rem;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-between;
-                gap: 1rem 1.5rem;
-            }
-            #devon-world-countdown .dwc-left {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                min-width: 9.75rem;
-                flex: 0 1 auto;
-            }
-            #devon-world-countdown .dwc-logo-link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 9.75rem;
-                height: auto;
-                margin-bottom: 0.5rem;
-                text-decoration: none;
-                color: #fff;
-            }
-            #devon-world-countdown .dwc-logo-img {
-                display: block;
-                width: auto;
-                max-width: 100%;
-                height: auto;
-                max-height: 3rem;
-            }
-            #devon-world-countdown .dwc-logo-fallback {
-                display: none;
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 600;
-                font-size: 15px;
-                letter-spacing: 0.04em;
-                line-height: 1.2;
-                text-align: center;
-                color: #fff;
-            }
-            #devon-world-countdown .dwc-datetime {
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 500;
-                font-size: 13px;
-                line-height: 1.6;
-                letter-spacing: normal;
-                color: rgba(248, 248, 248, 1);
-            }
-            #devon-world-countdown .dwc-center {
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                gap: 0.5rem;
-                flex: 1 1 auto;
-            }
-            #devon-world-countdown .dwc-unit {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                min-width: 3.25rem;
-            }
-            #devon-world-countdown .dwc-num {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 3rem;
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 600;
-                font-size: 38px;
-                line-height: 1.105263157894737;
-                letter-spacing: -0.005263157973164006em;
-                color: #fff;
-                font-variant-numeric: tabular-nums;
-            }
-            #devon-world-countdown .dwc-label {
-                padding-top: 0.5rem;
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 500;
-                font-size: 13px;
-                line-height: 1rem;
-                letter-spacing: -0.007692307806932009em;
-                color: #fff;
-                text-align: center;
-                text-transform: capitalize;
-            }
-            #devon-world-countdown .dwc-sep {
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 600;
-                font-size: 38px;
-                line-height: 1.5rem;
-                letter-spacing: -0.005263157973164006em;
-                color: #fff;
-                position: relative;
-                top: 0.85rem;
-            }
-            #devon-world-countdown .dwc-right {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 0.5rem;
-                text-align: center;
-                min-width: 11rem;
-            }
-            #devon-world-countdown .dwc-btn {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                box-sizing: border-box;
-                min-width: 11rem;
-                height: 3rem;
-                padding: 0 1rem;
-                border: 2px solid #fff;
-                background: transparent;
-                color: #fff;
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 600;
-                font-size: 13px;
-                line-height: 1.1364285605294364;
-                letter-spacing: 0.08520710468292236em;
-                text-transform: uppercase;
-                text-decoration: none;
-                transition: color 200ms ease-in, background 200ms ease-in, border-color 200ms ease-in;
-            }
-            #devon-world-countdown .dwc-btn:hover {
-                color: #000;
-                background: #fff;
-                border-color: #fff;
-            }
-            #devon-world-countdown .dwc-live {
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 600;
-                font-size: 13px;
-                line-height: 1rem;
-                letter-spacing: 0.13846153479356033em;
-                text-transform: uppercase;
-                color: rgba(248, 248, 248, 1);
-                text-decoration: none;
-            }
-            #devon-world-countdown .dwc-live:hover {
-                text-decoration: underline;
-            }
-            #devon-world-countdown .dwc-timeup {
-                font-family: VogueAvantGarde, Tajawal, helvetica, sans-serif;
-                font-weight: 600;
-                font-size: 18px;
-                letter-spacing: 0.04em;
-                text-transform: uppercase;
-                color: #fff;
-                text-align: center;
-                width: 100%;
-                padding: 0.5rem 0;
-            }
-            @media (max-width: 768px) {
-                #devon-world-countdown .dwc-inner {
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    padding: 1rem;
-                    gap: 0;
-                }
-                #devon-world-countdown .dwc-left {
-                    width: 100%;
-                    min-width: 0;
-                    margin-bottom: 1rem;
-                    align-items: center;
-                }
-                #devon-world-countdown .dwc-logo-link {
-                    margin-bottom: 0.35rem;
-                    width: auto;
-                    max-width: 11.5rem;
-                }
-                #devon-world-countdown .dwc-logo-img {
-                    max-height: 2.75rem;
-                }
-                #devon-world-countdown .dwc-datetime {
-                    font-size: 12px;
-                }
-                #devon-world-countdown .dwc-center {
-                    width: 100%;
-                    flex: 0 0 auto;
-                    justify-content: center;
-                    gap: 0.35rem;
-                    padding-bottom: 1rem;
-                }
-                #devon-world-countdown .dwc-unit {
-                    min-width: 2.75rem;
-                }
-                #devon-world-countdown .dwc-num {
-                    height: auto;
-                    font-size: 30px;
-                    line-height: 1;
-                }
-                #devon-world-countdown .dwc-sep {
-                    font-size: 30px;
-                    line-height: 1;
-                    top: 0.15rem;
-                }
-                #devon-world-countdown .dwc-label {
-                    padding-top: 0.35rem;
-                    font-size: 11px;
-                }
-                #devon-world-countdown .dwc-right {
-                    width: 100%;
-                    min-width: 0;
-                    gap: 0.75rem;
-                    align-items: center;
-                }
-                #devon-world-countdown .dwc-btn {
-                    margin-bottom: 0;
-                    width: 72%;
-                    max-width: 17rem;
-                    min-width: 0;
-                    height: 2.75rem;
-                }
-            }
-        </style>
-        <div class="dwc-inner">
-            <div class="dwc-left">
-                <a class="dwc-logo-link" href="https://www.vogue.mx/vogue-world" aria-label="Vogue World Milano">
-                    <img
-                        class="dwc-logo-img"
-                        src="https://assets.vogue.com/photos/6aa2cb6a76b1913dd8e967d3/original/pass/VW26_logo-white.png?format=original"
-                        alt="Vogue World Milano"
-                        onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb){fb.style.display='block';}"
-                    />
-                    <span class="dwc-logo-fallback">Vogue World Milano</span>
-                </a>
-                <div class="dwc-datetime">22 de septiembre a las 12:00 PM</div>
-            </div>
-                                                <div class="dwc-center" aria-live="polite">
-                <div class="dwc-timeup">EN VIVO: Vogue World Milán</div>
-            </div>
-<div class="dwc-right">
-                <a class="dwc-btn" href="https://www.vogue.mx/vogue-world">EN VIVO</a>
-                <a class="dwc-live" href="https://www.vogue.mx">EN VIVO EN VOGUE.MX</a>
-            </div>
+
+
+
+    
+    <!-- Vogue World Milano hero: photo poster + WATCH NOW (Vogue.mx mobile) -->
+    <section class="w-full relative bg-black" aria-label="Vogue World 2026 Milan Livestream">
+      <div class="vw-hero is-poster" id="vw-hero">
+        <video
+          id="vogue-world-hero"
+          class="vw-main"
+          playsinline
+          preload="metadata"
+          poster="assets/vw-milano-poster.jpg"
+          title="¡Revive lo mejor de Vogue World 2026 Milan Livestream!"
+        ></video>
+        <iframe
+          id="vogue-world-hero-embed"
+          class="vw-embed"
+          title="Vogue World 2026 Milan Livestream"
+          data-src="https://player.cnevids.com/iframe/video/68dbb6bd777e2b57792927d3"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <div class="vw-poster" id="vw-poster" role="button" tabindex="0" aria-label="Watch Now">
+          <img
+            class="vw-poster-media"
+            id="vw-poster-img"
+            src="assets/vw-milano-poster.jpg"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="vw-poster-scrim" aria-hidden="true"></div>
+          <div class="vw-poster-copy">
+            <span class="vw-tag">Fashion</span>
+            <p class="vw-headline">¡Revive lo mejor de Vogue World 2026 Milan Livestream!</p>
+            <button type="button" class="vw-watch" id="vw-watch-btn">
+              <svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path fill="currentColor" d="M0 0v14l12-7z"/></svg>
+              <span>Watch Now</span>
+            </button>
+          </div>
         </div>
-        <script>
-        (function () {
-            var root = document.getElementById('devon-world-countdown');
-            if (!root) return;
-            var center = root.querySelector('.dwc-center');
-            var btn = root.querySelector('.dwc-btn');
-            var daysEl = document.getElementById('devon-world-countdown-days');
-            var hoursEl = document.getElementById('devon-world-countdown-hours');
-            var minsEl = document.getElementById('devon-world-countdown-mins');
-            var secsEl = document.getElementById('devon-world-countdown-secs');
-            var TARGET_MS = 1790100000000; // 2026-09-22 12:00:00 America/Mexico_City
-            var TIME_UP = 'EN VIVO: Vogue World Milán';
-            var ended = false;
-            function pad(n) { return (n < 10 ? '0' : '') + n; }
-            function showLive() {
-                if (ended) return;
-                ended = true;
-                if (center) center.innerHTML = '<div class="dwc-timeup">' + TIME_UP + '</div>';
-                if (btn) {
-                    btn.textContent = 'EN VIVO';
-                    btn.setAttribute('href', 'https://www.vogue.mx/vogue-world');
-                }
-                root.classList.add('is-live');
-                root.setAttribute('aria-label', TIME_UP);
-            }
-            function tick() {
-                var now = Date.now();
-                if (now >= TARGET_MS) {
-                    if (daysEl) daysEl.textContent = '00';
-                    if (hoursEl) hoursEl.textContent = '00';
-                    if (minsEl) minsEl.textContent = '00';
-                    if (secsEl) secsEl.textContent = '00';
-                    showLive();
-                    return;
-                }
-                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
-                var diff = TARGET_MS - now;
-                var totalSec = Math.floor(diff / 1000);
-                var days = Math.floor(totalSec / 86400);
-                var hours = Math.floor((totalSec % 86400) / 3600);
-                var mins = Math.floor((totalSec % 3600) / 60);
-                var secs = totalSec % 60;
-                daysEl.textContent = pad(days);
-                hoursEl.textContent = pad(hours);
-                minsEl.textContent = pad(mins);
-                secsEl.textContent = pad(secs);
-            }
-            // Harden: go LIVE immediately when past target (no wait for interval)
-            if (Date.now() >= TARGET_MS) {
-                showLive();
-            } else {
-                tick();
-                setInterval(tick, 1000);
-            }
-        })();
-        </script>
-    </div>
 
+        <div class="vw-chrome" id="vw-chrome" aria-hidden="true">
+          <div class="vw-chrome-title">¡Revive lo mejor de Vogue World 2026 Milan Livestream!</div>
+          <div class="vw-bar">
+            <div class="vw-bar-row">
+              <button type="button" class="vw-btn" id="vw-playpause" aria-label="Pausa">
+                <svg id="vw-icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="3" width="5" height="18"></rect><rect x="14" y="3" width="5" height="18"></rect></svg>
+                <svg id="vw-icon-play" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17l14-8.5z"/></svg>
+              </button>
+              <span class="vw-time" id="vw-time">0:00 / 0:00</span>
+              <div class="vw-progress" id="vw-progress" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="vw-progress-track">
+                  <div class="vw-progress-fill" id="vw-progress-fill"></div>
+                  <div class="vw-progress-knob" id="vw-progress-knob"></div>
+                </div>
+              </div>
+              <div class="vw-bar-spacer">
+                <button type="button" class="vw-btn" id="vw-mute" aria-label="Silenciar">
+                  <svg id="vw-icon-vol" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" stroke="none"></path>
+                    <path d="M16.5 8.5a5 5 0 0 1 0 7"></path>
+                    <path d="M18.5 6a8 8 0 0 1 0 12"></path>
+                  </svg>
+                  <svg id="vw-icon-muted" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                    <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" stroke="none"></path>
+                    <path d="M19 9l-6 6M13 9l6 6"></path>
+                  </svg>
+                </button>
+                <button type="button" class="vw-btn" id="vw-fs" aria-label="Pantalla completa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                    <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      window.__devonVogueWorldHero = function () {
+        var SRC = "https://d2nig8ykak6ul6.cloudfront.net/out/v1/41206854f93f487c811a049dd0aa90c3/index.m3u8?start=2026-09-22T18%3A00%3A10.000%2B00%3A00&end=2026-09-22T18%3A38%3A24.000%2B00%3A00";
+        var EMBED = "https://player.cnevids.com/iframe/video/68dbb6bd777e2b57792927d3";
+        var hero = document.getElementById("vw-hero");
+        var video = document.getElementById("vogue-world-hero");
+        var embed = document.getElementById("vogue-world-hero-embed");
+        var poster = document.getElementById("vw-poster");
+        var watchBtn = document.getElementById("vw-watch-btn");
+        var chrome = document.getElementById("vw-chrome");
+        var playBtn = document.getElementById("vw-playpause");
+        var iconPause = document.getElementById("vw-icon-pause");
+        var iconPlay = document.getElementById("vw-icon-play");
+        var timeEl = document.getElementById("vw-time");
+        var progress = document.getElementById("vw-progress");
+        var fill = document.getElementById("vw-progress-fill");
+        var knob = document.getElementById("vw-progress-knob");
+        var muteBtn = document.getElementById("vw-mute");
+        var iconVol = document.getElementById("vw-icon-vol");
+        var iconMuted = document.getElementById("vw-icon-muted");
+        var fsBtn = document.getElementById("vw-fs");
+        if (!hero || !video || video.getAttribute("data-ready") === "1") return;
+        video.setAttribute("data-ready", "1");
+        video.removeAttribute("controls");
 
+        var hls = null;
+        var started = false;
+        var scrubbing = false;
 
-    <!-- Promo suscripción (móvil: donde va el ticker de Vogue) -->
+        function fmt(t) {
+          if (!isFinite(t) || t < 0) t = 0;
+          var s = Math.floor(t % 60);
+          var m = Math.floor(t / 60) % 60;
+          var h = Math.floor(t / 3600);
+          if (h > 0) return h + ":" + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+          return m + ":" + String(s).padStart(2, "0");
+        }
+        function syncPlayIcons() {
+          var paused = video.paused;
+          if (iconPause) iconPause.classList.toggle("hidden", paused);
+          if (iconPlay) iconPlay.classList.toggle("hidden", !paused);
+          if (playBtn) playBtn.setAttribute("aria-label", paused ? "Reproducir" : "Pausa");
+        }
+        function syncMuteIcons() {
+          var muted = video.muted || video.volume === 0;
+          if (iconVol) iconVol.classList.toggle("hidden", muted);
+          if (iconMuted) iconMuted.classList.toggle("hidden", !muted);
+          if (muteBtn) muteBtn.setAttribute("aria-label", muted ? "Activar sonido" : "Silenciar");
+        }
+        function syncProgress() {
+          if (scrubbing) return;
+          var d = video.duration || 0;
+          var c = video.currentTime || 0;
+          var pct = d > 0 ? (c / d) * 100 : 0;
+          if (fill) fill.style.width = pct + "%";
+          if (knob) knob.style.left = pct + "%";
+          if (progress) progress.setAttribute("aria-valuenow", String(Math.round(pct)));
+          if (timeEl) timeEl.textContent = fmt(c) + " / " + fmt(d);
+        }
+        function showEmbed() {
+          hero.classList.remove("is-poster", "is-playing");
+          hero.classList.add("is-embed");
+          try { video.pause(); } catch (e) {}
+          video.removeAttribute("src");
+          while (video.firstChild) video.removeChild(video.firstChild);
+          if (embed) {
+            embed.src = embed.getAttribute("data-src") || EMBED;
+            embed.style.display = "block";
+          }
+        }
+        function attachSource() {
+          if (window.Hls && Hls.isSupported()) {
+            hls = new Hls({ enableWorker: true, maxBufferLength: 30 });
+            hls.loadSource(SRC);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.ERROR, function (_e, data) {
+              if (data && data.fatal) {
+                try { hls.destroy(); } catch (e) {}
+                showEmbed();
+              }
+            });
+          } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+            video.src = SRC;
+            video.addEventListener("error", showEmbed, { once: true });
+          } else {
+            showEmbed();
+          }
+        }
+        function enterPlaying() {
+          if (started) {
+            if (video.paused) video.play().catch(function () {});
+            return;
+          }
+          started = true;
+          hero.classList.remove("is-poster");
+          hero.classList.add("is-playing");
+          if (chrome) chrome.setAttribute("aria-hidden", "false");
+          var p = video.play();
+          if (p && p.catch) p.catch(function () {});
+          syncPlayIcons();
+        }
+        function togglePlay() {
+          if (!started) { enterPlaying(); return; }
+          if (video.paused) video.play().catch(function () {});
+          else video.pause();
+        }
+        function seekFromEvent(ev) {
+          var rect = progress.getBoundingClientRect();
+          var x = (ev.clientX != null ? ev.clientX : (ev.touches && ev.touches[0].clientX)) - rect.left;
+          var pct = Math.max(0, Math.min(1, x / rect.width));
+          if (video.duration) video.currentTime = pct * video.duration;
+          if (fill) fill.style.width = (pct * 100) + "%";
+          if (knob) knob.style.left = (pct * 100) + "%";
+        }
+
+        attachSource();
+
+        if (watchBtn) watchBtn.addEventListener("click", function (e) { e.stopPropagation(); enterPlaying(); });
+        if (poster) {
+          poster.addEventListener("click", function (e) {
+            if (e.target && e.target.closest && e.target.closest(".vw-watch")) return;
+            enterPlaying();
+          });
+          poster.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); enterPlaying(); }
+          });
+        }
+        if (playBtn) playBtn.addEventListener("click", function (e) { e.stopPropagation(); togglePlay(); });
+        if (muteBtn) muteBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          video.muted = !video.muted;
+          syncMuteIcons();
+        });
+        if (fsBtn) fsBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var el = hero;
+          if (!document.fullscreenElement) {
+            (el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen || function () {}).call(el);
+          } else {
+            (document.exitFullscreen || document.webkitExitFullscreen || function () {}).call(document);
+          }
+        });
+        if (progress) {
+          progress.addEventListener("pointerdown", function (e) {
+            scrubbing = true;
+            progress.classList.add("is-scrubbing");
+            progress.setPointerCapture(e.pointerId);
+            seekFromEvent(e);
+          });
+          progress.addEventListener("pointermove", function (e) {
+            if (scrubbing) seekFromEvent(e);
+          });
+          progress.addEventListener("pointerup", function () {
+            scrubbing = false;
+            progress.classList.remove("is-scrubbing");
+          });
+          progress.addEventListener("pointercancel", function () {
+            scrubbing = false;
+            progress.classList.remove("is-scrubbing");
+          });
+        }
+
+        video.addEventListener("timeupdate", syncProgress);
+        video.addEventListener("loadedmetadata", syncProgress);
+        video.addEventListener("durationchange", syncProgress);
+        video.addEventListener("play", syncPlayIcons);
+        video.addEventListener("pause", syncPlayIcons);
+        video.addEventListener("volumechange", syncMuteIcons);
+        video.addEventListener("click", function () {
+          if (started) togglePlay();
+        });
+
+        syncPlayIcons();
+        syncMuteIcons();
+        syncProgress();
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" onload="window.__devonVogueWorldHero && window.__devonVogueWorldHero()" onerror="window.__devonVogueWorldHero && window.__devonVogueWorldHero()"></script>
+
+<!-- Promo suscripción (móvil: donde va el ticker de Vogue) -->
     <a href="suscripcion.html" class="w-full flex items-center gap-3 px-4 py-3 bg-white border-b border-gray-200 hover:bg-gray-50 transition-colors no-underline text-black">
         <img
             src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1780770047/Devon_June_2026_N.231_Suscripcio%CC%81n_sddr6u.png"
