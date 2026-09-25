@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalones acampanados y zapatos de plataforma: Así lleva Jennifer Lopez el estilo de los años 70 en otoño 2026 | Devon México y Latinoamérica</title>
+    <meta name="description" content="Jennifer Lopez revive los años 70 con pantalones acampanados y zapatos de plataforma, la combinación que regresa con fuerza para el otoño 2026.">
+    <meta property="og:title" content="Pantalones acampanados y zapatos de plataforma: Así lleva Jennifer Lopez el estilo de los años 70 en otoño 2026 | Devon México y Latinoamérica">
+    <meta property="og:description" content="Jennifer Lopez revive los años 70 con pantalones acampanados y zapatos de plataforma, la combinación que regresa con fuerza para el otoño 2026.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://media.vogue.mx/photos/6ab54b421456e5cd45c44758/1:1/w_1600,c_limit/jennifer-lopez-milan-pantalones-acampanados.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://media.vogue.mx/photos/6ab54b421456e5cd45c44758/1:1/w_1600,c_limit/jennifer-lopez-milan-pantalones-acampanados.jpg" alt="Pantalones acampanados y zapatos de plataforma: Así lleva Jennifer Lopez el estilo de los años 70 en otoño 2026" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">(Re)Devon</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Pantalones acampanados y zapatos de plataforma: Así lleva Jennifer Lopez el estilo de los años 70 en otoño 2026</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Rosa Vásquez Espinoza, laureada en los Premios Rolex 2026, protege a las abejas sin aguijón y convierte su conservación en una estrategia para la Amazonía.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR DEVON</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">21 de septiembre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>¡Hablemos del look de Jennifer Lopez! Y es que la cantante de raíces latinas fue recientemente capturada paseando por las calles de Milán con un look que hace referencia a una de las décadas más inspiradoras de la moda: los años 70. Pues aunque para muchos la década setentera pueda parecer que se reduce a colores estridentes, estampados floreados y el boho chic como máxima expresión, también fue la época en la que las prendas adoptaron siluetas diferentes: las blusas comenzaron a llevarse de manera más relajada, los pantalones adquirieron perneras cada vez más acampanadas y los zapatos alcanzaron alturas vertiginosas gracias a las plataformas. JLo parece conocer bien estas claves y nos demuestra que llevarlas a la actualidad es tan acertado como fácil.</p>
+<p>Jennifer Lopez lleva pantalones acampanados y zapatos de plataforma al más puro estilo de los 70 en otoño 2026</p>
+<p>Las siluetas de los 70 comenzaron a ganar protagonismo en las pasarelas de Otoño-Invierno 2026 a través de las propuestas de nuestros diseñadores favoritos. Chloé, Zimmermann, Gabriela Hearst y más integraron piezas emblemáticas de la década con un giro moderno, bajo esa estética que en redes sociales se conoce como tailored boho. Y el look en cuestión de Jennifer Lopez no podría recordarnos más a ella.</p>
+<p>Para la ocasión, apuesta por unos pantalones de tiro alto con bajo acampanado en color negro, una pieza que alarga visualmente su silueta y que, al combinarse con unos zapatos de plataforma a tono, la hace lucir aún más impactante. Para complementar y romper con la monocromía, nuestra estrella de portada para la edición de julio de 2023 los lleva con una camisa blanca de corte fluido y desabotonada, de forma que deja ver un bralette negro. Un acento sexy que, sin embargo, conserva la elegancia, sin duda una de las características que han sido sello de sus looks desde el principio de su carrera.</p>
+<div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">¿Quién es Rosa Vásquez Espinoza?</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298654/devon-mx/articles/Cienti_CC_81fica-peruana-Rosa-Vasquez-Espinosa-ganadora-Premio-Rolex-2026_qglgwq.jpg" alt="En 2026 Rosa Vsquez Espinoza se convirtió en una de las cinco nuevas galardonadas —todas ellas mujeres— con este..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">En 2026, Rosa Vásquez Espinoza se convirtió en una de las cinco nuevas galardonadas —todas ellas mujeres— con este reconocimiento. Rolex apoyará a la investigadora y a su organización, Amazon Research Internacional, en la ampliación de un corredor de hábitats protegidos para abejas gestionado por comunidades indígenas. © Rolex/Sofia Lopez Mañan</figcaption></figure>
+<p>Rosa Vásquez Espinoza nació en Lima en 1993 y creció entre los Andes peruanos y la Amazonía. Esa cercanía con distintos territorios y formas de entender la naturaleza terminaría influyendo profundamente en una carrera que hoy cruza ciencia, conservación y conocimiento indígena.</p>
+<p>Bióloga química y conservacionista, realizó parte de su formación científica en Estados Unidos, dentro de un sistema académico orientado hacia la eficiencia. Con el tiempo, su regreso al trabajo de campo en Perú la llevó a cuestionar esa manera de producir conocimiento y a incorporar cada vez más las preguntas del territorio y los saberes de quienes lo habitan.</p>
+<p>Hoy es exploradora de National Geographic y fundadora y directora ejecutiva de Amazon Research Internacional, una organización dedicada a proteger la biodiversidad y trabajar junto con comunidades de la cuenca amazónica. Su trayectoria también ha sido reconocida con el Premio UNESCO-Al Fozan para Jóvenes Científicos y con su inclusión en la lista de las 100 mujeres más influyentes de la BBC.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Las abejas que cambiaron el rumbo de su investigación</h2>
+<p>Vásquez Espinoza comenzó a estudiar las abejas sin aguijón de la Amazonía en 2020. Una de las primeras cosas que llamó su atención fue comprobar que las propiedades medicinales atribuidas durante generaciones a su miel por las comunidades locales podían demostrarse químicamente.</p>
+<p>Pero el estudio de esa miel llevó rápidamente a una pregunta más amplia. Las poblaciones de estas abejas estaban amenazadas por la deforestación, la degradación de sus hábitats, el uso de pesticidas y el cambio climático. A partir de su investigación, Amazon Research Internacional consiguió establecer el primer vínculo científico entre la deforestación y el declive de las abejas sin aguijón.</p>
+<p>Ese hallazgo también puso en evidencia la falta de mecanismos suficientes para protegerlas. Vásquez Espinoza, su equipo, comunidades y aliados comenzaron entonces a impulsar cambios legales y, a finales de 2025, las abejas sin aguijón de la Amazonía peruana se convirtieron en los primeros insectos del mundo en obtener derechos legales, entre ellos el derecho a existir y a mantener poblaciones saludables.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298654/devon-mx/articles/ppi_ra_2026_espinoza_2604sm_079_mhge6e.jpg" alt="Abejas sin aguijón en el Amazonas. Estas especies polinizadores clave y parte fundamental de la vida de las comunidades..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Abejas sin aguijón en el Amazonas. Estas especies, polinizadores clave y parte fundamental de la vida de las comunidades indígenas locales —entre otras—, cuentan ahora con el derecho legal a existir; se trata del primer insecto del mundo en obtener tal protección. © Rolex/Sofia Lopez Mañan</figcaption></figure>
+<p>El proceso ha estado profundamente ligado a pueblos como los Asháninka y Kukama-Kukamiria, para quienes estas abejas forman parte de conocimientos, prácticas medicinales y tradiciones transmitidas durante generaciones. Esa colaboración también ha transformado la manera en que Vásquez Espinoza entiende la ciencia, dando mayor espacio al conocimiento indígena y a las preguntas que surgen del propio territorio. Como explicó en una entrevista en el diario El País: “Si damos espacio a que se integren sus pensares y sus sentires indígenas, la ciencia mejora y eso es algo que, digamos, las abejas nos obligaron a hacer, porque casi no puedes encontrarlas sin el conocimiento indígena.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Los logros de Rosa Vásquez Espinoza en números</h2>
+<p>El trabajo de campo de Vásquez Espinoza y su equipo permite dimensionar la escala de una investigación que combina expediciones, monitoreo ambiental, conservación y capacitación comunitaria.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298654/devon-mx/articles/ppi_ra_2026_espinoza_2604sm_129_md5rr9.jpg" alt="La bióloga química y conservacionista Rosa Vsquez Espinoza y un colega examinan un cuadro de colmena en la Amazonia. “Es..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">La bióloga química y conservacionista Rosa Vásquez Espinoza y un colega examinan un cuadro de colmena en la Amazonia. “Es imposible realizar el mapeo de las abejas utilizando únicamente la ciencia moderna o el conocimiento tradicional. Solo es posible si los combinamos, que es precisamente lo que hemos hecho”, afirma. © Rolex/Sofia Lopez Mañan</figcaption></figure>
+<p>Las hectáreas de selva estudiadas por Rosa Vásquez Espinoza y su equipo. Hasta ahora, Amazon Research Internacional ha estudiado alrededor de 40,000 hectáreas de bosque amazónico para comprender mejor dónde viven estas especies, en qué condiciones se encuentran sus poblaciones y cómo la transformación del territorio afecta sus hábitats.</p>
+<p>Las colmenas silvestres identificadas durante la investigación. Localizar estos nidos exige algo que los instrumentos científicos por sí solos no siempre pueden ofrecer: conocimiento profundo del territorio. Parte del trabajo se realiza junto con apicultores y habitantes locales, en expediciones que pueden implicar horas de caminata, noches en la selva y días enteros registrando información sobre las abejas.</p>
+<p>Las abejas sin aguijón registradas por el proyecto. Las más de 300 colmenas identificadas representan alrededor de 1.6 millones de abejas. Su presencia es especialmente relevante porque estos insectos participan en la polinización y, por lo tanto, en la capacidad del bosque para reproducirse y mantenerse.</p>
+<p>Las comunidades con las que trabaja actualmente Amazon Research Internacional. El proyecto se desarrolla de manera directa con 11 comunidades, incorporando conocimiento indígena dentro de la investigación y de las estrategias de conservación. La colaboración incluye desde prácticas de apicultura hasta conocimientos medicinales, historias y formas tradicionales de relacionarse con las abejas.</p>
+<p>Las personas indígenas capacitadas en apicultura sostenible, emprendimiento e investigación ecológica. La conservación también se ha convertido en una herramienta para generar alternativas económicas dentro de las comunidades. Hasta ahora, el equipo ha capacitado a más de 350 personas en estas áreas.</p>
+<p>El porcentaje de mujeres entre quienes han recibido capacitación. Siete de cada diez participantes son mujeres. El dato también muestra cómo el proyecto conecta la protección de la biodiversidad con nuevas oportunidades dentro de las propias comunidades amazónicas.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El proyecto por el que Rosa Vásquez recibió Premio Rolex 2026 y lo que sigue</h2>
+<p>En 2026, Rosa Vásquez Espinoza fue elegida como una de las cinco Laureadas de los Premios Rolex –parte de la Iniciativa Perpetual Planet– por un proyecto que reúne investigación científica, conservación de la biodiversidad y participación indígena. Su trabajo consiguió establecer una relación científica entre la deforestación y el declive de las abejas sin aguijón, al tiempo que convirtió su protección en una herramienta para generar nuevas alternativas de vida para las comunidades locales.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298654/devon-mx/articles/ppi_ra_2026_espinoza_2604sm_068_ek14pv.jpg" alt="Un apicultor indígena con miel de abejas sin aguijón en la Amazonía. Aunque las comunidades locales valoraban esta miel..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Un apicultor indígena con miel de abejas sin aguijón en la Amazonía. Aunque las comunidades locales valoraban esta miel desde hacía mucho tiempo, sus propiedades medicinales fueron demostradas químicamente por primera vez en 2020 por la bióloga y conservacionista Rosa Vásquez Espinoza y sus colegas; un descubrimiento que sentó las bases de un caso jurídico histórico para proteger a la especie. © Rolex/Sofia Lopez Mañan</figcaption></figure>
+<p>El reconocimiento llega, además, cuando los Premios Rolex cumplen 50 años. Creado originalmente en 1976 como Rolex Awards for Enterprise, el programa forma parte de la Iniciativa Perpetual Planet de Rolex y respalda proyectos orientados a ampliar el conocimiento del planeta, proteger el medio ambiente y preservar especies y hábitats.</p>
+<p>Para Vásquez Espinoza, el premio representa sobre todo la posibilidad de pensar a largo plazo. Después de contribuir a la regeneración de 17 hectáreas de selva, Amazon Research Internacional planea crear 10 santuarios para abejas sin aguijón liderados por comunidades indígenas en zonas de alta biodiversidad.</p>
+<p>La siguiente etapa es todavía más ambiciosa. Su equipo busca mapear 200,000 hectáreas de hábitat y construir un corredor transfronterizo para la conservación de estas abejas que se extienda hacia Bolivia y a lo largo de la frontera entre Perú, Colombia y Brasil.</p>
+<p>El apoyo del Premio Rolex permitirá al proyecto pensar a mayor escala y a más largo plazo, más allá de los ciclos anuales de financiamiento que hasta ahora han condicionado su crecimiento. Para Vásquez Espinoza, también representa la posibilidad de situar su trabajo dentro de una trayectoria más amplia de proyectos que han logrado crecer con el respaldo de Rolex. “Ver la historia de lo que Rolex ha apoyado y cómo otras personas han podido seguir ampliando su trabajo nos impulsa aún más. Este trabajo es extremadamente difícil, pero pensar que puede alcanzar la escala de otros proyectos extraordinarios nos confirma que vamos por el camino correcto” explica.</p>
+<p>Con este apoyo, su equipo podrá avanzar hacia una estrategia de conservación regional que amplíe el alcance de una investigación que ya ha pasado del laboratorio al bosque, de las comunidades a las leyes y, ahora, a la protección de hábitats a gran escala.</p>
+<p>Puedes conocer más sobre la Iniciativa Perpetual Planet de Rolex y sus proyectos en Rolex.org y Rolex.com y queda atento a más contenido de la serie Voces del Planeta.</p>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="cristina-mittermeier-fotografa-mexicana-quien-es.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298655/devon-mx/articles/Mujer-con-ganso-de-Cristina-Mittermeier_cy6upq.jpg" alt="Cristina Mittermeier, la fotografía como herramienta de impacto ambiental" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Cristina Mittermeier, la fotografía como herramienta de impacto ambiental</h3>
+                </a>
+                <a href="ciclo-curaduria-textil-y-la-importancia-del-preloved.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298656/devon-mx/articles/DSC00419_gfureq.jpg" alt="Ciclo Curaduría Textil: Cómo vestir preloved pensando en nuestro planeta" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Ciclo Curaduría Textil: Cómo vestir preloved pensando en nuestro planeta</h3>
+                </a>
+                <a href="jeans-colombianos-do-over-lab-entrevista.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298658/devon-mx/articles/Jeans-barrel-do-over_ng9tvr.jpg" alt="Estos jeans son un manifiesto de sostenibilidad en la moda colombiana" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Estos jeans son un manifiesto de sostenibilidad en la moda colombiana</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>
