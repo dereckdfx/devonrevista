@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubrí que rentar ropa es una tendencia creciente (y conveniente para el medio ambiente) | Devon México y Latinoamérica</title>
+    <meta name="description" content="Lo diré con completa transparencia: la idea de rentar ropa me sigue incomodando. Pero también es verdad que constantemente estoy pensando en maneras de cómo impactar menos al planeta.">
+    <meta property="og:title" content="Descubrí que rentar ropa es una tendencia creciente (y conveniente para el medio ambiente) | Devon México y Latinoamérica">
+    <meta property="og:description" content="Lo diré con completa transparencia: la idea de rentar ropa me sigue incomodando. Pero también es verdad que constantemente estoy pensando en maneras de cómo impactar menos al planeta.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298668/devon-mx/articles/rentar-ropa_orinkj.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298668/devon-mx/articles/rentar-ropa_orinkj.jpg" alt="Descubrí que rentar ropa es una tendencia creciente (y conveniente para el medio ambiente)" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">(Re)Devon</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Descubrí que rentar ropa es una tendencia creciente (y conveniente para el medio ambiente)</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Lo diré con completa transparencia: la idea de rentar ropa me sigue incomodando. Pero también es verdad que constantemente estoy pensando en maneras de cómo impactar menos al planeta.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR MARÍA JOSÉ GONZÁLVEZ</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">22 de abril de 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Para mí, el concepto detrás de alquilar ropa es completamente ajeno a mi estilo de vida, pero quizás tenga que ver con que en México aún es una idea en desarrollo.</p>
+<p>El Thanksgiving pasado, una amiga me invitó a su celebración y, porque ella y su esposo decidieron bautizar a su hija al día siguiente, todos sus familiares y amigos viajaron a la Ciudad de México para ser parte del momento especial. En esa reunión me presentó a una de sus amigas, a quien le elogié su falda. “¡Gracias! La renté”, me respondió. Estoy segura de que mi expresión facial fue de confusión cuando le respondí: “¿Cómo que la rentaste?”. “Uy, sí, rento mucha de la ropa que uso. Durante la campaña de [Kamala] Harris, todos los que trabajamos ahí rentábamos la ropa que usábamos”, me dijo.</p>
+<p>¿Por qué me habrá sorprendido tanto la idea sobre ella usando una minifalda rentada? En mi caso, algo que aprecio mucho son las piezas que forman parte de mi armario. Y es probable que la idea sobre rentar no la tenga tan presente porque en México no es una “normalidad”, a menos que tengamos una boda y no queramos comprar un vestido para usar solo un día.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<p>La cultura circular y sostenible sigue siendo una conversación bastante verde en México y en la mayoría de los territorios de América Latina. Sí, seguimos siendo esclavos del fast fashion, y poco a poco estamos comenzando a entender conceptos como slow fashion o la compra de ropa de segunda mano. La realidad es que, como no estamos aún educados en el tema, las opciones para comprar vintage o segunda mano son pocas; solo los verdaderos conocedores saben de las tiendas que ofrecen la mejor variedad. Así que ni hablemos del concepto de renta, uno que, en la región, sigue bastante asociado a vestidos de noche y de gala; que, aunque esté enfocado a este mercado específico, hay algunos proyectos que se distinguen por tener una variedad de diseños muy curados. Conspiración Moda es uno de ellos y tiene presencia en gran parte de México.</p>
+<p>A principios de este año, invitaron a mi hermana a una boda. Yo conservo una serie de vestidos formales que compré conforme fui asistiendo a bodas y otros eventos. Algunos de ellos (específicamente el que llevé a mi graduación de preparatoria), los he prestado a mis hermanas y a algunas amigas, porque ¿por qué invertirían en un vestido para usarlo solo una vez? Esta vez, mi hermana ignoró mi pequeño “archivo” y decidió rentar su vestido. Me pareció una decisión extraña –aunque ya había conversado con la amiga de mi amiga sobre la renta de ropa–.</p>
+<p>Si bien, en Estados Unidos los proyectos como Rent the Runway han popularizado la acción de rentar prendas de diseñador con dos ideas claras y fijas: la primera, ¿por qué gastar miles de dólares en comprar una prenda que quizás no volverás a usar? La segunda, ¿por qué aportarías aún más a la contaminación medioambiental? Estos servicios, que son bajo un esquema de suscripciones, han apelado a aquellas personas que siempre están en busca del constante cambio, es decir, definen su estilo del diario por la novedad. Y es que la tecnología y los algoritmos han favorecido a las plataformas, capturando la información de cada suscriptora y siguiendo de cerca sus gustos para ofrecerle mejores opciones para rentar. Probablemente, la pandemia puso a tambalear a unos cuantos sitios, sin embargo, los expertos en el negocio de la moda aseguran que quienes se enfoquen por completo en la circularidad, se mantendrán a flote.</p>
+<p>Hace unos años, Venus Fabbricatore abrió su clóset para rentar, bajo el nombre de The Common Room. “Más que un archivo de moda, mi clóset es un universo de piezas que cuentan historias. Desde vintage hasta lo más actual, mi plataforma es un destino para que estilistas y celebridades encuentren un toque único”, me dice Fabbricatore. Creo que no hay forma más brillante de mantener un archivo que realmente aprecias y que no quieres (o no estás del todo preparada para) deshacerte de él, que abriéndolo para compartirlo con el mundo. Nayeli de Alba, la estilista, también tiene un proyecto similar llamado The Warehouse Rental. Quienes han tenido la oportunidad de visitar este departamento convertido en bodega, saben que pueden encontrar cualquier joya al más puro estilo de De Alba.</p>
+<p>Lo diré con completa transparencia: la idea de rentar ropa me sigue incomodando. Pero también es verdad que constantemente estoy pensando en maneras de cómo impactar menos al medio ambiente. Y aunque me he prometido –al igual que Amira pero no con tanta decisión– a comprar menos y evitar entrar a las tiendas de fast fashion para mitigar el paso de mi tarjeta, confieso que sigo cayendo en el vicio (porque las compras son eso). Curiosamente, el tema está más relevante que nunca en las noticias. Una búsqueda rápida en Google News arroja varios resultados de artículos recientes que hablan sobre el tema. Uno de The Guardian, por ejemplo, se titula Como Airbnb, pero para ropa: cómo ganar dinero alquilando tu armario, y expone el caso de una exestudiante australiana que buscaba incrementar sus ingresos y comenzó a rentar su armario. ¿Y qué nos falta en México y Latinoamérica para comenzar a aceptar que rentar ropa para el día a día también es parte de la “normalidad”?</p>
+<p>Quizás sea que no somos tan receptivas... Pero qué sucederá si realmente analizamos cada una de nuestras compras y optamos por rentar un mínimo porcentaje de prendas (las mismas que planeábamos comprar). ¿Estamos preparadas para el reto? Pensar sosteniblemente es un desafío, pero también [ahora] una obligación.</p>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="descubri-que-saber-lavar-y-secar-ropa-de-forma-correcta-es-una-forma-de-moda-sustentable.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298669/devon-mx/articles/lavar-y-secar-ropa-moda-sustentable_qorpjq.jpg" alt="Descubrí cómo lavar y secar ropa de forma correcta para que dure más (y contribuir a la moda sustentable)" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Descubrí cómo lavar y secar ropa de forma correcta para que dure más (y contribuir a la moda sustentable)</h3>
+                </a>
+                <a href="aprendi-a-amar-la-ropa-pre-loved-o-de-segunda-mano.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298671/devon-mx/articles/ensayos-vintage-moda-preloved-_ysaxhh.jpg" alt="Aprendí a amar la ropa de segunda mano no solo para “ahorrar”, sino también para ayudar al medio ambiente" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Aprendí a amar la ropa de segunda mano no solo para “ahorrar”, sino también para ayudar al medio ambiente</h3>
+                </a>
+                <a href="comprar-en-bazares-me-ayudo-a-definir-mi-estilo.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298672/devon-mx/articles/comprar-en-bazares_vatocn.jpg" alt="Comprar en bazares me ayudó a definir mi estilo (y ahora no me dejan de halagar mis atuendos)" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Comprar en bazares me ayudó a definir mi estilo (y ahora no me dejan de halagar mis atuendos)</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+</body>
+</html>

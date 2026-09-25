@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muere David Hockney a los 88 años, ícono del arte del siglo XX | Devon México y Latinoamérica</title>
+    <meta name="description" content="David Hockney —el pintor nacido en Inglaterra que reinventó el estilo de vida californiano— ha fallecido a los 88 años.">
+    <meta property="og:title" content="Muere David Hockney a los 88 años, ícono del arte del siglo XX | Devon México y Latinoamérica">
+    <meta property="og:description" content="David Hockney —el pintor nacido en Inglaterra que reinventó el estilo de vida californiano— ha fallecido a los 88 años.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1781538196/gettyimages-2202139948-594x594_wohfod.webp">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1781538196/gettyimages-2202139948-594x594_wohfod.webp" alt="Muere David Hockney a los 88 años, ícono del arte del siglo XX" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Estilo de Vida</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Muere David Hockney a los 88 años, ícono del arte del siglo XX</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">David Hockney —el pintor nacido en Inglaterra que reinventó el estilo de vida californiano— ha fallecido a los 88 años.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR ROBIN MUIR, RAMÓN BARRETO</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">12 de junio de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>La primera exposición individual de David Hockney, inaugurada en Londres en 1963, se tituló Pictures With People In, un título decididamente figurativo para el abanderado de una nueva y desafiante corriente pictórica, el Pop Art. Acababa de abandonar el Royal College of Art y estuvo a punto de quedarse sin título por negarse a dibujar un desnudo del natural —un requisito—, pero al final le concedieron una medalla de oro.</p>
+<p>Ese mismo año también se produjo la primera aparición de Hockney en la revista Devon, un retrato de grupo junto a sus compañeros pintores Howard Hodgkin, John Howlin e Ian Stephenson. Devon los bautizó como “The Impact Makers”. Tres de los cuatro acudieron vestidos con sobriedad; uno de ellos, Hodgkin, con traje negro, cruzó los brazos y posó al frente con aire sombrío. Stephenson y Howlin parecían igualmente incómodos. Solo Hockney, apartado de los demás, parecía imperturbable. Ya era rubio gracias al tinte “Champagne Ice” —&quot;Verás, una noche volví a casa un poco borracho y vi un anuncio en la tele que decía que las rubias se divierten más&quot;—, su estilo personal desenfadado lo diferenciaba aún más: una chaqueta azul claro y una corbata rosa fucsia. Y luego llegaron esas emblemáticas gafas de búho con monturas tan grandes como ruedas de bicicleta.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297503/devon-mx/articles/euphoria-final-capitulo_qcmwum.jpg" alt="euphoria final" loading="lazy" class="w-full h-auto"/></figure>
+<p>David Hockney, nació en Bradford en 1937, fue el segundo más joven y el más famoso de cuatro hermanos, el más acostumbrado a que le fotografiaran, el más alabado públicamente. De pronto, frente a él se encontraba California, con sus albercas y “A Bigger Splash”, y más tarde la ópera y los decorados teatrales, “Mr and Mrs Clark and Percy”, Stanley el perro salchicha, los collages de películas Polaroid con múltiples impresiones y la investigación sobre las propiedades de los dispositivos lenticulares, luego las alucinantes imágenes para iPad y las exposiciones “totalmente inmersivas” de su madurez. Pero casi siempre se apoyaba en un gran lienzo, fumando un cigarrillo con indiferencia.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<p>En 1964 se mudó a Los Ángeles. “Solía pensar que Londres era emocionante”, explicó, “Bueno, lo es en comparación con Bradford; pero comparado con Nueva York o San Francisco, no es nada”. Pero Londres no le dejaría de ser un referente para él, tan fácilmente. Se encontró formando parte de su élite cultural, una figura destacada del “Swinging London”, por mucho que se encontrara al otro lado del mundo. Aun así, a pesar de todo el tiempo que pasó en la costa oeste de Estados Unidos, nunca perdió su acento del norte, lo que le hacía casi ininteligible para Cecil Beaton, de Devon, pero como observó su amigo y contemporáneo RB Kitaj: “El norte de Inglaterra es su fuerza innata, y él lo sabe”.</p>
+<p>Por entonces, ya en la sesentena, Beaton, una estrella de Devon durante décadas, encontró en Hockney y su colorido séquito a los sucesores naturales de los “Bright Young Things” de los años 30. “Me siento completamente a gusto con él y estimulado por su entusiasmo, pues tiene esa cualidad de saber disfrutar de la vida”, dijo Beaton sobre el joven. En 1968 fotografió a Hockney para Devon en su departamento del oeste de Londres, completando el primero y uno de los más conocidos de sus magistrales retratos dobles, “Christopher Isherwood y Don Bachardy”. El gran novelista inglés llevaba exiliado en Los Ángeles desde la Segunda Guerra Mundial, y Hockney lo buscó nada más llegar, admirador de los textos de temática gay y la franqueza sexual de Isherwood.</p>
+<p>Lord Snowdon había fotografiado a Hockney por primera vez en 1963 para The Sunday Times. Quince años más tarde, en 1978, volvió a fotografiarlo, esta vez para Devon. “Hockney at Home” mostraba al pintor en un nuevo estudio en Powis Terrace, Notting Hill. “Siempre me quejo de Londres, pero sigo volviendo”, declaró Hockney a Devon. Poco después decidió establecer su residencia permanente en Los Ángeles.</p>
+<p>“David era bastante divertido”, recordaba Snowdon, quien admiraba sus pantalones de color amarillo canario y sus calcetines desparejados, pero se deleitaba aún más con el corcho de anuncios de su estudio, en el que destacaban instantáneas de desnudos de su antigua pareja, modelo y musa, Peter Schlesinger. Snowdon no consiguió publicar las imágenes ante el filtro del editor en jefe y publicarlas en la revista, pero el cuarto de baño de Hockney sí que salió, con sus últimos tintes para el pelo en tonos “Happy Honey” y “Winsome Wheat”.</p>
+<p>Todo el mundo encontraba divertido a David. “Los Ángeles debería tener un Piranesi”, le dijo a Devon con motivo de la inauguración de la exposición David Hockney: A Retrospective en la Tate en 1988, “¡Así que aquí estoy!”. Su imagen estaba ahora cuidadosamente calculada mientras deambulaba por su casa bañada por el sol en Hollywood Hills (que en su día perteneció a Anthony Perkins, protagonista de Psicosis), con Stanley, el perro salchicha, y un audífono rosa (o azul, a veces rojo). “Todo el mundo tiene la publicidad que quiere. David se ponía un vestido verde y amarillo para conseguirla”, dijo Lucian Freud, quizá con admiración.</p>
+<p>Un homenaje por su 50.º cumpleaños, publicado en 1987, había mostrado a los lectores de Devon lo lejos que había llegado. “No hay en él ni una pizca de pomposidad, ni de engreimiento por el éxito —¡y qué éxito!”, declaró Stephen Spender. “Una línea en su obra es como una nota en una melodía…”. Una festiva fotografía a la luz del sol lo mostraba en su alberca (por supuesto), pero él siempre recordaría de dónde venía, dónde empezó todo, con imágenes de su primer modelo, su padre, un empleado de oficina en una pequeña empresa y un apasionado pintor aficionado. “Tengo dentro a Bradford. Eso no me lo pueden quitar”.</p>
+<p>Y así, la presencia de David Hockney en Devon resonó a lo largo de los años. En 1992 fue “Nuestro hombre en Malibú”, el hombre que había inventado California para la sensibilidad británica: palmeras, piscinas, aspersores de césped, chicos en bañador bajo la ducha y bungalós modernistas de baja altura en tonos pastel. “Mientras sobrevolaba San Bernardino y miraba hacia abajo y veía las albercas, las casas y el sol”, recordaba, “me sentí más emocionado que nunca”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297503/devon-mx/articles/GettyImages-954274904_dxlwty.jpg" alt="Muere David Hockney a los 88 años ícono del arte del siglo XX" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Hockney y la edición de Devon París que editó como invitado. Getty Images.</figcaption></figure>
+<p>En 2006, ya cerca de los 70, Devon lo encontró de vuelta en su Yorkshire natal, cerca de Bridlington, donde se había instalado un estudio para pintar al aire libre su extenso paisaje. Había visto por primera vez esa localidad costera desde la ventanilla del tren cuando era niño, en los años 40, y allí había cerrado el círculo, alejado temporalmente de la soleada Los Ángeles. “El primer invierno que pasé aquí… empecé a darme cuenta de lo bonitos que eran los inviernos”.</p>
+<p>Cuando Tim Walker le hizo un retrato con motivo de su 80.º cumpleaños, en vísperas de otra retrospectiva en la Tate —¿era la tercera? —, su viejo amigo Peter Blake, que expuso con él por primera vez en 1961, encabezó los homenajes con una advertencia: “Mantenerse por delante de la vanguardia”, y añadió: “Por supuesto, es imposible, pero si alguien lo ha conseguido alguna vez, ese es David. Siempre va por delante de la percepción que la gente tiene de él”. (Para entonces, Peter Blake ya era Sir Peter Blake. El propio Hockney había rechazado el título de caballero a principios de los 90, pero aceptó en 2012 la Orden del Mérito).</p>
+<p>En agosto de 2020, otro hito: su primera portada para la edición británica de Devon. (Devon París se le había adelantado, concediéndole la portada y la dirección editorial invitada de un número completo en la Navidad de 1985). Hockney residía ahora en Normandía, pero para la portada cedió Wheat Field Near Fridaythorpe —una imagen tan típica de Yorkshire como se puede imaginar—. El mundo empezaba a salir de un letargo forzado y él estaba tan incontenible como siempre. “Es fantástico. La otra noche me levanté a las 4 de la madrugada para ir al baño y vi la luna llena más grande y brillante que había visto en mucho tiempo… La grabé con el iPad. La fotografía no sirve para esto, lo aleja todo, incluida la luna”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297503/devon-mx/articles/08_20CoverLandscapesHockney4ColNoPrice_vxwhdy.jpg" alt="Muere David Hockney a los 88 años ícono del arte del siglo XX" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Campo de trigo cerca de Fridaythorpe para el número de agosto de 2020 de British Devon Richard Schmidt.</figcaption></figure>
+<p>En 2023, en vísperas de su retrospectiva en la National Portrait Gallery, Drawing from Life, Devon pudo ver en primicia su último retrato del ídolo del pop, Harry Styles. “Me fascina este hombre, tiene suficientes frases ingeniosas para toda una vida”, dijo su modelo, completamente embelesado. “David Hockney lleva décadas reinventando la forma en que vemos el mundo”, afirmpo Harry.</p>
+<p>Cuando en la primavera de 2025 se inauguró una gran exposición de casi 400 obras en la Fondation Louis Vuitton, la “nube de cristal” de Frank Gehry, ahora un auténtico hito parisino, Hockney se acercaba a los 87 años. La exposición más grandiosa de su larga carrera provocó una emoción casi sin precedentes. La aclamación de la crítica y el aprecio del público por uno de los más grandes pintores de nuestro tiempo, cuya vida abarcó dos siglos, no disminuyeron. Casi un millón de personas la visitaron.</p>
+<p>David Hockney vivió lo suficiente para ser testigo de la explosión del mercado del arte y, en concreto, de la escalada estratosférica del valor de su obra en el mercado secundario. “Retrato de un artista (Piscina con dos figuras)”, que se vendió en 2018 por 90,3 millones de dólares, sigue siendo el precio más alto jamás pagado en una subasta por un cuadro de un artista vivo. “Es un mundo absurdo, ¿no?”, declaró Hockney a Devon en 2025. “Y parece que se está volviendo aún más absurdo”.</p>
+<p>Hay muchas cosas que le hacían único como artista, pero ¿y como ser humano? Celia Birtwell, probablemente ahora su amiga viva más antigua y una de las tres protagonistas del célebre “Mr and Mrs Clark and Percy” (1971), quizá lo expresó mejor cuando le dijo a Devon en 2017: “Él cree que si te ríes todos los días, probablemente vivirás para siempre… Por supuesto que no le creo. Pero es una idea bonita”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297505/devon-mx/articles/la-casa-de-los-espiritus-serie_d3o6ig.jpg" alt="La Casa de los Espíritus de Isabel Allende tendrá su serie." loading="lazy" class="w-full h-auto"/></figure>
+<p>Artículo originalmente publicado en Devon UK, devon.co.uk.</p>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="mejores-momentos-espacio-devon-abril-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297508/devon-mx/articles/karla-martinez-de-salas-espacio-vogue_l0joez.jpg" alt="¡Así se vivieron los mejores momentos de Espacio Devon 2026!" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">estilo de vida</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">¡Así se vivieron los mejores momentos de Espacio Devon 2026!</h3>
+                </a>
+                <a href="prendas-y-accesorios-de-devon-vintage-market-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297529/devon-mx/articles/IMG_1599-copy_gqbadz.jpg" alt="Las prendas y accesorios más elegantes de Devon Vintage Market 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Las prendas y accesorios más elegantes de Devon Vintage Market 2026</h3>
+                </a>
+                <a href="horoscopo-de-hoy-jueves-24-de-septiembre-de-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297537/devon-mx/articles/horoscopo-de-hoy-jueves-24-de-septiembre-de-2026_xtkddj.jpg" alt="Horóscopo de hoy: 24 de septiembre de 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Horóscopo de hoy: 24 de septiembre de 2026</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+</body>
+</html>

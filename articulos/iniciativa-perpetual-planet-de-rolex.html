@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo sobre la Iniciativa Perpetual Planet de Rolex para proteger al planeta | Devon México y Latinoamérica</title>
+    <meta name="description" content="Descubre los territorios de la Iniciativa Perpetual Planet de Rolex y su trabajo con Mission Blue, National Geographic y los Premios Rolex.">
+    <meta property="og:title" content="Todo sobre la Iniciativa Perpetual Planet de Rolex para proteger al planeta | Devon México y Latinoamérica">
+    <meta property="og:description" content="Descubre los territorios de la Iniciativa Perpetual Planet de Rolex y su trabajo con Mission Blue, National Geographic y los Premios Rolex.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298652/devon-mx/articles/vogue-v.01_vexqjl.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298652/devon-mx/articles/vogue-v.01_vexqjl.jpg" alt="Todo sobre la Iniciativa Perpetual Planet de Rolex para proteger al planeta" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">(Re)Devon</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Todo sobre la Iniciativa Perpetual Planet de Rolex para proteger al planeta</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Descubre los territorios de la Iniciativa Perpetual Planet de Rolex y su trabajo con Mission Blue, National Geographic y los Premios Rolex.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR AMIRA SAIM</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">4 de septiembre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Para proteger el mundo, primero hay que conocerlo. Esta es una idea que atraviesa buena parte de la historia de Rolex y que su Iniciativa Perpetual Planet lleva un paso más allá al reunir a científicos, exploradores y conservacionistas que trabajan sobre el terreno, desde las profundidades del océano hasta algunos de los paisajes más remotos del planeta.</p>
+<p>La relación de Rolex con la exploración no es nueva, pues durante buena parte del siglo XX, sus relojes acompañaron expediciones que buscaban llegar más lejos, descender más profundo o entender territorios todavía poco conocidos. Con el paso del tiempo, sin embargo, la pregunta cambió. Ya no se trataba solamente de descubrir qué había ahí fuera, sino de comprender qué estaba ocurriendo en esos lugares y cómo contribuir a preservarlos.</p>
+<p>Hoy, ese compromiso se articula a través de una red de más de 30 organizaciones asociadas y de los 165 proyectos que han recibido el apoyo a lo largo de sus cinco décadas de historia. Entre sus programas más reconocibles están los Premios Rolex, la colaboración con Mission Blue, fundada por la oceanógrafa Sylvia Earle, y su histórica alianza con National Geographic Society. A ellos se han sumado proyectos centrados en restauración de arrecifes, conservación de bosques, protección de especies y nuevas tecnologías científicas y médicas.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">¿Qué es la Iniciativa Perpetual Planet de Rolex?</h2>
+<p>La Iniciativa Perpetual Planet de Rolex nació en 2019, pero su origen se remonta a casi un siglo de apoyo de la marca a la exploración. Durante décadas, Rolex acompañó expediciones concebidas para llegar a territorios desconocidos y ampliar el conocimiento sobre el mundo. Hoy, esa misma curiosidad se orienta hacia un propósito más amplio: comprender mejor el planeta y apoyar a quienes trabajan para protegerlo.</p>
+<p>Para hacerlo, Perpetual Planet de Rolex estructura su trabajo en tres grandes territorios: Océanos; Paisajes; y Ciencia, Salud y Tecnología. Estas áreas reúnen una red de proyectos, organizaciones, científicos, exploradores, emprendedores y conservacionistas que desarrollan soluciones en algunos de los ecosistemas y territorios más importantes del planeta.</p>
+<p>El pilar de Océanos reúne proyectos centrados en la protección y el estudio de los ecosistemas marinos, como Mission Blue, Coral Gardeners y OceanX.</p>
+<p>En Paisajes, Perpetual Planet apoya iniciativas dedicadas a conservar y restaurar selvas, bosques, montañas y otros sistemas naturales. Entre ellas se encuentran las expediciones realizadas junto a National Geographic Society, así como los proyectos de Rewilding Argentina, Rewilding Chile y el Laureado de los Premios Rolex Constantino Aucca Chutas.</p>
+<p>El tercer pilar, Ciencia, Salud y Tecnología, reúne proyectos que aplican la investigación y la innovación a desafíos relacionados con el planeta y las personas, desde la neurociencia y la salud hasta el reciclaje y la educación científica.</p>
+<p>Los Premios Rolex atraviesan estos tres ámbitos al respaldar a personas cuyos proyectos contribuyen a la conservación, la investigación y el desarrollo de soluciones con impacto a largo plazo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298652/devon-mx/articles/1_nationalgeographic_2733732_1_tupwxm.jpg" alt="Linternas frontales iluminan la ruta que siguen los escaladores al ascender por la Cascada de Hielo del Khumbu situada..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Linternas frontales iluminan la ruta que siguen los escaladores al ascender por la Cascada de Hielo del Khumbu, situada por encima del campamento base del Everest. ©Rolex/©National Geographic</figcaption></figure>
+<p>La historia de los Premios Rolex –antes conocidos como los Premios Rolex a la Iniciativa– comenzó en 1976 cuando fueron creados por André J. Heiniger, entonces director ejecutivo de Rolex, para celebrar el 50 aniversario del Oyster, el primer reloj de pulsera hermético producido por la marca. Lo que inicialmente estaba pensado como una celebración puntual despertó tal interés internacional que terminó convirtiéndose en un programa permanente.</p>
+<p>En medio siglo, los Premios Rolex han apoyado a 165 laureados cuyos proyectos han tenido impacto en alrededor de 67 países. Su trabajo ha contribuido a plantar 37 millones de árboles, proteger 48 especies amenazadas y 32 grandes ecosistemas, conservar 57,600 kilómetros cuadrados de selva amazónica, descubrir cientos de nuevas especies y desarrollar 49 tecnologías innovadoras.</p>
+<p>Entre sus laureados aparecen desde científicos que han ideado tecnologías para prevenir enfermedades hasta especialistas en conservación marina, investigadores que trabajan con especies amenazadas y emprendedores capaces de plantear soluciones para el acceso al agua. Figuran, por ejemplo, el neurocientífico Grégoire Courtine, que desarrolla tecnologías para tratar lesiones de la médula espinal; el oftalmólogo Andrew Bastawrous, impulsor de un sistema portátil de diagnóstico ocular mediante smartphones; o el conservacionista Constantino Aucca Chutas, que trabaja con comunidades indígenas en la reforestación de los Andes.</p>
+<p>La edición de 2026 reunió a cinco mujeres cuyos proyectos reflejan la amplitud de la Iniciativa Perpetual Planet. Binbin Li trabaja en China para proteger al panda gigante y sus bosques de bambú mediante modelos de pastoreo compatibles con las comunidades locales; Farwiza Farhan defiende el ecosistema de Leuser, en Sumatra, frente a la deforestación; y Pardis Sabeti desarrolla herramientas para detectar enfermedades infecciosas en comunidades remotas de África occidental.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298652/devon-mx/articles/binbin_li_hero_image_cmyk-lowres_ljtnxu.jpg" alt="Binbin Li ganadora del Premio Rolex 2026" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Binbin Li. ©Jingnan Wang</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298652/devon-mx/articles/farwiza_farhan_hero_image_cmyk-lowres_wvrt4z.jpg" alt="Farwiza Farhan" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Farwiza Farhan. ©Magdalena Stawinski</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298652/devon-mx/articles/pardis_sabeti_hero_shot_cmyk-lowres_tevlh8.jpg" alt="Pardis Sabeti" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Pardis Sabeti. ©Sabeti Lab</figcaption></figure>
+<p>En Nigeria, Rachel Ikemeh impulsa un modelo de conservación comunitaria que ya ha protegido miles de hectáreas de bosque y varias especies amenazadas. En Perú, Rosa Vásquez Espinoza estudia el impacto de la deforestación sobre las abejas sin aguijón y trabaja junto a comunidades indígenas para proteger sus hábitats.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298652/devon-mx/articles/rachel_ikemeh_hero_shot_cmyk-lowres_zex4hj.jpg" alt="Rachel Ikemeh." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Rachel Ikemeh. ©SW/Niger Delta Forest Project</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298653/devon-mx/articles/rosa_vsquez_espinoza_hero_image_cmyk-lowres_bwojcb.jpg" alt="Rosa Vazquez Espinoza." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Rosa Vásquez Espinoza. ©Luis Garcia Solsol/Amazon Research International</figcaption></figure>
+<p>Si hay una figura capaz de personificar la exploración contemporánea de los océanos es Sylvia Earle. Bióloga marina, oceanógrafa y una de las grandes pioneras de la exploración submarina, Earle fundó Mission Blue en 2009, con el objetivo de construir una red global capaz de proteger zonas oceánicas especialmente valiosas desde el punto de vista ecológico.</p>
+<p>Rolex ha apoyado a Mission Blue desde 2014 y desde entonces, la iniciativa apoya su expansión y su propósito de conservar ecosistemas marinos esenciales.</p>
+<p>En el centro de Mission Blue están los Hope Spots, áreas del océano identificadas por su especial importancia para la salud marina. Pueden albergar una extraordinaria biodiversidad, especies endémicas o amenazadas, ecosistemas singulares o comunidades cuya supervivencia depende directamente de un entorno marino saludable. Actualmente la red supera los 165 Hope Spots alrededor del mundo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298653/devon-mx/articles/ppi_cgxse_2511tm_0410_n8fcs4.jpg" alt="Titouan Bernicot Fundador y CEO de Coral Gardeners fotografiado junto a la Testimonial Rolex Sylvia Earle inspeccionando..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Titouan Bernicot, Fundador y CEO de Coral Gardeners, fotografiado junto a la Testimonial Rolex Sylvia Earle, inspeccionando coral en el viver submarino tailandés. Bernicot ha hecho crecer la organización desde su dormitorio adolescente en un pequeño atolón de la Polinesia Francesa hasta lograr reconocimiento internacional, con Earle como una increíble fuente de inspiración. © Rolex / Tim McKenna</figcaption></figure>
+<p>La red alcanza geografías muy distintas. La península de Osa, en Costa Rica, es uno de estos enclaves y busca proteger un corredor marino sometido a presiones como la pesca industrial y la contaminación. Las Azores cuentan con otro Hope Spot en una región del Atlántico de enorme riqueza oceánica. Por su parte, el mar de los Sargazos, ecosistema único delimitado por corrientes en lugar de fronteras terrestres, forma también parte del programa.</p>
+<p>La relación de Rolex con la National Geographic Society comenzó en 1954, cuando la revista publicó un artículo dedicado al histórico ascenso al Everest de Sir Edmund Hillary y Tenzing Norgay, una expedición equipada con relojes Rolex.</p>
+<p>Esa relación se ha convertido en una alianza científica destinada a estudiar cómo el cambio climático está transformando algunos de los sistemas fundamentales para la vida en la Tierra, con las montañas como grandes reservas de agua, las selvas como reguladoras de los ecosistemas y los océanos como parte esencial del sistema climático.</p>
+<p>En 2019, comenzó una nueva etapa con las Rolex and National Geographic Perpetual Planet Expeditions. La primera llevó a un equipo de científicos al Everest para estudiar los glaciares del Hindu Kush-Himalaya, de los que dependen recursos hídricos esenciales para alrededor de mil millones de personas.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298653/devon-mx/articles/4_nationalgeographic_2736174_4_v8u4b6.jpg" alt="El equipo de expedición de alta montaña instala la estación meteorológica automatizada ms alta del mundo en El Balcón en..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">El equipo de expedición de alta montaña instala la estación meteorológica automatizada más alta del mundo en El Balcón, en la arista sureste del monte Everest. ©Rolex/©National Geographic</figcaption></figure>
+<p>La colaboración continuó en otras grandes montañas: en el monte Tupungato, en Argentina, se instaló otra estación meteorológica; mientras que en el monte Logan, en Canadá, la exploradora Alison Criscitiello consiguió extraer el núcleo de hielo más profundo obtenido hasta entonces de un glaciar de montaña de gran altitud.</p>
+<p>En 2022, la mirada se trasladó a la cuenca del Amazonas, donde siete equipos de National Geographic Explorers desarrollaron investigaciones desde los Andes hasta el Atlántico para estudiar la conexión entre sus ecosistemas, los efectos de la deforestación y el cambio climático y la importancia de las inundaciones estacionales para comunidades y especies.</p>
+<p>Por otro lado, la Ocean Expedition, recorre durante dos años los cinco océanos, desde la costa hasta el fondo marino y de polo a polo. Científicos, exploradores, narradores y miembros de comunidades locales combinan investigación académica, conocimientos tradicionales y trabajo sobre el terreno para estudiar la diversidad y las conexiones que existen entre los mares del planeta.</p>
+<p>Puedes conocer más sobre la Iniciativa Perpetual Planet de Rolex y sus proyectos en Rolex.org y Rolex.com y queda atento a más contenido de la serie Voces del Planeta.</p>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="quien-es-rosa-vasquez-espinoza-premio-rolex-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298654/devon-mx/articles/ROLEX-VOGUE-ROSA_2520_1_b7nmst.jpg" alt="Rosa Vásquez Espinoza, la científica peruana que trabaja por salvar al planeta, una abeja a la vez" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Rosa Vásquez Espinoza, la científica peruana que trabaja por salvar al planeta, una abeja a la vez</h3>
+                </a>
+                <a href="cristina-mittermeier-fotografa-mexicana-quien-es.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298655/devon-mx/articles/Mujer-con-ganso-de-Cristina-Mittermeier_cy6upq.jpg" alt="Cristina Mittermeier, la fotografía como herramienta de impacto ambiental" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Cristina Mittermeier, la fotografía como herramienta de impacto ambiental</h3>
+                </a>
+                <a href="ciclo-curaduria-textil-y-la-importancia-del-preloved.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790298656/devon-mx/articles/DSC00419_gfureq.jpg" alt="Ciclo Curaduría Textil: Cómo vestir preloved pensando en nuestro planeta" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">(Re)Devon</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Ciclo Curaduría Textil: Cómo vestir preloved pensando en nuestro planeta</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+</body>
+</html>

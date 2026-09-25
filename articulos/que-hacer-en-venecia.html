@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venecia, la guia Devon para descubrir La Serenissima | Devon México y Latinoamérica</title>
+    <meta name="description" content="Descubre la guía de Devon con las mejores opciones de alojamiento en Venecia, restaurantes y opciones para disfrutarla al máximo.">
+    <meta property="og:title" content="Venecia, la guia Devon para descubrir La Serenissima | Devon México y Latinoamérica">
+    <meta property="og:description" content="Descubre la guía de Devon con las mejores opciones de alojamiento en Venecia, restaurantes y opciones para disfrutarla al máximo.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297566/devon-mx/articles/VOGUEMX-GUIA-VENECIA_bivymb.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297566/devon-mx/articles/VOGUEMX-GUIA-VENECIA_bivymb.jpg" alt="Venecia, la guia Devon para descubrir La Serenissima" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Estilo de Vida</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Venecia, la guia Devon para descubrir La Serenissima</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Descubre la guía de Devon con las mejores opciones de alojamiento en Venecia, restaurantes y opciones para disfrutarla al máximo.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR RAMÓN BARRETO, LIAM HESS</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">21 de julio de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Hay pocas ciudades en el mundo que cuenten con una oferta tan increíble de hoteles de primera categoría como Venecia. Esto se debe, en parte, a su larga trayectoria como destino turístico de moda, que se remonta al siglo XVIII, cuando era una parada del Grand Tour en la que los aristócratas se entregaban a placeres –a menudo prohibidos– en los grandes casinos y bailes de máscaras de la ciudad.</p>
+<p>Hoy en día, sigue siendo un destino imprescindible, aunque la mayoría de los visitantes vienen a empaparse de las maravillas culturales de la ciudad (no te pierdas la Colección Peggy Guggenheim) o a degustar sus delicias culinarias (una visita a un bacaró para tomar cicchetti por la mañana también es imprescindible en Venecia).</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297569/devon-mx/articles/st-barth-que-hacer-donde-hosperdar_jxrzpk.jpg" alt="St Barth, qué hacer, dónde hospedarse, cómo llegar" loading="lazy" class="w-full h-auto"/></figure>
+<p>Más recientemente, la ciudad ha sido testigo de la aparición de una nueva ola de establecimientos con diseño vanguardista repartidos por toda la ciudad. Todos ellos preparados para acoger a las multitudes de visitantes creativos que llegan cada año con motivo de las Bienales de arte y arquitectura de la ciudad y, por supuesto, de su festival de cine repleto de estrellas.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<p>Aquí tienes la guía de Devon con lo mejor de la ciudad, desde estancias en palacios deslumbrantes hasta joyas de diseño poco conocidas:</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Baglioni Hotel Luna</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297568/devon-mx/articles/Captura_20de_20pantalla_202026-07-21_20a_20la_s_208.23.48_E2_80_AFa.m._vdby3a.png" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>A unos pasos de la Plaza de San Marcos se encuentra Baglioni Hotel Luna Venice, uno de los hoteles históricos más emblemáticos de la ciudad. Tras varios años de una meticulosa renovación, la propiedad ha inaugurado una nueva etapa que revitaliza sus habitaciones, espacios comunes y propuesta gastronómica sin renunciar al legado que la ha distinguido desde hace siglos.</p>
+<p>Los orígenes del edificio se remontan al siglo XII, cuando servía como refugio para los Caballeros Templarios antes de partir hacia Tierra Santa. Hoy, esa historia convive con una estética renovada que pone en valor la artesanía italiana y el diseño contemporáneo. En los últimos cinco años, prácticamente todas las habitaciones y suites han sido restauradas con materiales que respetan la identidad del inmueble: pisos de parquet inspirados en los antiguos palacios, textiles de la histórica firma veneciana Rubelli y acabados en mármol blanco de Carrara, así como pequeños detalles de su esmerado equipo, que elevan la experiencia.</p>
+<p>La transformación también alcanza la oferta culinaria. El nuevo restaurante Santo Mare, el renovado Salón Marco Polo y el rediseñado Bar Canova consolidan al hotel como un destino gastronómico por derecho propio, mientras que sus terrazas con vistas al Bacino di San Marco y a la isla de San Giorgio ofrecen algunos de los escenarios más privilegiados para disfrutar del atardecer veneciano. Como parte del portafolio de The Palace Company, Baglioni Hotel Luna Venice combina el carácter de un gran palacio histórico con el confort y los servicios de un hotel de lujo contemporáneo, convirtiéndose en una opción ideal para quienes buscan descubrir Venecia desde una de sus direcciones más icónicas. ¿La cereza del pastel? La posibilidad de tomar el desayuno en su increíble salón, un viaje en el tiempo a cuando Venecia era la capital del mundo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Servicios: Llegada en Water Taxi, góndola, restaurante Santo Mare, Bar Canova, Salón Marco Polo para eventos, terrazas panorámicas, habitaciones y suites renovadas, servicio de concierge.</li><li>Dirección: San Marco 1243, 30124, Venecia, Italia.</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Hotel Cipriani</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297568/devon-mx/articles/Courtesy_Hotel_20Cipriani_ozyaha.jpg" alt="Image may contain Architecture Building House Housing Villa Pool Water Boat Transportation Vehicle and Chair" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía Hotel Cipriani.</figcaption></figure>
+<p>Tras un largo día recorriendo las calles de Venecia, es probable que te invada una sensación de cansancio: por muy bonito que sea el entorno, las horas que pasas abriéndote paso a codazos entre las multitudes de turistas acabarán agotando incluso al viajero más intrépido. No es de extrañar, pues, que uno de los hoteles más queridos de Venecia sea uno situado un poco alejado del centro de la ciudad: el Hotel Cipriani, un hotel Belmond, que ocupa una ubicación privilegiada en la punta de la isla de Giudecca. Está a solo 10 minutos en lanzadera de la plaza de San Marcos, pero parece que estás en otro mundo: al llegar al embarcadero, verás a la elegante clientela del Cipriani sentada en la terraza del restaurante Il Porticciolo, con las sombrillas retro ondeando al viento de la laguna mientras se deleitan con platos de raviolis de cangrejo o algunas de las mejores pizzas al horno de leña que encontrarás en toda Venecia.</p>
+<p>La verdadera magia de Cipriani, sin embargo, reside en su magnitud: se extiende a lo largo de una amplia red de propiedades, que van desde el Palazzo Vendramin del siglo XV, con vistas a San Marcos, hasta el glamour de la “Dolce Vita” de su elegante edificio principal, que da a la laguna, hay abundantes jardines, múltiples zonas de restauración y bares al aire libre, una pista de tenis y la piscina más grande de toda la ciudad, equipada con cabañas para que te sientas como en un complejo turístico junto a la playa.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Servicios : piscina, servicio de traslado al aeropuerto, spa, bar, 3 restaurantes en el propio hotel</li><li>Dirección: Giudecca 10, Venecia 30133, Italia</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El Venice Venice Hotel</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297568/devon-mx/articles/courtesy_the_20venice_20venice_20hotel_guwv0t.jpg" alt="Image may contain Lamp Indoors Interior Design Art Painting Desk Furniture Table Architecture and Building" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Al llegar al hotel The Venice Venice, situado a un paso del puente de Rialto, queda claro de inmediato que no se trata de un palacio veneciano cualquiera. El hotel es una creación de Alessandro Gallo y Francesca Rinaldo, la pareja responsable de la marca de zapatillas de culto Golden Goose, y la filosofía de diseño del hotel se basa en ingeniosas combinaciones entre lo clásico y lo contemporáneo: basta con fijarse en la cavernosa entrada, donde una enorme escultura de mármol de una Piedad está dividida en dos para ocupar ambas mitades de la sala, con losas de hormigón suspendidas inspiradas en Carlo Scarpa que parecen flotar a su alrededor, o en el espectacular de techos altos, que cuenta con un tapiz hecho a medida que rodea un bar en el centro, con altavoces tipo boombox y un letrero luminoso LED rojo.</p>
+<p>Sin embargo, el diseño vanguardista no significa que el equipo haya escatimado en lujo. El hotel presume de algunas de las mejores vistas de la ciudad y, si consigues una habitación en esquina, descubrirás que han instalado ventanas que se extienden a lo largo de ambos lados.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Servicios : bar, restaurante en el propio hotel, gimnasio, spa</li><li>Dirección: Palazzo Ca&#x27; da Mosto - Cannaregio 5631, 5632, Cannaregio, Venecia 30121, Italia</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Hotel Flora</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297568/devon-mx/articles/courtesy_20hotel_20flora_fpfwim.jpg" alt="Image may contain Cushion Home Decor Indoors Interior Design Bed Furniture Pillow Candle Lamp Bedroom and Room" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Pregunta a cualquier apasionado de Venecia (que no disponga del presupuesto para gastarse miles de dólares por noche en uno de los alojamientos más lujosos de la ciudad) dónde le gusta alojarse, y lo más probable es que su respuesta sea el Hotel Flora. Al igual que muchos de los mejores hoteles de Venecia, consigue transmitir una sensación de intimidad a la vez que de estar en pleno centro de la acción, escondido en una estrecha callejuela lateral que sale de la bulliciosa Calle Larga XXII Marzo, pero situado en un frondoso patio donde el único ruido que oirás es el murmullo de la fuente y el ocasional silbido de un pájaro entre las copas de los árboles. Las habitaciones están decoradas con encantadoras antigüedades venecianas que le dan al lugar un aire de haber retrocedido en el tiempo, y aunque aquí no hay restaurante (al fin y al cabo, no es que te falten sitios para comer cerca), hay un bar pequeño y encantador donde uno de los empleados estará encantado de prepararte un bellini o dos.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Servicios : servicio de habitaciones, jardín, bar, desayuno, cafetería en el propio hotel</li><li>Dirección: Calle Larga XXII Marzo, San Marco 2283/A, San Marco, Venecia 30124, Italia</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Dónde comer:</h2>
+<p>Pocos lugares condensan la historia y el espíritu de Venecia como el Caffè Florian. Inaugurado en 1720 bajo las arcadas de la Plaza de San Marcos, es el café más antiguo de Italia y uno de los más longevos del mundo en funcionamiento continuo. A lo largo de más de tres siglos ha sido punto de encuentro de figuras como Casanova, Charles Dickens, Marcel Proust y Lord Byron, conservando intacta la atmósfera de elegancia que lo convirtió en un símbolo de la ciudad. Sus salones, decorados con espejos dorados, frescos, terciopelos y paneles de madera, evocan el esplendor de la Venecia del siglo XVIII, mientras que su icónica terraza ofrece uno de los mejores lugares para detenerse a contemplar el ir y venir de la Piazza San Marco. Ya sea para disfrutar de un espresso, un chocolate caliente —considerado uno de los mejores de la ciudad— o un tradicional spritz acompañado de música en vivo, una visita al Florian es tanto una experiencia gastronómica como un viaje por la historia veneciana.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297568/devon-mx/articles/GettyImages-1314653733_wqf1l5.jpg" alt="Venecia la guia Devon para descubrir La Serenissima" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Getty Images.</figcaption></figure>
+<p>Dentro del histórico Baglioni Hotel Luna, a unos pasos de la Plaza de San Marcos, Santo Mare propone una interpretación contemporánea de la tradicional pescheria italiana. Inaugurado en 2025 en colaboración con el grupo gastronómico Reitano Food, el restaurante gira en torno a un concepto sencillo pero refinado: el pescado y los mariscos llegan diariamente desde aguas italianas y son los propios comensales quienes pueden elegir las piezas directamente de la vitrina antes de que el atento equipo de cocina las transforme en recetas que respetan el producto y la tradición mediterránea.</p>
+<p>El menú celebra los sabores del litoral italiano con especialidades como el carpaccio de gamba roja siciliana, el tartar de atún rojo del Mediterráneo, los linguine con langosta o los tagliolini con cigalas y menta, acompañados por una carta de vinos cuidadosamente seleccionada. Su elegante comedor, inspirado en el universo de las antiguas pescaderías italianas, combina la sofisticación característica del Hotel Luna con una propuesta culinaria centrada en la frescura y la estacionalidad, convirtiéndose rápidamente en una de las aperturas gastronómicas más interesantes de la Venecia contemporánea.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297569/devon-mx/articles/Santo-Mare-Venice-Interni_cwncod.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Si hay un nombre que domina la alta cocina veneciana, ese es el de Massimiliano Alajmo. El chef originario de Padua, quien en 2002 se convirtió, con apenas 28 años, en el cocinero más joven de la historia en recibir tres estrellas Michelin, ha construido junto a su hermano Raffaele y otros miembros de su familia —apasionada por la gastronomía— un pequeño imperio de restaurantes imprescindibles repartidos por la región del Véneto, además de sedes en París y Marrakech.</p>
+<p>Su restaurante insignia en Venecia es Quadri, ubicado bajo las históricas arcadas de las Procuratie Vecchie, en el lado norte de la Piazza San Marco. En 2018 fue renovado por Philippe Starck, quien aportó una visión más lúdica y personal a sus interiores.</p>
+<p>Entrar en Quadri es toda una experiencia. El recorrido comienza en la cafetería de la planta baja, donde destacan las paredes de estuco en tono pistache y los vibrantes frescos que representan escenas de la vida veneciana. Si observas con atención, notarás que las patas del mobiliario están elaboradas en latón sin barnizar, una decisión que permite que, cuando llega el fenómeno del acqua alta (la marea alta), cada pieza adquiera una pátina única como resultado de su contacto con el agua.</p>
+<p>En el piso superior, la narrativa estética alcanza su punto culminante en un opulento comedor revestido con los intrincados tejidos de la histórica manufactura veneciana Bevilacqua. Un detalle inesperado: entre los elaborados motivos florales se esconden retratos de los hermanos Alajmo.</p>
+<p>Una vez que logres apartar la mirada de este escenario casi fantástico, vale la pena entregarse a alguno de sus delicados menús de degustación de cuatro tiempos y 16 preparaciones, que reinterpretan rincones menos conocidos de la tradición culinaria veneciana. Entre los platillos destacan nuevas versiones de las moeche —el famoso cangrejo de concha blanda— o un original &quot;capuchino&quot; elaborado con espuma de papa y mejillones de la laguna, servido en un cuenco de cristal translúcido. En Venecia, pocos lugares consiguen fusionar gastronomía y diseño con tanta elegancia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297569/devon-mx/articles/ezgif-4-c901fd2fe7_jxqymj.jpg" alt="Venecia la guia Devon para descubrir La Serenissima" loading="lazy" class="w-full h-auto"/></figure>
+<p>Ubicado en el encantador barrio de San Giacomo dell&#x27;Orio, La Zucca es una institución muy querida por los locales. Antes de la cena vale la pena detenerse en la plaza para disfrutar de un aperitivo, donde es común encontrar a niños jugando al fútbol después de la escuela o a alguna nonna regresando a casa con las compras del día.</p>
+<p>En una ciudad donde predominan los mariscos, La Zucca destaca por ofrecer una extraordinaria propuesta vegetariana basada en ingredientes de temporada provenientes de la isla de Sant&#x27;Erasmo, sin dejar de lado excelentes opciones de carne y pescado.</p>
+<p>Su carta cambia constantemente, aunque el flan de calabaza permanece como uno de sus grandes clásicos y una visita obligada. El ambiente resulta igual de atractivo gracias a sus interiores contemporáneos, definidos por paneles diagonales de madera y una cuidada selección de obra gráfica.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297569/devon-mx/articles/interno_5_ayw2jp.jpg" alt="Venecia la guia Devon para descubrir La Serenissima" loading="lazy" class="w-full h-auto"/></figure>
+<p>Aunque abrió sus puertas en 2015, Local ya se ha consolidado como uno de los restaurantes más interesantes de la ciudad. Se encuentra escondido entre las callejuelas y puentes que rodean Campo Bandiera e Moro, aproximadamente a medio camino entre la Piazza San Marco y el Arsenale.</p>
+<p>Su cocina mantiene un delicado equilibrio entre el respeto por la tradición veneciana y una interpretación contemporánea basada en ingredientes de temporada provenientes de toda la región del Véneto.</p>
+<p>Ese mismo diálogo entre historia e innovación se refleja en su diseño interior. El restaurante conserva la esencia arquitectónica del edificio mientras celebra el talento artesanal de la Venecia actual, desde sus pisos de terrazo elaborados a mano hasta el exquisito mobiliario hecho a medida por Pasquini Marino.</p>
+<p>En el barrio de Cannaregio, una zona donde todavía predominan los habitantes locales sobre los turistas y abundan las tradicionales cicchetterie junto a los canales, se encuentra Vino Vero.</p>
+<p>Este discreto pero elegante bar de vinos se especializa en etiquetas naturales y biodinámicas, cuidadosamente seleccionadas y servidas por un equipo con un profundo conocimiento enológico, lo que convierte cada visita en una oportunidad para descubrir pequeños productores italianos y europeos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297569/devon-mx/articles/DSC09414_yrftej.jpg" alt="Venecia la guia Devon para descubrir La Serenissima" loading="lazy" class="w-full h-auto"/></figure>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Qué hacer:</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297569/devon-mx/articles/Area_20Carlo_20Scarpa_02_jfvqzi.jpg" alt="Venecia la guia Devon para descubrir La Serenissima" loading="lazy" class="w-full h-auto"/></figure>
+<p>Si hay un nombre que aparece una y otra vez al hablar del diseño en Venecia, ese es Carlo Scarpa. Y no es casualidad. Las obras de este gran maestro de la arquitectura veneciana del siglo XX son tan ambiciosas como profundamente admiradas por los habitantes de la ciudad.</p>
+<p>El mejor lugar para comprender su legado es el Museo Querini Stampalia, situado en la pintoresca plaza de Santa Maria Formosa. Este espacio cultural, que funciona simultáneamente como museo, biblioteca y sede de eventos, resume muchas de las ideas arquitectónicas de Scarpa.</p>
+<p>Su diseño establece una relación fluida entre interior y exterior, así como entre el agua y la arquitectura, logrando que ambos elementos dialoguen de manera natural.</p>
+<p>Quienes deseen seguir explorando la obra de Scarpa deberían visitar también la histórica sala de exposición de las máquinas de escribir Olivetti, en la Piazza San Marco. Y si disponen de tiempo para salir de Venecia, vale la pena acercarse al cementerio Tomba Brion, cerca de Treviso, o al extraordinario Museo Castelvecchio, en Verona.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297570/devon-mx/articles/9cda5628-a7e3-11e6-a836-75a661626cad_image_hires_zluqkv.jpg" alt="Venecia la guia Devon para descubrir La Serenissima" loading="lazy" class="w-full h-auto"/></figure>
+<p>Con el constante flujo de viajeros que recorren sus calles cada año, no sorprende que Venecia sea uno de los grandes destinos europeos para las compras de lujo.</p>
+<p>Desde 2016, uno de sus espacios comerciales más importantes es Fondaco dei Tedeschi, instalado en uno de los edificios históricos más emblemáticos de la ciudad, junto al Puente de Rialto. Originalmente construido como centro de comercio para mercaderes alemanes, el inmueble fue transformado por el estudio OMA, dirigido por Rem Koolhaas.</p>
+<p>Hoy alberga una cuidada selección de boutiques que reúne tanto a las históricas casas de moda italianas como a firmas contemporáneas como Jacquemus, Ganni y The Attico.</p>
+<p>Como atractivo adicional, en el gran atrio central se encuentra Amo, otro de los restaurantes del universo gastronómico de Massimiliano Alajmo. Aquí el protagonista es su célebre pizza al vapor, una especialidad sorprendentemente deliciosa.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297569/devon-mx/articles/lagunab_R9A6607_web_hojfvl.jpg" alt="Venecia la guia Devon para descubrir La Serenissima" loading="lazy" class="w-full h-auto"/></figure>
+<p>Aunque Laguna~B fue fundada en 1994 por la fallecida Marie Brandolini, inspirada por las piezas experimentales que los artesanos de Murano elaboraban con los restos de vidrio, la marca adquirió una nueva dimensión cuando su hijo Marcantonio Brandolini asumió la dirección en 2019.</p>
+<p>Desde entonces se ha convertido en una referencia del diseño contemporáneo gracias a sus colaboraciones con reconocidos creativos internacionales y a su firme apuesta por la sostenibilidad.</p>
+<p>En 2025 inauguró su primera tienda en el animado barrio de Dorsoduro, consolidando así su presencia física en Venecia.</p>
+<p>Una de las obras arquitectónicas más sorprendentes de Venecia se encuentra lejos del bullicio del centro histórico, en la isla-cementerio de San Michele, cuya silueta, marcada por sus altos cipreses, puede verse desde el norte de la ciudad.</p>
+<p>Tras recorrer la parte más antigua del camposanto —donde descansan numerosas víctimas de antiguas epidemias de peste— se llega a los sobrios y espectaculares claustros minimalistas diseñados por el arquitecto británico David Chipperfield.</p>
+<p>El resultado es un espacio de gran serenidad, donde la arquitectura contemporánea ofrece un momento de contemplación y silencio en contraste con el ritmo siempre vibrante de Venecia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297571/devon-mx/articles/zel-punta-cana-club-de-playa_z0igv4.jpg" alt="ZEL Punta Cana" loading="lazy" class="w-full h-auto"/></figure>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="luis-miguel-conciertos-2027.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297573/devon-mx/articles/luis-miguel-tour-2027_yhyjiq.jpg" alt="Luis Miguel anuncia su gira de 2027: Fechas, cuándo viene a México y lo que se sabe hasta ahora" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Estilo de Vida</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Luis Miguel anuncia su gira de 2027: Fechas, cuándo viene a México y lo que se sabe hasta ahora</h3>
+                </a>
+                <a href="asi-fue-el-primer-concierto-de-la-residencia-de-shakira-en-madrid.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297574/devon-mx/articles/shakira-concierto-madrid_jffhwz.jpg" alt="Así fue el primer concierto de la residencia de Shakira en Madrid: “Los años más felices de mi vida los pasé aquí”" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Estilo de Vida</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Así fue el primer concierto de la residencia de Shakira en Madrid: “Los años más felices de mi vida los pasé aquí”</h3>
+                </a>
+                <a href="rosalia-confesionario-lux-tour.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297576/devon-mx/articles/confesionarios-de-rosalia_dbvcem.jpg" alt="Los 8 mejores confesionarios de Rosalía en el LUX Tour seleccionados por Devon" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Estilo de Vida</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Los 8 mejores confesionarios de Rosalía en el LUX Tour seleccionados por Devon</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+</body>
+</html>

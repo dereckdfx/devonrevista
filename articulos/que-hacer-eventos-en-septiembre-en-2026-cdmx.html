@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en septiembre 2026 en la CDMX ¿Qué hacer, ver y comer? | Devon México y Latinoamérica</title>
+    <meta name="description" content="La Ciudad de México entra en su período más alegre y festivo. Aquí todas las opciones para dejarte por los nuevos restaurantes, galerías y propuestas culturales.">
+    <meta property="og:title" content="Eventos en septiembre 2026 en la CDMX ¿Qué hacer, ver y comer? | Devon México y Latinoamérica">
+    <meta property="og:description" content="La Ciudad de México entra en su período más alegre y festivo. Aquí todas las opciones para dejarte por los nuevos restaurantes, galerías y propuestas culturales.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297547/devon-mx/articles/que-hacer-cdmx-septiembre-2025_nq79hu.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297547/devon-mx/articles/que-hacer-cdmx-septiembre-2025_nq79hu.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qué hacer, ver y comer?" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Cultura</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Eventos en septiembre 2026 en la CDMX ¿Qué hacer, ver y comer?</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">La Ciudad de México entra en su período más alegre y festivo. Aquí todas las opciones para dejarte por los nuevos restaurantes, galerías y propuestas culturales.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR RAMÓN BARRETO</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">23 de septiembre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Septiembre 2026 llega cargado de planes irresistibles: desde nuevos restaurantes imperdibles, hasta aperturas de shows que marcan tendencia en la escena artística de la ciudad.</p>
+<p>Este mes, la ciudad se convierte en un punto de encuentro donde conviven la tradición y la celebración, ideal para quienes buscan disfrutar de experiencias únicas. Ya sea que quieras celebrar las fiestas patrias, probar nuevos menús de temporada o simplemente salir a explorar, aquí tienes todo lo necesario para planear tu septiembre al máximo:</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297547/devon-mx/articles/2._20Hermanos_202026_20Oil_20and_20acrylic_20on_20canvas_20150cm_20x_20120cm_ttjtp1.jpg" alt="article image" loading="lazy" class="w-full h-auto"/></figure>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Galerías a visitar en la CDMX en septiembre 2026:</h2>
+<p>El texto señala: Esta es la primera exposición individual en la galería de la artista, coreógrafa y bailarina española Candela Capitán, quien transforma el espacio expositivo en un spa de un futuro cercano donde el descanso implica llevar el cuerpo al límite. Activada por la presencia de cuerpos feminizados, la instalación explora los vínculos entre respiración, tecnología y contemplación a través de un circuito hidráulico que conecta un depósito de agua, un sistema de presión y depuración y una bañera. Concebida a la vez como máquina y organismo, la obra alcanza su momento performativo cuando el ciclo se detiene y cuerpo y dispositivo comparten un mismo estado de suspensión.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<p>A partir del 19 de septiembre.</p>
+<p>LABOR: Gral. Francisco Ramírez 5, Ampliación Daniel Garza.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297546/devon-mx/articles/Captura_20de_20pantalla_202026-09-05_20a_20la_s_204.36.22_E2_80_AFp.m._zgrsv9.png" alt="Cortesía de la artista y galería LABOR." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía de la artista y galería LABOR.</figcaption></figure>
+<p>Willy Ronis: fragmentos de la vida cotidiana — Fotografía francesa en Chapultepec</p>
+<p>La exposición al aire libre reúne 60 fotografías de Willy Ronis (1910–2009), una de las figuras fundamentales de la fotografía francesa del siglo XX, para recorrer una trayectoria dedicada a observar con sensibilidad y poesía la vida cotidiana. Entre París y el sur de Francia, Ronis construyó un amplio registro de la sociedad francesa desde la década de 1930 hasta los años 2000, combinando la mirada documental con una particular atención a la luz, la composición y los pequeños instantes de la vida urbana.</p>
+<p>La muestra también aborda su compromiso con las grandes luchas sociales de su tiempo, así como las imágenes familiares realizadas tras su llegada a Gordes en 1948, algunas convertidas en referentes de la fotografía humanista. Su recorrido continúa con el reconocimiento internacional que recibió desde los años cincuenta y su posterior consagración en Francia.</p>
+<p>Con curaduría de Matthieu Rivallin, la exposición podrá visitarse del 10 de septiembre al 25 de octubre en las rejas de la Primera Sección del Bosque de Chapultepec, frente al Museo Nacional de Antropología.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297546/devon-mx/articles/WILLY_20RONIS_Pub_20a_CC_80_20Soho_20Londres_20_Angleterre_201955_20Pub_20en_20Soho_20Londres_20_Inglaterra_201955_20_20_20_20_20_20_20_20_20_20_20_20_20_20_20_20_20_20_20copia_kr2cia.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">© Ministère de la Culture - Médiathèque du Patrimoine, Dist. RMN-Grand Palais / Willy Ronis</figcaption></figure>
+<p>adhesivo contemporary presenta “fresas y otras cosas” (딸기와 그 이외의 것들) de Renée Abaroa</p>
+<p>Esta es una exposición individual de la artista mexicana Renée Abaroa. El texto refiere: “A partir de empaques, productos y objetos encontrados en supermercados de distintos lugares, Abaroa explora el deseo, la nostalgia y las pequeñas obsesiones que construimos alrededor de las cosas cotidianas”.</p>
+<p>C. Gobernador Ignacio Esteva 51b, San Miguel Chapultepec I Sección.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297546/devon-mx/articles/F0_9F_8D_93_rene_CC_81ebaroa_E1_84_89_E1_85_A5_E1_84_8B_E1_85_AE_E1_86_AF_E1_84_8B_E1_85_AE_E1_84_8B_E1_85_B2oil_20on_20canvas24_20x_2018_20cm2026join_20us_20this_20thursday_20september_203rd_20for_20the_20opening_20_ekb1qp.jpg" alt="“서울우유” Cortesía de la artista y adhesivo contemporary." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">“서울우유” / Cortesía de la artista y adhesivo contemporary.</figcaption></figure>
+<p>Alejandra Topete Gallery presenta Natura Animalis de Tatiana Parcero</p>
+<p>En el marco de FotoSeptiembre, la galería presenta “Natura Animalis”. Fotografías de Tatiana Parcero, una exposición individual de la destacada artista mexicana, integrada por 15 fotografías bajo la curaduría de María Laura Rosa. A partir del 10 de septiembre de 2026, la muestra propone una reflexión sobre los vínculos de cuidado entre el cuerpo, el territorio y lo no humano, cuestionando la idea de superioridad humana y las dinámicas de explotación de la naturaleza. La exposición reúne las series Natura Animalis (2012) y Fin y Principio (2008-2012), en las que Parcero establece diálogos entre su cuerpo, la flora, la fauna y distintos territorios para abordar temas como la fragilidad de la existencia compartida, las amenazas ecológicas y el cambio climático. Como actividad especial, el 17 de octubre se realizará una entrevista virtual abierta entre la artista y la curadora.</p>
+<p>Gral. Francisco Ramírez 11, Ampliación Daniel Garza.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297546/devon-mx/articles/1_20_C2_A9_20Tatiana_20Parcero_20Natura_20Animalis_20tectum_20manus_202_20_1_meyag9.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Cortesía Tatiana Parcero/Alejandra Topete Gallery.</figcaption></figure>
+<p>En el marco de GAMA Week, continúa abierta fake gods, la más reciente exposición de Aldo Chaparro, con curaduría de Tania Ragasol, que reúne pintura, escultura y obra móvil en un nuevo cuerpo de trabajo que marca el regreso del artista a México después de una década. Una oportunidad para acercarse a esta nueva etapa de su práctica y recorrer la muestra este sábado 5 de septiembre, de 11:00 a 17:00 h, en CAM Galería.</p>
+<p>Aristóteles 354, Polanco.</p>
+<p>CLAROSCURO presenta BIUTIFUL, exposición del artista mexicano Joaquín Trujillo</p>
+<p>La muestra forma parte de FOToseptiembre 2026, organizado por el Centro de la Imagen. A través de una serie profundamente personal, Trujillo explora la memoria, la infancia y los vínculos afectivos a partir de las mujeres de su familia y las flores, elementos que construyen un lenguaje visual de amor, cuidado y esperanza. La muestra parte de recuerdos y experiencias íntimas para reflexionar sobre la manera en que quienes nos acompañan durante la infancia dejan una huella en nuestra forma de mirar y relacionarnos con el mundo. Las flores aparecen como metáfora de una memoria que se transforma y permanece, convirtiendo el relato familiar del artista en una experiencia universal sobre los afectos, la identidad y aquellas pequeñas formas de belleza que continúan floreciendo con el paso del tiempo, señala la galería liderada por Jeanette Arévalo.</p>
+<p>CLAROSCURO: Tecoyotitla 122, La Florida, CDMX.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297548/devon-mx/articles/002_De_Mi_Jardin_LasFlores_300_jxbzna.jpg" alt="Cortesía del artistaGalería CLAROSCURO." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía del artista/Galería CLAROSCURO.</figcaption></figure>
+<p>Campeche presenta “Mi bosque es el tianguis, estos injertos son mi lengua” de Salvador Xharicata</p>
+<p>Esta es la primera exposición individual de Salvador Xharicata (Cherán, Michoacán, 1996) en la galería. A través de video, dibujo e instalación, el artista explora la pérdida y búsqueda de su lengua materna, el p’urhépecha, y la tensión entre sus raíces indígenas y el español impuesto por relaciones históricas de poder. Tomando como metáfora el injerto —una práctica botánica que Xharicata aprendió de su abuelo paterno—, la exposición reflexiona sobre el lenguaje como un espacio intermedio, vivo y en transformación, donde la memoria también se expresa a través del cuerpo, la respiración, los gestos y las texturas.</p>
+<p>Campeche 130, Roma Sur.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297548/devon-mx/articles/unnamed_20_4_ipltia.jpg" alt="Cortesía del artistaCampeche Galería." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía del artista/Campeche Galería.</figcaption></figure>
+<p>Patricia Conde Galería presenta “Hipervínculos: Alejandro Cartagena 2005-2026”</p>
+<p>El texto de sala refiere: “Esta muestra reúne dos décadas de trabajo de uno de los fotógrafos mexicanos más inquietos de su generación, la que él mismo ha llamado ‘la generación de la duda’: aquella que, tras heredar la tradición documental del siglo XX, decidió cuestionar sus certezas antes que perpetuarlas. Desde series como Suburbia Mexicana, Carpoolers o Rivers of Power hasta sus proyectos más recientes con archivos históricos e inteligencia artificial, Cartagena examina las estructuras urbanas, laborales, fronterizas que organizan la vida en el México contemporáneo, siempre desde la sospecha de que la fotografía nunca ha sido un simple registro de lo real, sino un dispositivo que construye y propone relatos”.</p>
+<p>Calle Gral. Juan Cano 68, San Miguel Chapultepec.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297548/devon-mx/articles/Disapereances_20_11_rmiza1.jpg" alt="Cortesía de la galería." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía de la galería. ALEJANDRO CARTAGENA</figcaption></figure>
+<p>Proyectos Monclova Gallery presenta “Imágenes interrumpidas” y “Evocaciones escultóricas”</p>
+<p>Proyectos Monclova Gallery presenta dos exposiciones que abrirán al público el 3 de septiembre y podrán visitarse hasta el 24 de octubre. “Imágenes interrumpida”s marca la primera muestra individual en la galería del artista uruguayo Guillermo García Cruz, quien confronta el lenguaje de la geometría con la estética del glitch y las interfaces digitales, estableciendo un diálogo entre la abstracción geométrica latinoamericana y la cultura visual contemporánea. Por su parte, “Evocaciones escultóricas” ofrece una mirada a la obra tardía de Manuel Felguérez (1928–2022), figura clave del abstraccionismo mexicano, a través de tres conjuntos escultóricos en hierro policromado, bronce y madera, acompañados por pinturas de la década de 1980 que revelan su constante exploración formal y material.</p>
+<p>Ambas muestras se presentan en Proyectos Monclova Gallery: Lamartine 415, Polanco.</p>
+<p>Picci Fine Arts presenta “Amoríos del marabú” de Nelson Domínguez</p>
+<p>Picci Fine Arts presenta Amoríos del marabú, exposición individual del reconocido artista cubano Nelson Domínguez, que reúne un nuevo conjunto de pinturas en la galería de Lomas de Chapultepec. A través de escenas pobladas por personajes, animales, frutos y paisajes vinculados con la vida rural cubana, Domínguez explora la memoria, la espiritualidad y la cotidianidad, incorporando referencias a la religiosidad afrocubana y a la identidad cultural de la isla. Las obras oscilan entre la figuración y la síntesis expresiva, con el dibujo como eje de las composiciones y una paleta de tonos oscuros interrumpida por intensos rojos, amarillos y verdes, además de una marcada experimentación con texturas y materiales. Nacido en La Habana en 1947 y reconocido con el Premio Nacional de Artes Plásticas de Cuba en 2009, Domínguez es una figura fundamental del arte cubano contemporáneo, con una trayectoria de más de cinco décadas.</p>
+<p>Picci Fine Arts: Alpes 700A, Lomas de Chapultepec.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297548/devon-mx/articles/Vista_20de_20instalacio_CC_81n_h_zvvirv.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>La galería itinerante de propiedad queer SPIELZEUG debuta en Ciudad de México con REITERINNENSTANDBILDER, su primera exposición en México, presentada en el marco de GAMA Week en Casa Tabasco “Carlos Pellicer”, una casona porfiriana de 1902 en la Colonia Juárez. La muestra reúne a diez artistas internacionales —Sophie Jung, Thomas Liu Le Lann, Christopher Gambino, Magdalena Petroni, Charlott Dazan, Andrea Ferrero, Camila Arévalo, Mojo, Guadalupe Salgado, Mitchell Charbonneau y Roger Munoz— cuyas esculturas funcionan como anti-monumentos que cuestionan los ideales heteropatriarcales asociados tradicionalmente con la monumentalidad.</p>
+<p>Con una propuesta que combina arte contemporáneo, performance, espectáculo y vida nocturna, SPIELZEUG inaugura la exposición con una fiesta el 5 de septiembre, de 18:00 a 23:00 horas, seguida de una afterparty en Abrazarnos, y abrirá al público del 6 de septiembre al 17 de octubre, de miércoles a sábado, de 12:00 a 18:00 horas. La entrada es gratuita.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297548/devon-mx/articles/GENERAL_rpmsdy.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/></figure>
+<p>Una exposición que reúne seis nuevas pinturas al óleo de Max Xeno Karnig, realizadas sobre paneles de cobre y construidas a partir de la precisión compositiva y técnica de los maestros antiguos para abordar escenas contemporáneas. El artista parte de referencias que van del cine y las observaciones cotidianas a una combinación de ambas: un retrato inspirado en La Notte de Michelangelo Antonioni convive con naturalezas muertas de frutas y flores de un mercado local, mientras un pequeño desnudo retoma las proporciones y estructuras de las pinturas religiosas de los siglos XV y XVI, pero incorpora una figura tomada de la vida real, señala el texto de sala.</p>
+<p>Entre pinceladas meticulosas, color cuidadosamente modulado y juegos de luz, Karnig mantiene una distancia casi clásica frente a sus temas, al tiempo que introduce un sentido del humor sobre las propias fuentes de sus imágenes y el acto de pintar.</p>
+<p>Tlaxcala 103, Roma Sur.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297549/devon-mx/articles/h001.yoEc6ZimAW_t6X0Trqc7brCz-y2ml_XqDI1iL9hgkr4_nycte3.jpg" alt="Max Xeno Karnig Dahlia 2026. Cortesía del artista y PEANA. Foto Caylon Hackwith." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Max Xeno Karnig, Dahlia, 2026. Cortesía del artista y PEANA. Foto: Caylon Hackwith.</figcaption></figure>
+<p>Una colección que incorpora cinco nuevos colores —Vainilla, Uva, Agave, Olivo y Verde— a sus formas emblemáticas, creando distintas posibilidades de combinación entre formas, texturas y alturas. Cada pieza es elaborada a mano en México, por lo que las variaciones naturales de la arcilla, el esmalte y los acabados hacen que cada una sea única.</p>
+<p>La colección ya está disponible en línea y en su tienda de Ciudad de México (Parque España 17, Roma Norte), mientras haya piezas disponibles.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297549/devon-mx/articles/ADKq_NbvnrLnPBA4j_VL0M6i4H8BF1BSVg7NVVdvEpbvAd8be3CdKNaAhZoD4ad6Px3L3bCLKo4CPjyuuH2MNAILno3huLuoFbpyeVAGZ-6b-D9hHFHx7dncPonrTv8FJ4wYUrYg8RDT_F1tQ4_nq_UDJ8es_b1tQcwUCLeX7g_s0-d-e1-ft_q1bjto.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Museos a visitar en septiembre 2026 en la CDMX:</h2>
+<p>“Tamayo, Nieto, Toledo. Los años en París” en el Museo Tamayo</p>
+<p>Esta exposición reúne obras de los artistas oaxaqueños Rufino Tamayo, Rodolfo Nieto y Francisco Toledo, quienes durante la segunda mitad del siglo XX radicaron temporalmente en París, donde transformaron sus prácticas y establecieron diálogos entre la estética prehispánica y el arte popular mexicano con las vanguardias internacionales. A través de pintura, dibujo, gráfica y collage, los tres artistas desarrollaron una trayectoria multidisciplinaria vinculada con creadores, escritores y talleres de impresión de la escena artística europea. La muestra destaca también el papel de Tamayo como figura de referencia para distintas generaciones que buscaban construir un pensamiento propio e integrarse desde México a la modernidad artística internacional.</p>
+<p>Museo Tamayo, Paseo de la Reforma. Hasta el 15 de febrero de 2027.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Restaurantes para probar en septiembre 2026 en la CDMX:</h2>
+<p>A partir del 24 de septiembre llega Dans le Noir?, la reconocida experiencia gastronómica a oscuras, llega por primera vez a América y elige Sofitel Mexico City Reforma como su sede en Ciudad de México. Con presencia en 16 ciudades de 11 países y más de tres millones de visitantes desde 2004, el concepto propone redescubrir la alta gastronomía prescindiendo por completo de la vista: durante una cena de cuatro tiempos, los comensales son guiados y atendidos en absoluta oscuridad por personas ciegas o con discapacidad visual, mientras exploran un menú sorpresa inspirado en el savoir-faire francés y elaborado con ingredientes frescos, de temporada y productos locales mexicanos. La experiencia se presenta de jueves a sábado, a partir de las 19:00 horas, con opción de menú con o sin maridaje de vinos, y reúne a los asistentes en mesas comunales donde el gusto, el olfato, el tacto y la conversación se convierten en protagonistas.</p>
+<p>El Menú Instinto tiene un costo de $1,590 MXN e incluye welcome drink, mientras que el Menú Instinto &amp; Essences, con maridaje de vinos, tiene un costo de $2,290 MXN. La experiencia estará disponible de forma permanente en Av. Paseo de la Reforma 297, Ciudad de México.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297549/devon-mx/articles/DLN_egnrra.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Guillaume Cottancin</figcaption></figure>
+<p>Este martes 15 de septiembre, Tachinomi reactiva su clásico Taco Tuesday con una edición especial para celebrar las fiestas patrias. Para la ocasión, el chef sinaloense Daniel González será el encargado de preparar una selección de tacos especiales, llevando su propia interpretación a la barra como parte de una noche pensada para quienes quieran celebrar el 15 de septiembre con buena comida y ambiente relajado. La experiencia forma parte del ecosistema gastronómico del chef Edo López y marca el regreso de una de las dinámicas favoritas de Tachinomi.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297551/devon-mx/articles/WhatsApp_20Image_202026-09-08_20at_202.38.47_20PM_zernit.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/></figure>
+<p>Hay algo que se estaba escaseando en la Roma: esas comidas que se alargan sin culpa, sin que un mesero te presione a salir a los noventa minutos. La Belle Époque llegó a devolvernos eso. Max Righi, su chef y copropietario, no quería abrir un restaurante más: quería abrir el restaurante donde él mismo se sentaría a comer. Y se le nota en cada decisión: mantel blanco, cortinas de terciopelo, y una cocina clásica francesa que no necesita hacer trucos —su filete a la pimienta son literalmente tres ingredientes (salsa, filete, cebollín) y aun así es de lo más memorable del menú—. Es, sin exagerar, el lugar perfecto para una cita, para una sobremesa que se alarga, para volver a emocionarse por salir a comer. Si extrañabas ese tipo de restaurante, este es.</p>
+<p>Av. Oaxaca 80, Roma Norte.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297549/devon-mx/articles/Un_20espacio_20pensado_20para_20disfrutar_20de_20los_20pequen_CC_83os_20placeres-_20una_20buena_20conversacio_CC_81n_20una_20mesa_20com_n6pwmu.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>En torno a la nogada, Bajel en Sofitel Mexico City Reforma celebra el mes patrio</p>
+<p>Este 15 de septiembre, Bajel propone una manera distinta de acercarse a uno de los grandes clásicos de la cocina mexicana con “En torno a la nogada”, un menú conceptual de cuatro tiempos creado por el chef Alonso Vidal que toma la nogada como protagonista y la lleva hacia nuevas interpretaciones. La experiencia comienza con un helado de nogada con reducción de PX, seguido de morillas en nogada de piñón con puré de ciruela y vinagre balsámico; como plato principal, langosta con nogada de macadamia, compota de manzana, ajo negro y granada, y para cerrar, nogada de almendra con higos en almíbar. Un ejercicio de deconstrucción y rebeldía culinaria que, como plantea Vidal, busca adaptar esta elaboración a nuevos contextos desde una perspectiva personal.</p>
+<p>Disponible el 15 de septiembre, de 14:00 a 22:30 h, con reservaciones por OpenTable.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297550/devon-mx/articles/JoseMiguelRamirez__josemiguell_Bajel_SEP26_18_igwtop.jpg" alt="Foto josemiguell" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: @josemiguell</figcaption></figure>
+<p>CHARCO x Tarántula Paris x Early June Paris — Una noche entre México y París</p>
+<p>Este 15 de septiembre, desde las 18:00, CHARCO, en el Centro Histórico, reunirá a tres proyectos alrededor de una cena especial que conecta México y París a través del producto, el vino y la temporada. La cocina de Ricardo Verdejo compartirá la noche con Tarántula Paris, la cantina de bistronomía mexicana del chef regiomontano Emmanuel Peña, quien desde París explora nuevas formas de llevar la cocina del norte de México a la mesa, y Early June Paris, el restaurante cercano al Canal Saint-Martin de Victor Vautier, concebido como un espacio cambiante que recibe a chefs invitados de distintas partes del mundo.</p>
+<p>El encuentro parte de una idea tan sencilla como sugerente: llevar París a México y permitir que México también transforme a París, en un menú construido alrededor del producto de temporada y las distintas maneras de entender la cocina de cada proyecto. Afuera, la celebración del 15 de septiembre y los fuegos artificiales sobre el Centro Histórico terminarán de convertir la cena en una experiencia que sucede tanto en la mesa como en la ciudad.</p>
+<p>Alterna es el nuevo proyecto de Gruppo Noi, los mismos detrás de Magazzino Wine Bar. El restaurante nace de una búsqueda creativa que integra cocina, vino, hospitalidad, diseño y cultura contemporánea, sin responder a una tradición culinaria o geografía específica. Al frente de la cocina está el chef Cosimo Branca, quien propone una gastronomía de influencias globales, técnica precisa y producto como protagonista, construida a partir de experiencias, viajes y curiosidades personales.</p>
+<p>La propuesta se complementa con el programa de vinos y hospitalidad de Jocsán Lomelí, mientras que Patrizio y Nicolo Cesarano lideran el proyecto desde la dirección creativa, estratégica y administrativa. Con una gran barra central, iluminación seductora y una selección musical que acompaña el ritmo del día, Alterna busca convertirse en un punto de encuentro para quienes entienden la gastronomía como parte de una vida cultural más amplia, donde el diseño, la arquitectura, el vino, la música y los viajes también forman parte de un todo.</p>
+<p>Juan de la Barrera 112, Colonia Condesa.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297550/devon-mx/articles/Callo_20Margarita_20con_20Manzana_20verde_20y_20Caviar_twjjtc.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Durante septiembre, Lina, el restaurante de la chef Mariana Villegas, propone celebrar la cocina mexicana desde una perspectiva contemporánea, explorando ingredientes y sabores que forman parte de nuestra identidad a través de preparaciones menos convencionales. Entre sus propuestas destaca la arrachera Wagyu, una interpretación del recetario norteño de la chef en la que la carne, cocinada a la parrilla con sal, pimienta y chile morita, se acompaña de un caldo de frijoles charros elaborado con frijol sangre de toro producido en Morelos, además de cebolla, ajo, hoja de aguacate, chile serrano, tocino, manita de cerdo, cilantro y cerveza. La propuesta de Lina invita a descubrir la gastronomía mexicana desde nuevos ángulos, combinando técnica y creatividad para poner en valor ingredientes locales y tradiciones regionales. Una alternativa para quienes buscan sumar algo distinto a los clásicos de septiembre, como el chile en nogada o el pozole.</p>
+<p>Av. Yucatán 147, Roma Norte.</p>
+<p>Este martes 8 de septiembre, Sartoria inaugura Wine Nights, una nueva experiencia alrededor de la mesa que celebra el aperitivo al estilo italiano a través de grandes etiquetas y algunos de los clásicos de la casa. Para esta primera edición, Climats se suma con una selección de tres vinos del norte de Italia, maridados con gnocco frito, crudo de atún y tortelli de ricotta y quelites. La experiencia será de 18:00 a 21:00 h, con un precio de $890 MXN por persona, e incluye los tres aperitivos y sus respectivos maridajes. Orizaba 42, Roma Norte. Reservaciones a través de OpenTable o al 55 7265 3616.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297554/devon-mx/articles/847A9087_k6cypb.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Universal de Hamburguesas llegó a la Ciudad de México para reivindicar el placer de una buena hamburguesa, con una propuesta urbana, relajada y sin pretensiones que pone el producto al centro. Ubicado en la zona de Virreyes, el proyecto, creado por operadores de festivales de música y restaurantes con más de 20 años de experiencia, apuesta por una experiencia rápida y accesible sin sacrificar calidad: carne con blend propio de ranchos seleccionados, pan de la casa y una técnica cuidada al detalle. El menú incluye opciones smash, una burger más gruesa a la parrilla, fried chicken y vegetariana, además de distintas variaciones que se adaptan a cada paladar.</p>
+<p>Pedregal 29-A, Lomas - Virreyes, Lomas de Chapultepec IV Secc, Miguel Hidalgo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297550/devon-mx/articles/Combo1ccopie_gwvczs.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Este septiembre, Mado Matcha lleva el espíritu patrio a uno de los rituales favoritos del momento con Strawberry Matcha, una edición especial que combina matcha, leche y compota de fresa para reinterpretar en un vaso la paleta verde, blanco y rojo de las fiestas mexicanas. Dulce, cremoso y refrescante, el resultado juega con los colores y sabores de septiembre desde una propuesta contemporánea, vibrante y desenfadada.</p>
+<p>Disponible por tiempo limitado durante todo el mes patrio en Orizaba 76, Roma Norte.</p>
+<p>Tori Tori Temístocles abre una nueva etapa con TORI, una propuesta de cocina japonesa más fresca, libre y contemporánea, liderada por el chef Marcelo Hisaki. Ubicado en el emblemático edificio diseñado por Michel Rojkind y renovado por Esrawe Studio, TORI parte de la misma raíz que ha definido a Tori Tori: respeto por el producto, la técnica y los códigos de la cocina japonesa, pero amplía su lenguaje para incorporar ingredientes frescos, locales y de gran calidad. Sin buscar convertirse en cocina mexicana ni definirse como una “fusión”, la propuesta apuesta por preparaciones precisas y frescas que exploran nuevas posibilidades desde el contexto en el que suceden.</p>
+<p>TORI se encuentra en Temístocles 61, Polanco.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297550/devon-mx/articles/IMG_4036_20_1_fxzqts.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>En una casona histórica de la colonia Roma, Castizo Roma propone una mirada contemporánea a la gastronomía española, adaptada al contexto de la Ciudad de México por el chef madrileño Álvaro “Milu” Crespo. Tercer restaurante de Grupo Castizo, el espacio parte de una cocina de corazón español y recetario mediterráneo que combina ingredientes provenientes de España, muchos de ellos con Denominación de Origen Protegida, con productos locales. El menú recorre tapas, entradas para compartir, pescados, arroces, carnes y postres, con platos como el matrimonio de anchoa y boquerón sobre guacamole, el croquetón de short rib, las flores de calabaza en tempura rellenas de queso trufado, el arroz negro con chopitos andaluces y la costilla lacada de cerdo ibérico. La experiencia se extiende a una carta de aproximadamente 120 vinos, cerca del 70% españoles, además de coctelería clásica y de autor, vermut, carajillos y cervezas madrileñas. Diseñada por el arquitecto catalán Uriol Bernal, la casona conserva su fachada patrimonial y reúne distintos ambientes que evocan tabernas, vermuterías y casas españolas, desde una barra a pie de calle hasta comedores, salones privados y una terraza.</p>
+<p>Orizaba 74, Roma Norte.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297552/devon-mx/articles/Castizo_20Roma_20-_20Pulpo_20a_20la_20brasa_20con_20pure_CC_81_20de_20alubias_20y_20tinta_20de_20calamar_2001_hjk5vo.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>99 Records presenta Shhh Roma, su nueva extensión en Álvaro Obregón 273, en la Roma Norte, dedicada a la cultura de la escucha y diseñada para convertir la música en el centro de la experiencia. El espacio reúne tres propuestas: un listening room, un jazz kissa y un hi-fi bar, cada una con sistemas de audio de alta fidelidad y una personalidad propia. Las sesiones del listening room recorren álbumes completos en formato físico, mientras que el jazz kissa propone una experiencia diurna con café, té y whisky japonés; por la noche, el hi-fi bar suma coctelería clásica y de autor a cargo del mixólogo Ismael “Pollo” Martínez. Con arquitectura e interiorismo de Estudio H. Fernández, Shhh Roma vincula diseño, vinilo, gastronomía y sonido para crear un espacio donde escuchar se convierte en una experiencia consciente.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297551/devon-mx/articles/Shhh_20Roma_20__2015_20__20Listening_20Room_zpcopx.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Hector Meraz @mcperro</figcaption></figure>
+<p>Siembra Taquería retoma sus Taco Tuesdays en este mes patrio con una edición especial el martes 8 de septiembre, a partir de las 18:00 horas, en su sede de Polanco. Para esta primera noche de regreso, el chef invitado Mauricio Vega, de Goya Taller, presentará una propuesta especial de tacos creada para la ocasión. La colaboración celebra el regreso de estas noches dedicadas al buen sabor de México, en un encuentro gastronómico que podrá disfrutarse a partir de las 6 de la tarde.</p>
+<p>Av. Isaac Newton 256, Polanco, Ciudad de México.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297552/devon-mx/articles/8b126094-efe5-4e6a-9b8f-03400c3443b1_vcnfog.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/></figure>
+<p>Ladurée celebra la apertura de su nuevo Coffee Shop en Perisur, un rincón especial para descubrir las mejores delicias de la pastelería francesa. El lugar perfecto para tomar el té y disfrutar una degustación de los nuevos helados de Ladurée. La nueva coffe shop se encuentra en el tercer nivel del icónico centro comercial del sur de la Ciudad de México.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297551/devon-mx/articles/Tea_20Time_20Tradition_F0_9F_AB_96_20el_20afternoon_20tea_20reinterpretado_20al_20estilo_20Ladure_CC_81e_20y_20servido_20para_20comparti_ii88ne.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>L’Occitane en Provence se une con Mygyo para llevar la esencia de la Provenza al mundo del helado a través de dos nuevos sabores inspirados en ingredientes emblemáticos de la marca: lavanda y almendra. Hasta el 18 de octubre de 2026, esta colaboración invita a descubrir estos ingredientes desde una nueva perspectiva, trasladándolos del universo de la belleza a una experiencia gastronómica y sensorial. Los sabores estarán disponibles en 19 sucursales participantes de Mygyo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297552/devon-mx/articles/0K9A3470_b2f8jo.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/></figure>
+<p>Ubicado en el piso 14 de Sofitel Mexico City Reforma, L’Obsidian es un cocktail bar que propone un encuentro entre la cultura francesa y los sabores de México. El espacio, concebido como un oasis de elegancia en el corazón de la ciudad, lleva esta dualidad a su propuesta líquida, donde la tradición y la sofisticación francesa dialogan con ingredientes y referencias mexicanas. Su ubicación elevada convierte la visita en una experiencia que combina coctelería, diseño y una perspectiva privilegiada de la CDMX.</p>
+<p>297 Av. Paseo de la Reforma.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297553/devon-mx/articles/LObsidian_20is_20where_20timeless_20design_20exceptional_20cocktails_20and_20unforgettable_20nights_20come_20togeth_jomxd3.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Con poco más de un año de trayectoria, Chow Chow se ha consolidado rápidamente como uno de los bares más interesantes de la escena contemporánea de la ciudad, recibiendo reconocimiento de la propia industria en plataformas como Shaker Awards y Tales of the Cocktail. Su propuesta parte del encuentro entre la cultura china y los destilados mexicanos, incorporando además una serie de fermentos elaborados en casa que amplían las posibilidades de su coctelería. La cocina sigue la misma filosofía experimental y disruptiva, convirtiendo a Chow Chow en un espacio donde bebida, gastronomía y exploración cultural conviven de manera poco convencional.</p>
+<p>Av Chapultepec 403, Juárez, Cuauhtémoc.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297553/devon-mx/articles/Les_20agradecemos_20mucho_20a_20_somos.mxc_20por_20la_20nota_20tan_20chula_20_F0_9F_A7_A7_20Puedes_20encontrarla_20completa_20en_20su_20bi_v1qnlv.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Desde su apertura en noviembre de 2024, FO+MA ha construido una propuesta alrededor de la experimentación y la investigación de ingredientes. Su sofisticado laboratorio funciona como punto de partida para desarrollar cócteles inspirados en sabores y tradiciones de distintas regiones del mundo, explorando nuevas técnicas y combinaciones. Próximo a presentar un nuevo menú, el bar llega a esta nueva etapa con un importante reconocimiento internacional: fue incluido en el puesto 13 de la más reciente lista de North America’s 50 Best Bars, consolidándose como una de las direcciones a seguir dentro de la escena de coctelería contemporánea de la región.</p>
+<p>San Luis Potosí 37, Roma Norte.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297553/devon-mx/articles/Thank_20you_20for_20an_20unforgettable_20first_20weeks_20Some_20of_20you_20have_20already_20become_20a_20part_20of_20our_20space_20_fefg9r.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Eventos en septiembre 2026 en la CDMX:</h2>
+<p>El Claustro ofrece una clase presencial de chiles en nogada el próximo sábado 12 de septiembre de 2026, ideal para aprender a preparar uno de los platillos más emblemáticos de la gastronomía mexicana de cara a las celebraciones patrias. Durante una sesión de cuatro horas, los participantes aprenderán, de la mano del chef Daniel Jiménez, a elaborar la receta tradicional y una alternativa vegetariana, mediante práctica directa en cocina y el uso de materias primas y equipo de alta calidad. La clase tiene un costo de $2,300 MXN e incluye ingredientes, mandil, red y recetario; dirigida a público general, no requiere experiencia previa y se trata de una oportunidad única para aprender de la mano de un gran experto.</p>
+<p>En su última función este 8 de septiembre, se presenta Four Play, comedia contemporánea LGBT+ del dramaturgo británico Jake Brunger, todos los martes a las 20:00 horas hasta el 8 de septiembre. La historia sigue a Rafa y Pedro, una pareja que lleva siete años junta y que decide explorar una fantasía que pondrá a prueba los límites de su relación: invitar a Miguel, un amigo cercano que mantiene una relación abierta con Andy, a formar parte de un encuentro entre los cuatro. Dirigida por Adrián Torri y producida por Retrovisor Media, la puesta en escena se presenta por primera vez en Latinoamérica y cuenta con las actuaciones de Alexandro Villaseñor, Mauricio Topete, Gonzalo Aburto y Bernardo Kasis Galán, alternando funciones con Alejandro Rumart y Daniel Alejandro.</p>
+<p>Teatro Wilberto Cantón (SOGEM), José María Velasco 59, San José Insurgentes, Benito Juárez.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297553/devon-mx/articles/Captura_20de_20pantalla_202026-09-03_20a_20la_s_208.08.23_E2_80_AFa.m._kqggvq.png" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Tras agotar su primera fecha en Ciudad de México, GOZAR, el sello y serie de eventos creado por Luch, abre una segunda noche el sábado 26 de septiembre de 2026 en el Polyforum Siqueiros. Después de sus presentaciones en Monterrey y Guadalajara, GOZAR llega por primera vez a la capital con una experiencia de música electrónica que sale de los escenarios habituales para dialogar con la arquitectura y la obra monumental de David Alfaro Siqueiros. El lineup permanecerá en secreto hasta el día del evento. La primera fecha, del 25 de septiembre, ya está agotada.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297553/devon-mx/articles/unnamed_20_5_wanwb3.jpg" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/></figure>
+<p>Como un puente entre México y Líbano, Maderas del Mismo Cedro: Subasta por Líbano reúne a 50 artistas en una subasta de arte cuya recaudación será destinada a apoyar a Líbano. El proyecto contará con un programa público del 7 al 10 de septiembre en el Centro Libanés, que explora los vínculos entre ambos países a través del arte, el cine, la literatura y la memoria. Durante estos días, el showroom permanecerá abierto de 10:00 a 19:00 h, como un espacio para conocer las obras y acercarse al proyecto, mientras que la subasta se llevará a cabo el 10 de septiembre a las 19:00 h.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297554/devon-mx/articles/Invite_Maderas_20del_20Mismo_20Cedro_Subasta_20por_20Li_CC_81bano_mpoiw4.jpg" alt="Screenshot" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Screenshot</figcaption></figure>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Escapadas dentro y fuera de la CDMX:</h2>
+<p>Con motivo de las fiestas patrias, El Santuario Valle de Bravo se prepara para recibir a sus visitantes en una noche llena de sabor, tradición y orgullo mexicano con su esperada Cena Mexicana, que se llevará a cabo este 15 de septiembre a partir de las 19:00 horas. La celebración será una experiencia pensada para disfrutar y compartir, en un ambiente especial que reunirá algunos de los elementos más representativos de la cultura mexicana. Los asistentes podrán deleitarse con un buffet de cocina mexicana, acompañado de la presentación de un ballet folclórico y mariachi, creando el escenario perfecto para celebrar una de las fechas más importantes de nuestro país. Con esta celebración, El Santuario invita a vivir una noche diferente para conmemorar las fiestas patrias, enmarcada por la gastronomía, la música y las tradiciones que hacen de México un país único, en uno de los entornos más emblemáticos y representativos de México como lo es Valle de Bravo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297555/devon-mx/articles/Captura_20de_20pantalla_202026-09-03_20a_20la_s_209.13.34_E2_80_AFa.m._ea9e93.png" alt="Eventos en septiembre 2026 en la CDMX ¿Qu hacer ver y comer" loading="lazy" class="w-full h-auto"/></figure>
+<p>En San Felipe del Agua, Oaxaca, Entre Sombras, el restaurante de Casa Santo Origen, propone una experiencia de alta cocina que combina técnicas contemporáneas, producto local y una interpretación personal de las tradiciones gastronómicas del Mediterráneo. En un entorno de calma y diseño cuidado, la cocina se construye a partir de procesos artesanales —como el pan horneado diariamente y la pasta elaborada en casa— y de ingredientes de proximidad como vegetales orgánicos de los Valles Centrales, pescados de la costa oaxaqueña, hierbas de huertos cercanos, miel de producción propia y café de Pluma Hidalgo. Su propuesta abarca desayunos, comidas y cenas con platos de autor que conviven con una selección de vinos, espirituosos y mixología, además del mezcal de la casa Santo Origen. Ubicado dentro del hotel boutique, reconocido con una Llave Michelin en 2024 y 2025, Entre Sombras ofrece una experiencia que equilibra sofisticación, hospitalidad y profundo respeto por el territorio oaxaqueño.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297555/devon-mx/articles/banner1_dkojbd.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Mycelium Supper Club: Meditación, comunidad y el reino fungi — Feelnest + Micelia Labs</p>
+<p>Este septiembre, Feelnest y Micelia Labs reúnen a 20 mujeres en Pedregal de San Ángel para una experiencia íntima que combina bienestar, gastronomía, arte y comunidad en torno a la temporada de hongos. La noche comenzará con una meditación sonora de cuencos guiada por Feelnest, seguida de una cena de cinco tiempos creada por la chef Federica Rigoletti de Puntarena, acompañada de pan artesanal de Panadería Umbral y elíxires y adaptógenos de Micelia Labs.</p>
+<p>El encuentro, pensado como un espacio de conexión, creatividad y convivencia entre mujeres, tendrá lugar de 18:30 a 22:00 hrs en una ubicación secreta en Pedregal y tendrá un costo de $2,200 MXN.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297555/devon-mx/articles/b7e6e4ae-1698-42f6-83fa-49b7567597fd_vexgpr.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+<p>Enclavado en una casona colonial restaurada sobre el emblemático Paseo Montejo, Kahal es un hotel boutique de doce habitaciones que celebra la riqueza cultural y sensorial de la Península de Yucatán. Inaugurado en 2024, el proyecto combina la arquitectura histórica —con muros de mampostería, carpintería original, pisos de pasta y techos de doble altura— con un interiorismo contemporáneo inspirado en materiales y tradiciones locales, como la madera de tzalam y el chukum. Su propuesta invita a disfrutar Mérida sin prisas, a través de espacios como su patio interior, biblioteca, restaurante y rooftop con vistas al Centro Histórico, además de una experiencia gastronómica de inspiración yucateca, servicios de wellness y recorridos personalizados por cenotes, zonas arqueológicas y haciendas.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297555/devon-mx/articles/q1r31jPRcpOKy91wC8akN9crHms_kkh1xf.jpg" alt="Cortesía." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Cortesía.</figcaption></figure>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="luxurylab-global-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297557/devon-mx/articles/luxurylab-global-2026_mjqv6r.jpg" alt="LuxuryLab Global 2026 revela cuáles son las tendencias y el futuro del lujo" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Estilo de Vida</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">LuxuryLab Global 2026 revela cuáles son las tendencias y el futuro del lujo</h3>
+                </a>
+                <a href="montage-los-cabos-celebra-arte-culinaria-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297558/devon-mx/articles/montage-los-cabos-mexico-hotel_q2bzlg.jpg" alt="Los Cabos celebra el arte y la gastronomía a través de experiencias únicas" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Estilo de Vida</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Los Cabos celebra el arte y la gastronomía a través de experiencias únicas</h3>
+                </a>
+                <a href="que-hacer-en-milan.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297561/devon-mx/articles/VOGUEMX-GUIA-MILAN_x3qusp.jpg" alt="Milán, la guía Devon para dejarse llevar por esta elegante ciudad italiana" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Estilo de Vida</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Milán, la guía Devon para dejarse llevar por esta elegante ciudad italiana</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+</body>
+</html>

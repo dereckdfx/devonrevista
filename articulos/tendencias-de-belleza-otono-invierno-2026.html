@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tendencias de belleza para Otoño-Invierno 2026: Peinados, cabello, cejas y maquillaje | Devon México y Latinoamérica</title>
+    <meta name="description" content="Desenfadada, nostálgica y con ecos de los 90 y los 2000. La belleza deja atrás la perfección para abrazar una actitud más libre, cool y espontánea.">
+    <meta property="og:title" content="Tendencias de belleza para Otoño-Invierno 2026: Peinados, cabello, cejas y maquillaje | Devon México y Latinoamérica">
+    <meta property="og:description" content="Desenfadada, nostálgica y con ecos de los 90 y los 2000. La belleza deja atrás la perfección para abrazar una actitud más libre, cool y espontánea.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297453/devon-mx/articles/tendencias-de-belleza-oton_25CC_2583o-invierno-2026_zz7kxc.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297453/devon-mx/articles/tendencias-de-belleza-oton_25CC_2583o-invierno-2026_zz7kxc.jpg" alt="Tendencias de belleza para Otoño-Invierno 2026: Peinados, cabello, cejas y maquillaje" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Belleza</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Tendencias de belleza para Otoño-Invierno 2026: Peinados, cabello, cejas y maquillaje</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Desenfadada, nostálgica y con ecos de los 90 y los 2000. La belleza deja atrás la perfección para abrazar una actitud más libre, cool y espontánea.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR MARÍA DIEZ</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">2 de septiembre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Como cada temporada, te adentramos a las tendencias de belleza que marcarán los próximos meses, y, si algo puedo decirte con total sinceridad, es que la llegada de la nueva estación no puede ser más emocionante. Después de una primera mitad del año definida por el regreso al minimalismo y el bajo mantenimiento, los últimos meses de 2026 llegan para reinventar esta estética con un aire cool, desenfadado y que, aunque aparenta no intentarlo demasiado, presta especial atención a los detalles. La prueba está en las pasarelas de Otoño-Invierno 2026 y en nuestras marcas favoritas, que proponen peinados, maquillajes, diseños de cejas y beauty looks en general que recuperan una esencia nostálgica de algunas de las décadas más emblemáticas de la historia, como los 90 y los 2000, pero la llevan a un lugar mucho más actual. Desde la vuelta de la raya lateral y los flecos rectos hasta los accesorios para el cabello, el brillo, las cejas al natural y el regreso del maquillaje a todo color, esta temporada se trata de encontrar belleza en lo espontáneo, jugar con la nostalgia y, sobre todo, volver a divertirnos.</p>
+<p>Con esta idea en mente y sin más preámbulo, te compartimos las tendencias que estarán marcando el pulso de la belleza este Otoño-Invierno 2026:</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Tendencias de belleza Otoño-Invierno 2026</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297452/devon-mx/articles/peinado-hermes-oton_CC_83o-invierno-2026_g5btbs.jpg" alt="Peinado Hermès OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Hermès, Otoño-Invierno 2026. Armando Grillo / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297452/devon-mx/articles/cabello-despeinado-alberta-ferretti-oton_CC_83o-invierno-2026_fxgsty.jpg" alt="Cabello despeinado Alberta Ferretti OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Alberta Ferretti, Otoño-Invierno 2026. Spotlight / Launchmetrics</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297452/devon-mx/articles/pelo-esponjado-gabriela-hearst-oton_CC_83o-invierno-2026_efwdl8.jpg" alt="Pelo esponjado Gabriela Hearst OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gabriela Hearst, Otoño-Invierno 2026. Armando Grillo / Gorunway</figcaption></figure>
+<p>Después de observar una y otra vez las pasarelas de nuestros diseñadores favoritos, hay un común denominador imposible de ignorar: el look despeinado, con poco maquillaje y ese aire de “me acabo de salir de la cama” que es simplemente irresistible. ¿Será que estamos viviendo el epítome del effortless chic o esta tendencia de belleza de casi sin intentarlo llegó hoy a otro nivel? Lo cierto es que es un beauty look que, al acompañarse de un look de impacto como los que vemos en Gabriela Hearst, Hermès y Alberta Ferretti, luce totalmente intencionado y hace que cada pieza cobre un nuevo sentido. No importa si decides llevarlo en un cabello completamente desenfadado o si el desorden se equilibra ligeramente con un maquillaje difuminado y de apariencia lived-in, la clave es que se sienta más natural y un poco rebelde.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297452/devon-mx/articles/raya-de-lado-mcqueen-oton_CC_83o-invierni-2026_sig4n0.jpg" alt="Raya de lado McQueen OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">McQueen, Otoño-Invierno 2026. McQueen / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297452/devon-mx/articles/isabel-marant-oton_CC_83o-invierno-2026_enpyrc.jpg" alt="Isabel Marant OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isabel Marant, Otoño-Invierno 2026. Armando Grillo / Gorunway</figcaption></figure>
+<p>La raya al centro que parecía haber gobernado la moda en los últimos años is nowhere to be found este otoño. En su lugar, es reemplazada por la raya lateral que gobernó la moda de los 90 y, para ser honesta, no podemos estar más emocionados por su regreso, pues, al contrario de la creencia popular, la side part ayuda a equilibrar y estilizar los rasgos del rostro y a aportar un mayor volumen al cabello. Por ello, no sorprende que ya haya hecho su aparición en las colecciones de diseñadores como Fendi y Chanel en Primavera-Verano 2026. Esta temporada vuelve con más fuerza y se integra también a las de Alexander McQueen y Alaïa para enseñarnos que, no importa si llevas el cabello suelto o recogido, este aire desprevenido que nos invita a jugar con nuestra melena (y raya del pelo) es la mejor opción.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297453/devon-mx/articles/fleco-zadig-_-voltaire-oton_CC_83o-invierno-2026_cxhvjv.jpg" alt="Fleco Zadig Voltaire OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Zadig &amp; Voltaire, Otoño-Invierno 2026. Spotlight / Launchmetrics</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297453/devon-mx/articles/fleco-moschino-oton_CC_83o-invierno-2026_ucwbaq.jpg" alt="Fleco Moschino OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Moschino, Otoño-Invierno 2026. Spotlight / Launchmetrics</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297453/devon-mx/articles/fleco-michael-kors-oton_CC_83o-invierno-2026_ie1a5w.jpg" alt="Fleco Michael Kors OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Michael Kors Collection, Otoño-Invierno 2026. Armando Grillo / Gianluca Carraro / Gorunway</figcaption></figure>
+<p>Si tenemos que nombrar el corte de pelo favorito de las tendencias de belleza para Otoño-Invierno 2026, este llevaría, indudablemente, un flequillo. Un estilo que, aunque desde el año pasado se fue introduciendo poco a poco al radar en materia de side bangs y flequillos laterales discretos, este año lo vemos recto, tupido y en su máximo potencial. Puede que se deba a la innegable inspiración de la chica francesa, a su habilidad para enmarcar el rostro o al inevitable regreso de la estética de los años 60 con iconos de estilo como Brigitte Bardot o Jane Birkin como referentes; lo que está claro es que, no importa si lo llevas con una melena larga como en Zadig &amp; Voltaire o una midi como en Moschino, te dará el mismo resultado: chic y muy cool.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297453/devon-mx/articles/diesel-oton_CC_83o-invierno-2026_dmt62p.jpg" alt="Diesel OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Diesel, Otoño-Invierno 2026. Armando Grillo / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297454/devon-mx/articles/chanel-oton_CC_83o-invierno-2026_gwvget.jpg" alt="Chanel OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Chanel, Otoño-Invierno 2026. Armando Grillo / Gorunway</figcaption></figure>
+<p>Cuando para la colección de Otoño-Invierno 2026 de Chanel, Matthieu Blazy presentó peinados y maquillajes llenos de brillo, las amantes del estilo se obsesionaron por completo –y no nos sorprende–. Hoy, el universo beauty lo ve gobernar por completo, ya sea en geles brillantes, glitter corporal, bases extra luminosas como la de Diesel o hasta manicuras con efecto cromado que, una y otra vez, acaparan todas las listas de uñas de moda. Una tendencia que viene muy de la mano de la nostalgia generacional por los años 2000 y que, llevada de la manera correcta, no puede gustarnos más.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297454/devon-mx/articles/cejas-marie-adam-leenaerdt-oton_CC_83o-invierno-2026_sndkvk.jpg" alt="Cejas Marie AdamLeenaerdt OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Marie Adam-Leenaerdt, Otoño-Invierno 2026. Marie Adam-Leenaerdt / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297454/devon-mx/articles/cejas-louis-vuitton-oton_CC_83o-invierno-2026_h7pvq5.jpg" alt="Cejas Louis Vuitton OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Louis Vuitton, Otoño-Invierno 2026. Alessandro Viero &amp; Armando Grillo / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297454/devon-mx/articles/cejas-fendi-oton_CC_83o-invierno-2026_djohca.jpg" alt="Cejas Fendi OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Fendi, Otoño-Invierno 2026. Gianluca Carraro / Gorunway</figcaption></figure>
+<p>Aunque a principios de este año vimos las cejas discretas y llenas de volumen gobernar las tendencias, para esta temporada conservamos el aspecto natural pero con una nuevo objetivo: no maquillarlas en absoluto. La meta es conseguir un efecto relajado y despreocupado, dejando que el resto del maquillaje destaque por encima de ellas. Sigue la clave de Marie Adam-Leenaerdt, Louis Vuitton y Fendi, péinalas sutilmente para potenciar tu forma natural y confía en el proceso, te prometo que no te arrepentirás.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297454/devon-mx/articles/peinado-diadema-miu-miu-oton_CC_83o-2026_vyynzg.jpg" alt="Peinado diadema Miu Miu otoño 2026" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Miu Miu, Otoño-Invierno 2026. Alessandro Viero / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297455/devon-mx/articles/diademas-valentino-oton_CC_83o-invierno-2026_ozefku.jpg" alt="Diademas Valentino OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Valentino Otoño-Invierno 2026. Valentino / Gorunway</figcaption></figure>
+<p>Entre los peinados de Otoño-Invierno 2026, la presencia del cabello suelto y desenfadado es innegable, sin embargo, aquellos que recogen el frente con una diadema destacan como favoritos. Las expertas de estilo ya se vieron inspiradas en Hailey Bieber y la diadema en zigzag que regresa de la era Y2K directo a la pasarela de Miu Miu; sin embargo, ese es un sello que se extiende a diferentes colecciones. Lo vemos en Valentino, con tintes eclécticos y una estética glitch muy marcada que, más allá de gritar presente en la ropa, se traduce a peinados con cabello desenfadado y accesorios con apliques metálicos. Sin duda, el plus que eleva cualquier look en cuestión de segundos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297455/devon-mx/articles/aelis-oton_CC_83o-invierno-2026_qwjfj9.jpg" alt="Aelis Couture OtoñoInvierno 2026" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Aelis Couture, Otoño-Invierno 2026. Spotlight / Launchmetrics</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297455/devon-mx/articles/maquillaje-balenciaga-oton_CC_83o-invierno-2026_xhihx6.jpg" alt="Tendencias de belleza para OtoñoInvierno 2026 Peinados cabello cejas y maquillaje" loading="lazy" class="w-full h-auto"/></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297455/devon-mx/articles/maquillaje-carolina-herrera-oton_CC_83o-invierno-2026_tu4rvx.jpg" alt="Maquillaje Carolina Herrera OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Carolina Herrera, Otoño-Invierno 2026. Armando Grillo / Gorunway</figcaption></figure>
+<p>Para las amantes del maquillaje… ¡el color está de regreso! Aunque todavía vemos el makeup no makeup con sombras terrosas y tintes naturales que reinó el año pasado, la aparición de diferentes tonos e intensidades ha ido colándose al radar poco a poco bajo nombres como blush blindness o eye-maxxing. Hoy, llega a las pasarelas, confirmando que esta temporada lo natural quedó atrás y la experimentación está dictando las reglas del presente. La prueba de ello viene en forma de sombras azules, verdes o violetas de Balenciaga y Carolina Herrera, labios burdeos y mejillas (muy) rosadas. Y, a decir verdad, es un confort absoluto que este sea de nuevo un espacio para divertirnos, expresar nuestra personalidad y no temer a ser “demasiado”.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Tendencias de belleza Primavera-Verano 2026</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297455/devon-mx/articles/cabello-isabel-marant_fernuq.jpg" alt="7 peinados para cabello rizado que le darn volumen y dimensión al pelo" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297455/devon-mx/articles/cabello-christian-dior_qndouh.jpg" alt="Cabello Christian Dior" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<p>Después de explorar las tendencias de peinado para 2026, queda claro que las propuestas que permiten al cabello lucir su textura original acaparan todos los focos. Los diseñadores presentan a modelos como Luna Yohannan –en Celine, Louis Vuitton, Rabanne y Dolce &amp; Gabbana– o Noor Khan –en Khaite, Calvin Klein, Prada y Miu Miu– llevando el cabello en su forma natural.</p>
+<p>Así, resulta evidente que la conversación tome un giro y deje de centrarse en cómo peinarlo para enfocarse en cómo cuidarlo. Tal como afirma Octavio León, hairstylist que ha colaborado en numerosas portadas con Devon México y Latinoamérica: “Una de las principales tendencias de consumo que estaremos viendo en 2026 es llevar un cabello saludable, enfocarnos en que se vea natural, brillante e hidratado”. Y aunque el mercado está repleto de productos “milagrosos” que prometen resultados inmediatos, serán aquellos –como los tratamientos capilares de Davines o los aceites nutritivos de TEIA– que combinan ingredientes de origen natural con tecnología avanzada los que se posicionen como la clave para lograrlo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297456/devon-mx/articles/peinado.mugler_qw6ynk.jpg" alt="Peinado Mugler" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297456/devon-mx/articles/peinado-dries-van_20noten_uvj0p9.jpg" alt="Peinado Dries Van Noten" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297456/devon-mx/articles/peinado-nicole-pasqualetti_ulfwnq.jpg" alt="Peinado Nicole Pasqualetti" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<p>Siguiendo esta línea, los peinados recogidos y desenfadados encuentran su lugar. Tal como señalan expertos de WGSN, las referencias abarcan desde la época victoriana hasta el Renacimiento y la Edad Media: “Rizos voluminosos, trenzados intrincados y siluetas esculturales otorgan al cabello un aire de elegancia real. Estos looks resultan teatrales y, al mismo tiempo, prácticos, combinando la grandeza histórica con la elegancia moderna”.</p>
+<p>Los ejemplos van desde el french twist –famoso en redes sociales– de Niccolò Pasqualetti, hasta recogidos bajos y pulidos con un crêpe ligero como en Mugler; flequillos cortos con mechones sueltos al estilo de Dries Van Noten o propuestas con volumen y rizos definidos como en Giorgio Armani. Cada uno plantea una opción única y elegante y, de forma innegable, evoca la sensación de haber salido directamente de un libro de romance de época.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297456/devon-mx/articles/maquillaje-hermes_lpcffk.jpg" alt="LaunchmetricsSpotlight" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297456/devon-mx/articles/maquillaje-j-salinas_acsxea.jpg" alt="Maquillaje J. Salinas" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<p>Las colecciones de Primavera-Verano 2026 nos adelantan las tendencias de maquillaje que veremos de forma constante en los próximos 12 meses. Basta con un recorrido por Devon Runway para confirmar que los ojos se convierten en el foco principal y que, si se maquillan en tonos terrosos –del café profundo a un dorado sutil–, el resultado será más que acertado. Una paleta que, al igual que en 2025, seguirá liderando la conversación de belleza en todos sus rubros. Según WGSN: “…intensos tonos cacao, castaño, espresso y bronce aportaron calidez y sofisticación a ojos, labios, cabello y uñas. Esta tendencia se inclina hacia la elegancia tonal, ofreciendo un enfoque moderno y minimalista que se siente elevado en lugar de discreto. El resultado es suave, sensual y refinado sin esfuerzo”.</p>
+<p>Ya sabemos cuáles serán los tonos protagonistas, pero el cómo aplicarlos también cobra especial relevancia. Pasarelas como Hermès y J. Salinas proponen trabajar la sombra concentrándola principalmente en las esquinas del párpado móvil y del inferior, a modo de delineado difuminado, y sumar como toque final un punto de iluminador en el lagrimal. ¿El resultado? Una mirada visiblemente más grande y un lifting inmediato. Acompañado de labios glossy en rosa o coral, el triunfo está prácticamente garantizado.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297456/devon-mx/articles/cejas-demeulemeester_fvwgar.jpg" alt="Cejas Ann Demeulemeester" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297457/devon-mx/articles/cejas-akris_th8ksu.jpg" alt="Cejas Akris" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297457/devon-mx/articles/cejas.-vetements_qatisl.jpg" alt="Cejas Vetements" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Launchmetrics/Spotlight</figcaption></figure>
+<p>Después de las cejas ultrafinas de los años veinte, los noventa y principios de los 2000; del delineado marcado que se popularizó alrededor de 2018; o de las cejas extravagantes que vimos en las pasarelas de Pascal Le y Marni para 2025, este año queda claro que las cejas discretas están listas para gobernar las tendencias. Más allá del color o la forma, la conversación se centra en un look de aspecto natural, similar a lo que ocurre en el rubro de peinados. No importa si tienes cejas pobladas o escasas, se busca potenciar su volumen para que se vean tan esponjosas como sea posible. Una tendencia que las pasarelas –Isabel Marant, Akris, Lacoste, Ralph Lauren, Ann Demeulemeester, Vetements y más– adoptan sin pensarlo dos veces.</p>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="colores-de-unas-otono-invierno-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297458/devon-mx/articles/colores-un_25CC_2583as-tendencia-oton_25CC_2583o-invierno-2026_c5lh3d.jpg" alt="Colores de uñas en tendencia para Otoño-Invierno 2026: las manicuras que reinarán" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Belleza</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Colores de uñas en tendencia para Otoño-Invierno 2026: las manicuras que reinarán</h3>
+                </a>
+                <a href="que-comprar-en-espacio-devon-holiday-edition-2024.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297465/devon-mx/articles/espacio-vogue-holiday-edition-2024_ykulog.jpg" alt="¿Qué comprar en Espacio Devon Holiday Edition 2024? Piezas y accesorios imperdibles de la pop up store de Devon" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">¿Qué comprar en Espacio Devon Holiday Edition 2024? Piezas y accesorios imperdibles de la pop up store de Devon</h3>
+                </a>
+                <a href="las-marcas-de-belleza-de-espacio-devon-mexico-2023.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297468/devon-mx/articles/marcas-de-belleza-espacio-vogue-2023jpg_pm0gno.jpg" alt="Las marcas de belleza imperdibles de Espacio Devon México 2023" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Belleza</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Las marcas de belleza imperdibles de Espacio Devon México 2023</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+</body>
+</html>
