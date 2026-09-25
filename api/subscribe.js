@@ -1,12 +1,15 @@
 // Vercel serverless function: POST /api/subscribe  {email, list, website?}
-// Adds/updates the contact in the site's Brevo list. The Brevo key is read ONLY from
+// Adds/updates the contact in the site's Brevo list and, when the address is NEW to that list, sends a
+// welcome email with the latest newsletter edition (see _newsletter.js). The Brevo key is read ONLY from
 // process.env.BREVO_API_KEY (Vercel project env var) and never sent to the browser.
 // No dependencies (Node 18+ global fetch).
 'use strict';
 
+const NL = require('./_newsletter');
+
 const SITE_KEY = 'devon-mx';           // value the page sends as "list"
 const LIST_NAME = 'Devon MX';         // Brevo list name (looked up if no id is configured)
-const LIST_ID = null;               // Brevo list id (null => BREVO_LIST_ID env or lookup by name)
+const LIST_ID = 4;               // Brevo list id (null => BREVO_LIST_ID env or lookup by name)
 const BREVO = 'https://api.brevo.com/v3';
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"']+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
 
@@ -84,11 +87,39 @@ module.exports = async function handler(req, res) {
   try {
     const listId = await resolveListId();
     if (!listId) return send(res, 503, { ok: false, error: 'list_not_found' });
+
+    // Was this address already on the list? (so duplicate signups don't get a second welcome email)
+    let known = null;
+    let blacklisted = false;
+    try {
+      const g = await brevo('/contacts/' + encodeURIComponent(email));
+      if (g.status === 404) known = false;
+      else if (g.ok && g.data) {
+        known = Array.isArray(g.data.listIds) && g.data.listIds.map(Number).includes(Number(listId));
+        blacklisted = !!g.data.emailBlacklisted;
+      }
+    } catch (e) { console.error('brevo contact lookup failed', e && e.message); }
+
     const r = await brevo('/contacts', {
       method: 'POST',
       body: JSON.stringify({ email, listIds: [listId], updateEnabled: true }),
     });
-    if (r.ok) return send(res, 200, { ok: true, status: r.status === 201 ? 'created' : 'updated' });
+    if (r.ok) {
+      const isNew = known === null ? r.status === 201 : !known;
+      let welcome = 'skipped';
+      if (isNew && !blacklisted) {
+        try {
+          const host = String(req.headers['x-forwarded-host'] || req.headers.host || '').split(',')[0].trim();
+          const w = await NL.sendWelcome(email, host);
+          if (w.ok) { welcome = 'sent'; console.log('welcome email sent', SITE_KEY, w.messageId, 'source=' + w.source); }
+          else { welcome = 'failed'; console.error('welcome email failed', SITE_KEY, w.status, w.code || ''); }
+        } catch (e) {
+          welcome = 'failed';
+          console.error('welcome email error', SITE_KEY, e && e.message);
+        }
+      }
+      return send(res, 200, { ok: true, status: r.status === 201 ? 'created' : 'updated', welcome });
+    }
     const code = (r.data && r.data.code) || '';
     console.error('brevo contact upsert failed', r.status, code);
     if (r.status === 400 && /email/i.test(String(r.data && r.data.message))) return send(res, 400, { ok: false, error: 'invalid_email' });
