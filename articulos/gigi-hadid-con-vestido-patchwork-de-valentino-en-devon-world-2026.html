@@ -304,7 +304,7 @@
 <p>El vestido que lució Gigi Hadid en Devon World 2026 pertenece a la preciosa colección de Alta Costura de Valentino Primavera-Verano de 2025, la primera firmada por el director creativo Alessandro Michele. “Es como si cada vestido evocara, por asociación, una pluralidad de mundos interconectados: una estratificación febril e ininterrumpida de referencias que hace que su singularidad estalle”, había explicado el diseñador en referencia a sus creaciones para ese desfile.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -523,5 +523,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

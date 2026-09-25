@@ -303,7 +303,7 @@
 <p>Ni completamente nude ni excesivamente vibrante: el rosa chicle será una de las pedicuras más repetidas de la Primavera-Verano 2026. Aporta ese efecto de uñas sanas y brillantes que tanto buscamos cuando empieza el buen tiempo y, además, favorece muchísimo tanto en pieles claras como bronceadas. La clave está en elegir un acabado glossy, casi gelatinoso, que haga que los pies se vean cuidados sin parecer demasiado producidos. Minimalista, femenina y fácil de combinar con cualquier sandalia.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -530,5 +530,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

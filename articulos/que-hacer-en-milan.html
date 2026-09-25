@@ -302,7 +302,7 @@
 <p>En el corazón de Brera, el barrio que concentra el pulso artístico y creativo de Milán, Casa Baglioni ofrece una interpretación contemporánea de la hospitalidad italiana. Reinaugurado en 2023, dentro de un elegante edificio que data de 1913, el hotel rinde homenaje a la efervescencia cultural de la ciudad durante los años sesenta, una época decisiva para el diseño italiano. Concebido por Spagnulo &amp; Partners, sus interiores incorporan referencias a figuras como Gio Ponti, Lucio Fontana, Enrico Castellani y Nanda Vigo, combinando obras de arte, mobiliario de manufactura italiana y materiales nobles en espacios que evocan la atmósfera de una refinada residencia milanesa, a pocos pasos de la Pinacoteca de Brera, el Quadrilatero della Moda y el Teatro alla Scala.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -553,5 +553,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

@@ -301,7 +301,7 @@
 <p>Desde entonces, los bazares se han convertido en mi territorio sagrado. No hay comparación entre la emoción de encontrar una prenda única y el placer de incorporarla en mi estilo. Me han dado la libertad de jugar, de experimentar con siluetas que jamás me habría atrevido a probar en un centro comercial. Antes, la idea de llevar un vestido con miles de colores y unas botas con punta me habría parecido demasiado arriesgada, pero ahora, sé que el estilo se construye con atrevimiento, con mezcla, con ese toque inesperado que no puede encontrarse en masa.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -520,5 +520,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

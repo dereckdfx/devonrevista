@@ -274,7 +274,7 @@
                 
                 <!-- Contenedor del Formulario -->
                 <div id="formContainer" class="w-full transition-opacity duration-500">
-                    <form id="subscriptionForm" action="#" method="POST" class="w-full">
+                    <form id="subscriptionForm" action="#" method="POST" class="w-full" data-newsletter novalidate>
                     
                         <!-- Opción de Boletín (Texto del PDF adaptado a Devon) -->
                         <div class="border-t border-b border-gray-300 py-6 mb-10">
@@ -480,29 +480,23 @@
             };
 
             // Verificar si el usuario ya se suscribió previamente al cargar la página
-            if (localStorage.getItem("devonSubscribed") === "true") {
+            if (localStorage.getItem("devonNewsletterSubscribed") === "true") {
                 showSuccess();
             }
 
-            // Manejar el clic en el botón de suscribirse
+            // Suscripción real: js/newsletter.js envía el correo a /api/subscribe (Brevo)
+            // y dispara "newsletter:success" solo cuando el registro fue exitoso.
             if (subscriptionForm) {
-                subscriptionForm.addEventListener("submit", (e) => {
-                    e.preventDefault(); // Evitar que la página recargue al mandar el formulario
-                    const emailInput = document.getElementById("email");
-                    
-                    if (emailInput.value.trim() !== "") {
-                        // Guardar el estado de suscripción en el navegador
-                        localStorage.setItem("devonSubscribed", "true");
-                        
-                        // Efecto visual: desvanecer el formulario y mostrar el mensaje
-                        formContainer.classList.add("opacity-0");
-                        setTimeout(() => {
-                            showSuccess();
-                        }, 500); 
-                    }
+                subscriptionForm.addEventListener("newsletter:success", () => {
+                    localStorage.setItem("devonNewsletterSubscribed", "true");
+                    formContainer.classList.add("opacity-0");
+                    setTimeout(() => {
+                        showSuccess();
+                    }, 500);
                 });
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

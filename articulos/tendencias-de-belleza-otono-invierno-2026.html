@@ -305,7 +305,7 @@
 <p>Después de observar una y otra vez las pasarelas de nuestros diseñadores favoritos, hay un común denominador imposible de ignorar: el look despeinado, con poco maquillaje y ese aire de “me acabo de salir de la cama” que es simplemente irresistible. ¿Será que estamos viviendo el epítome del effortless chic o esta tendencia de belleza de casi sin intentarlo llegó hoy a otro nivel? Lo cierto es que es un beauty look que, al acompañarse de un look de impacto como los que vemos en Gabriela Hearst, Hermès y Alberta Ferretti, luce totalmente intencionado y hace que cada pieza cobre un nuevo sentido. No importa si decides llevarlo en un cabello completamente desenfadado o si el desorden se equilibra ligeramente con un maquillaje difuminado y de apariencia lived-in, la clave es que se sienta más natural y un poco rebelde.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -559,5 +559,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

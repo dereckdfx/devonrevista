@@ -303,7 +303,7 @@
 <p>¿Siempre has pensado que la obsesión por el pelo rubio surgió en Hollywood? Esto no es exactamente así. Las damas de la nobleza veneciana del Renacimiento pasaban los días en las terrazas de sus majestuosos palacios con vistas al Gran Canal, luciendo un peculiar sombrero sin copa (solana) con el objetivo de aclarar su cabello al exponerse al sol, tras haberle aplicado extraños brebajes a base de lejía y limón. ¿El resultado? El legendario “rubio titian”.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -536,5 +536,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

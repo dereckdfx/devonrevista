@@ -303,7 +303,7 @@
 <p>Monstruo: La historia de Lizzie Borden está inspirada en una historia real, sin embargo, no es una reconstrucción exacta de lo sucedido. La serie parte del caso de Lizzie Borden, quien fue acusada de asesinar a su padre y su madrastra con un hacha, pero al ser un caso que ocurrió durante la década de 1800, la historia toma libertades creativas en su construcción. Además de contar lo sucedido, el proyecto indaga en las estructuras sociales de la época para denunciar la represión femenina y cómo influenció el curso del incidente y la perspectiva de la acusada. “El trabajo del programa era contrastar esta jaula que cualquier mujer que viviera en esa época y en ese lugar habría sentido — pero particularmente, esta extraña joven que amaba a los animales y que vivía en un hogar represivo”, declaró Ian Brennan para Netflix.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -544,5 +544,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

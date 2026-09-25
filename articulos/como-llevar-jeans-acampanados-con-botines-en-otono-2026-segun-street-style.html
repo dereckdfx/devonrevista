@@ -303,7 +303,7 @@
 <p>Por un lado, los botines en tendencia para Otoño-Invierno 2026, el calzado más esperado de la temporada y, por otro, los vaqueros de pernera amplia que se extienden desde las rodillas hasta rozar el suelo. Dos piezas que, al unirse, consolidan una alianza tan antigua como el tiempo, o al menos una que nos transporta directamente a la década setentera. Dicho esto, hemos reunido las opciones que mejor canalizan esta propuesta para que las sumes a tu repertorio de looks sin margen de error.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -532,5 +532,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

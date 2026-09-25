@@ -302,7 +302,7 @@
 <p>David Hockney, nació en Bradford en 1937, fue el segundo más joven y el más famoso de cuatro hermanos, el más acostumbrado a que le fotografiaran, el más alabado públicamente. De pronto, frente a él se encontraba California, con sus albercas y “A Bigger Splash”, y más tarde la ópera y los decorados teatrales, “Mr and Mrs Clark and Percy”, Stanley el perro salchicha, los collages de películas Polaroid con múltiples impresiones y la investigación sobre las propiedades de los dispositivos lenticulares, luego las alucinantes imágenes para iPad y las exposiciones “totalmente inmersivas” de su madurez. Pero casi siempre se apoyaba en un gran lienzo, fumando un cigarrillo con indiferencia.</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -535,5 +535,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

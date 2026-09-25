@@ -302,7 +302,7 @@
 <p>Cuando se trata de sustentabilidad y de tratar de buscarle un espacio en lo cotidiano, aprender es un verbo que se debe conjugar en gerundio. Siempre debemos estar aprendiendo o, por lo menos, con la disposición de alimentar la curiosidad por conocer nuevas soluciones, innovaciones en cuanto a materiales y procesos, propuestas para la circularidad, iniciativas con impacto social, pero, también, educarse sobre los estragos de las industrias sobre el planeta, leyes que aboguen por el resguardo de nuestros recursos naturales, así como también de las comunidades más vulnerables, de tal manera que tus decisiones estén lo más informadas posibles. ¿Cómo informarse, se preguntarán ustedes? Pues un buen primer paso es seguir la sección de ReVogue de esta revista, dedicada a sustentabilidad, donde se destacan marcas, iniciativas, líderes que están apostando por prácticas más responsables y con un impacto positivo en sus comunidades. Yo, personalmente, me nutro mucho también con el contenido de publicaciones como Wired En Español, pues profundizan en temas con datos científicos, poniendo en contexto muchas noticias que te dan una visión más amplia de los problemas. Me enseña mucho de términos, procesos, especificidades que al momento de enfrentarme a una noticia, que me ayudan a mitigar lo más posible el greenwashing. Otra parte importante de aprender es preguntar. De verdad no hay pregunta tonta. Debes pensar que siempre es válido preguntar a quienes se supone que tengan la respuesta, y aquí te dejo una serie de preguntas básicas y sumamente importantes: ¿De qué materiales está hecha la prenda?, ¿cómo son las condiciones de las personas que trabajaron el proceso de confección? ¿Qué pasa con el excedente de ropa que le queda a una marca? ¿Cómo se lava esa prenda?</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -523,5 +523,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>

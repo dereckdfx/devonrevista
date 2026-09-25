@@ -301,7 +301,7 @@
 <p>Me puse a hacer una purga de ropa, donar mucha, intentar vender otra y de plano tirar la que ya no era viable. En mi búsqueda de vender toda esa ropa, encontré bazares de ropa pre-loved, unos en línea, otros en redes sociales y otros físicos. Empecé a darme cuenta de que había muchas prendas que estaban en perfectas condiciones, con una o dos puestas, si acaso, otras con etiquetas completamente nuevas, mucha ropa que por temporada ya no encontraba en tiendas (como un abrigo en junio, o unos denim shorts en diciembre). Me empecé a sentir cómoda viendo cómo era mejor generar una economía circular con otras mujeres que intentaban renovar su clóset a un precio fracción de lo que se pagaría en una tienda. No solo podía “ahorrar”, sino que se generaban círculos de compra-venta de confianza, que prefería encontrar prendas de calidad, con buenas telas y confección, o una pieza muy particular que estuviera buscando a través de estos canales. Y fue así como la ropa pre-loved o second hand, se hizo un espacio en mi corazón (y bolsillo).</p>
             <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
                 <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
-                <form class="flex flex-col sm:flex-row w-full mb-4" onsubmit="event.preventDefault(); window.location.href='../newsletter.html';">
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
                     <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
                     <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
                 </form>
@@ -520,5 +520,6 @@
             }
         });
     </script>
+    <script src="/js/newsletter.js" defer></script>
 </body>
 </html>
