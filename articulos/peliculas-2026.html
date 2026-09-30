@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las 64 películas más esperadas de 2026 y los mejores estrenos del año | Devon México y Latinoamérica</title>
+    <meta name="description" content="Tu guía Devon de películas 2026 ya está aquí. Conoce cuáles son los estrenos que no puedes perderte en este año, desde Marty Supreme, hasta Super Girl.">
+    <meta property="og:title" content="Las 64 películas más esperadas de 2026 y los mejores estrenos del año | Devon México y Latinoamérica">
+    <meta property="og:description" content="Tu guía Devon de películas 2026 ya está aquí. Conoce cuáles son los estrenos que no puedes perderte en este año, desde Marty Supreme, hasta Super Girl.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297660/devon-mx/articles/practical-magic-2_npx0su.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297660/devon-mx/articles/practical-magic-2_npx0su.jpg" alt="Las 64 películas más esperadas de 2026 y los mejores estrenos del año" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Red Carpet</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Las 64 películas más esperadas de 2026 y los mejores estrenos del año</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Tu guía Devon de películas 2026 ya está aquí. Conoce cuáles son los estrenos que no puedes perderte en este año, desde Marty Supreme, hasta Super Girl.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR MIGUEL VICENCIO, FERNANDA PÉREZ SÁNCHEZ</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">13 de septiembre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Las películas de 2026 revelan un año interesante para el cine. Resuenan los nombres de estrenos como El diablo viste a la moda 2, la esperadísima secuela de la cinta de 2006; La Odisea, el filme histórico de Christopher Nolan; Super Girl, la adaptación de la historia de la prima de Superman; Avengers: Doomsday, la apuesta más esperada del Universo Marvel en años; y Dune 3, la conclusión de la saga de ciencia ficción protagonizada por Timothée Chalamet.</p>
+<p>Otros estrenos que han acaparado la conversación son El Día de la Revelación, el regreso de Steven Spielberg a la temática de extraterrestres; la biopic de Michael Jackson; y, en cuanto al terror, Backrooms, la cinta que nació en unos cortos de YouTube, fue una de las más exitosas del año.</p>
+<p>Ya sea a través de géneros como el romance y la comedia; o el suspenso y el terror, las películas que se estrenan este año le abren paso a una nueva ola de lanzamientos que dejarán su huella. Esto es todo lo que llega al cine en 2026.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<ul class="list-disc pl-6 space-y-2"><li>Películas que estrenan en enero 2026</li><li>La empleada</li><li>Gente que conocemos en vacaciones</li><li>Marty Supremo</li><li>28 Years Later: The Bone Temple</li><li>The Rip</li><li>HAMNET</li><li>Sin Piedad</li><li>Send Help</li><li>Películas que estrenan en febrero 2026</li><li>Cumbres borrascosas</li><li>Scream 7</li><li>Películas que estrenan en marzo 2026</li><li>¡La Novia!</li><li>The Testament of Ann Lee</li><li>Peaky Blinders: El hombre inmortal</li><li>Proyecto fin del mundo</li><li>Te van a matar</li><li>Películas que estrenan en abril 2026</li><li>The Drama</li><li>Michael</li><li>Super Mario Galaxy: La película</li><li>You, Me &amp; Tuscany</li><li>La Posesión De La Momia</li><li>Películas que estrenan en mayo 2026</li><li>El diablo viste a la moda 2</li><li>El ritual del nahual</li><li>Mortal Kombat II</li><li>Criaturas luminosas</li><li>Obsesión</li><li>Star Wars: The Mandalorian and Grogu</li><li>Amarga Navidad</li><li>Backrooms</li><li>Películas que estrenan en junio 2026</li><li>Scary Movie 6</li><li>En el camino</li><li>Alpha</li><li>Masters of the Universe</li><li>El día de la Revelación</li><li>Toy Story 5</li><li>Supergirl: Woman of Tomorrow</li><li>Películas que estrenan en julio 2026</li><li>Minions 3: Mega Minion</li><li>Moscas</li><li>La odisea</li><li>Hasta el fin del mundo</li><li>Spider-Man: Brand New Day</li><li>Moana live action</li><li>Películas que estrenan en agosto 2026</li><li>Flowervale Street</li><li>La captura</li><li>Coyote vs. Acme</li><li>La constelación del perro</li><li>Películas que estrenan en septiembre 2026</li><li>Practical Magic 2</li><li>Películas que estrenan en octubre 2026</li><li>Verity: La sombra de un engaño</li><li>Digger</li><li>Street Fighter</li><li>Clayface</li><li>Películas que estrenan en noviembre 2026</li><li>El gato con sombrero</li><li>Los Juegos del Hambre: Amanecer en la Cosecha</li><li>Yo soy Rocky</li><li>Películas que estrenan en diciembre 2026</li><li>Avengers: Doomsday</li><li>Dune 3</li><li>Jumanji 3</li><li>Werwulf</li><li>Películas con fecha de estreno por Definir</li><li>Soulm8te</li><li>Empero r</li><li>Masterplan</li><li>Cut Off</li><li>Amigos de la vida</li><li>Remain</li><li>Ceniza en la boca</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Los estrenos de películas más esperados de 2026: lista completa</h2>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en enero 2026</h2>
+<p>En este thriller psicológico, una joven con un pasado oscuro que busca empezar de nuevo es contratada por una familia adinerada como la nueva niñera de la familia. Con el paso de los días, se percata de que sus nuevos empleadores tienen secretos que podrían poner su vida en riesgo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Paul Feig</li><li>Reparto: Sydney Sweeney, Amanda Seyfried, Brandon Sklenar</li><li>Fecha de estreno: 1 de enero</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>La cinta estrenada directamente en Netflix se basa en la novela homónima de Emily Henry, conocida por sus historias de romance ligero en tiempos modernos. En esta película vemos a Emily y Alex, dos amigos que son polos opuestos, unidos por su pasión por viajar y conocer diferentes lugares del mundo. Después de varios años siguiendo la tradición de visitar una ciudad nueva cada verano, todo cambia en su parada en Italia. Cuando Alex se compromete, Poppy debe ponerle nombre a sus sentimientos por él.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Brett Haley</li><li>Reparto: Emily Bader, Tom Blyth</li><li>Fecha de estreno: 9 de enero</li><li>Dónde ver: Netflix</li></ul>
+<p>Marty Supreme es parte de las cintas cuya trama supera la realidad. Inspirada en la vida de Marty Reisman, esta película se adentra en la vida de un hombre problemático en medio de un intento por triunfar. Ambientada en Nueva York en la década de los cincuenta, la cinta muestra la vida de Marty y su ascenso hasta convertirse en una leyenda del ping-pong. Está inspirada en una historia real.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Josh Safdie</li><li>Reparto: Timothée Chalamet, Gwyneth Paltrow, Odessa A&#x27;zion</li><li>Fecha de estreno: 15 de enero</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>Expandiendo el universo puesto en marcha en 2002 con el estreno de Exterminio, 28 Years Later: The Bone Temple se sitúa en el futuro para seguir la historia de un hombre que despierta de un coma para encontrarse con un mundo en donde un virus que convierte a las personas en monstruos se ha apoderado de la humanidad. La similitud de la trama puede trazarse a la cinta original en donde Cillian Murphy le da vida a Jim, un hombre que despierta de un coma tras una acciende de bicicleta para encontrar un mundo distinto. Con esta trama, la directora extiende un guiño al origen de este universo cinematográfico con un nuevo giro que lo conecta todo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Nia DaCosta</li><li>Reparto: Jack O&#x27;Connell, Ralph Frennes, Emma Laid</li><li>Fecha de estreno: 16 de enero</li><li>Dónde ver: HBO Max</li></ul>
+<p>Con Matt Damon y Ben Affleck como protagonistas, esta cinta a cargo de Joe Carnahan muestra a un grupo de policías en Miami que descubren una escondite con millones de dólares adentro. Ahí, comienza un viaje que pone aprueba sus principios en un juego donde la confianza se vuelve de vida o muerte. Si bien, existe una libertad creativa de por medio, la historia se inspira en el Miami River Cops Scandal, un incidente en donde un grupo de policías fueron señalados por actos de corrupción.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Joe Carnahan</li><li>Reparto: Teyana Taylor, Matt Damon, Ben Affleck</li><li>Fecha de estreno: 16 de enero</li><li>Dónde ver: Netflix</li></ul>
+<p>En esta adaptación de la novela de Maggie O&#x27;Farrell, Jessie Buckley interpreta a Agnes, la esposa de William Shakespeare. La cinta aborda el duelo de una mujer tras perder a su hijo y sigue el proceso de sanación que llevó a cabo para sobrellevarla.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Chloé Zhao</li><li>Reparto: Jessie Buckley, Paul Mescal, Zac Wishart</li><li>Fecha de estreno: 29 de enero</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>Después de ser acusado por el asesinato de su esposa, Raymond, un detective dispuesto a todo, es llevado a un juicio en donde tendrá que demostrar su inocencia en 90 minutos antes de que su destino sea sellado. Ahí, se encuentra con una juez de IA a la que ayudó en el pasado y ahora deberá enfrentarse. La cinta presenta la búsqueda de justicia mientras explora ia imparcialidad que la Inteligencia Artificial puede tener para hacer que esta suceda.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Vincent D&#x27;Onofrio</li><li>Reparto: Chris Pratt, Rebecca Ferguson, Michael C. Mahon</li><li>Fecha de estreno: 22 de enero</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>En su día a día, Linda debe tolerar las malas actitudes de su empleador, Bradley, pero cuando un viaje termina en un accidente aéreo que los deja en una isla desierta cambia la situación y ella será la única esperanza para que ambos salgan con vida. Con esta cinta, Sam Raimi, mayormente conocido por su trabajo en la saga de Spider Man, regresa al género de horror con un tono de comedia, tal como lo hizo en 2009 con Arrástrame al Infierno, pero esta vez, lo hace con una historia que demuestra cómo el miedo puede transformar las dinámicas de poder y doblegar a una persona.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Sam Raimi</li><li>Reparto: Rachel McAdams, Dylan O&#x27;Brien, Xavier Samuel</li><li>Fecha de estreno: 30 de enero</li><li>Dónde ver: Disney+</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en febrero 2026</h2>
+<p>En 1847, Emily Brontë lanzó Cumbres Borrascosas, una oda al romance gótico en la que una relación entre Heathcliff y Catherine Earnshaw se adentra en el abismo para mostrar el lado oscuro del amor cuando este se encuentra con la obsesión. En esta reinterpretación de una historia llena de pasión, Emerald Fennell continúa construyendo su voz como directora en un género donde rompe los límites sin miedo a dejar a sus personajes mostrar su versión más pasional, tal como lo hizo con su rol tras la dirección de Saltburn.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Emerald Fennell</li><li>Reparto: Jacob Elordi, Margot Robbie, Alison Oliver</li><li>Fecha de estreno: 12 de febrero</li><li>Dónde ver: HBO Max</li></ul>
+<p>Scream 7 regresa con parte del elenco original para retomar la historia donde la entrega pasada la dejó. Después de escapar de la muerte, Sidney decide rehacer su vida en un pueblo fuera del caos, pero la reaparición de un nuevo Ghostface pone a su familia como el nuevo objetivo y la adentra en una nueva lucha para salvar a lo que más quiere antes de que sea muy tarde. Con esta película, Kevin Williamson –guionista clave detrás de las cintas originales de la saga– asume el papel de director de esta continuación de esta serie de películas que revolucionó el género de slasher.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kevin Williamson</li><li>Reparto: Neve Campbell, Courteney Cox, Isabel May</li><li>Fecha de estreno: 26 de febrero</li><li>Dónde ver: Amazon Prime Video con suspripción adicional</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en marzo 2026</h2>
+<p>En 2025, la fiebre por reinterpretar la historia de Mary Shelley resultó en algunos de los títulos más emblemáticos del año. Desde Frankenstein de Guillermo del Toro y Soy Frankelda, la historia de la criatura incomprendida fue vestida por talento mexicano y este 2026, parece que la tendencia por seguir contando la historia sigue. En esta ocasión, es Maggie Gyllenhaal quien presenta una nueva versión que rompe con el molde para contarla desde la perspectiva de una mujer. ¡La Novia! pone a la figura femenina al centro de una historia pasional que utiliza el horror clásico para plantear una crítica social al remomtsarse a los años 30, en donde Frankenstein se empeña en crear una compañera utilizando el cuerpo de una mujer asesinada.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Maggie Gyllenhaal</li><li>Reparto: Jake Gyllenhaal, Jessie Buckley, Christian Bale</li><li>Fecha de estreno: 5 de marzo</li><li>Dónde ver: HBO Max</li></ul>
+<p>Con Amanda Seyfried al frente del elenco, este drama musical regresa al siglo XVIII para tomar inspiración en la vida de Ann Lee, la fundadora del movimiento religioso, los Shakers y a través de la música, mostrar la creación de una comunidad de creyentes en medio de un contexto donde la religión parecía estar reservada al patriarcado. Después de su paso por el Festival de Cine de Venecia, en donde recibió una ovación de 15 minutos, finalmente llega a salas de cine.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Mona Fastvold</li><li>Reparto: Amanda Seyfried, Lewis Pullman, Thomasin McKenzie</li><li>Fecha de estreno: 12 de marzo</li><li>Dónde ver: Disney+</li></ul>
+<p>El galardonado al Oscar, Cillian Murphy, regresa a su papel como Thomas Shelby para expandir la saga de Peaky Blinders hacia un nuevo formato. Con la esencia de la serie original creada por Steven Knight, la historia se remonta a la Segunda Guerra Mundial para seguir a Tommy en su regreso a Birmingham, donde se enfrentará a misiones secretar y amenazas que regresan para atormentarlo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Tom Harper</li><li>Reparto: Cillian Murphy, Rebecca Ferguson, Tim Roth</li><li>Fecha de estreno: 20 de marzo</li><li>Dónde ver: Netflix</li></ul>
+<p>Con un elenco encabezado por Ryan Gosling, Proyecto fin del mundo llega para explorar la historia de Ryan, un hombre que despierta solo en una nave espacial sin memoria de cómo llegó ahí. Ahora, deberá usar sus conocimientos de ciencia para salvar la humanidad mientras recupera fragmentos de su identidad. Esta cinta inspirada en la novela de Andy Weir continúa posicionando al autor como un referente en el género después de que The Martian, otro de sus títulos, fuera adaptada a la pantalla en 2015.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Phil Lord, Christopher Miller</li><li>Reparto: Ryan Gosling, Milana Vayntrub, Sandra Hüller</li><li>Fecha de estreno: 20 de marzo</li><li>Dónde ver: Amazon Prime Video (con costo adicional)</li></ul>
+<p>En esta cinta de terror urbano, una mujer es contratada para ser empleada doméstica en un lujoso edificio de Nueva York que sin saberlo ha sido el epicentro de una serie de desapariciones que parecen no tener respuesta. El estreno de esta entrega marca el debut de Nocturna, el sello de producción asociado con Skydance y Paramount Pictures creado por las mentes detrás de las adaptaciones más recientes de IT, Andrew y Barbara Muschietti.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kirill Sokolov</li><li>Reparto: Patricia Arquette, Zazie Beetz, Tom Felton, Heather Graham</li><li>Fecha de estreno: 26 de marzo</li><li>Dónde ver: HBO Max</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en abril 2026</h2>
+<p>Robert Pattinson y Zendaya protagonizan una de las comedias románticas más esperadas del año. En The Drama, los actores interpretan a una pareja que está a punto de casarse, pero cuando los secretos comienzan a aflorar, será tiempo de reevaluar la decisión. La cinta de A24 cuenta con la dirección de Kristoffer Borgli y su tráiler oficial reveló un tono ácido y ligeramente oscuro que sin duda será refrescante para el género.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kristoffer Borgli</li><li>Reparto: Zendaya, Robert Pattinson</li><li>Fecha de estreno: 3 de abril</li><li>Dónde ver: Amazon Prime Video (con costo adicional)</li></ul>
+<p>Michael Jackson no necesita introducción. El Rey del Pop transformó la industria de la música y el espectáculo. Su vida, marcada por las controversias, aún causa polémica. En esta cinta, es su propio sobrino, Jaafar Jackson, quien le da vida, sin embargo, el proyecto ha sido criticado por el enfoque que se le ha dado a las controversias que la leyenda del pop vivió, señalado por figuras como Dan Reed –el director de Leaving Neverland, el documental que expone las acusaciones de pedofilia contra el cantante– al ser etiquetada como una película poco acertada.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Antoine Fuqua</li><li>Reparto: Jaafar Jackson, Juliano Krue Valdi, Tony von Halle</li><li>Fecha de estreno: 24 de abril</li><li>Dónde ver: Amazon Prime Video (con costo adicional)</li></ul>
+<p>Posiblemente, Mario Bros sea uno de los personajes más reconocidos dentro del mundo de la animación. Entre videojuegos y películas, se ha convertido en el rostro de los videojuegos durante generaciones. Inspirado en la historia del videojuego de 2007, Super Mario Galaxy y su secuela de 2010, la película llega para fusionar elementos del universo de Mario Bros y seguir al protagonista durante su lucha contra Wario y Bowser Jr. La cinta también destaca por la participación de talentos como Anya Taylor-Joy, Chris Pratt y Jack Black.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Aaron Horvath, Michael Jelenic, Pierre Leduc, Fabien Polack</li><li>Reparto: Anya Taylor-Joy, Chris Pratt, Jack Black</li><li>Fecha de estreno: 1 de abril</li><li>Dónde ver: Amazon Prime Video (con costo adicional)</li></ul>
+<p>Tras el éxito de Evil Dead: El Despertar, el guionista y director, Lee Cronin, regresa a la pantalla para reinventar la historia de una de las figuras más conocidas del género de horror. En La Posesión De La Momia, la desaparición de una joven en el desierto atormenta a su madre, una periodista en busca de la verdad. Años después, la joven regresa, pero algo ha cambiado y lejos de un reencuentro feliz, se transforma en una historia de terror. Con esta cinta, Cronin mostrará una versión cruda de una de las criaturas más temidas del cine con el sello que lo distingue con el apoyo de James Wan, John Keville y Jason Blum en la producción.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Lee Cronin</li><li>Reparto: Jack Reynor, Laia Costa, May Calamawy.</li><li>Fecha de estreno: abril</li><li>Dónde ver: Amazon Prime Video (con suscripción adicional)</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en mayo 2026</h2>
+<p>En 2006 se estrenó El diablo viste a la moda 2, la película en donde Meryl Streep encarna a Miranda Priestly, la despiadada editora en jefe de Runway que atormenta al personaje de Anne Hathaway, Andrea Sachs, una joven asistente sin sentido aparente de la moda. A 20 años de su estreno original, la cinta continúa siendo un referente de la cultura pop y ahora una secuela mostrará qué fue de la periodista y la influyente editora de moda en una era donde las revistas impresas sufren ante los medios digitales. Además del retorno de Meryl Streep, Anne Hathaway y Emily Blunt a sus papeles, nuevas figuras como Simone Ashley se suman al elenco para recibir la nueva era.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: David Frankel</li><li>Reparto: Meryl Streep, Anne Hathaway, Emily Blunt</li><li>Fecha de estreno: 1 de mayo</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>El ritual del Nahual llegó como parte de los estrenos hechos en México. La cinta se adentra a los bosques de San Luis Potosí para retratar a un grupo de curanderos que se enfrentan a una amenaza cuando en el pueblo, una serie de asesinatos que desencadena un poder maligno acecha con atacar. La película es parte de los esfuerzos por colocar al cine mexicano en la pantalla grande dentro del género de terror folclórico que le da una nueva perspectiva a las creencias y tradiciones de México.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Carlos Matienzo Serment</li><li>Reparto: Gerardo Oñate, Alejandra Herrera, Gerardo Trejoluna</li><li>Fecha de estreno: 7 de mayo</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Existe una tendencia por trasladar historias originalmente presentadas en videojuegos a la pantalla. Si algo hemos aprendido con producciones como The Last of Us y Silent Hill es que la audiencia siempre está en busca de nuevas historias sin importar si están o no inmersos en la escena gamer, y esta vez, Mortal Kombat II llega como secuela de la saga de películas iniciada por Simon McQuoid en 2021 para reafirmarlo. Esta vez, la cinta sigue a personajes como Sonya Blade, Lui Kang, Johnny Cage y Jax en su búsqueda por reclutar nuevos aliados para el torneo que lucha por la supervivencia del Earthrealm.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Simon McQuoid</li><li>Reparto: Karl Urban, Ludi Lin, Jessica McNamee</li><li>Fecha de estreno: 7 de mayo</li><li>Dónde ver: Amazon Prime Video (con costo adicional)</li></ul>
+<p>Criaturas luminosas es una adaptación de la novela homónima de Shelby Van Pelt. Se trata de una conmovedora historia que sigue a Tova Sullivan, una mujer viuda y solitaria que trabaja limpiando un acuario local donde interactúa con Marcellus, un pulpo gigante con quien tiene más en común de lo que podría pensar. Juntos emprenderán un viaje sobre el duelo al que se suma Cameron, un joven marcado por la ausencia de su padre.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Olivia Newman</li><li>Reparto: Sally Field, Alfred Molina, Lewis Pullman</li><li>Fecha de estreno: 8 de mayo</li><li>Dónde ver: Netflix</li></ul>
+<p>Tras perder su empleo, Anna decide ocupar de manera ilegal una villa en la Toscana italiana. En un cambio de suerte, la madre del dueño del sitio la confunde con la prometida de su hijo y aunque intenta seguir con la fachada, el amor verdadero llega de manera inesperada. En esta comedia romántica, Regé-Jean Page (Bridgerton) y Halle Bailey (La sirenita) asumen los papeles protagonistas.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kat Coiro</li><li>Reparto: Regé-Jean Page, Halle Bailey, Marco Calvani</li><li>Fecha de estreno: 9 de abril</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Con el anhelo de que Nikki, la mujer de sus sueños se fije en él, Bear hace un deseo que termina por hacerse realidad y desencadena en ella una obsesión que no puede frenarse. Ahora, deberá navegar su relación con la entidad que habita a Nikki acompañada por consecuencias que podrían resultar mortales.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Curry Barker</li><li>Reparto: Michael Johnston, Inde Navarrette, Cooper Tomlinson</li><li>Fecha de estreno: 21 de mayo</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Durante décadas, Star Wars se ha mantenido como uno de los universos de ciencia ficción más reconocidos alrededor del mundo. Star Wars: The Mandalorian and Grogu llega como una continuación directa de The Mandalorian, la serie lanzada en 2019 donde Pedro Pascal se unió al universo de la saga. La cinta seguirá la historia del cazarrecompensas en la fuga mientras protege al bebé alienígena en una galaxia llena de peligros.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Jon Favreau</li><li>Reparto: Sigourney Weaver, Pedro Pascal, Jeremy Allen White</li><li>Fecha de estreno: 22 de mayo</li><li>Dónde ver: Salas de cine seleccionadas y Disney+</li></ul>
+<p>Pedro Almodóvar regresa con Amarga Navidad. Al igual que la mayoría de su obra, la cinta explora la fragilidad humana y el duelo. La historia sigue a Elsa, una directora de una empresa de publicidad que enfrenta la muerte de su madre y decide llenar su vacío con trabajo. En un viaje con su mejor amiga, se reencuentra a sí misma en una travesía inesperada.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Pedro Almodóvar</li><li>Reparto: Bárbara Lennie, Leonardo Sbaraglia, Milena Smit</li><li>Fecha de estreno: 28 de mayo</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>En 2022, Kane Parsons creaba videos en su canal de YouTube, Kane Pixels. a través de videos con imágenes y música que generaban una sensación inquietante en su adiencia, creó el concepto de los Backrooms. Años después, este se transforrmó en el punto de partida para su debut direccional en Backrooms, la cinta de A24 que sigue la vida de sus protagonistas mientras se enfrentan a un espacio habitado por seres misteriosos en un laberinto interminable sin explicación. De acuerdo a lo reportado por Variety, la cinta se consolidó como el estreno más rentable de la productora, con una suma por encima de los 200 millones de dólares globales hasta el día de hoy.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kane Parsons</li><li>Reparto: Chiwetel Ejiofor, Renate Reinsve, Mark Duplass</li><li>Fecha de estreno: 28 de mayo</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en junio 2026</h2>
+<p>La comedia de terror irreverente fue marcada por Scary Movie con el lanzamiento de la saga a inicios de los 2000. Creada como una parodia de algunos de los clásicos del horror, esta serie de películas formó parte de la cultura pop. Con una nueva entrega que trae de vuelta a talentos como Anna Faris, los hermanos Wayans regresan con un guion que promete mantener el estilo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Michael Tiddes</li><li>Reparto: Regina Hall, Lochlyn Munro, Anna Faris</li><li>Fecha de estreno: 4 de junio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>En el camino es una de las producciones mexicanas más comentadas de los últimos meses. Producida por Diego Luna, Inna Payán, Enrique Nava, Luis Salinas; y dirigida por David Pablos (El baile de los 41, Las elegidas), esta cinta en la que un joven sin casa se adentra en una travesía sexual con conductores y comienza un romance con un camionero, es parte del cine queer que cobra fuerza. Después de su estreno en el Festival de Cine de Venecia y su paso por el Festival Internacional de Cine de Morelia 2025, Cinépolis distribuirá la cinta, por lo que llegará a salas de cine en algún momento de este año.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: David Pablos</li><li>Reparto: Osvaldo Sanchez, Victor Prieto Simental</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Julia Ducournau, la directora de Voraz conocida por ser la ganadora de la Palma de Oro por Titane en 2021 regresa a la pantalla grande con Alpha. Al igual que la mayoría de sus entregas, utiliza el body horror como herramienta narrativa para contar la historia de Alpha, una adolescente que después de una fiesta, regresa a casa con un tatuaje en el brazo en medio del brote de un virus que causa que sus víctimas se desintegren. Junto a la ayuda de su madre, deberá enconrtrar una solución antes de que sea muy tarde.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Julia Ducournau</li><li>Reparto: Tahar Rahim, Golshifteh Farahani, Mélissa Boros</li><li>Fecha de estreno: 4 de julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>En la década de los 80, He-Man llenó la pantalla chica como parte de las animaciones que dieron rostro a la época. En una reinvención que le da una nueva estética, la historia del príncipe del espacio que defenderá Eternia de las legiones oscuras de Skeletor, regresa para revivir la nostalgia de quienes lo conocieron en su debut y presentarse ante nuevas generaciones. Con Amazon MGM y Sony detrás de la distribución, se espera que este sea uno de los estrenos más ambiciosos del calendario.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Travis Knight</li><li>Reparto: Morena Baccarin, Idris Elba, Alison Brie</li><li>Fecha de estreno: 5 de junio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>A modo de comedia ácida, México 86 se adentra en la manera en la que México se convirtió en el anfitrión del Mundial de 1986 después de que Colombia renunciara a la encomienda. La película explora las incongruencias y el ingenio mexicano que lo hizo posible.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Gabriel Ripstein</li><li>Reparto: Diego Luna, Karla Souza, Daniel Giménez Cacho y Álvaro Guerrero</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Netflix</li></ul>
+<p>Con El Día de la Revelación Steven Spielberg vuelve con una cinta de ciencia ficción en la que se hace una revelación pública sobre la existencia de vida extraterrestre. La historia involucra a una meteoróloga y un periodista envueltos en conspiraciones. Con este lanzamiento después de forjar su carrera con títulos como Encuentros cercanos del tercer tipo, La guerra de los mundos y E.T., el extraterrestre, el cineasta vuelve a confirmar su afición por contar relatos que involucran a series de otro mundo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Steven Spielberg</li><li>Reparto: Josh O&#x27;Connor, Emily Blunt, Eve Hewson</li><li>Fecha de estreno: 11 de junio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Desde mediados de la década de los noventa, Toy Story ha mantenido su lugar como un referente de la animación, con una historia ha logrado conmover a generaciones que vieron el desarrollo de la conmovedora saga en la pantalla grande. Con un mensaje sobre la adultez y los nuevos comienzos, la franquicia continúa siendo uno de los fenómenos más grandes de Pixar. En esta nueva entrega, Woody y Buzz se enfrentarán a la llegada de las nuevas tecnologías que pretenden desplazar a los juguetes tradicionales.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: McKenna Harris, Andrew Stanton</li><li>Reparto: Tom Hanks, Tim Allen, Greta Lee</li><li>Fecha de estreno: 18 de junio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Dervidada del universo de Superman de James Gunn, Supergirl: Woman of Tomorrow se centra en la historia de Kara Zor-El, quien después de una desilusión, encuentra el rumbo cuando Ruthye, una alienígena que busca una venganza personal la recluta para su misión. Con esta cinta, se quita el foco a Superman para darle protagonismo a su prima, cuya narrativa es muy diferente y mucho más oscura que la del superhéroe de capa roja.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Craig Gillespie</li><li>Reparto: Milly Alcock, Eve Ridley, Matthias Schoenaerts</li><li>Fecha de estreno: 25 de junio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en julio 2026</h2>
+<p>Tras el éxito que los asistentes de Gru en Mi Villano Favorito lograron en 2010, una saga de películas que indagan en su historia y origen fue lanzada en 2015. Con una tercera entrega, Minions 3 llega con Pierre Coffin –también conocido por hacer la voz de los Minions– como director para seguir contando las aventuras de estas figuras.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Pierre Coffin</li><li>Reparto: Amy Sedaris, Romesh Ranganathan, Pierre Coffin</li><li>Fecha de estreno: 1 de julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Tras su paso por el Festival Internacional de Cine de Berlín, Moscas, la cinta del mexicano Fernando Eimbcke en colaboración con Vanesa Garnica y la producción de Eréndira Núñez Larios y Michel Franco, llega a salas de cine para navegar la historia de Olga, una mujer que lleva una vida solitaria en un edificio multifamiliar. Para solventar sus problemas económicos decide rentar una habitación en su hogar a un hombre y su hijo, y pronto tendrá que enfrentar su miedo a socializar y enfrentarse a sus nuevos inquilinos.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Fernando Eimbcke</li><li>Reparto: Teresa Sánchez, Enrique ArreolaT, Hugo Ramírez</li><li>Fecha de estreno: 2 de julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Inspirada en la obra publicada por Homero en el siglo VII, esta adaptación sigue a Odiseo, un hombre que busca regresar a casa tras la Guerra de Troya, pero antes deberá enfrentarse a un camino lleno de criaturas míticas y dioses que buscan impedir el reencuentro con su amada. El ganador del Oscar Christopher Nolan tomó la dirección del filme rodado en 65 mm.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Christopher Nolan</li><li>Reparto: Matt Damon, Tom Holland, Anne Hathaway</li><li>Fecha de estreno: 16 de julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Hasta el fin del mundo llegó como una de las sorpresas que marcaron el calendario. Con la participación de Aislinn Derbez y Mauricio Ochmann, quienes después de su ruptura pública se unen en la pantalla para protagonizar una historia de romance, la película narra la vida de Manuel, un hombre que después de 15 años, se reencuentra con Esmeralda, su amor perdido. Su reencuentro llega cuando está por casarse con alguien más y ahora deberá tomar una decisión que cambiará su vida para siempre.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Emiliano Castro Vizcarra</li><li>Reparto: Aislinn Derbez, Mauricio Ochmann, Melina Figueroa</li><li>Fecha de estreno: 23 de julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Sin duda alguna, Spider-Man se ha convertido en uno de los superhéroes más conocidos del universo de Marvel. Con esta continuación a cargo de Destin Daniel Cretton, la historia de Stan Lee continúa su desarrollo con el Spider-Man de Tom Holland en su cuarta entrega bajo el papel. Aunque la historia sucede dentro del mismo universo de la saga de Jon Watts, esta vez el rol direccional cambia de figura y abre un nuevo camino en expansión.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Destin Daniel Cretton</li><li>Reparto: Tom Holland, Zendaya, Sadie Sink</li><li>Fecha de estreno: 31 de julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>En 2016 se estrenó Moana y en 2024 la secuela fue lanzada. Moana forma parte de la nueva era de princesas de Disney que redefinen la feminidad clásica que se nos había presentado hasta el momento. Esta será la primera vez que la película llegue como un live action con la intención de entregar aún más realismo al proyecto. Thomas Kail usará su enfoque en el teatro con puestas en escena como Hamilton para traer la magia de ambos mundos.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Thomas Kail</li><li>Reparto: Catherine Laga&#x27;aia, Dwayne Johnson, John Tui</li><li>Fecha de estreno: 9 julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en agosto 2026</h2>
+<p>2026 parece ser un buen año para Anne Hathaway, con el estreno de La Odisea y The Devil Wears Prada 2 en puerta, la actriz será uno de los rostros recurrentes de la pantalla grande. Con Flowervale Street, veremos una versión distinta de ella. Aunque la trama aún no ha sido revelada en su totalidad, el trabajo de David Robert Mitchell es a menudo inquietante y poco convencional, por lo que podemos esperar que esta entrega no sea la excepción.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: David Robert Mitchell</li><li>Reparto: Anne Hathaway, Ewan McGregor, P.J. Byrne</li><li>Fecha de estreno: 13 de agosto</li><li>Dónde ver: Salas de cines seleccionados</li></ul>
+<p>“El Chapo” no es un nombre desconocido. Joaquín Guzmán es uno de los narcotraficantes más grandes de la historia, y aunque existen producciones que se empeñan en retratar su historia, La captura quita a Guzmán del centro de la historia para darle protagonismo a los policías detrás de su arresto. Inspirada en las crónicas del periodista Héctor de Mauleón, la cinta regresa al 2016 para adentrarse en los detalles de la caída del narcotraficante.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Chava Cartas</li><li>Reparto: Alfonso Herrera, Noé Hernández, Hector Kotsifakis</li><li>Fecha de estreno: 21 de agosto</li><li>Dónde ver: Netflix</li></ul>
+<p>Después de años de intentos fallidos por atrapar al Correcaminos utilizando productos de la Corporación ACME, Wile E. Coyote decide demandar a la empresa. La película sigue la lucha legal de Coyote en un viaje lleno de comedia y nostalgia.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Dave Green</li><li>Reparto: Will Forte, Lana Condor, John Cena</li><li>Fecha de estreno: 27 de agosto</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Sin lugar a dudas, Jacob Elordi es uno de los rostros que se han apoderado de la pantalla durante los últimos años. Desde Frankenstein y Cumbres Borrascosas, hasta Euphoria, el actor australiano continúa haciendo historia una película a la vez. En esta ocasión, lo hace bajo la dirección de Ridley Scott en una cinta protagonizada por Margaret Qualley y Josh Brolin que sigue a un grupo que sobrevive a un virus que aniquila la humanidad. La cinta navega la nueva realidad de los protagonistas y las conexiones humanas después de la tragedia.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Ridley Scott</li><li>Reparto: Margaret Qualley, Jacob Elordi, Josh Brolin</li><li>Fecha de estreno: 27 de agosto</li><li>Dónde ver: Salas de cines seleccionados</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en septiembre 2026</h2>
+<p>La película de 1988 con Sandra Bullock y Nicole Kidman, en donde un par de hermanas recurren a la magia para encontrar el amor con un hechizo, tendrá su regreso este año. La historia, inicialmente inspirada en la novela de Alice Hoffman tendrá una secuela, y esta vez, se centra en la historia de la familia y su condena de no tener amor, algo que las nuevas generaciones tendrán que arreglar para cambiar el destino.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Susanne Bier</li><li>Reparto: Nicole Kidman, Sandra Bullock, Lee Pace</li><li>Fecha de estreno: 18 de septiembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en octubre 2026</h2>
+<p>Basada en la novela homónima de Colleen Hoover y protagonizada por Anne Hathaway y Dakota Johnson, la historia sigue a Verity, una exitosa escritora quien, después de un accidente, decide contratar a Lowen, una escritora fantasma que le ayudaría a terminar su novela. Al llegar a la residencia de su nueva empleadora, Lowen descubre que nada es lo que parece y que Verity y su esposo podrían tener una agenda oculta.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Michael Showalter</li><li>Reparto: Anne Hathaway, Dakota Johnson, Josh Hartnett</li><li>Fecha de estreno: 1 de octubre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Alejandro G. Iñárritu regresa con su próxima cinta, Digger. Cuando un hombre provoca un desastre y tiene la oportunidad de salvar la humanidad, una serie de situaciones poco usuales se pondrán en medio. Tom Cruise expresó su agradecimiento con el cineasta a través de una publicación en su perfil de Instagram, en donde asegura que está ansioso por ver la película en pantalla.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Alejandro G. Iñárritu</li><li>Reparto: Tom Cruise, Sandra Hüller, Jesse Plemons</li><li>Fecha de estreno: 2 de octubre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Al igual que la franquicia de Mortal Kombat, Street Fighter también forma parte de las películas adaptadas de un videojuego de 2026. La película aviva la nostalgia de quienes conocieron esta entrega a través de la consola. Con personajes recurrentes en este universo y la participación de rostros conocidos en Hollywood, esta apuesta es de los clásicos de acción que veremos este 2026.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kitao Sakurai</li><li>Reparto: Mel Jarnson, Orville Peck, Jason Momoa</li><li>Fecha de estreno: 15 de octubre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Otra de las entregas que llegan para expandir el universo de superhéroes de este año llega a cargo de James Watkins. Se trata de Clayface, una cinta que se sitúa en Gotham para seguir a un ente con la habilidad de transformar su cuerpo. Es parte del DCU Chapter One: Gods &amp; Monsters, el universo de James Gunn que pretende interconectar el universo de DC con la historia de villanos y dioses.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: James Watkins</li><li>Reparto: Naomi Ackie, Eddie Marsan, Max Minghella</li><li>Fecha de estreno: 22 de octubre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en noviembre 2026</h2>
+<p>El gato con sombrero llega para adaptar la historia del Dr. Seuss presentada en The Cat in the Hat de 1957. Esta versión se distingue de El gato de 2003 al mantener un tono familiar que preserva la esencia de la entrega inicial.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Alessandro Carloni, Erica Rivinoja</li><li>Reparto: Bill Hader, Xochitl Gomez, Tiago Martinez</li><li>Fecha de estreno: 6 de noviembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Los Juegos del Hambre: Amanecer en la Cosecha (Estreno: 20 de noviembre)</p>
+<p>En esta sexta entrega de la franquicia derivada de las novelas anterior a Suzanne Collins, la película se centra en la cosecha de los 50º Juegos del Hambre, el Segundo Vasallaje de los Veinticinco. La historia sigue a Haymitch Abernathy en su juventud, cuando se convierte en cosecha injustamente, su romance Lenore Dove y su lucha para sobrevivir en los juegos.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Francis Lawrence</li><li>Reparto: Joseph Zada, Glenn Close, Elle Fanning</li><li>Fecha de estreno: 20 de noviembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Hoy, Rocky Balboa es un nombre que ha logrado trascender generaciones, pero a pesar de que la franquicia y el personaje de Sylvester Stallone se ha convertido en un referente de la cultura pop, la historia que hay detrás no es igual de conocida. Ese es, precisamente, el papel que Yo soy Rocky busca cumplir. Con una recreación de la historia de Stallone y la construcción del personaje que lo llevaría a la fama, la cinta busca darle una voz a la lucha de un hombre que arriesgó todo para alcanzar la cima mediante una propuesta narrativa que apela a la emoción.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Peter Farrelly</li><li>Reparto: Anthony Ippolito, Toby Kebbell, AnnaSophia Robb</li><li>Fecha de estreno: Noviembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas que estrenan en diciembre 2026</h2>
+<p>Avengers: Doomsday llega como la continuación del Universo de Marvel tras lo sucedido en Edgame. El enfoque de esta cinta le da a la saga un nuevo giro al mostrar a figuras como el Capitán América intentando sobrellevar una vida normal después de la tragedia. Una vez más, los Avengers tendrán que unirse para hacerle frente a una nueva amenaza y seguir la vida después de la desaparición de algunos de sus miembros.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Anthony Russo, Joe Russo</li><li>Reparto: Robert Downey Jr., Pedro Pascal, Chris Hemsworth</li><li>Fecha de estreno: 17 de diciembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Dune 3 continúa con la saga de Denis Villenueve. Al igual que las novelas, esta tercera entrega sigue el viaje de Paul Atreides tras su ascenso como el emperador. Esta vez, tendrá que hacerle frente a las consecuencias de sus actos de tiranía. Este es uno de los estrenos más relevantes de 2026, poniendo un fin a la saga que mostró lo grandioso que puede ser el cine de ciencia ficción en términos técnicos y narrativos.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Denis Villeneuve</li><li>Reparto: Timothée Chalamet, Rebecca Ferguson, Robert Pattinson</li><li>Fecha de estreno: 17 de diciembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>En 1995, la película de Joe Johnston estelarizada por Robin Williams reinventó el género de aventura con Jumanji, la cinta en donde los jugadores de un juego de mesa quedan inmersos dentro de los retos del tablero. En 2017, la historia fue reinventada por la saga de Jake Kasdan. Esta tercera parte extiende un guiño a la historia original y prepara todo para el gran cierre de este ciclo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Jake Kasdan</li><li>Reparto: Dwayne Johnson, Jack Black, Karen Gillan</li><li>Fecha de estreno: 25 de diciembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Bajo la dirección de Robert Eggers, Werwulf llega para despedir el año y reinterpretar la historia de uno de los personajes más simbólicos del terror: el hombre lobo. Así, el regreso de Eggers al horror folclórico, sumerge al espectador a una visión gótica que explora su versión de la figura del licántropo con el estilo que lo caracteriza y la utilización de elementos como la religión, el miedo y la humanidad. Para lograrlo, un reparto con figuras como Jack Morris, Willem Dafoey Aaron Taylor-Johnson lideran el elenco.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Robert Eggers</li><li>Reparto: Jack Morris, Willem Dafoe, Aaron Taylor-Johnson</li><li>Fecha de estreno: 31 de diciembre</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Películas con fechas de estreno por definir</h2>
+<p>Después de dirigir la saga de M3GAN, la cinta de terror en la que la Inteligencia Artifical se rebela para sembrar terror entre sus dueños, Kate Dolan se adentra en el género con Soulm8te. En esta película, un hombre que busca recrear el vínculo con su esposa difunta termina inmerso en una pesadilla.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kate Dolan</li><li>Reparto: Valerie Hanna, Claudia Doumit, David Rysdahl</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Por definir</li></ul>
+<p>A modo de un thriller histórico, Emperor llega a las salas de cine para presentar una epopeya de acción en la que Johanna De Gante busca vengarse del emperador Carlos V por la muerte de su padre. Ambientada en el Siglo XVI, la película promete tomar la historia y usarla para mostrar un retrato crudo en un mundo lleno de división de riquezas y manipulación.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Lee Tamahori</li><li>Reparto: Adrien Brody, Sophie Cookson, Paz Vega</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Por definir</li></ul>
+<p>Cuando un ladrón profesional se dispone a cometer el robo del siglo y pone a la Mona Lisa en el radar, dos ladrones contratados se enfrentan con la sorpresa de que son hermanos y que su padre es quien los contrató para este plan. Ahora, deberán enfrentarse a su nueva familia y pasar a la historia al lograr lo que nadie ha podido hasta el momento.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Thomas Vincent</li><li>Reparto: Stanley Tucci, Victor Belmondo, Simona Tabasco</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Por definir</li></ul>
+<p>Con un rol como protagonista y director, Jonah Hill presenta Cut Off, una cinta de comedia en donde dos hermanos de una familia privilegiada son puestos a prueba cuando sus padres deciden frenar su apoyo económico para darles una prueba de realidad. Con esta película, Johan Hill continúa su rol tras la cámara y expande su autoridad como una voz representativa del género de la comedia.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Jonah Hill</li><li>Reparto: Jonah Hill, Kristen Wiig, Nathan Lane</li><li>Fecha de estreno: 27 de julio</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Aunque al día de hoy los pormenores de la trama aún se encuentran bajo resgurardo, esta cinta que mezcla dibujos animados con acción real reúne a talentos como Jason Momoa, Aubrey Plaza, Ryan Reynolds y Addison Rae para seguir la historia de dos animales que ante todo pronóstico, forjan una amistad inesperada.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Peter Atencio</li><li>Reparto: Jason Momoa, Aubrey Plaza, Ryan Reynolds</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>M. Night Shyamalan (El sexto sentido, Señales) vuele al misterio con Remain, una película que se desprende de la historia de un arquitecto que se muda a Cabo Cod tras su salida de una clínica psiquiátrica y ahí conoce a una mujer que lo hace reconsiderar lo que creía saber sobre la vida. Con un tono lúgubre y de suspenso, esta cinta concebida en un trabajo de tratamiento de guion entre el mismo M. Night Shyamalan y Nicholas Sparks llega para jugar con la mente de la audiencia e indagar en la psicología de sus protagonistas.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: M. Night Shyamalan</li><li>Reparto: Jake Gyllenhaal, M. Night Shyamalan, Julie Hagerty</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+<p>Ceniza en la boca es la próxima entrega de Diego Luna como director. La cinta –estrenada en Festival de Cannes 2026– sigue a Lucila, una joven que se muda a España con la esperanza de reunirse con su madre a la que no ha visto desde hace ocho años.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Diego Luna</li><li>Reparto: Sergio Bautista, Celeste Beas, Anna Díaz</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Salas de cine seleccionadas</li></ul>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="series-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790769992/devon-mx/articles/mal-de-amores-series-2026_pmahi4.jpg" alt="Las mejores series de 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Las mejores series de 2026</h3>
+                </a>
+                <a href="mexico-86-netflix.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297660/devon-mx/articles/diego-luna-mexico-86_vqjgw0.jpg" alt="México 86 ya tiene tráiler y fecha de estreno: La película de Netflix sobre el Mundial protagonizada por Diego Luna" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">México 86 ya tiene tráiler y fecha de estreno: La película de Netflix sobre el Mundial protagonizada por Diego Luna</h3>
+                </a>
+                <a href="series-como-off-campus.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297662/devon-mx/articles/Heated_Rivalry__25C2_25A9_Sabrina_Lantos_HBO_Max_vn81o5.jpg" alt="8 series como Off Campus para ver mientras llega la segunda temporada" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">8 series como Off Campus para ver mientras llega la segunda temporada</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>

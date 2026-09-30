@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las mejores series de 2026 | Devon México y Latinoamérica</title>
+    <meta name="description" content="La guía oficial de Devon para tus series de este año está aquí. Las nuevas apuestas de Netflix, HBO Max y todos los estrenos que llegan al streaming.">
+    <meta property="og:title" content="Las mejores series de 2026 | Devon México y Latinoamérica">
+    <meta property="og:description" content="La guía oficial de Devon para tus series de este año está aquí. Las nuevas apuestas de Netflix, HBO Max y todos los estrenos que llegan al streaming.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790769992/devon-mx/articles/mal-de-amores-series-2026_pmahi4.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790769992/devon-mx/articles/mal-de-amores-series-2026_pmahi4.jpg" alt="Las mejores series de 2026" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Red Carpet</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Las mejores series de 2026</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">La guía oficial de Devon para tus series de este año está aquí. Las nuevas apuestas de Netflix, HBO Max y todos los estrenos que llegan al streaming.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR MIGUEL VICENCIO</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">13 de septiembre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Las series 2026 que se suman al calendario de estrenos a lo largo de este año son la mejor manera de adentrarse en las apuestas creativas de este ciclo. Con una infinidad de géneros para elegir y nuevas historias que narrar, el streaming se inunda de una creatividad que parece no tener límite alguno. Desde títulos como la nueva temporada de Bridgerton y The Pitt, hasta entregas como House of the Dragon y Euphoria que continúan con la expansión del universo creado por George R. R. Martin, seremos testigos de una revolución del entretenimiento.</p>
+<p>De principio a fin, repasamos todas las series que llegan a lo largo de este año y prometen dejar su huella.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Series que estrenan en enero 2026</li><li>The Pitt temporada 2</li><li>Grey’s Anatomy temporada 21</li><li>El infiltrado temporada 2</li><li>Hijack temporada 2</li><li>Agatha Christie: Las Siete Esferas</li><li>El Caballero de los Siete Reinos</li><li>Wonder Man</li><li>Bridgerton temporada 4, parte 1</li><li>Series que estrenan en febrero 2026</li><li>El abogado del Lincoln temporada 4</li><li>Heated Rivalry</li><li>Love Story: John F. Kennedy Jr. y Carolyn Bessette</li><li>Como agua para chocolate temporada 2</li><li>56 Días</li><li>Series que estrenan en marzo 2026</li><li>Vladimir</li><li>Un novio por suscripción</li><li>One Piece temporada 2</li><li>Scarpetta</li><li>La oficina</li><li>Series que estrenan en abril 2026</li><li>Malcolm in the Middle: La vida sigue siendo injusta</li><li>Euphoria temporada 3</li><li>Margo tiene problemas de dinero</li><li>Stranger Things: Relatos del 85</li><li>Santita</li><li>Series que estrenan en mayo 2026</li><li>Off Campus</li><li>The Boroughs</li><li>Series que estrenan en junio 2026</li><li>Cada año que pasé contigo</li><li>House of the Dragon temporada 3</li><li>Series que estrenan en julio 2026</li><li>Elle</li><li>No tengo miedo</li><li>Series que estrenan en agosto 2026</li><li>Nadie nos va a extrañar temporada 2</li><li>Cien años de soledad parte 2</li><li>Series que estrenan en septiembre 2026</li><li>Mal de amores</li><li>Colisión</li><li>Monstruo: La historia de Lizzie Borden</li><li>Series que estrenan en noviembre 2026</li><li>The Gilded Age temporada 4</li><li>Series que estrenan en diciembre 2026</li><li>Harry Potter y la Piedra Filosofal</li><li>Series con fecha de estreno por definir</li><li>Don Ramón</li><li>El Círculo</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en enero 2026</h2>
+<p>A tan solo semanas de su estreno, este drama médico se posicionó entre las series más destacadas de 2025. La trama sigue a un equipo de emergencias en un hospital de Pittsburgh y su día a día. La serie fue premiada en la temporada de galardones y aclamada por la precisión médica de su narrativa. En esta segunda entrega, nuevos casos llegarán para seguir retratando el mundo de un hospital y sus empleados con una línea temporal que cubre el turno de 15 horas de un médico en un formato de una hora por capítulo.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Damian Marcano, Amanda Marsalis, John Cameron</li><li>Reparto: Noah Wyle, Ned Brower, Patrick Ball</li><li>Fecha de estreno: 8 de enero</li><li>Dónde ver: HBO Max</li></ul>
+<p>Uno de los dramas médicos más reconocidos regresa con una nueva temporada. Esta vez, el regreso de Ben Warren para formar parte del equipo de residentes de la Dra. Miranda Bailey en el Grey Sloan Memorial es el punto de partida que abre la puerta a una nueva dosis de drama de la mayor intensidad, donde todo se convierte en un caso de vida o muerte.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Creado por Shonda Rhimes</li><li>Reparto: Ellen Pompeo, James Pickens Jr., Kevin McKidd</li><li>Fecha de estreno: 9 de enero</li><li>Dónde ver: Disney+</li></ul>
+<p>La segunda temporada de El infiltrado llegará este año para seguir con una temática que explora el género del espionaje. En la segunda parte de esta historia, Jonathan Pine y la agente Burr se vuelven a unir para adentrarse a una misión en contra del narcotráfico, con Teddy dos Santos, un traficante de armas con presencia en Colombia como el antagonista principal de esta parte, deberán enfrentarse a una nueva red de narcotráfico. Esta segunda parte llega 10 años después de la entrega original, lo que hace de este uno de los regresos más anticipados de este año.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Georgi Banks-Davies</li><li>Reparto: Tom Hiddleston, Olivia Colman, Hugh Laurie, Diego Calva</li><li>Fecha de estreno: 11 de enero</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>En la segunda temporada de Hijack, se continúa explorando la temática central en la que un equipo de negociación es puesto a cargo en misiones donde la vida de rehenes está en juego. Al estilo de drama policial, la serie profundiza en el arco de cada uno de los personajes al abordarlo desde su psicología para un mejor entendimiento de sus motivos y consecuencias. La relevancia de esta entrega radica en contar historias sobre crímenes desde una perspectiva poco explorada que le da una nueva voz a este género con una historia sobre un tren de pasajeron secuestrado en Berlín.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Jim Field Smith</li><li>Reparto: Idris Elba, Christiane Paul, Neil Maskell</li><li>Fecha de estreno: 14 de enero</li><li>Dónde ver: Apple TV</li></ul>
+<p>Las adaptaciones en la pantalla continúan con Agatha Christie: Las Siete Esferas, la miniserie en la que una mujer de alta sociedad desarrolla una obsesión con resolver misterios. Tras un asesinato en su comunidad, comienza una investigación que la lleva a siete esferas misteriosas que podrían ser clave para la resolución del caso. La serie mantiene el tono característico de la autora de la novela original a través de drama de época que invita a la audiencia a un viaje al pasado.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Chris Sweeney</li><li>Reparto: Alex Macqueen, Guy Siner, Nyasha Hatendi</li><li>Fecha de estreno: 15 de enero</li><li>Dónde ver: Netflix</li></ul>
+<p>El universo de Game of Thrones revolucionó el género de fantasía medieval como lo conocíamos. Tras la serie original, el trabajo de George R. R. Martin ha tenido adaptaciones como House of the Dragon, y en esta ocasión, El caballero de los Siete Reinos será la encargada de continuar con la expansión del universo de la franquicia. La serie sigue la historia de Dunk y Egg, un caballero y su escudero. Con una línea narrativa que se enfoca en una nueva perspectiva de Westeros, esta serie mantiene un tono menos crudo que aborda los sucesos previos a la historia presentada en Game of Thrones.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Owen Harris, Sarah Adina Smith</li><li>Reparto: Peter Claffey, Dexter Sol Ansell, Daniel Ings</li><li>Fecha de estreno: 19 de enero</li><li>Dónde ver: HBO Max</li></ul>
+<p>Wonder Man llega al streaming como parte de la expansión del universo de Marvel para continuar con las entregas de superhéroes en la pantalla chica. La serie sigue a Simon, un actor frustrado en busca de un nuevo comienzo que tiene poderes derivados de la energía iónica. Con un tono de comedia y acción, la serie sigue la lucha de su protagonista por cumplir sus sueños en la pantalla y utilizar sus poderes para el bien.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Destin Daniel Cretton, Tiffany Johnson, Stella Meghie, James Ponsoldt</li><li>Reparto: Ben Kingsley, Demetrius Grosse, Lauren Glazier</li><li>Fecha de estreno: 27 de enero</li><li>Dónde ver: Disney+</li></ul>
+<p>Con un drama de época que plasma la historia de una familia de la alta sociedad, Bridgerton ha conquistado el streaming utilizando un formato episódico que narra la historia de cada uno de los miembros de la familia por temporada. En esta cuarta edición, se cuenta la historia de Benedict Bridgerton, el segundo hijo de la familia. La trama se centra en su vida y su encuentro con Sophie, la mujer de la que se enamora y con la que pronto inicia una aventura llena de romance.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Tom Verica</li><li>Reparto: Luke Thompson, Yerin Ha, Jonathan Bailey, Julie Andrews, Polly Walker</li><li>Fecha de estreno: 29 de enero</li><li>Dónde ver: Netflix</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en febrero 2026</h2>
+<p>La tercera temporada de la serie sigue la vida de Mickey Haller, un abogado conocido por su habilidad por darle la vuelta a los casos más complejos. En esta ocasión, se enfrenta a un fiscal después de que es acusado de asesinato. Ahora, deberá probar su inocencia y revelar al verdadero asesino para salvar el bufete.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Antonio Negret, Alonso Alvarez, Ted Humphrey</li><li>Reparto: Manuel Garcia-Rulfo, Becki Newton, Angus Sampson</li><li>Fecha de estreno: 5 de febrero</li><li>Dónde ver: Netflix</li></ul>
+<p>Antes de llegar a Latinoamérica, Heated Rivalry —escrita y dirigida por Jacob Tierney– ya se ha convertido en una de las primeras obsesiones de la televisión en 2026 y no es difícil entender por qué. Hudson Williams y Connor Storrie en los personajes de Shane Hollaner e Ilya Rozanov conforman una dupla explosiva en una historia sobre un par de estrellas de hockey que no solo comparten la ambición por el triunfo, también una atracción que los rebasa a ambos.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Jacob Tierney</li><li>Reparto: Hudson Williams, Connor Storrie y François Arnaud</li><li>Fecha de estreno: 6 de febrero</li><li>Dónde ver: HBO Max</li></ul>
+<p>Love Story: John F. Kennedy Jr. y Carolyn Bessette (Estreno: 12 de febrero)</p>
+<p>La historia acerca de la mediática relación entre John F. Kennedy y Carolyn Bessette llega en formato serie, creada por FX. Basada en la novela Once Upon A Time de Elizabeth Beller, los episodios nos llevan a conocer qué hubo detrás de un noviazgo y matrimonio ampliamente cubierto por los medios de comunicación sensacionalistas pero, sobre todo, veremos quién era Bessette de manera más profunda.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Connor Hines</li><li>Reparto: Sarah Pidgeon, Paul Kelly, Naomi Watts, Grace Gummer, Leila George</li><li>Fecha de estreno: 6 de febrero</li><li>Dónde ver: HBO Max</li></ul>
+<p>Como agua para chocolate temporada 2 (Estreno: 15 de febrero)</p>
+<p>Como agua para chocolate se considera como una de las máximas novela de romance en México. La trama sigue a dos jóvenes que inician un romance prohibido en el que encuentran un lenguaje de amor a través de la comida. Para estar juntos, tendrán que desafiar las normas de la época y las expectativas de su familia. En esta adaptación, la novela de Laura Esquivel cobró vida en la pantalla chica y la segunda parte, seguirá la trágica historia de Tita y Pedro, luego de que tuvieran que separarse en el final de la primera entrega.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Julián de Tavira, Ana Lorena Pérez Ríos</li><li>Reparto: Irene Azuela, Azul Guaita, Ana Valeria Becerril</li><li>Fecha de estreno: 15 de febrero</li><li>Dónde ver: HBO Max</li></ul>
+<p>En esta adaptación del bestseller de Catherine Ryan Howard, Oliver y Ciara, una pareja que se conoce en un supermercado, comienza una relación. 56 días después, un cuerpo no identificado en el departamento de Oliver da pie a una cacería de brujas. La trama adapta la historia con matices de un thriller de romance y misterio criminal que llevará al espectador por un viaje psicológico lleno de giros inesperados y sensualidad.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Alethea Jones, Shana Stein, Lauren Wolkstein</li><li>Reparto: Avan Jogia, Dove Cameron, Karla Souza</li><li>Fecha de estreno: 18 de febrero</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>El desenlace de la historia de Bridgerton y Sophie se contará en la segunda parte de la serie de Netflix. En esta entrega, veremos a Benedict debatirse entre su amor por Sophie y el estatus de su familia en la aristocracia británica, todo mientras se acerca a la verdad de la verdadera identidad de la doncella.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Tom Verica</li><li>Reparto: Luke Thompson, Yerin Ha, Jonathan Bailey, Julie Andrews, Polly Walker</li><li>Fecha de estreno: 29 de enero</li><li>Dónde ver: Netflix</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en marzo 2026</h2>
+<p>En una historia que explora el deseo y la obsesión, Vladimir sigue a una profesora universitaria, que cansada de la rutina, descubre una conexión con un joven menor que ella. Pronto, se ve envuelta por una crisis de identidad que la llevará a poner su vida familiar y laboral en riesgo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Julia May Jonas</li><li>Reparto: Rachel Weisz, Leo Woodall, Jessica Henwick</li><li>Fecha de estreno: 5 de marzo</li><li>Dónde ver: Netflix</li></ul>
+<p>La escena del K-Drama en Netflix continúa en expansión con la llegada de Un novio por suscripción, una serie que parte de una artista en busca del amor que decide darle una oportunidad a un servicio de citas virtuales que promete conectarla con su pareja ideal, pero con el tiempo, se da cuenta que los sentimientos no siempre se quedan en la pantalla.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Kim Jung-Shik</li><li>Reparto: Kim Jisoo, Seo In-guk, Ryu Sun-young</li><li>Fecha de estreno: 6 de marzo</li><li>Dónde ver: Netflix</li></ul>
+<p>Tras el éxito que tuvo la adaptación del manga de Eiichiro Oda, una segunda temporada llega como parte de los estrenos masivos de este año. La historia sigue a Luffy y su travesía por el mar, donde se seguirá enfrentando a piratas y peligros a los que solo podrá vencer haciendo las alianzas correctas. Esta segunda parte promete contar con valores de producción incluso más notables que la primera parte.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Matt Owens y Steven Maeda</li><li>Reparto: Iñaki Godoy, Emily Rudd Mackenyu</li><li>Fecha de estreno: 10 de marzo</li><li>Dónde ver: Netflix</li></ul>
+<p>En esta serie inspirada en las novelas de Patricia Cornwell, Nicole Kidman le da vida a a Kay Scarpetta, una patóloga forense que utiliza sus habilidades para resolver casos complejos. Su pasado regresa cuando un asesino en serie vuelve a aterrorizar y deberá encontrar al culpable antes de que sea muy tarde.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: David Gordon Green, Charlotte Brändström, Ellen Kuras</li><li>Reparto: Nicole Kidman, Jamie Lee Curtis, Bobby Cannavale</li><li>Fecha de estreno: 11 de marzo</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>Al estilo de falso documental, La oficina llega a Prime Video para reinterpretar The Office, el fenómeno de la comedia creado por Ricky Gervais que tuvo una adaptación estadounidense. En esta versión, un jefe incompetente queda al frente de una compañía familiar de jabones y los empleados se enfrentarán a lo absurdo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Gaz Alazraki</li><li>Reparto: Fernando Bonilla, Fabrizio Santini, Edgar Villa</li><li>Fecha de estreno: 13 de marzo</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en abril 2026</h2>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Malcolm in the Middle: La vida sigue siendo injusta (10 de abril)</h2>
+<p>En el auge de las comedias de situación, Malcolm el de en medio conquistó a la audiencia adolescente de los 2000. Durante siete temporadas, la serie se adentró en la disfuncional familia que cautivó a los espectadores con su irreverencia. A más de una década de su final regresa con Malcolm in the Middle: La vida sigue siendo injusta, una continuación que reúne a Bryan Cranston (Hal), Frankie Muniz (Malcolm), Jane Kaczmarek (Lois), Christopher Kennedy Masterson (Francis), Justin Berfield (Reese), y Emy Coligado (Piama) como parte del elenco original para situarse en el futuro y seguir a Malcolm y su hija en una reunión con la familia. Si bien no está contemplada para ser una serie reboot, traerá de vuelta a los protagonistas frente a la pantalla una vez más.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Ken Kwapis</li><li>Reparto: Bryan Cranston, Frankie Muniz, Jane Kaczmarek</li><li>Fecha de estreno: 10 de abril</li><li>Dónde ver: Disney+</li></ul>
+<p>Sam Levinson regresa con la tercera y última temporada de Euphoria luego de tres años de su segunda entrega. Lo que comenzó con una historia de adolescentes en la preparatoria, ahora dará un salto temporal para seguir la vida de sus protagonistas en una etapa más adulta, dando continuidad a la historia de Rue, Maddy, Nate, Cassie y Jules. Esta temporada contará con nuevos personajes, entre ellos, la inesperada participación de Rosalía.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Sam Levinson</li><li>Reparto: Zendaya, Jacob Elordi, Sydney Sweeney, Alexa Demie</li><li>Fecha de estreno: 12 de abril</li><li>Dónde ver: HBO Max</li></ul>
+<p>Inspirada en la novela homónima de Rufi Thorpe, esta serie sigue la historia de una madre de familia que decide abrir una cuenta de Only Fans para afrontar la situación económica que vive y sacar adelante a su familia. A pesar de que encuentra un éxito inesperado en internet, cuestiona si valió la pena. Esta producción con la participación de A24 en desarrollo para Apple TV convoca a un elenco protagonizado por estrellas como Nicole Kidman y Elle Fanning para acentuar el sello de la productora y trasladarlo a la pantalla chica.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Dearbhla Walsh</li><li>Reparto: Nicole Kidman, Elle Fanning, Michael Workeye</li><li>Fecha de estreno: 15 de abril</li><li>Dónde ver: Apple TV</li></ul>
+<p>Tras el final del fenómeno mundial de Netflix el 31 de diciembre de 2025, el universo de Stranger Things continúa en expansión. Esta vez, lo hace a través de una serie animada ambientada en Hawkins. La historia se remonta al invierno de 1985, donde Eleven y sus amigos se reúnen para descifrar un misterio que azota el pueblo. Aunque conserva la mayoría de los personajes, cuenta con cambios importantes en el elenco.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Phil Allora</li><li>Reparto: Odessa A&#x27;zion, Janeane Garofalo, Jeremy Jordan</li><li>Fecha de estreno: 23 de abril</li><li>Dónde ver: Netflix</li></ul>
+<p>En 1982 Isabel Allende publicó La casa de los espíritus, una novela fuertemente inspirada en la partida de su abuelo. Hoy, la novela es parte de los títulos del realismo mágico contemporáneo más reconocidos hasta el día de hoy. En formato de serie, Prime Video reinterpreta el trabajo de Allende en un título que sigue a la familia Trueba a lo largo de un siglo, donde entre amores secretos y batallas silenciosas, se revela el peso generacional entre el patriarca y su nieta al centro de la trama.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Francisca Alegria, Andrés Wood</li><li>Reparto: Alfonso Herrera, Nicole Wallace, Maribel Verdú</li><li>Fecha de estreno: 29 de abril</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>Después de un accidente que la llevó a la silla de ruedas, María José Cano huyó del amor dejando a su prometido en el altar. Años después, el hombre regresa para hacerle enfrentar las consecuencias de sus acciones en una decisión que la llevará al límite en una historia de amor poco convencional.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Rodrigo García</li><li>Reparto: Paulina Dávila, Gael García Bernal, Erik Hayser, Ilse Salas</li><li>Fecha de estreno: 22 de abril</li><li>Dónde ver: Netflix</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en mayo 2026</h2>
+<p>Off Campus llega como parte de la ola de adaptación de novelas juveniles en Prime Video. Se trata de una historia original de Elle Kennedy, la autora de la saga juvenil que sirve como inspiración de este proyecto. La trama sigue a un grupo de estudiantes en la Universidad Briar, en donde el hockey se encuentra con la música y el romance. Al igual que las novelas, cada una de las temporadas está pensada para adaptar la historia de una pareja distinta. La primera temporada narra la historia de Hannah Wells y Garrett Graham.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Creación: Louisa Levy</li><li>Reparto: Ella Bright, Belmont Cameli, Mika Abdalla</li><li>Fecha de estreno: 13 de mayo 2026</li><li>Dónde ver: Prime Video</li></ul>
+<p>Tras la muerte de su esposa, Sam se muda a The Boroughs, una comunidad de retiro en donde planea pasar el resto de sus días. Al llegar, nota que la soledad no será su única enemiga y descubre que en las paredes, se albergan secretos de otra dimensión que podrían hacer que su jubilación sea más pronto de lo esperado.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Creación: Jeffrey Addiss, Will Matthews</li><li>Reparto: Alfred Molina, Geena Davis, Alfre Woodard</li><li>Fecha de estreno: 21 de mayo</li><li>Dónde ver: Netflix</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en junio 2026</h2>
+<p>Cada Año Que Pasé Contigo es otra de las adaptaciones de novelas que llegan al streaming. La serie basa en la novela de Carley Fortune narra la relación entre Percy y Sam, dos mejores amigos que con el tiempo empiezan un romance que colapsa por un error. Años después, la muerte de la madre de Sam marca el regreso de Percy al pueblo, donde se reencuentran para averiguar si la si vínculo volverá a hacerlos creer en el amor.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Creación: Leila Gerstein, Amy Harris</li><li>Reparto: Leila Gerstein, Amy Harris</li><li>Fecha de estreno: 10 de julio 2026</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<p>Otra de las entregas que llegan como parte del universo creado por George R. R. Martin es la tercera parte de House of The Dragon, la novela que ahonda en el legado de los Targaryen y se remonta a 200 años antes de la línea temporal original.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Clare Kilner, Loni Peristere</li><li>Reparto: Matt Smith, Emma D&#x27;Arcy, Olivia Cooke</li><li>Fecha de estreno: 21 de junio 2026</li><li>Dónde ver: HBO Max</li></ul>
+<p>El universo de Legalmente rubia tendrá una nueva expansión con una serie con Reese Witherspoon como productora ejecutiva. La serie trae de regreso a Elle, la joven abogada que conquistó los tribunales con audacia en 2001. Esta vez, llega a modo de precuela para contar la historia de Elle durante su adolescencia. La serie promete preservar el encanto orginal de la entrega con Marc Platt -el productor original de la película- de vuelta al reparto y Josh Schwartz y Stephanie Savage (Gossip Girl y The O.C.) en la producción.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Pete Chatmon, Sammi Cohen, Stacie Passon, Jason Moore</li><li>Reparto: Lexi Minetree, Sophie Thom, Anna Katharina</li><li>Fecha de estreno: 1 de julio</li><li>Dónde ver: HBO Max</li></ul>
+<p>Cuando Miguel, un niño de 10 años, se encuentra con un secreto sobre sus padres, se enfrenta a la verdad sobre la naturaleza humana de su propia familia. Situada en 1986, la serie se desarrolla en las montañas donde habita una población de Veracruz que algún día prosperó y hoy lucha contra la pobreza.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Ernesto Contreras, Alba Gil, Alejandro Zuno</li><li>Reparto: Luis Alberti, Fátima Molina, Yoshira Escárrega, Humberto Busto, Leidi Gutierrez.</li><li>Fecha de estreno: 8 de julio</li><li>Dónde ver: Netflix</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en agosto 2026</h2>
+<p>En esta segunda entrega de Cien años de soledad, se adapta la obra de Gabriel García Márquez con la dirección de Laura Mora y Carlos Moreno. Considerada como una de las producciones de sello latino con mayor peso en Netflix, la obra del ganador del Nobel mantiene vivo su legado con la participación de la familia del autor. En esta segunda parte de la serie, se retoma la historia después de la firma del tratado de Neerlandia, en donde el coronel Aureliano Buendía continúa atemorizando el pueblo. José Arcadio Segundo sigue atrapado en los manuscritos de José Arcadio Buendía y la llegada del tren abrirá paso a la compañía bananera para darle paso a una nueva era en Macondo.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Alex Garcia Lopez, Laura Mora Ortega</li><li>Reparto: Viña Machado, Jesus Reyes, Claudio Cataño</li><li>Fecha de estreno: 2 de agosto</li><li>Dónde ver: Netflix</li></ul>
+<p>Nadie nos va a extrañar temporada 2 (Estreno: 7 de agosto 2026)</p>
+<p>Tras la muerte de Memo, la segunda temporada de Nadie nos va a extrañar regresa para inundar la pantalla de nostalgia noventera con la historia de los estudiantes. Movidos por la tragedia en su círculo, la historia continúa con ellos intentando seguir adelante. Con Silvana Aguirre como la showrunner, esta producción promete ser parte de los títulos más ambiciosos de la plataforma y mantener un tono de comedia introspectiva con lecciones de por medio.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Samuel Kishi</li><li>Reparto: Humberto Busto, Tiaré Scanda, Carla Adell</li><li>Fecha de estreno: 7 de agosto</li><li>Dónde ver: Amazon Prime Video</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en septiembre 2026</h2>
+<p>Esta serie inspirada en la novela homónima de Ángeles Mastretta marca el esfuerzo de la plataforma por adaptar el trabajo literario en la pantalla. La historia de época sigue a Emilia, una joven aspirante a médico que se involucra en un triángulo amoroso con Daniel, un revolucionaro de espíritu rebelde y Antonio, un médico que podría ofrecerle un futuro exitoso. A través de los años, la serie cuenta el romance de la protagonista con ellos y lo que aprende en el camino. El proyecto es encabezado por Catalina Aguilar Mastretta, hija de la autora original del libro.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Catalina Aguilar Mastretta</li><li>Reparto: Renata Vaca, Alejandro Puente</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Netflix</li></ul>
+<p>Colisión llega a HBO Max como una novela original. Cuenta la historia de Zoé, la heredera de una empresa que regresa a México tras la muerte de su padre para ponerse a cargo de la compañía. Al llegar descubre que su madre se ha encargado de tomar las riendas de la empresa, lo cual detona un conflicto familiar por el poder marcado por la ambición de una familia llena de secretos.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Max Zunino, Mariano Ardanaz y Laura Marco.</li><li>Reparto: Diego Klein, Alberto Lopez, El RealMacarena Achaga</li><li>Fecha de estreno: 7 de septiembre</li><li>Dónde ver: HBO Max</li></ul>
+<p>En el siglo XIX, Lizzie Borden, la hija de una familia acomodada en Nueva Inglaterra, fue acusada por asesinar a sus padres. Aunque existen distintas teorías de lo ocurrido, su historia trascendió hasta la actualidad. Monstruo: La historia de Lizzie Borden recrea los hechos desde la perspectiva de Borden, intentando comprender lo sucedido y las posibles causas que la llevaron al límite.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Max Winkler, Sarah Adina Smith</li><li>Reparto: Ella Beatty, Vicky Krieps, Sarah Paulson</li><li>Fecha de estreno: 17 de septiembre</li><li>Dónde ver: Netflix</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en noviembre 2026</h2>
+<p>Otro de los dramas de época que llegan este 2026 se trata de la cuarta temporada de The Gilded Age, un drama histórico que indaga en la era dorada de Nueva York. La historia parte de la llegada de una familia de nuevos ricos, y el rechazo de la alta sociedad. En esta continuación, las repercusiones de el tiroteo a George Russell comienzan a tener secuelas y la relación de Bertha está inconclusa.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Michael Engler, Salli Richardson-Whitfield, Deborah Kampmeier, Crystle Roberson Dorsey</li><li>Reparto: Carrie Coon, Morgan Spector, Louisa Jacobson</li><li>Fecha de estreno: 1 de noviembre</li><li>Dónde ver: HBO Max</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series que estrenan en diciembre 2026</h2>
+<p>Después del éxito de la franquicia literaria y sus adaptaciones en la pantalla, Harry Potter llega a HBO Max como una serie original que readaptará la historia de los libros para darle la bienvenida a una nueva generación de talentos a cargo de darle vida. Al igual que las novelas, la serie seguirá a Harry y sus amigos en su ingreso a Hogwarts.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Mark Mylod</li><li>Reparto: Arabella Stanton, Dominic McLaughlin, Alastair Stout</li><li>Fecha de estreno: 25 de diciembre</li><li>Dónde ver: HBO Max</li></ul>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Series con fecha de estreno por definir</h2>
+<p>El universo de Chespirito continúa en expansión. Después del éxito de Chespirito: Sin Querer Queriendo, la serie de live action que ahonda en la vida de Chespirito llega con Don Ramón, una serie enfocada en la historia de uno de los personajes de su universo. Aunque aún no se conoce mucho sobre los detalles de esta producción, se espera que siga en la misma línea del universo que reivindica el trabajo de Bolaños.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Por definir</li><li>Reparto: Por definir</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: HBO Max</li></ul>
+<p>Anteriormente anunciada bajo el nombre de Corruptores, la serie sigue a cuatro amigos que terminan envueltos en un escándalo después de que uno de ellos publicara un video que conecta al Secretario de Defensa con el homicidio de una actriz que se rodeaba de políticos y criminales. Pronto, el grupo conocerá las limitaciones de un sistema marcado por los intereses propios y el peso de la amistad.</p>
+<ul class="list-disc pl-6 space-y-2"><li>Dirección: Alejandro Lozano (showrunner), Bernardo de la Rosa</li><li>Reparto: Michel Brown, Zuria Vega, Osvaldo Benavides, Raúl Briones</li><li>Fecha de estreno: Por definir</li><li>Dónde ver: Netflix</li></ul>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="mexico-86-netflix.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297660/devon-mx/articles/diego-luna-mexico-86_vqjgw0.jpg" alt="México 86 ya tiene tráiler y fecha de estreno: La película de Netflix sobre el Mundial protagonizada por Diego Luna" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">México 86 ya tiene tráiler y fecha de estreno: La película de Netflix sobre el Mundial protagonizada por Diego Luna</h3>
+                </a>
+                <a href="series-como-off-campus.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297662/devon-mx/articles/Heated_Rivalry__25C2_25A9_Sabrina_Lantos_HBO_Max_vn81o5.jpg" alt="8 series como Off Campus para ver mientras llega la segunda temporada" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">8 series como Off Campus para ver mientras llega la segunda temporada</h3>
+                </a>
+                <a href="la-odisea-pelicula-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790297664/devon-mx/articles/matt-damon-la-odisea_xxccnl.jpg" alt="La Odisea: La adaptación de Christopher Nolan llega en 2026 con Matt Damon, Anne Hathaway y más" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">La Odisea: La adaptación de Christopher Nolan llega en 2026 con Matt Damon, Anne Hathaway y más</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>
