@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias | Devon México y Latinoamérica</title>
+    <meta name="description" content="Con el inicio del otoño llegan nuevas ideas de cómo combinar colores, texturas, y siluetas. Las tendencias hablan del momento que vivimos.">
+    <meta property="og:title" content="Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias | Devon México y Latinoamérica">
+    <meta property="og:description" content="Con el inicio del otoño llegan nuevas ideas de cómo combinar colores, texturas, y siluetas. Las tendencias hablan del momento que vivimos.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942710/devon-mx/articles/moda-oton_25CC_2583o-invierno-2026-tendencias_ublio8.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942710/devon-mx/articles/moda-oton_25CC_2583o-invierno-2026-tendencias_ublio8.jpg" alt="Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Moda</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Con el inicio del otoño llegan nuevas ideas de cómo combinar colores, texturas, y siluetas. Las tendencias hablan del momento que vivimos.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR LUZ GARCÍA</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">2 de septiembre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>La moda Otoño-Invierno 2026 ya está aquí. Con la entrada a una nueva estación, viene una sensación de renovación que empieza por el armario. Y si bien es cierto que las tendencias son cíclicas, en esta temporada ha habido ciertos cambios sobre las pasarelas que indican el momento en el que vivimos.</p>
+<p>En la mayoría de las propuestas no hay rigidez, pues tanto en la sastrería como en los looks más casuales para el diario se llevan en una construcción de capas fluidas. Por otro lado, la tendencia de llevar retratos impresos sobre la ropa nos habla de que hay una necesidad de acompañamiento, de expresar afinidad de identidades, épocas o discursos a través del rostro. Seguido están las texturas que invitan al tacto, desde las más inusuales como se vio en Masion Margiela hasta las más reconfortantes, como lo demostraron Victoria Beckham y Chloé. El brillo no cesa y lo vemos mediante las prendas de tejidos y aplicaciones metálicas. Y si volvemos a recordar las tendencias de una época, definitivamente son las de los años 80.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">¿Cuáles son las tendencias de Otoño-Invierno 2026/2027?</h2>
+<ul class="list-disc pl-6 space-y-2"><li>Nuevas formas de sastrería</li><li>Retratos portables</li><li>Texturas que provocan el tacto</li><li>Toque metálicos</li><li>Regresan los años 80</li></ul>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942710/devon-mx/articles/sastreria-chanel-vogue-runway_ieu2ym.jpg" alt="Chanel OtoñoInvierno 2026 sastrería sin estructura." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Chanel. Daniele Oberrauch / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942710/devon-mx/articles/givenchy-oton_CC_83o-invierno-2026-sastreria_d0xale.jpg" alt="Traje sastre de Givenchy OtoñoInvierno 20262027." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Givenchy. Filippo Fior / Gorunway</figcaption></figure>
+<p>Esta temporada hay una amplia variedad de cómo portar sastrería. En Chanel, por ejemplo, las proporciones cambian de lo convencional a lo más surreal con las faldas que parecen comenzar desde los muslos. Givenchy lo ha hecho a través de los cortes de las camisas y las solapas en pico que se elevan como una forma de derrochar estilo, sobre un traje de pantalones fluidos y saco corto.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942710/devon-mx/articles/schiaparelli-oton_CC_83o-invierno-2026_txdkov.jpg" alt="Schiaparelli OtoñoInvierno 2026 traje sastre con pantalones bombachos." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Schiaparelli. Schiaparelli / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942710/devon-mx/articles/traje-sastre-rabanne-oton_CC_83o-invierno-2026-2027_ilahim.jpg" alt="Rabanne OtoñoInvierno 20262027 look de traje sastre." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Rabanne. Isidore Montag / Gorunway</figcaption></figure>
+<p>Los trajes de pantalón también se reinventaron en Schiaparelli, con una versión de diseños de pantalones slouchy en tonos claros y oscuros. Y en Rabanne, el diseñador Julien Dossena apuesta por la yuxtaposición de estampados y colores.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942710/devon-mx/articles/acne-studios-oton_CC_83o-invierno-2026-2027-falda-cara_q8xxsb.jpg" alt="Acne Studios OtoñoInvierno 20262027 tendencia de faldas de caras." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Acne Studios. Isidore Montag / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942711/devon-mx/articles/versace-falda-de-caras-oton_CC_83o-invierno-2026_vuw7ql.jpg" alt="Versace OtoñoInvierno 20262027 tendencia de falda con cara." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Versace. Versace / Gorunway</figcaption></figure>
+<p>El performance es innato a las pasarelas de la semana de la moda. Y cuando las palabras callan, la ropa expresa. Esta temporada, los rostros se maximizan sobre la ropa. En Acne Studios, la marca de Estocolmo fundada por Jonny Johansson a mediados de los 90, presentó faldas con retratos de estudiantes de arte realizados por el fotógrafo Paul Kooiker.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942711/devon-mx/articles/moschino-oton_CC_83o-invierno-2026-2027-faldas_qunhy6.jpg" alt="Moschino OtoñoInvierno 20262027 vestido con cara." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Moschino. Umberto Fratini / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942711/devon-mx/articles/balenciaga-tendencia-retratos-oton_CC_83o-invierno-2026-2027_hvwju0.jpg" alt="Balenciaga OtoñoInvierno 20262027 tendencias de rostros en la ropa." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Balenciaga. Filippo Fior / Gorunway</figcaption></figure>
+<p>La tendencia también se extendió en Versace, con rostros de mujeres con maquillajes y peinados de los años 60. En Moschino hubo una demostración de la era de los pixeles y en Balenciaga la tendencia se vivió de forma más dramática mediante los contrastes.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942711/devon-mx/articles/maison-margiela-oton_CC_83o-invierno-2026_yc1hmc.jpg" alt="Vestido blanco craquelado de Maison Margiela OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Maison Margiela. Maison Margiela / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942711/devon-mx/articles/chloe-abrigo-peluche-oton_CC_83o-invierno-2026-2027_ajrx1k.jpg" alt="Chlo OtoñoInvierno 20262027" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Chloé Chloé / Gorunway</figcaption></figure>
+<p>Desde el terciopelo, hasta cómo se reimagina el pelaje de los abrigos, las tendencias nos invitan a acercarnos a los tejidos para sentirlos. Maison Margiela hizo de su pasarela una demostración de técnicas que se desplegaron en vestidos con efectos visuales que incentivan la curiosidad. Y otras firmas como Victoria Beckham, Chloé y Gabriela Hearst apuestan por las telas que reconfortan.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942712/devon-mx/articles/vestido-victoria-beckham-oton_CC_83o-invierno-2026-2027_l0wrxw.jpg" alt="Vestido de textura velvet de Victoria Beckham OtoñoInvierno 20262027." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Victoria Beckham. Isidore Montag / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942712/devon-mx/articles/gabriela-hearst-oton_CC_83o-invierno-2026_j2zdmq.jpg" alt="Gabriela Hearst OtoñoInvierno 2026 vestido blanco." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gabriela Hearst. Filippo Fior / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942712/devon-mx/articles/vestido-dorado-miu-miu-oton_CC_83o-invierno-2026_ihtw79.jpg" alt="Vestido dotado de Miu Miu OtoñoInvierno 20262027." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Miu Miu. Umberto Fratini / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942712/devon-mx/articles/valentino-tendencias-metalico-dorado-oton_CC_83o-invierno-2026-2027_dtlnwi.jpg" alt="Valentino OtoñoInvierno 2026" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Valentino. Valentino / Gorunway</figcaption></figure>
+<p>Los tejidos metálicos se hicieron presentes en las pasarelas. En Miu Miu vimos minivestidos con aplicaciones de lentejuelas que rompen el mito y se llevan del día a la noche. En Valentino los vimos en capas que acompañan vestidos para los momentos de celebración.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942712/devon-mx/articles/stella-mc-cartney-fall-winter-2026-tendencias-de-los-80_ygmxlf.jpg" alt="Look de Stella McCartney con pantalones azules y blusa de lunares de los 80 tendencias para OtoñoInvierno 20262027" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Stella McCartney. Alessandro Lucioni / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942712/devon-mx/articles/mugler-oton_CC_83o-invierno-2026-2027_xsimar.jpg" alt="Tendencia de hombreras de los 80 de Mugler OtoñoInvierno 20262027" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Mugler. Umberto Fratini / Gorunway</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942712/devon-mx/articles/traje-sastre-dolce-and-gabbana-traje-sastre-de-los-80_tjtjyj.jpg" alt="Traje sastre de rayas que regresa de los 80 de Dolce Gabbana OtoñoInvierno 20262027." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Dolce &amp; Gabbana. Isidore Montag / Gorunway</figcaption></figure>
+<p>Una tendencia que se repite con respecto a la temporada de otoño pasado es la del regreso de los años 80. Las hombreras gigantescas se vieron tanto en Stella McCartney como en Mugler. Por un lado en una versión de cómo vestir en tono ladylike y el otro sporty. Lo mismo en Dolce &amp; Gabbana, donde se celebró el power dressing con trajes de rayas en siluetas acinturadas.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Las colecciones de las Semanas de la Moda Otoño-Invierno 2026</h2>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942713/devon-mx/articles/ralph-lauren-oton_CC_83o-invierno-2026-falda-midi_e7na16.jpg" alt="Look de falda midi en color caf con botas en el desfile de Ralph Lauren OtoñoInvierno 2026 en la semana de la moda de..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Ralph Lauren. Ralph Lauren / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942713/devon-mx/articles/ralph-lauren-oton_CC_83o-invierno-2026-pantalones-sastre_ynvzdn.jpg" alt="Look de pantalón con botas en el desfile de Ralph Lauren OtoñoInvierno 2026 en la semana de la moda de Nueva York." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Ralph Lauren. Ralph Lauren / Gorunway.</figcaption></figure>
+<p>El desfile de Ralph Lauren tuvo lugar en el Clock Tower de Manhattan con la presencia de Anne Hathaway y Lana del Rey, además de los editores y demás invitados que presenciaron la colección del diseñador, donde destacaron los conjuntos clásicos con accesorios como cinturones, bolsas de mano, botas altas y el color café como hilo conductor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942713/devon-mx/articles/desfile-proenza-schouler-oton_CC_83o-2026_r2p2iu.jpg" alt="Modelo en pasarela de Proenza Schouler con conjunto burdeos de top asimtrico de mangas largas y pantalones con botones..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Monica Feudi / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942713/devon-mx/articles/desfile-proenza-schouler-oton_CC_83o-2026-2_azmpka.jpg" alt="Modelo en pasarela de Proenza Schouler con vestido largo gris asimtrico y detalles de botones caminando sobre alfombra..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Monica Feudi / Gorunway.</figcaption></figure>
+<p>Rachel Scott presentó su primera colección para Proenza Schouler. La diseñadora nos dejó ver a la “nueva mujer Proenza Schouler: moldeada por el pensamiento, la intuición y la contradicción”. Cómo era de esperarse, color y artesanía estuvieron presentes. Vestidos ligeramente arrugados y drapeados, pliegues irregulares, talles suaves y desestructurados, piezas en seda, toques de color. Así se ve su visión para esta temporada. Sobre los accesorios, algunos bolsos de archivo son reinterpretados a través de materiales mixtos. Además de calzado con flecos para jugar con la feminidad — Atenea Morales, Executive Digital Editor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942713/devon-mx/articles/desfile-coach-oton_CC_83o-2026-2_mx5o01.jpg" alt="Modelo en desfile de Coach con chaqueta negra cruzada falda de cuero negra y bolso pequeño caminando por pasarela." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942713/devon-mx/articles/desfile-coach-oton_CC_83o-2026_utlgu1.jpg" alt="Modelo en desfile de Coach con top rojo y rosa de manga larga con número 39 falda de cuadros de talle alto y tenis..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.</figcaption></figure>
+<p>Coach presentó en NYFW su colección Otoño-Invierno 2026, la cual anunciaba una dedicatoria especial. Stuart Vevers compartió que dedicaba este desfile a su hija de nueve días. Para la temporada, el diseñador transicionó de la oscuridad al technicolor, del grunge al preppy americano moderno a través de sacos y chaquetas decontracturadas, tejidos en color, shorts y jeans deshilachados. Todo surgió como analogía a los tiempos que vivimos e inspirado en El Mago de Oz. “Mi fascinación por la ropa vintage ha sido un sello distintivo de mi tiempo en Coach”, dijo el diseñador en su cuenta de Instagram — Atenea Morales, Executive Digital Editor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942713/devon-mx/articles/desfile-tory-burch-oton_CC_83o-2026-2_xr8ahw.jpg" alt="Modelo en pasarela de Tory Burch usando top transparente falda con capas y lazos capa con adornos dorados clutch negro y..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942714/devon-mx/articles/desfile-tory-burch-oton_CC_83o-2026_fkc87f.jpg" alt="Modelo en pasarela del desfile Tory Burch Otoño 2026 vistiendo suter rojo sobre camisa beige con cuello falda marrón de..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.</figcaption></figure>
+<p>Para la temporada Otoño-Invierno 2026, Tory Burch apostó por capas atrevidas y prendas de punto con detalles metálicos. La mujer contemporánea de la firma se viste a través de elegantes piezas, accesorios statement y aplicaciones en color y metalizadas. La colección mostró también suéteres y camisas de cuello redondo y con mangas recogidas, pantalones anchos de pana, vestidos en seda, gabardinas en piel y más. — Atenea Morales, Executive Digital Editor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942714/devon-mx/articles/desfile-carolina-herrera-oton_CC_83o-2026_jgah08.jpg" alt="Modelo en pasarela del desfile Carolina Herrera Otoño 2026 con blusa de estampado animal en tonos marrón y negro mangas..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942714/devon-mx/articles/desfile-carolina-herrera-oton_CC_83o-2026-2_dzhnhp.jpg" alt="Modelo en pasarela del desfile Carolina Herrera Otoño 2026 con blusa negra transparente de mangas voluminosas y falda..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.</figcaption></figure>
+<p>El sentir romántico de Carolina Herrera regresa para una colección inspirada en una comunidad de artistas. “Esta colección comenzó como un homenaje a amplia comunidad de mujeres que a lo largo del tiempo han influenciado el escenario del arte”, sentenció el diseñador. Minutos después y sobre la pasarela caminaron artistas, curadoras, galerías y coleccionistas que dieron vida a vestidos voluminosos, cinturas ceñidas con monos, faldas de tubo con estampado animal print, alcatraces impresos y como broches y aplicaciones florales metálicas — Atenea Morales, Executive Digital Editor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942714/devon-mx/articles/desfile-calvin-klein-oton_CC_83o-2026_u9s3ni.jpg" alt="Modelo en la pasarela de Calvin Klein Otoño 2026 vistiendo un vestido largo negro translúcido con adornos texturizados." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942714/devon-mx/articles/desfile-calvin-klein-oton_CC_83o-2026-2_ax2egp.jpg" alt="Modelo en la pasarela de Calvin Klein Otoño 2026 vistiendo un conjunto minimalista en color crema compuesto por un top..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<p>La diseñadora Veronica Leoni presentó hoy su tercera colección de Otoño-Invierno 2026 para Calvin Klein Collection. La propuesta incluyó sacos amplios y con volumen, su característica visión minimalista y mucha nostalgia. La diseñadora comentó: “Esta temporada fue una inmersión profunda en lo que era Calvin... Queríamos remontarnos a finales de los 70 y principios de los 80, cuando él empezaba a sentar las bases de la colección de Calvin Klein. Creo que era muy radical y sin complejos en aquel entonces, y sentí que había mucho que decir y explorar al respecto”.Vestidos con detalles al frente y abiertos en la espalda, prendas satinadas, abrigos largos… Sin más, nos llevó a ver la moda como ella misma la definió, no solo para cubrir, sino para impresionar. — Atenea Morales, Executive Digital Editor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942715/devon-mx/articles/desfile-michael-kors-oton_CC_83o-2026-2_u5sarj.jpg" alt="Modelo en la pasarela de Michael Kors Otoño 2026 vestida con un conjunto monocromtico en tono camel que incluye blazer..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942715/devon-mx/articles/desfile-michael-kors-oton_CC_83o-2026_s8rht9.jpg" alt="Modelo en la pasarela de Michael Kors Otoño 2026 vestida con un conjunto monocromtico en rojo intenso que incluye un..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<p>Cuando el diseñador Michael Kors cerró el desfile caminando por todo el recinto, era señal de que algo estaba celebrando. La marca cumple 45 años y su colección Otoño-Invierno 2026 en el Lincoln Center fue una combinación de su mirada al pasado con la que tiene en el futuro. La sastrería larga y voluminosa predominó, así como los vestidos glamurosos con plumas y lentejuelas. Se vieron también algunas chaquetas cortadas y así como faldas tejidas en colores neutrales. Todo esto como un viaje por cuatro décadas. — Atenea Morales, Executive Digital Editor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942715/devon-mx/articles/desfile-ulla-johnson-oton_CC_83o-2026-2_stec4h.jpg" alt="Modelo en la pasarela de Ulla Johnson Otoño 2025 vistiendo una chaqueta negra oversize brillante combinada con..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942715/devon-mx/articles/desfile-ulla-johnson-oton_CC_83o-2026_oguyva.jpg" alt="Modelo en la pasarela de Ulla Johnson Otoño 2026 vistiendo un vestido voluminoso en tono beige con adornos que evocan..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<p>A través de una experiencia sensorial y aromática, Ulla Johnson presentó su colección Otoño-Invierno 2026 con una visión llena de tejidos en tonos pasteles, vestidos bohemios, chaquetas bomber, pantalones rectos en piel y blusas románticas con lazos al cuello. La estética románticamente boho que la caracteriza resaltó en cada pieza. — Atenea Morales, Executive Digital Editor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942715/devon-mx/articles/desfile-for-all-mankind-fall-oton_CC_83o-2026_yzkhxf.jpg" alt="Modelo en la pasarela de 7 For All Mankind con chaqueta de cuero negra bufanda azul claro jeans de pierna ancha y gafas..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of 7 For All Mankind</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942715/devon-mx/articles/desfile-for-all-mankind-oton_CC_83o-2026-2_l3l9wf.jpg" alt="Modelo en la pasarela de 7 For All Mankind con chaqueta de cuero marrón de puños en mezclilla bufanda blanca guantes..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of 7 For All Mankind</figcaption></figure>
+<p>Esta temporada, 7 For All Mankind fue una oda a la nostalgia y la moda de los 2000. El diseñador Nicola Brognano presentó su debut con una colección viva y llena de capas: minifaldas con volantes, bufandas de punto ajustadas, vaqueros ultra ajustados y una amplia variedad de chaquetas holgadas que a menudo caían de los hombros de las modelos. Su visón para la temporada está en piezas de punto, cuero y accesorios.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942716/devon-mx/articles/desfile-de-campillo-oton_CC_83o-2026_bhwnu4.jpg" alt="Modelo en la pasarela de Campillo con top gris sin mangas de rayas sobre camisa blanca de hombros exagerados y pantalón..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942716/devon-mx/articles/desfile-de-campillo-oton_CC_83o-2026-2_eiucbf.jpg" alt="Modelo en la pasarela de Campillo con abrigo beige largo de ribete en piel camisa verde pantalones beige de pierna ancha..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<p>Patricio Campillo regresó a la semana de la moda en Nueva York con una colección que dialoga entre la restricción y la posibilidad. El diseñador mexicano presentó su colección de Otoño-Invierno 2026 con una visión en donde las estructuras y proporciones corporales se revelan, el cuero luce en chaquetas, la sastrería de Campillo vuelve a brillar sobre cortes rectos y algunos más cortos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942716/devon-mx/articles/desfile-altuzarra-oton_CC_83o-2026-2_q1lcr6.jpg" alt="Modelo en la pasarela de Altuzarra con chaqueta de cuero negra con ribete en piel bufanda beige pantalones crema y bolso..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942716/devon-mx/articles/desfile-altuzarra-oton_CC_83o-2026_v0ydtw.jpg" alt="Modelo en la pasarela de Altuzarra con chaqueta de tweed con cuello de piel blusa de encaje transparente falda negra de..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<p>Joseph Altuzarra se inspiró en la obra del pintor español Diego Velázquez y el maximalismo emocional del cineasta Pedro Almodóvar para su colección Otoño-Invierno 2026. Su visión para la temporada estuvo llena de piezas esculturales y elegantes. Chaquetas y abrigos de cuero, vestidos y faldas amplias con flecos, piezas fluidas y accesorios en piel.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942716/devon-mx/articles/erdem-fall-2026-oton_CC_83o-invierno-_ztgckq.jpg" alt="Erdem Otoñoinvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Erdem. Isidore Montag / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942716/devon-mx/articles/erdem-fall-2026-ready-to-wear-semana-de-la-moda_grow4n.jpg" alt="Erdem Otoñoinvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Erdem. Isidore Montag / Gorunway.</figcaption></figure>
+<p>Para celebrar su 20 aniversario, Erdem se inspiró en las conversaciones imaginarias entre los diseñadores y sus musas a lo largo de los años. ¿El resultado? Una colección que destacó por el detalle de los brocados, los tejidos satinados, los broches, listones y plumas colocados de forma estratégica en sus diseños.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942716/devon-mx/articles/emilia-wickstead-fall-2026-ready-to-wear-oton_CC_83o-invierno_t0p2cf.jpg" alt="Emilia Wickstead OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Emilia Wickstead. Daniele Oberrauch / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942717/devon-mx/articles/emilia-wickstead-fall-2026-ready-to-wear-_leccoi.jpg" alt="Emilia Wickstead OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Emilia Wickstead. Daniele Oberrauch / Gorunway.</figcaption></figure>
+<p>Emilia Wickstead tomó como punto de partida a las mujeres creativas de estética andrógina que han habitado en el pasado, específicamente a la actriz francesa, Fano Messan. La idea se trasladó en una colección de siluetas inspiradas en los años 20, además de vestidos y faldas en corte A.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942717/devon-mx/articles/simone-rocha-fall-2026-oton_CC_83o-invierno_lc8x1j.jpg" alt="Simone Rocha OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Simone Rocha. Umberto Fratini / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942717/devon-mx/articles/simone-rocha-fall-2026-ready-to-wear-credit-gorunway_xfzwrp.jpg" alt="Simone Rocha OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Simone Rocha. Umberto Fratini / Gorunway.</figcaption></figure>
+<p>Simone Rocha trae de vuelta la tendencia athleisure con su colaboración con Adidas Originals. La diseñadora se inspiró en la mitología inglesa y creó una mezcla del misticismo que caracteriza a su marca con detalles de sportswear contemporáneo. El encaje y los lazos satinados que definen su firma, se entrelazaron con los códigos de la marca deportiva.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942717/devon-mx/articles/burberry-fall-2026-ready-to-wear_pwau8m.jpg" alt="Burberry OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Burberry. Isidore Montag / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942717/devon-mx/articles/burberry-fall-2026-oton_CC_83o-invierno_ph7csa.jpg" alt="Burberry OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Burberry. Isidore Montag / Gorunway.</figcaption></figure>
+<p>Daniel Lee hace del trench coat la pieza protagonista de la colección de Burberry, al reinventarla en diferentes siluetas. La inspiración de la colección fue la vida nocturna de Londres. Destacaron la mezcla de estampados y texturas.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942717/devon-mx/articles/diesel-fall-2026-jeans_n7ieyp.jpg" alt="Diesel OtoñoInvierno 2026 jeans con camiseta blancas." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Diesel. Filippo Fior / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942717/devon-mx/articles/diesel-fall-2026-ready-to-wear-credit-gorunway_xcqojo.jpg" alt="Diesel OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Diesel. Filippo Fior / Gorunway.</figcaption></figure>
+<p>Diesel transformó los básicos en piezas confeccionadas a base de pliegues. No faltaron las piezas de denim en diferentes siluetas y tonalidades. La escenografía de la colección reunió más de 50,000 objetos de desfiles, eventos y escaparates anteriores de la marca.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/jil-sander-fall-2026-_ctyiwr.jpg" alt="Jil Sander" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Jil Sander. Filippo Fior / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/jil-sander-oton_CC_83o-invierno-2026_hsxbmq.jpg" alt="Jil Sander OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Jil Sander. Filippo Fior / Gorunway.</figcaption></figure>
+<p>Para su segunda colección, Simone Bellotti se alejó del minimalismo extremo con el que inauguró su era en la marca. En esta ocasión añadió más volumen, aunque bajo la misma idea; los looks fueron monocromáticos y presentaban aberturas ubicadas en lugares estratégicos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/fendi-oton_CC_83o-invierno-2026-falda-encaje_mrxioq.jpg" alt="Fendi OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Fendi. Umberto Fratini / Gorunway.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/vestido-fendi-fall-2026-ready-to-wear-credit_eym1bo.jpg" alt="Fendi OtoñoInvierno 2026." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Fendi. Umberto Fratini / Gorunway.</figcaption></figure>
+<p>El debut de Maria Grazia Chiuri en Fendi se define a través de las ideas de la unión, el pluralismo y la colaboración. Para su primera colección, hubo un hilo conductor entre la sastrería, los cuellos blancos aislados, el encaje y el pelo de los abrigos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/mm6-maison-margiela-oton_CC_83o-2026-ready-to-wear-1_myrvti.jpg" alt="Modelo en pasarela de MM6 Maison Margiela con atuendo compuesto por una chaqueta mostaza con amplio cuello de piel suter..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of MM6 Maison Margiela</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/mm6-maison-margiela-oton_CC_83o-2026-ready-to-wear_o4lumj.jpg" alt="Modelo en pasarela de MM6 Maison Margiela con un conjunto monocromtico azul marino compuesto por abrigo largo con..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of MM6 Maison Margiela</figcaption></figure>
+<p>El desfile sucedió en el cuarto de espera de la Estación de Milán Central. Algunas de las piezas daban la sensación de estar confeccionadas en tejidos desgastados, de tonos grisáceos en crudo. La cintura baja de las faldas se acentuó con diseños tableados. Para las mujeres, los jeans fueron de cintura alta e iban a juego con zapatos pumps. En el caso de los hombres, destacó la doble cinturilla.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/max-mara-oton_CC_83o-2026-ready-to-wear-1_h6qqrc.jpg" alt="Modelo en pasarela de Max Mara con conjunto totalmente negro compuesto por una chaqueta corta de manga corta sobre top..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942718/devon-mx/articles/max-mara-oton_CC_83o-2026-ready-to-wear_fi3bj4.jpg" alt="Modelo en pasarela de Max Mara con atuendo monocromtico marrón compuesto por un abrigo oversize con solapas anchas..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+<p>Capas, túnicas, botas altas con puntera cuadrada y sudaderas con capucha fueron algunas de las prendas protagonistas de la colección de Ian Griffiths para Max Mara. El diseñador se inspiró en los “años oscuros” de la Era Medieval. Un periodo de aproximadamente 1000 años, que de hecho no fue tan oscuro, marcó la pauta de las siluetas creadas en suede.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942719/devon-mx/articles/prada-oton_CC_83o-2026-ready-to-wear_nfg82e.jpg" alt="Modelo en pasarela de Prada con atuendo de compuesto por un abrigo largo oversize gris oscuro con adornos capa interior..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942719/devon-mx/articles/prada-oton_CC_83o-2026-ready-to-wear-1_ittcqj.jpg" alt="Modelo en desfile de Prada con trench coat oversize beige. Bajo el abrigo lleva una chamarra roja con cuello alto y una..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942719/devon-mx/articles/gucci-oton_CC_83o-2026-ready-to-wear-2_prfchx.jpg" alt="Modelo con vestido dorado largo y clutch a juego combinado con tacones en punta del mismo color" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Gucci</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942719/devon-mx/articles/gucci-oton_CC_83o-2026-ready-to-wear-1_tdplpe.jpg" alt="Modelo en pasarela de Gucci con conjunto negro de blazer y falda combinado con tacones en punta y bolsa de hombro a juego" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Gucci</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942719/devon-mx/articles/moschino-oton_CC_83o-2026-ready-to-wear-1_en63yf.jpg" alt="Modelo con camisa amarilla con cuello abierto y de lado derecho detalle de tejido y jeans desgastados con cinturon negro..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942719/devon-mx/articles/moschino-oton_CC_83o-2026-ready-to-wear-2_epjgcl.jpg" alt="Modelo con vestido azul claro con un cinturon cafe claro con volantes y flecos amarillos bolso verde menta y zapatos..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942720/devon-mx/articles/ferragamo-oton_CC_83o-2026-ready-to-wear-2_xmhfee.jpg" alt="Modelo con vestido midi color marron con bolsas en los costados combinado con zapatillas de tacon en punta y un collar..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942720/devon-mx/articles/ferragamo-oton_CC_83o-2026-ready-to-wear-1_jf4sd8.jpg" alt="Modelo con traje blanco estructurado y botones negros combinado con zapatillas negras de tacón en punta" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942720/devon-mx/articles/dolce-and-gabbana-oton_CC_83o-2026-ready-to-wear-2_e9emp2.jpg" alt="Modelo con vestido de encaje negro midi con un escote cuadrado combinado con medias cortas color negro y zapatillas de..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942720/devon-mx/articles/dolce-and-gabbana-oton_CC_83o-2026-ready-to-wear-1_er0lip.jpg" alt="Modelo con vestido negro de escote cuadrado combinado con calcetas largas y zapatillas en punta con una bolsa mediana en..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942720/devon-mx/articles/bottega-veneta-oton_CC_83o-2026-ready-to-wear-2_bheg0d.jpg" alt="Modelo con conjunto rojo con brillos de top y pantalón combinado con mocasines del mismo color y bolsa a juego" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gorunway.com / Courtesy of Bottega Veneta</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942720/devon-mx/articles/bottega-veneta-oton_CC_83o-2026-ready-to-wear-1_epstxh.jpg" alt="Modelo con top estructurado color crema falda satinada del mismo color y gorro gris combinado con zapatos planos de..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gorunway.com / Courtesy of Bottega Veneta</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942721/devon-mx/articles/christian-dior-oton_CC_83o-2026-ready-to-wear-2_fbgq6x.jpg" alt="Modelo con vestido crema strapless y sandalias azules de tacon" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942721/devon-mx/articles/christian-dior-oton_CC_83o-2026-ready-to-wear-1_sndeyk.jpg" alt="Modelo con top pastel con motivo floral y falda marrón voluminosa con olanes combinado con tacones con puntos en punta" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942721/devon-mx/articles/saint-laurent-oton_CC_83o-2026-ready-to-wear-2_h5e7nd.jpg" alt="Modelo con un vestido encaje marrón claro midi combinado con una chaqueta de encaje semiabierta y adorno en el pecho..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Alessandro Lucioni / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942721/devon-mx/articles/saint-laurent-oton_CC_83o-2026-ready-to-wear-1_r2uqje.jpg" alt="Modelo con traje sastre con estructura y hombreras de color caf combinado con un clutch pequeño y sandalias de tacón" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Alessandro Lucioni / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942721/devon-mx/articles/courreges-oton_CC_83o-2026-ready-to-wear-1_lkceba.jpg" alt="Modelo con vestido blanco con escote cuadrado y aperturas en la espalda combinado con sandalias de tacon a juego y bolsa..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Courrèges</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942721/devon-mx/articles/courreges-oton_CC_83o-2026-ready-to-wear-2_mba9ux.jpg" alt="Modelo con vestido negro strapless cuadrado y asimetrico combinado con sandalias de tacon color crema y lentes de sol..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Courrèges</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/balmain-oton_CC_83o-2026-ready-to-wear-1_nx0faw.jpg" alt="Modelo con chaqueta negra de cuero de cuello alto y pantalón del mismo color combinado con medias y tacones en punta..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Balmain</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/balmain-oton_CC_83o-2026-ready-to-wear-2_fkjdqs.jpg" alt="Modelo con bomber verde y falda de seda con encaje combinado con medias negras y tacones en punta del mismo color lleva..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Balmain</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/dries-van-noten-oton_CC_83o-2026-ready-to-wear-2_sejb1y.jpg" alt="Modelo con bermudas de mezclilla con un chaleco largo con bordado dorado de flores combinado con botas marrones y bolsa..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/dries-van-noten-oton_CC_83o-2026-ready-to-wear-1_sntf21.jpg" alt="Modelo con un abrigo cerrado largo con motivo de cuadros verdes combinado con botas largas marrones y bolsa extra grande..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/stella-mccartney-oton_CC_83o-2026-ready-to-wear-1_ypk5af.jpg" alt="Modelo con pantalón sastre gris con un cardigan color marron claro y cinturon caf combinado con zapatos marrones en..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Alessandro Lucioni / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/stella-mccartney-oton_CC_83o-2026-ready-to-wear-2_vg5mea.jpg" alt="Modelo con vestido blanco con un escote en v prolongado y flecos largos combinado con sandalias de tacon" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Alessandro Lucioni / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/alaia-oton_CC_83o-2026-ready-to-wear-1_f4vcru.jpg" alt="Modelo con falda larga color verde con una blusa de manga larga del mismo color combinado con tacones blancos" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Alaïa</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942722/devon-mx/articles/alaia-oton_CC_83o-2026-ready-to-wear-2_ktzhed.jpg" alt="Modelo con vestido rojo midi de manga larga con detalle de textura enfrente combinado con sandalias de tacon rojas" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Alaïa</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/chloe-oton_CC_83o-2026-ready-to-wear-1_uipcqv.jpg" alt="Modelo con falda voluminosa gris de encaje midi con camisa de cuadros naranjas y blancos con un lazo en el cuello y saco..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Chloé</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/chloe-oton_CC_83o-2026-ready-to-wear-2_oqyxjx.jpg" alt="Modelo con pantalones globo azul marino combinado con una blusa sinmangas corta con estampado de flores rojas y zuecos..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Chloé</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/rabanne-oton_CC_83o-2026-ready-to-wear-1_yne97y.jpg" alt="Modelo con vestido rosa claro co brillos con un escote en V pronunciado combinado sobre una camisa de manga corta y..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/rabanne-oton_CC_83o-2026-ready-to-wear-2_zosau4.jpg" alt="Modelo con falda de seda con una blusa a juego color caf con detalles de encaje blanco y medias rosas con tacones de..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/schiaparelli-oton_CC_83o-2026-ready-to-wear-1_lhiumw.jpg" alt="Modelo con vestido amarillo ajustado con volantes escultóricos al frente y cmbinado con tacones en punta a juego y bolsa..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Schiaparelli</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/schiaparelli-oton_CC_83o-2026-ready-to-wear-2_fowrn4.jpg" alt="Modelo con vestido dorado metlico de silueta larga y ajustada cuello alto y collar llamativo combinado con tacones en..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Schiaparelli</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/isabel-marant-oton_CC_83o-2026-ready-to-wear-1_pmmqyx.jpg" alt="Modelo con jeans rotos con una camiseta transparente color cafe y chamarra negra blanca y roja combinada con botas rojas..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942723/devon-mx/articles/isabel-marant-oton_CC_83o-2026-ready-to-wear-2_df5xh8.jpg" alt="Modelo con conjunto de piel rojo de pantalones rectos con una chamarra con botones de lado derecho combinado con botas..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942724/devon-mx/articles/loewe-oton_CC_83o-2026-ready-to-wear-1_pwovf2.jpg" alt="Modelo con vestido amarillo mini combinado con medias negras oscuras y zapatos planos naranjas con una bolsa negra en mano" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942724/devon-mx/articles/loewe-oton_CC_83o-2026-ready-to-wear-2_lql8p9.jpg" alt="Modelo con vestido verde strapless con flecos verdes combinado con medias negras oscuras y zapatos planos negros" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942724/devon-mx/articles/givenchy-oton_CC_83o-2026-ready-to-wear-1_sqt9qh.jpg" alt="Modelo con un conjunto estructurado de blazer negro con solapas y puños exagerados camisa blanca de cuello alto..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Givenchy</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942724/devon-mx/articles/givenchy-oton_CC_83o-2026-ready-to-wear-2_pb37fh.jpg" alt="Modelo con un vestido corto amarillo de hombros descubiertos y mangas voluminosas en brocado floral. Complementa con..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Givenchy</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942725/devon-mx/articles/victoria-beckham-oton_CC_83o-2026-ready-to-wear-1_txoyuw.jpg" alt="Modelo con abrigo largo y amplio en tono lavanda de hombros marcados sobre camisa azul y blanca de rayas verticales...." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942724/devon-mx/articles/victoria-beckham-oton_CC_83o-2026-ready-to-wear-2_ztwahl.jpg" alt="Modelo con abrigo oversize gris oscuro de silueta estructurada sobre blusa blanca y falda metlica de acabado satinado..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942725/devon-mx/articles/celine-oton_CC_83o-2026-ready-to-wear-1_myx83a.jpg" alt="Modelo con abrigo sastre negro suter de cuello alto pantalón y botas negras. Lleva sombrero de ala ancha negro y bolso..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Celine</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942725/devon-mx/articles/celine-oton_CC_83o-2026-ready-to-wear-2_coyl4t.jpg" alt="Modelo con vestido rojo texturizado con adornos blancos y plateados bajo trench coat beige. Complementa con botas altas..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Courtesy of Celine</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942726/devon-mx/articles/hermes-oton_CC_83o-2026-ready-to-wear-1_nshoqj.jpg" alt="Modelo en pasarela con look monocromo de top negro de manga larga con cierre frontal cinturón de cadena plateada shorts..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942725/devon-mx/articles/hermes-oton_CC_83o-2026-ready-to-wear-2_ovkswf.jpg" alt="Modelo con abrigo largo marrón de cuello de piel suter verde oscuro de cuello alto y falda burdeos de cuero con abertura..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Isidore Montag / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942726/devon-mx/articles/balenciaga-oton_CC_83o-2026-ready-to-wear-1_tnlwja.jpg" alt="Modelo con vestido de terciopelo burdeos de diseño asimtrico que deja expuesto un costado del torso. La prenda presenta..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942726/devon-mx/articles/balenciaga-oton_CC_83o-2026-ready-to-wear-2_r6fid1.jpg" alt="Modelo con look de cuero negro de chaqueta oversize minifalda y botas altas con aberturas. Lleva bolso negro pequeño..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942726/devon-mx/articles/jean-paul-gaultier-oton_CC_83o-2026-ready-to-wear-1_rienw6.jpg" alt="Modelo en pasarela con traje negro de rayas finas sudadera con capucha corbata a rayas rojas y negras guantes negros y..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942726/devon-mx/articles/jean-paul-gaultier-oton_CC_83o-2026-ready-to-wear-2_heq2mq.jpg" alt="Modelo con vestido negro de cuerpo ajustado y falda amplia acompañado de sombrero negro de ala ancha botas altas y..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942727/devon-mx/articles/mcqueen-oton_CC_83o-2026-ready-to-wear-1_bgkk5a.jpg" alt="Modelo con vestido negro sin mangas superposición transparente y detalles de encaje intrincados. Complementa con..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942727/devon-mx/articles/mcqueen-oton_CC_83o-2026-ready-to-wear-2_gxn8tn.jpg" alt="Modelo con vestido negro de mangas largas y puños blancos sobredimensionado con flecos blancos en el bajo y gran lazo..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Umberto Fratini / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942727/devon-mx/articles/gabriela-hearst-oton_CC_83o-2026-ready-to-wear-1_lhnbfx.jpg" alt="Modelo en pasarela con chaqueta marrón de cuero con cuello de piel top a juego y pantalones amplios de cuero marrón...." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942727/devon-mx/articles/gabriela-hearst-oton_CC_83o-2026-ready-to-wear-2_akxwl9.jpg" alt="Modelo con chaqueta marrón de cuero con cuello de piel top a juego y pantalones amplios de cuero marrón. Completa con..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Filippo Fior / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942727/devon-mx/articles/chanel-oton_CC_83o-2026-ready-to-wear-1_ivar4d.jpg" alt="Modelo en pasarela con vestido sin mangas en tonos pastel durazno rosa y lavanda con motivos florales y encaje en el..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942727/devon-mx/articles/chanel-oton_CC_83o-2026-ready-to-wear-2_spfrno.jpg" alt="Modelo en pasarela con conjunto plisado blanco de dos piezas blusa de manga larga y pantalones amplios ambos con ribetes..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Daniele Oberrauch / Gorunway.com</figcaption></figure>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="blusas-otono-invierno-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942729/devon-mx/articles/Blusas-tendencias-Dolce-Gabbana-otono-invierno-2026_qawhat.jpg" alt="Blusas en tendencia de Otoño-Invierno 2026: Boho, de flores, drapeadas y más" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Tendencias</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Blusas en tendencia de Otoño-Invierno 2026: Boho, de flores, drapeadas y más</h3>
+                </a>
+                <a href="faldas-otono-invierno-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942737/devon-mx/articles/Faldas-tendencias-christian-dior-otono-invierno-2026_ypou88.jpg" alt="Faldas en tendencia de Otoño-Invierno 2026: Largas, drapeadas, plisadas y más" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Tendencias</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Faldas en tendencia de Otoño-Invierno 2026: Largas, drapeadas, plisadas y más</h3>
+                </a>
+                <a href="jeans-otono-invierno-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790942745/devon-mx/articles/Jeans-tendencia-stella-mccartney-otono-invierno-2026_swqx6f.jpg" alt="Todos los jeans en tendencia de Otoño-Invierno 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Tendencias</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Todos los jeans en tendencia de Otoño-Invierno 2026</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>
