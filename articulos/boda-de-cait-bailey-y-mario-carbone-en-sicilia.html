@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La novia llevó un vestido de Balenciaga para celebrar una boda siciliana de tres días | Devon México y Latinoamérica</title>
+    <meta name="description" content="La novia, que trabaja como publicista, también lució diseños de Ludovic de Saint Sernin y piezas de archivo de Chanel, Valentino y Prada en su boda de estilo clásico.">
+    <meta property="og:title" content="La novia llevó un vestido de Balenciaga para celebrar una boda siciliana de tres días | Devon México y Latinoamérica">
+    <meta property="og:description" content="La novia, que trabaja como publicista, también lució diseños de Ludovic de Saint Sernin y piezas de archivo de Chanel, Valentino y Prada en su boda de estilo clásico.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028844/devon-mx/articles/6-18-German_vh7p7x.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028844/devon-mx/articles/6-18-German_vh7p7x.jpg" alt="La novia llevó un vestido de Balenciaga para celebrar una boda siciliana de tres días" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Moda</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">La novia llevó un vestido de Balenciaga para celebrar una boda siciliana de tres días</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">La novia, que trabaja como publicista, también lució diseños de Ludovic de Saint Sernin y piezas de archivo de Chanel, Valentino y Prada en su boda de estilo clásico.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR ALEXANDRA MACON</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">2 de octubre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Antes de celebrar su boda en los locales The Grill y The Pool, de Major Food Group —con una deslumbrante lista de invitados famosos y una actuación de Benson Boone—, la estratega de marca y antigua relaciones públicas Cait Bailey y el restaurador y chef Mario Carbone se casaron en una gran celebración de tres días en Sicilia, que comenzó el 30 de julio.</p>
+<p>Los dos se conocieron ocho años antes en el restaurante de Mario, Carbone, cuando la amiga de Cait, Shay Mitchell, consiguió de alguna manera una reserva para ese mismo día —algo prácticamente imposible— en el local de moda de Greenwich Village… o eso creía Cait. En realidad, Shay se había puesto en contacto directamente con Mario y, al no poder atenderla, él la invitó a unirse a él y a un amigo en SU mesa. “¿Qué?”, dijo Shay al llegar.</p>
+<p>Seis años después, Mario le pidió matrimonio en Capri el 14 de julio de 2024, durante unas vacaciones de un mes allí. “Me pidió que me casara con él con nuestro perro Rocco a su lado”, recuerda Cait. “Llevábamos años yendo a Capri, y nos pareció el lugar perfecto para ese momento tan especial”.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028845/devon-mx/articles/georgina-rodriguez-y-cristiano-ronaldo-boda-portugal_20copia_sore2e.jpg" alt="La boda Georgina Rodríguez y Cristiano Ronaldo en Portugal: FOTOS exclusivas" loading="lazy" class="w-full h-auto"/></figure>
+<p>Después de buscar lugares por todo el mundo durante casi un año, Cait y Mario decidieron casarse en Palermo, Sicilia. La familia paterna de Mario es de Sicilia, y la isla no dejaba de aparecer en sus búsquedas.&quot;Hemos viajado juntos por toda Italia, pero nunca habíamos visitado Sicilia como pareja&quot;, explica Cait. “Nos encantó la idea de dar a conocer a nuestras familias un lugar que también sería nuevo para nosotros, y nos encanta que Palermo tenga tantas contradicciones hermosas: carácter y grandeza, una historia arquitectónica y culinaria extraordinaria, y la energía de una ciudad con unas vistas preciosas al mar”. Mario se sintió conectado con la ciudad desde el principio gracias a su historia familiar y a sus tradiciones gastronómicas, mientras que el mar le recordaba a Cait su infancia en la costa este de Maryland. “También nos inspiró el mundo de Il Gattopardo y la pasión que Mario siempre ha sentido por El Padrino”, añade Cait.</p>
+<p>La ceremonia tuvo lugar el sábado 1 de agosto en Santa María dello Spasimo, y Cait y Mario trabajaron con la organizadora de eventos Marcy Blum, a quien ambos conocen desde hace años, para planificar la celebración de tres días. “Mario y Major Food Group han colaborado con Marcy en muchos eventos, y hemos bromeado diciendo que ella ya se había reservado nuestra boda mucho antes de que nos comprometiéramos”, dice Cait. “Guiar a los invitados por espacios históricos requiere un cuidado extraordinario, pero Marcy y su equipo tienen la habilidad de hacer que los elementos más difíciles parezcan sencillos”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028844/devon-mx/articles/1-8-German_kuwfxh.jpg" alt="Image may contain Zack O&#x27;Malley Greenburg Blazer Clothing Coat Jacket Face Head Person Photography and Portrait" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Empezamos el fin de semana en Villa Igiea, con vistas al mar. Yo llevaba un vestido de croché de Chanel de la colección de primavera de 2005, mientras que Mario llevaba una chaqueta de Caruso con pantalones de Valentino.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028844/devon-mx/articles/1-14-Bottega_ga3agv.jpg" alt="Image may contain Clothing Formal Wear Suit Dress Face Head Person Photography Portrait Blazer Coat and Jacket" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>La primera noche fue un evento relajado para dar la bienvenida a todos a Sicilia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028844/devon-mx/articles/1-15-Bottega_hx1qug.jpg" alt="Image may contain Brenda Bakke Clothing Dress Rock Face Head Person Photography Portrait Architecture and Building" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El delicado punto de ganchillo de mi vestido de Chanel de colección encajaba a la perfección con el entorno costero de Palermo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028844/devon-mx/articles/1-16-Bottega_bab70r.jpg" alt="Image may contain Person Sitting Adult Clothing and Coat" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>A Mario siempre le ha encantado la sastrería clásica. Para los cócteles de bienvenida, combinó una chaqueta de Caruso con unos pantalones de Valentino, una corbata de Husbands y unos zapatos de Celine.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028845/devon-mx/articles/1-17-Bottega_vkrzfk.jpg" alt="Image may contain Indoors Fun Hall Furniture Table Banquet Dining Table and Chair" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Cada invitado disponía de un plato de cerámica personalizado, pintado a mano con su nombre, mientras que el centro de la mesa se dejó deliberadamente libre para que la comida se sirviera al estilo familiar.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028845/devon-mx/articles/1-17.4-German_aucvcv.jpg" alt="Image may contain Tub Plant Pool Water Adult Person Wedding Chair Furniture Swimming Pool Outdoors and Plate" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Villa Igiea se convirtió en nuestro hogar durante el fin de semana. Su ubicación sobre el mar, sus preciosos jardines y su personal, increíblemente acogedor, hicieron que todos nos sintiéramos bienvenidos desde el primer momento.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028845/devon-mx/articles/1-20-German_ocnlsk.jpg" alt="Image may contain Blazer Clothing Coat Jacket Dress Adult Person Wedding Formal Wear Suit Fashion and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Para la cena, me puse un vestido de Khaite hecho a medida y diseñado por Cate Holstein. Su silueta escultural resultaba moderna, pero encajaba perfectamente en el entorno histórico.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028845/devon-mx/articles/1-31-Bottega_hldduc.jpg" alt="Image may contain Ross Atkins Adult Person Formal Wear Clothing Suit Blazer Coat Jacket Accessories Tie and Dress" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mario junto a su socio, Rich Torrisi, justo después de su discurso.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028846/devon-mx/articles/1-33-Bottega_giabj9.jpg" alt="Image may contain Jessica Marais Robert Downey Jr. Judy Cornwell Takeshi So Architecture Building and Dining Room" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Con mi padre, riéndonos durante unos discursos que eran a partes iguales divertidísimos y emotivos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028846/devon-mx/articles/1-34-Bottega_f5tybs.jpg" alt="Image may contain Adult Person Food Meal Waiter Dining Table Furniture Table Face Head Accessories and Glasses" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El chef Fulvio Pierangelini preparó un banquete siciliano al estilo familiar en el que destacaban la caponata, las gambas rojas de la zona, la pasta alla norma y otros platos de Palermo y de toda la isla.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028846/devon-mx/articles/3-2-German_zwvgws.jpg" alt="Image may contain Clothing Formal Wear Suit Blazer Coat Jacket Dress Face Head Person Photography and Portrait" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Un momento surrealista en las escaleras del Teatro Massimo, el teatro de ópera más grande de Italia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028846/devon-mx/articles/3-4-Bottega_ltmpkn.jpg" alt="Image may contain Ria Antoniou Clothing Dress Face Head Person Photography Portrait Fashion Formal Wear and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Llevaba un look a medida con plumas de Ludovic de Saint Sernin. El corsé y la espectacular falda tipo jaula se diseñaron para estar a la altura de la grandiosidad y la teatralidad del escenario.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028846/devon-mx/articles/3-8-German_hcggcq.jpg" alt="Image may contain Indoors Theater Auditorium Hall Architecture Building and Person" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Al levantar la vista hacia el interior del auditorio, su historia y su grandeza se perciben de inmediato.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028846/devon-mx/articles/3-9-German_o4paim.jpg" alt="Image may contain Kemp Muhl Indoors Theater People Person Lighting Adult Wedding Clothing Dress and Auditorium" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El contraste entre el traje a medida de solaro de Mario y mi look con plumas de Ludovic de Saint Sernin encajaba a la perfección con esta ocasión.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028847/devon-mx/articles/3-10-German_z74iki.jpg" alt="Image may contain Zack O&#x27;Malley Greenburg Clothing Formal Wear Suit Dress Photography Fashion Gown Face and Head" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Colaboré con mi buena amiga y estilista Mimi Cuttrell para contribuir a la narración y a la conexión con cada escenario.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028847/devon-mx/articles/3-13-Bottega_djktqb.jpg" alt="Image may contain Q&#x27;orianka Kilcher Mýa Nina Lisandrello Lily Aldridge Tara Strong La Parka Clothing and Dress" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>A mi padre le hacía especial ilusión recibir a los invitados en las escaleras del Teatro Massimo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028847/devon-mx/articles/3-14-Bottega_e0ymnl.jpg" alt="Image may contain Assaf Gavron Body Part Hand Person Holding Hands Adult Blazer Clothing Coat Jacket and Pants" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mi primer amigo y compañero de trabajo de Nueva York, Michael Cohen, y su marido, Erez Rose.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028847/devon-mx/articles/3-15-Bottega_tllkxh.jpg" alt="Image may contain Clothing Dress Blazer Coat Jacket Formal Wear Adult Person Wedding Suit Fashion and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Antes de que comenzara la representación, Mario dio la bienvenida a nuestros invitados y les contó un poco sobre la historia del Teatro Massimo y lo que estaban a punto de vivir.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028847/devon-mx/articles/3-19-Bottega_uc6auf.jpg" alt="Image may contain Indoors Theater Auditorium Hall Architecture Building Person and Adult" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El Teatro Massimo presentó una selección de seis piezas emblemáticas de la música italiana, interpretadas por extraordinarios cantantes de ópera italianos y que culminaron con “O sole mio”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028848/devon-mx/articles/3-23-Bottega_bwsqz5.jpg" alt="Image may contain Architecture Building House Housing Portico and Person" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El teatro de la ópera al atardecer. Cada lugar era una sorpresa, lo que permitía a nuestros invitados descubrir Palermo capítulo a capítulo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028848/devon-mx/articles/4-1-Bottega_hfhmht.jpg" alt="Image may contain Abbas Babaei chegeni Nora En Pure Blazer Clothing Coat Jacket Body Part Hand and Person" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Antes de salir del teatro, me puse un top de Valentino de la colección de primavera de 2004 con una falda hecha a medida por su amigo Sylvio Roubertto Kovacic.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028848/devon-mx/articles/4-2-German_ogyhl7.jpg" alt="Image may contain City Urban Adult Person Road Street Architecture Building Body Part Hand People and Lighting" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Cuando salimos a la calle, nos quedamos boquiabiertos al ver a una multitud de palermitanos esperando en la plaza, animando junto con el grupo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028848/devon-mx/articles/4-3-Bottega_li3kyk.jpg" alt="Image may contain Person Photobombing People Clothing Formal Wear Suit Blazer Coat Jacket Adult Urban and Wedding" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>A Mario le encantó la idea de dar un paseo por Palermo con nuestros amigos y familiares, inspirándose en la tradición siciliana de que los recién casados den un paseo por la ciudad tras la ceremonia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028848/devon-mx/articles/4-6-German_hcphci.jpg" alt="Image may contain Kevin Harvick Sukanta Bhattacharya People Person Urban Lighting Clothing Formal Wear and Suit" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Siguiendo a la banda por las calles de Palermo hacia el mercado.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028849/devon-mx/articles/4-11-Bottega_oi02tu.jpg" alt="Image may contain Marina Rossell Akash Gowda People Person Group Performance Leisure Activities Music and Music Band" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>La banda nos lleva desde la formalidad del teatro de la ópera hasta la energía del mercado.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028848/devon-mx/articles/4-12-Bottega_nhjznk.jpg" alt="Image may contain Kate Kendall Clothing Dress Formal Wear Face Head Person Photography Portrait Fashion and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Lo que más recordamos del mercado es la calidez con la que todos recibieron a nuestros invitados.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028849/devon-mx/articles/4-13-Bottega_gbosnk.jpg" alt="Image may contain People Person Accessories Formal Wear Tie Adult Clothing Hat Musical Instrument and Wedding" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El grupo estuvo fenomenal y marcó el tono de la siguiente experiencia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028849/devon-mx/articles/4-14-German_n4eptp.jpg" alt="Image may contain Sandhy Sondoro Lighting City Road Street Urban Blazer Clothing Coat Jacket Dress Face and Head" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Una instalación tradicional de luminarias iluminaba nuestras iniciales y las palabras “The Summer of Love”, una frase acuñada por un amigo en homenaje a todas aquellas personas de nuestro entorno que celebran el amor este verano.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028849/devon-mx/articles/4-19-German_hpo5x9.jpg" alt="Image may contain Adult Person Head Face Happy Wedding Laughing and Formal Wear" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Comimos, exploramos y bailamos por todo el mercado.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028849/devon-mx/articles/4-21-Bottega_yjbrls.jpg" alt="Image may contain Face Head Person Photography Portrait Urban Adult Wedding Lighting Wristwatch and Body Part" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El ambiente en el Mercato del Capo era totalmente desenfadado. Era imposible no dejarse llevar por él.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028849/devon-mx/articles/4-22-Bottega_vwe9nk.jpg" alt="Image may contain La Parka Food Seafood Animal Sea Life Invertebrate and Oyster" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Queríamos que la cena del viernes se disfrutara mientras se paseaba por un mercado auténtico y en pleno funcionamiento, con vendedores locales que presentaran los alimentos que elaboran cada día.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028850/devon-mx/articles/4-23-Bottega_m6n7yl.jpg" alt="Image may contain Face Head Person Photography Portrait Clothing TShirt Urban City Adult Road and Street" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Los cocineros compartieron con orgullo sus especialidades y las tradiciones que hay detrás de ellas.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028851/devon-mx/articles/4-27-Bottega_ez3bbm.jpg" alt="Image may contain Adult Person Child Chair Furniture Accessories Bag Handbag Clothing Footwear Shoe and Baby" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Nuestros amigos contemplan la representación de la “Opera dei Pupi” a cargo del Teatro dei Pupi Argento, una tradición siciliana que se remonta a siglos atrás.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028850/devon-mx/articles/4-28-German_br4mda.jpg" alt="Image may contain Shay Mitchell Clothing Dress Adult Person Wedding Urban Head Face Lighting and Formal Wear" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Con mi mejor amiga, Shay Mitchell. Siempre riéndonos de algo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028850/devon-mx/articles/4-29-Bottega_uuar57.jpg" alt="Image may contain Urban Adult Person Architecture and Building" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Cada puesto conservaba su propia personalidad. Queríamos que el mercado siguiera siendo reconocible tal y como era.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028850/devon-mx/articles/4-30-German_b1wiuf.jpg" alt="Image may contain Andrzej Lampert Kate Kendall Abhimanyu Mithun Clothing Dress Adult Person Face and Head" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Los invitados pudieron degustar panelle, arancine, marisco a la parrilla, helado y otras especialidades sicilianas a lo largo de toda la noche.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028851/devon-mx/articles/4-35-Bottega_nevgc3.jpg" alt="Image may contain Adult Person Accessories Bag Handbag Clothing Glove Blade Knife and Weapon" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Ver cómo los vendedores preparaban sus platos estrella delante de nuestros invitados fue una de las cosas que más nos gustó del fin de semana.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028851/devon-mx/articles/4-33-Bottega_hkubh9.jpg" alt="Image may contain Shay Mitchell Maruja Bustamante Jang MiRan AliAsghar Bahari Clothing Pants Adult and Person" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Por una noche, nuestra celebración no pareció algo ajeno a Palermo. Se percibía como algo ligado a la ciudad.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028851/devon-mx/articles/5-1-Bottega_v7synx.jpg" alt="Image may contain Architecture Building House Housing Villa Furniture Hacienda and Arch" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Los drapeados esculturales de Mia Sylvia se extendían por Santa María dello Spasimo como una instalación, haciendo eco de la amplitud del espacio.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028851/devon-mx/articles/5-3-Bottega_hoyurc.jpg" alt="Image may contain Floor Architecture Building Monastery and Arch" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Quería una ceremonia etérea que permitiera que la historia y la espiritualidad de la iglesia sin techo siguieran siendo el centro de atención. Marcy y su equipo hicieron realidad esa visión.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028851/devon-mx/articles/5-4-Bottega_oexhif.jpg" alt="Image may contain Arch Architecture Gothic Arch Building and Indoors" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Para nuestros invitados, utilizamos bancos con fundas en lugar de las sillas tradicionales.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028852/devon-mx/articles/5-6-German_g6wjnb.jpg" alt="Image may contain Clothing Long Sleeve Sleeve Silk and Fashion" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Era la primera vez que veía mi nuevo nombre, bordado en la funda de Balenciaga diseñada para mi vestido de novia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028852/devon-mx/articles/5-7-German_u8oh4y.jpg" alt="Image may contain Indoors Bed Bedroom Furniture Room Bridal Veil Clothing Dress Fashion Formal Wear and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Mi vestido de Balenciaga hecho a medida para la ceremonia, diseñado por Pierpaolo Piccioli.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028852/devon-mx/articles/5-11-German_vdpgd4.jpg" alt="Image may contain Furniture Bed Bedroom Indoors Room Adult Person Wedding Bridal Veil Clothing Dress and Fashion" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Los últimos momentos de los preparativos. Trabajar durante el fin de semana con sus dos mejores amigas, la estilista Mimi Cuttrell y la peluquera Laura Polko, hizo que el proceso fuera aún más divertido.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028852/devon-mx/articles/5-13-German_mcboyz.jpg" alt="Image may contain Flower Plant Flower Arrangement Flower Bouquet Food and Produce" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Llevaba un ramo de calas o alcatraces, la flor favorita de Cristóbal Balenciaga. La pulsera de zafiros y diamantes de su madrina, un regalo de mi difunto padrino, estaba enrollada alrededor de los tallos a modo de “algo azul”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028852/devon-mx/articles/5-15-German_z3uwtl.jpg" alt="Image may contain Clothing Dress Fashion Formal Wear Gown Wedding Wedding Gown Bridal Veil Person and Arch" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Para mí era importante que el vestido tuviera un aire atemporal y delicado, sin dejar de destacar dentro del entorno de la iglesia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028853/devon-mx/articles/5-18-German_up0y4p.jpg" alt="El silencio que reinaba en el lugar de la ceremonia antes de que llegaran todos resultaba increíblemente emotivo." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El silencio que reinaba en el lugar de la ceremonia antes de que llegaran todos resultaba increíblemente emotivo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028853/devon-mx/articles/5-19-German_n5yaji.jpg" alt="Image may contain Clothing Formal Wear Suit Dress Fashion Gown Flower Flower Arrangement Flower Bouquet and Plant" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Nos vimos por primera vez aproximadamente una hora antes de la ceremonia. Mario —que llevaba un traje de P. Johnson el día de nuestra boda— empezó a llorar casi en cuanto me vio, lo que hizo que ese momento fuera aún más emotivo para los dos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028853/devon-mx/articles/5-20-German_sfxem5.jpg" alt="Image may contain Bridal Veil Clothing Dress Fashion Formal Wear Gown Person Wedding Wedding Gown and Adult" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El velo, adornado con delicados apliques de encaje, se diseñó teniendo en cuenta las dimensiones del pasillo. Por debajo, un pañuelo de gasa de seda caía casi como una capa.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028853/devon-mx/articles/5-21-German_ppftbr.jpg" alt="Image may contain Arch Architecture Bridal Veil Clothing Dress Fashion Formal Wear Gown Person and Wedding" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Un momento de tranquilidad juntos antes de que comenzara la ceremonia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028853/devon-mx/articles/5-24-Bottega_cwmfyd.jpg" alt="Image may contain William Miller Clothing Dress Fashion Formal Wear Gown Arch Architecture Wedding and Wedding Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Nuestros invitados reunidos en Santa María dello Spasimo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028853/devon-mx/articles/5-25-Bottega_lec12k.jpg" alt="Image may contain Accessories Strap Clothing Footwear Sandal Shoe Animal Canine Dog Mammal and Pet" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Uno de nuestros invitados mejor vestidos, Rocco Carbone.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028854/devon-mx/articles/5-27-Bottega_mlpwsu.jpg" alt="Image may contain Clothing Formal Wear Suit Adult Person Baby Wedding Electrical Device and Microphone" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Un conjunto de cuerdas interpretó arreglos de las canciones que eran importantes para nosotros.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028854/devon-mx/articles/5-29-Bottega_ljdb7q.jpg" alt="Image may contain Clothing Veil Accessories Earring Jewelry Dress Fashion Formal Wear Gown and Wedding" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Lorraine Schwartz diseñó mi collar de diamantes para que quedara debajo del velo de gasa de seda. Su diamante en forma de pera hacía juego con los de mi anillo de compromiso, una forma que tiene un significado especial para ambas familias maternas.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028854/devon-mx/articles/5-33-German_ulz5j0.jpg" alt="Image may contain Flower Flower Arrangement Flower Bouquet Plant Body Part Finger Hand Person and Accessories" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Unos instantes antes de caminar hacia el altar.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028854/devon-mx/articles/5-34-German_fkezhn.jpg" alt="Image may contain Clothing Dress Fashion Formal Wear Gown Wedding Wedding Gown Photography Adult and Person" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Mario esperando a su novia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028854/devon-mx/articles/5-39-Bottega_dxcopq.jpg" alt="Image may contain Clothing Dress Fashion Formal Wear Gown Wedding Wedding Gown Bridal Veil Person and Adult" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mi padre me acompañó hasta el altar mientras el conjunto de cuerdas interpretaba un popurrí de canciones de adoración que significaban mucho para nosotros: “Oceans”, “Goodness of God”, “How Great Is Our God” y “What a Beautiful Name”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028854/devon-mx/articles/5-41-German_cyeypw.jpg" alt="Image may contain Barbara Bellenberg Kate Beaton La Parka Kumi Miyasato Clothing Formal Wear Suit Dress and Adult" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El reducido número de invitados hizo que la ceremonia se viviera como un momento familiar.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028855/devon-mx/articles/5-47-German_qnzzvy.jpg" alt="Image may contain Rich Wilkerson Jr. Juan Ponce de León Clothing Dress Fashion Formal Wear Gown and Wedding" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El cielo abierto sobre Santa María dello Spasimo nos hizo sentir una conexión espiritual extraordinaria durante la ceremonia.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028855/devon-mx/articles/5-49-German_sazgde.jpg" alt="Image may contain Erik Mykland Adult Person Wedding Bridal Veil Clothing Dress Fashion Formal Wear and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Nuestro amigo Filippo Testa pronunció una preciosa oración y bendición en italiano.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028855/devon-mx/articles/5-50-German_eodtkj.jpg" alt="Image may contain Wedding Adult Person Bridal Veil Clothing Dress Fashion Formal Wear Gown and Wedding Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El pastor Rich Wilkerson Jr., de la iglesia VOUS de Miami, ofició la ceremonia y pronunció un sermón increíblemente conmovedor. Su mensaje fue profundamente personal, basado en la fe y lleno de calidez y amor.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028855/devon-mx/articles/5-51-German_absoym.jpg" alt="Image may contain Tiera Skovbye Bridal Veil Clothing Dress Fashion Formal Wear Gown Person Wedding and Wedding Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Intercambiamos unas alianzas de oro de Cartier y una casa que hemos amado y en la que hemos ido acumulando recuerdos juntos a lo largo de los años.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028855/devon-mx/articles/5-52-Bottega_vsrvrr.jpg" alt="Image may contain Rich Wilkerson Jr. Adult Person Wedding Bridal Veil Clothing Dress Fashion Formal Wear and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Nuestro primer beso como marido y mujer.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028856/devon-mx/articles/5-53-Bottega_briyb2.jpg" alt="Image may contain Clothing Formal Wear Suit Dress Face Head Person Photography Portrait Fashion Gown and Wedding" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Decidimos no celebrar una fiesta de boda formal. Todos los que viajaron a Sicilia para acompañarnos formaban parte de nuestra fiesta de boda.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028856/devon-mx/articles/5-56-German_wx2gnl.jpg" alt="Image may contain Zack O&#x27;Malley Greenburg Mariam alMansouri Werrason Ethan Gilsdorf Clothing Dress and Fashion" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>¡Volviendo juntos por el pasillo, ya somos marido y mujer!</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028856/devon-mx/articles/5-58-German_jmx38k.jpg" alt="Image may contain Jana Beller Adult Person Wedding Clothing Dress Fashion Formal Wear Gown and Wedding Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El señor y la señora Carbone.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028857/devon-mx/articles/5-59-Bottega_olwfrl.jpg" alt="Image may contain Bill Kenney Clothing Formal Wear Suit Dress Fashion Gown Wedding Wedding Gown Tuxedo and Face" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Tras la ceremonia, nos llevaron en coche al lugar de la recepción. Ese rato a solas nos permitió asimilarlo todo antes de reunirnos de nuevo con el resto de los invitados.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028858/devon-mx/articles/Vogue_2520Photo_252068_2520-_2520Bottega_shocrb.jpg" alt="Image may contain Architecture Building Housing and House" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>La cena en Villa Valguarnera se concibió como un gran banquete siciliano al estilo de antaño, inspirado en la mansión y en el universo visual de Il Gattopardo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028858/devon-mx/articles/Vogue_2520Photo_252069_2520-_2520Bottega_jcapes.jpg" alt="Image may contain Architecture Building House Housing Villa Chair Furniture and Indoors" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Nos enamoramos de Villa Valguarnera en cuanto la vimos. La villa parece una cápsula del tiempo de otra época, magníficamente conservada.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028857/devon-mx/articles/6-4-Bottega_gerruf.jpg" alt="Image may contain Architecture Building House Housing Villa Indoors Hall Fun Person Hacienda and Banquet" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El diseño de la recepción incluía arreglos florales en tonos rojo intenso y burdeos, luz de velas, cortinas esculturales y elementos decorativos destacados que animaban a los invitados a recorrer la finca.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028857/devon-mx/articles/6-5-Bottega_lqx3rd.jpg" alt="Image may contain Brunch Food People Person Meal Candle and Adult" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El chef Corrado Assenza, del Caffè Sicilia, preparó una mesa repleta de cassata, cannoli, babà y otros postres tradicionales sicilianos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028858/devon-mx/articles/6-8-Bottega_knlsu3.jpg" alt="Image may contain Food Meal Brunch Cafeteria Indoors Restaurant and Buffet" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El objetivo de Mario, tanto en la boda como siempre, es asegurarse de que nuestros amigos y familiares coman muy bien.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028858/devon-mx/articles/6-10-German_gn9psr.jpg" alt="Image may contain Marc Jacobs Natalie Medhurst Adult Person Wedding Bridal Veil Clothing Dress and Fashion" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Llegamos a Villa Valguarnera antes que nuestros invitados y tuvimos unos minutos de tranquilidad para hacernos unos retratos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028858/devon-mx/articles/6-14-German_kijmqk.jpg" alt="Image may contain Clothing Formal Wear Suit Coat Jacket Face Head Person Photography Portrait Blazer and Tuxedo" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Mario lució un broche vintage de esmeraldas de Tiffany &amp; Co. y unos gemelos de esmeraldas en homenaje a la piedra natal de Cait, junto con su anillo de sello con el escudo familiar de los Sinatra.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028858/devon-mx/articles/6-15-German_objffk.jpg" alt="Image may contain Clothing Dress Fashion Formal Wear Gown Wedding Wedding Gown Bridal Veil and Person" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>La grandeza y la historia de Villa Valguarnera nos hicieron sentir como si hubiéramos viajado a otra época.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028859/devon-mx/articles/6-18-German_y8nrul.jpg" alt="Image may contain Craig Revel Horwood Bridal Veil Clothing Dress Fashion Formal Wear Gown Person and Wedding" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Antes de que empezara la recepción, nos quedamos en la azotea de la villa y vimos cómo iban llegando todos nuestros seres queridos. Fue uno de esos momentos excepcionales en los que pudimos contemplar la celebración desde la distancia, solo nosotros dos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028859/devon-mx/articles/6-19-German_savhvc.jpg" alt="Image may contain Clothing Dress Fashion Formal Wear Gown Wedding Wedding Gown Adult Person and Veil" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Mi velo de Balenciaga ondeando en la terraza al atardecer.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028859/devon-mx/articles/6-27-Bottega_y0fkul.jpg" alt="Image may contain Flower Flower Arrangement Plant Rose Flower Bouquet Furniture Table Dining Table and Tablecloth" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>La mantelería vintage de encaje bordado, adquirida en mercadillos de toda Italia, se combinó con motivos florales de color rojo intenso y la luz de las velas.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028859/devon-mx/articles/6-31-Bottega_qjah2w.jpg" alt="Image may contain Face Head Person Photography Portrait Clothing Dress Formal Wear Adult Wedding Fashion and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Me quité el velo, pero me dejé puesto el pañuelo de gasa de seda para nuestra entrada en el banquete.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028859/devon-mx/articles/6-33-Bottega_jwog5t.jpg" alt="Image may contain Clothing Formal Wear Suit Blazer Coat Jacket Dress Adult Person Fashion Wedding and Body Part" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Entrar juntos a cenar como marido y mujer.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028859/devon-mx/articles/6-35-Bottega_pr1mue.jpg" alt="Image may contain Clothing Dress Formal Wear Suit Fashion Gown Face Head Person Photography Portrait and Lighting" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El fin de semana reunió a personas que nos han acompañado en casi todas las etapas de nuestra vida. Los abrazos tras la ceremonia lo dijeron todo, más de lo que las palabras podrían expresar.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028860/devon-mx/articles/6-36-Bottega_c7w1h3.jpg" alt="Image may contain Bret Ernst Clothing Formal Wear Suit Lighting Blazer Coat Jacket Face Head and Person" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El baile de Mario con su madre fue uno de los momentos más tiernos de la velada.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028860/devon-mx/articles/6-37-Bottega_lrr5ln.jpg" alt="Image may contain Robert Curtis Brown Blazer Clothing Coat Jacket Formal Wear Suit People Person and Accessories" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mario con sus amigos, que van excepcionalmente bien vestidos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028860/devon-mx/articles/6-44-German_uyfgvg.jpg" alt="Image may contain Adult Person People Face Head Candle Food and Meal" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Mario se encargó en secreto de que uno de sus chefs de Major Food Group preparara los rigatoni picantes de Carbone. Mario escondió un delantal debajo de su silla para poder servírselos él mismo a nuestros invitados.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028860/devon-mx/articles/6-46-German_slig5k.jpg" alt="Image may contain Clothing Dress Formal Wear Adult Person Wedding Fashion Gown and Lighting" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>Llevaba un vestido de Alta Costura de Elie Saab que parecía sacado de una película de época, mi género favorito. Mimi Cuttrell y Lorraine Schwartz eligieron unos pendientes mágicos para complementarlo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028860/devon-mx/articles/6-50-Bottega_rtpx1q.jpg" alt="Image may contain Urban Lighting Adult Person Night Life Face Head and People" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>La cena fue de ensueño.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028861/devon-mx/articles/6-52-Bottega_o2aphv.jpg" alt="Image may contain Fredric March People Person Lighting Adult Wedding Cake Dessert Food Cream Icing Crowd and Fun" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Para nosotros era importante que cada momento de la noche revelara una nueva faceta del lugar.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028861/devon-mx/articles/6-56-Bottega_dj6leu.jpg" alt="Image may contain Architecture Building House Housing Staircase Clothing Dress Person Formal Wear and Handrail" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mi look de Valentino de la colección de primavera de 2005, con los extraordinarios interiores de la villa como telón de fondo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028861/devon-mx/articles/6-57-German_isdjg0.jpg" alt="Image may contain Clothing Dress Face Head Person Photography Portrait Blazer Coat Jacket Formal Wear and Suit" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>El chef Corrado Assenza nos preparó un sencillo pastel de verano con fruta y nata.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028861/devon-mx/articles/6-58-Bottega_jgvefx.jpg" alt="Image may contain Tape" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Las panderetas esperaban a todo el mundo antes de que comenzara la tarantela. Marcy y su equipo las habían personalizado de muy diversas formas.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028862/devon-mx/articles/6-59-Bottega_q2chhz.jpg" alt="Image may contain Arve Henriksen Herbert Vianna La Parka Clothing Formal Wear Suit Face Head Person and Photography" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mario se puso un traje blanco de seda dupioni de doble botonadura con mocasines John Lobb hechos a medida y se unió a la banda de tarantela.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028861/devon-mx/articles/6-60-German_vdacs3.jpg" alt="Image may contain Urban People Person Adult Wedding Clothing Dress Body Part Finger Hand Accessories and Glasses" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>En cuanto empezó la música, todo el mundo se puso de pie al instante.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028862/devon-mx/articles/6-62-German_vn3dsg.jpg" alt="Image may contain Robert Potylo Kate Kendall Clothing Dress Adult Person Wedding Formal Wear Suit Fashion and Gown" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: German Larkin.</figcaption></figure>
+<p>La banda de tarantela guió a todo el mundo por la villa, pasando por la biblioteca convertida en sala de postres, hasta llegar a una pista de baile más amplia situada en la parte trasera.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028863/devon-mx/articles/6-64-Bottega_wwllu2.jpg" alt="Image may contain Anderson .Paak Performer Person Solo Performance Adult Face Head Accessories Formal Wear and Tie" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>DJ Pee.Wee (Anderson .Paak) pinchó un set en vinilo. La energía que transmite es casi imposible de describir.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028863/devon-mx/articles/6-67-Bottega_nir37j.jpg" alt="Image may contain People Person Brunch Food Cup Fun Party and Furniture" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>La mesa de postres sicilianos continuaba en el interior de la villa, rodeada de los libros, las obras de arte y las colecciones personales de la princesa.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028864/devon-mx/articles/6-70-Bottega_sdbeqm.jpg" alt="Image may contain Xabier Iriondo Adult Person Accessories Jewelry Necklace Face Head and Sunglasses" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mind Enterprises, un emblemático dúo italiano de música disco que Mario descubrió hace algún tiempo y al que ha seguido desde entonces, puso música. No defraudaron.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028863/devon-mx/articles/6-71-Bottega_y9xvyc.jpg" alt="Image may contain Chandelier Lamp Person Art Face and Head" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Los interiores de Villa Valguarnera son, de alguna manera, aún más espectaculares que su exterior.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028864/devon-mx/articles/6-74-Bottega_ti3haa.jpg" alt="Image may contain Body Part Finger Hand Person People Photobombing Face Head Photography Portrait and Clothing" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Mario y sus amigos, pasándoselo en grande.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028864/devon-mx/articles/6-75-Bottega_o68lld.jpg" alt="Image may contain Face Head Person Photography Portrait Adult Furniture Accessories Sunglasses Book and Indoors" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>El vestido que Cait lució en el after-party, del desfile de Prada de primavera de 2010, fue su “algo prestado”, cedido por su amiga Carmine Spena de su colección personal. Los cristales cambiaban de color con la luz, y combinó el vestido con unos zapatos de tacón que le había regalado Amina Muaddi.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028865/devon-mx/articles/6-76-Bottega_r22xr4.jpg" alt="Image may contain Adult Person Wedding Face and Head" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Foto: Bottega53.</figcaption></figure>
+<p>Tucker Halpern, de la banda de Sofi Tukker, tocó dentro de la casa antes de salir al exterior para ver el amanecer. Un grupo de nuestros amigos más cercanos seguía bailando mientras salía el sol. Ojalá pudiéramos volver a esa noche y revivirla cien veces más.</p>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="los-eventos-de-fashion-designers-of-latin-america-en-las-semanas-de-la-moda-mas-relevantes.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028869/devon-mx/articles/Fashion-Designers-of-Latin-America-en-paris-2026-1_zfpep5.jpg" alt="Fashion Designers of Latin America en las semanas de la moda más relevantes 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Fashion Designers of Latin America en las semanas de la moda más relevantes 2026</h3>
+                </a>
+                <a href="como-llevar-zapatos-bicolor-como-katie-holmes-en-otono-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028871/devon-mx/articles/2297568732_cl9wii.jpg" alt="Zapatos bicolor, la estrategia de estilo de Katie Holmes para ser la mejor vestida en otoño 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Zapatos bicolor, la estrategia de estilo de Katie Holmes para ser la mejor vestida en otoño 2026</h3>
+                </a>
+                <a href="sofia-vergara-lleva-jeans-de-los-ano-80-con-tenis-de-papa-en-octubre-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791028873/devon-mx/articles/sofia-vergara-jeans-baggy-tenis-de-papa_syuqd1.jpg" alt="Sofía Vergara rescata los jeans de los año 80 que mejor lucen con tenis de papá en octubre 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Sofía Vergara rescata los jeans de los año 80 que mejor lucen con tenis de papá en octubre 2026</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>
