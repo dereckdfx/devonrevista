@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebraron su boda en un castillo francés, y la novia ucraniana llevó un vestido de más de 42 metros | Devon México y Latinoamérica</title>
+    <meta name="description" content="Este verano, Kristina y Oleg invitaron a sus seres queridos al Château Grand-Lucé, conocido como el “Pequeño Versalles” para una ceremonia llena de inspiración y romanticismo.">
+    <meta property="og:title" content="Celebraron su boda en un castillo francés, y la novia ucraniana llevó un vestido de más de 42 metros | Devon México y Latinoamérica">
+    <meta property="og:description" content="Este verano, Kristina y Oleg invitaron a sus seres queridos al Château Grand-Lucé, conocido como el “Pequeño Versalles” para una ceremonia llena de inspiración y romanticismo.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720411/devon-mx/articles/Kristina_Oleg-306_uvkbtc.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720411/devon-mx/articles/Kristina_Oleg-306_uvkbtc.jpg" alt="Celebraron su boda en un castillo francés, y la novia ucraniana llevó un vestido de más de 42 metros" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Estilo Devon</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Celebraron su boda en un castillo francés, y la novia ucraniana llevó un vestido de más de 42 metros</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Este verano, Kristina y Oleg invitaron a sus seres queridos al Château Grand-Lucé, conocido como el “Pequeño Versalles” para una ceremonia llena de inspiración y romanticismo.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR MANON GARRIGUES</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">9 de octubre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>El pasado 25 de julio, Kristina y Oleg se dieron el “sí, acepto” en el encantador Château du Grand-Lucé, ubicado en el corazón del valle del Loira, en la región francesa de Sarthe, en Francia. A medio camino entre Tours y Le Mans, este antiguo palacio neoclásico del siglo XVIII, convertido en un hotel de lujo, está rodeado por un parque de más de 30 hectáreas que alberga jardines de estilo francés inspirados en Versalles, un huerto, un lago y un frondoso bosque.</p>
+<p>En este escenario de cuento de hadas, la pareja ucraniana intercambió sus votos frente a sus familiares y amigos más cercanos, durante una ceremonia que parecía sacada de una película. “Pasamos tres días en el Château du Grand-Lucé cuando nuestra boda todavía era solo un sueño. Su majestuosidad francesa, su tranquilidad y esa sensación de estar a solas con la historia y la naturaleza nos conmovieron tanto que fue allí donde, por primera vez, pudimos imaginar cómo sería nuestra celebración”, recuerda Kristina.</p>
+<p>Después de un año y medio de relación, Oleg le propuso matrimonio durante una velada sorpresa en Dubái. “Después de cenar junto al mar, regresamos a nuestro departamento, donde me esperaban flores y un pequeño video que Oleg había preparado con algunos de nuestros recuerdos más especiales. Hacia las últimas escenas, ya no podía contener las lágrimas. Fue entonces cuando se arrodilló y me pidió que me casara con él”.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720411/devon-mx/articles/141372984_gy3zri.jpg" alt="Historia del anillo de compromiso de la reina Letizia de España, el modelo perfecto para la novia poco convencional" loading="lazy" class="w-full h-auto"/></figure>
+<p>Las celebraciones comenzaron con una cena de bienvenida, en la que los invitados se reunieron alrededor de una mesa cubierta con un mantel de seda rosa rubor, decorada con candelabros adornados con listones, una elegante vajilla de plata y arreglos de rosas en tonos suaves. Apasionada por la moda, Kristina marcó el estilo del fin de semana, con un vestido de silueta sirena confeccionado en seda blanca drapeada, con un delicado escote y detalles de cordones en la espalda, diseñado por la firma australiana Natalie Rolt.</p>
+<p>Al día siguiente, frente al castillo, donde enormes cortinas de seda rosa empolvado enmarcaban un altar decorado con arreglos florales de inspiración campestre, Kristina caminó hacia el hombre de su vida luciendo un espectacular vestido hecho a medida en Kiev por la firma ucraniana Monetre. Para su confección se utilizaron 42 metros de tela y 12 metros de forro, que dieron forma a una silueta de drapeados en cascada, tan suaves y voluminosos que evocaban la textura de la crema batida. El diseño se complementó con un velo igual de impresionante, sujeto al elegante moño de la novia. “Tenía ese esplendor de cuento de hadas que tanto buscaba, sin renunciar al minimalismo que define mi estilo. Mientras caminaba hacia la ceremonia, me sentía como un cisne blanco”.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720411/devon-mx/articles/Kristina_Oleg-350_fgmzrj.jpg" alt="Kristina Somos sin duda el tipo de pareja que se complementa de forma natural. Y a decir verdad había muchas razones por..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">Devon: ¿Podrían contarnos la historia de su relación y, en concreto, cómo se conocieron?</h3>
+<p>Kristina : Somos, sin duda, el tipo de pareja que se complementa de forma natural. Y, a decir verdad, había muchas razones por las que nuestro encuentro nunca debería haber tenido lugar. Un año antes de conocernos, un amigo común nos había dicho por separado a cada uno que formaríamos una pareja perfecta y que teníamos que conocernos sin falta. Sin embargo, no fue hasta un año después cuando Oleg me envió un mensaje a una red social que yo apenas utilizaba, por lo que estuve casi dos semanas sin responderle. Entonces, por pura casualidad, los dos volamos al mismo país y a la misma ciudad. Él me vio por la calle, pero no se acercó a mí. Aproximadamente una hora más tarde, por alguna razón inexplicable, de repente sentí la necesidad de abrir “ese mensaje sin leer”. Y así fue como, solo unas horas antes de su vuelo, por fin nos conocimos —y desde ese momento, nos volvimos inseparables—.</p>
+<p>Cuando juntas todos estos detalles, casi parece el argumento de una comedia romántica. Es raro que se den tantas coincidencias en la vida real y, sin embargo, así es exactamente como empezó nuestra historia. Lo que la hace aún más especial es que la amiga que nos presentó por primera vez fue la misma que ofició nuestra boda en Francia varios años después. Parece como si ella hubiera visto nuestra historia incluso antes de que ninguno de los dos supiera que existía.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720411/devon-mx/articles/Kristina_Oleg-739_websize_rgbck7.jpg" alt="Estbamos celebrando nuestro primer aniversario y medio juntos en uno de nuestros hoteles favoritos el OneOnly The Palm..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cómo fue la propuesta de matrimonio?</h3>
+<p>Estábamos celebrando nuestro primer aniversario y medio juntos en uno de nuestros hoteles favoritos, el One&amp;Only The Palm , en Dubái. Durante nuestra cita junto al mar, tuve la vaga sensación de que la velada podría tomar un giro especial. Pero la cena terminó, ya era bien entrada la noche, y volvimos a nuestra habitación, donde me esperaban unas flores y un pequeño vídeo que Oleg había montado él mismo con algunos de nuestros momentos más preciados. Ya en las últimas escenas del video, se me saltaron las lágrimas. Fue entonces cuando se arrodilló y me pidió que fuera su esposa.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720411/devon-mx/articles/Kristina_Oleg-745_websize_n6w0tc.jpg" alt="Quería que mi anillo me representara sin lugar a dudas. Durante un viaje a Londres tuvimos la oportunidad de visitar la..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cómo encontraron el anillo de compromiso perfecto?</h3>
+<p>Quería que mi anillo me representara sin lugar a dudas. Durante un viaje a Londres, tuvimos la oportunidad de visitar la joyería británica Boodles . Me probé un anillo con diamantes blancos que se adaptaba perfectamente a mi mano. Seguía pensando en ello cuando empecé a informarme más sobre la casa y descubrí que era especialmente famosa por sus rarísimos diamantes rosas. En ese momento, todo encajó. El rosa siempre ha sido un color muy personal para mí, y acabó convirtiéndose en el color emblemático de nuestra boda.</p>
+<p>Decidimos crear una versión a medida de ese anillo con diamantes rosas. Para mí, se ha convertido en el símbolo de la ternura de nuestro amor y de todo lo que hemos puesto en la organización de nuestra boda. Hay algo maravilloso en saber que el color que marcó nuestra ceremonia perdura ahora en el propio anillo, tanto como recuerdo como símbolo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720411/devon-mx/articles/Kristina_Oleg-703_nimdek.jpg" alt="Todo encajó de forma muy natural. Un año antes de la boda sin siquiera buscar “el lugar” lo encontramos… y lo..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">Cuéntanos algo sobre el lugar que eligieron</h3>
+<p>Todo encajó de forma muy natural. Un año antes de la boda, sin siquiera buscar “el lugar”, lo encontramos… y lo reservamos. Mi pasión por los hoteles magníficos y atípicos suele influir en nuestra forma de viajar. Me encanta descubrirlos y plasmar en imágenes la emoción que me transmiten. Así fue como pasamos tres días en el Château du Grand-Lucé , en una época en la que nuestra boda no era más que un sueño. Su grandeza al estilo francés, su tranquilidad y la sensación de estar a solas frente a la historia y la naturaleza nos conmovieron tanto que fue allí, por primera vez, donde pudimos imaginar de verdad nuestra celebración.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720412/devon-mx/articles/Kristina_Oleg-166_h16eru.jpg" alt="Sabíamos que si nos casbamos queríamos que el lugar se convirtiera en un autntico hogar para todos nuestros invitados..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Sabíamos que, si nos casábamos, queríamos que el lugar se convirtiera en un auténtico hogar para todos nuestros invitados durante tres noches: un lugar donde cada uno pudiera sumergirse por completo en el ambiente y la historia que queríamos crear. El castillo contaba exactamente con 19 habitaciones, cada una de ellas una obra de arte, lo cual era perfecto para nuestros 37 amigos y familiares. La elección del lugar se convirtió en nuestra primera decisión, y la más fácil, de todo el proceso de organización.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720412/devon-mx/articles/Kristina_Oleg-705_mrl7us.jpg" alt="Cuando elegimos a nuestro organizador Vadym Keller sabíamos que casi nada le parecía imposible y le estoy infinitamente..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cuál era la línea en cuanto a la decoración?</h3>
+<p>Cuando elegimos a nuestro organizador, Vadym Keller , sabíamos que casi nada le parecía imposible, y le estoy infinitamente agradecida por la libertad creativa de la que disfrutamos para trabajar juntos en verdadera sinergia. Recopilé numerosas referencias visuales, pero, sobre todo, tenía una idea muy personal del ambiente que quería crear: delicado y onírico, con elementos visuales llamativos contrarrestados por la ligereza de los detalles. El elemento central de la ceremonia fue un enorme lazo rosa que cubría el castillo, acompañado de instalaciones florales etéreas que parecían abrir el camino. Detrás de este resultado natural, digno de un cuento de hadas, se escondía un trabajo complejo y considerable. Tuvimos que encontrar exactamente la tela adecuada e imaginar una forma de montarlo todo, tratando al mismo tiempo este edificio histórico con el mayor cuidado.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720413/devon-mx/articles/Kristina_Oleg-417_sr8ysz.jpg" alt="En colaboración con el equipo organizador así como con los floristas y decoradores de Mutabor creamos doce decorados..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>En colaboración con el equipo organizador, así como con los floristas y decoradores de Mutabor , creamos doce decorados diferentes a lo largo de los tres días de celebración. Cada uno tenía su propio carácter, pero todos estaban unidos por una misma estética.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720413/devon-mx/articles/Kristina_Oleg-806_eeyju6.jpg" alt="A los dos nos encanta la cocina francesa así que dejamos la cena de la boda totalmente en manos del chef. Ya había..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cómo idearon el menú?</h3>
+<p>A los dos nos encanta la cocina francesa, así que dejamos la cena de la boda totalmente en manos del chef. Ya había conseguido una estrella Michelin , así que nos encantó darle total libertad creativa. También preparamos unos elegantes bufés de cóctel con ostras y una selección de pequeños aperitivos.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720412/devon-mx/articles/Kristina_Oleg-888_n2k2r0.jpg" alt="La parte dulce de la celebración corrió a cargo de Zhizhanna Lenik que preparó nuestro postre favorito el tiramisú en..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>La parte dulce de la celebración corrió a cargo de Zhizhanna Lenik , que preparó nuestro postre favorito, el tiramisú, en raciones individuales para cada invitado, así como nuestra tarta de boda. Ya desde el tercer día, la cena había adoptado el formato mucho más distendido de una barbacoa. Pero si me preguntaras cuál es mi debilidad personal, sin duda alguna sería el desayuno. En nuestra pareja, soy yo quien adora prepararlo, así que quería que cada mañana del fin de semana de la boda fuera todo un acontecimiento, con mesas de bufé magníficamente dispuestas y repletas de todos nuestros platos favoritos. Y, por supuesto, no podía faltar el matcha: Oleg y yo no podemos imaginar nuestras mañanas sin él. Creo que el castillo lo preparó por primera vez especialmente a petición nuestra.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720413/devon-mx/articles/Kristina_Oleg-265_websize_sitgnk.jpg" alt="Queríamos que esta celebración fuera mucho ms que una simple ceremonia seguida de una cena oficial. Queríamos que fuera..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cómo describirías el ambiente de tu gran día?</h3>
+<p>Queríamos que esta celebración fuera mucho más que una simple ceremonia seguida de una cena oficial. Queríamos que fuera como una magnífica escapada de tres días, organizada en honor a nuestro amor. Durante tres días, convivimos en el castillo con un pequeño grupo de nuestros seres queridos. Muchos de nuestros invitados habían viajado desde Ucrania; por eso, el simple hecho de poder reunirnos, tomarnos un respiro y compartir esta felicidad juntos tenía un significado muy especial.</p>
+<p>Queríamos que nuestra boda fuera muy estética, pero también profundamente cálida y personal, de modo que cada elemento revelara algo de quiénes somos como pareja. Para lograrlo, dedicamos mucho tiempo a reflexionar sobre lo que nos define y lo que realmente nos importa, y luego plasmamos esas ideas en cada detalle. Esa fue la única parte del proceso que nunca hubiéramos podido delegar.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720413/devon-mx/articles/Kristina_Oleg-50_xnz0yc.jpg" alt="El primer día al llegar los invitados se encontraron con unos pijamas hechos a medida que les esperaban en sus..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>El primer día, al llegar, los invitados se encontraron con unos pijamas hechos a medida que les esperaban en sus habitaciones. Vestidos con esos pijamas, comenzaron el fin de semana de boda con una dinámica inspirada en nuestra historia, riendo y corriendo por el parque del castillo mientras se iban conociendo entre ellos. También se organizó una velada de cine, con la proyección de una película sobre nuestra relación, mientras que el último día se dedicó a nuestras raíces y tradiciones. Además, escribimos una carta de agradecimiento a mano a cada invitado, en la que les decíamos lo mucho que significaba para nosotros su presencia. Hubo muchos detalles personales como este a lo largo de todo el fin de semana.</p>
+<p>En conjunto, estos pequeños detalles lograron recrear exactamente el ambiente que habíamos imaginado: a la vez magnífico y suntuoso, pero también desenfadado, relajado, íntimo y lleno de calidez.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720413/devon-mx/articles/Kristina_Oleg-170_wfc61q.jpg" alt="Por mi trabajo los vestidos bonitos ya forman parte de mi día a día y conozco muy bien mis gustos me encanta la seda y..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cuál es la historia de tu vestido de novia?</h3>
+<p>Por mi trabajo, los vestidos bonitos ya forman parte de mi día a día, y conozco muy bien mis gustos: me encanta la seda y las siluetas minimalistas. Mi prometido ya me había visto llevar este tipo de conjuntos en numerosas ocasiones, así que no fue fácil encontrar un vestido de novia que me pareciera realmente especial.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720413/devon-mx/articles/Kristina_Oleg-204_websize_bdaab6.jpg" alt="Tras innumerables pruebas por toda Europa la encontr de forma inesperada en Kiev en Monetre. Tenía ese esplendor de..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Tras innumerables pruebas por toda Europa, la encontré de forma inesperada en Kiev, en Monetre . Tenía ese esplendor de cuento de hadas que buscaba, sin dejar de lado el minimalismo tan cercano a mi propia estética.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720414/devon-mx/articles/Kristina_Oleg-154_ypyvr2.jpg" alt="En colaboración con la diseñadora Olena Batyrieva hemos rediseñado por completo la estructura del corpiño conservando al..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>En colaboración con la diseñadora, Olena Batyrieva , hemos rediseñado por completo la estructura del corpiño, conservando al mismo tiempo una cola de tres metros y medio. Para confeccionar el vestido se necesitaron 42 metros de tela y 12 metros de forro, y el equipo realizó un trabajo increíble para garantizar que todo ese volumen mantuviera su forma a la perfección y, al mismo tiempo, me permitiera moverme con facilidad.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720414/devon-mx/articles/Kristina_Oleg-366_websize_pwtuxw.jpg" alt="Lo combin con un velo largo transparente unos zapatos de tacón de satn Danielle Frankel el modelo Nala y unos pendientes..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Lo combiné con un velo largo transparente, unos zapatos de tacón de satén Danielle Frankel, el modelo Nala, y unos pendientes de perlas Tiffany Victoria . De camino a la ceremonia con este conjunto, me sentía como un cisne blanco.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720414/devon-mx/articles/Kristina_Oleg-513_websize_ndjfqk.jpg" alt="Para la velada quería un diseño que se ajustara a las líneas del cuerpo y al mismo tiempo me diera libertad para..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Para la velada, quería un diseño que se ajustara a las líneas del cuerpo y, al mismo tiempo, me diera libertad para entregarme por completo al baile. Sabía que el talentoso diseñador ucraniano Ivan Frolov sería la persona ideal para esta misión. Ya habíamos empezado a crear el vestido, pero durante una prueba, apenas una semana antes de la boda, nos sentimos tan en sintonía a nivel creativo que decidimos replantearnos por completo la idea inicial. El nuevo diseño vio la luz en tan solo tres días: un drapeado complejo, un pañuelo en lugar de un velo y una delicada seda en un tono inusual que, al final, combinaba a la perfección con la decoración.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720415/devon-mx/articles/Kristina_Oleg-862_r6tczs.jpg" alt="Mi conjunto de esta mañana era muy suave y delicado con un vestido del diseñador francs Antoine Guerin." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Mi conjunto de esta mañana era muy suave y delicado, con un vestido del diseñador francés Antoine Guerin .</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720414/devon-mx/articles/Kristina_Oleg-758_websize_dvvll3.jpg" alt="En cuanto a mi vestido para el after lo encontr por pura casualidad no entraba en absoluto en mis planes. Mientras daba..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>En cuanto a mi vestido para el after, lo encontré por pura casualidad; no entraba en absoluto en mis planes. Mientras daba un paseo por París, vi un vestido metalizado de Rabanne en un escaparate y me lo probé por simple curiosidad. Me quedaba a la perfección y acabó inspirando todo el concepto plateado de nuestra velada. Lo combiné con unas sandalias plateadas de Loewe .</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720415/devon-mx/articles/Kristina_Oleg-857_websize_xaynv0.jpg" alt="He trabajado como maquilladora así que tenía una idea muy clara del look que quería lucir el día de mi boda. Junto con..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cuál fue la idea detrás del maquillaje y peinado?</h3>
+<p>He trabajado como maquilladora, así que tenía una idea muy clara del look que quería lucir el día de mi boda. Junto con Tina Antonenko , optamos por un cutis ligeramente luminoso, un delicado trazo de delineador de ojos y unas pestañas un poco más marcadas. Las texturas se hicieron un poco más duraderas, sin dejar de mantener un resultado general natural. Íris Onufriienko creó un moño suelto con mechones sueltos que enmarcaban mi rostro; en definitiva, una versión más refinada de un peinado que yo misma suelo llevar a menudo. Esto combinaba a la perfección con el velo y, al mismo tiempo, me permitía sentirme plenamente yo misma. Habíamos probado y acordado cada detalle durante una sesión de prueba previa; así, la mañana de la boda, pude confiar plenamente en el equipo y simplemente disfrutar del momento.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720415/devon-mx/articles/Kristina_Oleg-245_i3v8wz.jpg" alt="El look de Oleg seguía la línea de la paleta de colores suaves y claros de la boda. Era elegante a la vez que desprendía..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Qué llevaba puesto el novio?</h3>
+<p>El look de Oleg seguía la línea de la paleta de colores suaves y claros de la boda. Era elegante, a la vez que desprendía un aire desenfadado y natural. En realidad, al principio habíamos comprado otro traje, pero una vez elegido mi vestido de novia, este look completo de Gucci nos pareció inmediatamente el complemento ideal. Una camisa de seda semitransparente y unos mocasines marrones completaban el conjunto.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720415/devon-mx/articles/Kristina_Oleg-677_websize_vtz8vi.jpg" alt="Para el after nuestros conjuntos combinaban a la perfección gracias a los detalles metalizados. Le habíamos encargado..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Para el after , nuestros conjuntos combinaban a la perfección gracias a los detalles metalizados. Le habíamos encargado una camiseta en un tono a juego con mi vestido de Rabanne , que él combinó con unos pantalones negros holgados de Jacquemus .</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720415/devon-mx/articles/Kristina_Oleg-230_irsco4.jpg" alt="Sí les pedimos a nuestros invitados que se ciñeran a una gama de colores pastel suaves. Se esmeraron tanto en sus..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Se impuso algún código de vestimenta a los invitados?</h3>
+<p>Sí, les pedimos a nuestros invitados que se ciñeran a una gama de colores pastel suaves. Se esmeraron tanto en sus atuendos que superaron con creces todas las indicaciones que les habíamos dado. Cuando vi a todo el mundo reunido durante la ceremonia, me quedé realmente sin aliento. Se convirtieron en las flores de nuestra fiesta.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720415/devon-mx/articles/Kristina_Oleg-236_websize_fhlchx.jpg" alt="Los vestidos de las damas de honor se inspiraban en un vestido de seda minimalista y muy femenino de una de mis marcas..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Los vestidos de las damas de honor se inspiraban en un vestido de seda minimalista y muy femenino de una de mis marcas australianas favoritas, Natalie Rolt , que ya tenía. Especialmente para las chicas, la marca ha creado diferentes modelos en el mismo tono de rosa pálido.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720416/devon-mx/articles/Kristina_Oleg-1_be31wn.jpg" alt="Antes de la boda intent centrarme en los principios bsicos del bienestar comer bien hidratarme lo suficiente y dedicar..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Has seguido alguna rutina deportiva, de belleza o alimentaria concreta antes del gran día?</h3>
+<p>Antes de la boda, intenté centrarme en los principios básicos del bienestar: comer bien, hidratarme lo suficiente y dedicar el tiempo necesario al sueño. Con todos esos preparativos que se suceden uno tras otro, incluso estas cosas tan sencillas pueden resultar sorprendentemente difíciles de cumplir. En cuanto al cuidado de la piel, me mantuve fiel a mi rutina habitual en casa, evité probar productos nuevos y simplemente añadí más mascarillas hidratantes. Llevaba todo un año dejándome crecer el pelo tras un corte corto, cuidando de que se mantuviera sano, y poco antes de la boda me hice unas mechas suaves y más claras.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720416/devon-mx/articles/Kristina_Oleg-398_zatfsj.jpg" alt="Pero para mí el momento ms importante fue la sesión de yoga la misma mañana de la boda. A mi marido y a mí nos encanta..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>Pero para mí, el momento más importante fue la sesión de yoga la misma mañana de la boda. A mi marido y a mí nos encanta practicar yoga juntos, así que organizamos una bonita sesión en el césped e invitamos a todos nuestros invitados a unirse a nosotros. Nos centramos en la respiración y la visualización: en cómo queríamos vivir y sentir el día que nos esperaba. Tras meses de preparativos, realmente necesitaba ese momento de armonía interior. Ni siquiera esperaba sentirme tan tranquila después de eso. A partir de ese momento, sinceramente, ya no sentí ni pizca de nerviosismo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720416/devon-mx/articles/Kristina_Oleg-117_efegdr.jpg" alt="Lo ms agotador fue todo lo que me había encargado yo misma. Quería que cada detalle tuviera un toque personal y no..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Qué asunto de los preparativos les ha causado más angustia?</h3>
+<p>Lo más agotador fue todo lo que me había encargado yo misma. Quería que cada detalle tuviera un toque personal, y no siempre calculé de forma realista el tiempo y la energía que eso iba a suponer. Por ejemplo, la decoración de nuestra noche de cine ya estaba totalmente lista, mientras que la película sobre nuestra pareja no se terminó hasta la víspera de la proyección. Dos semanas antes de la boda, decidimos contratar a un asistente personal, lo que nos ayudó muchísimo. Una vez que empezó la fiesta, por fin pudimos confiar plenamente en el equipo y simplemente disfrutar de cada momento.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720416/devon-mx/articles/Kristina_Oleg-313_abk2ch.jpg" alt="Nuestra conexión con Francia comenzó durante nuestro primer viaje romntico juntos. Fuimos a París y a Étretat y todo lo..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Qué relación tienes con Francia?</h3>
+<p>Nuestra conexión con Francia comenzó durante nuestro primer viaje romántico juntos. Fuimos a París y a Étretat, y todo lo que marcó ese momento nos pareció especialmente bonito, ya que nuestra relación acababa de empezar a florecer. El ambiente de Francia parecía estar en perfecta armonía con esa sensación de enamoramiento. Étretat sigue siendo, aún hoy, uno de nuestros lugares favoritos. Cada vez que hemos vuelto a Francia, hemos encontrado allí una profunda fuente de inspiración. Nuestra boda se convirtió en la prolongación natural de ese vínculo. E incluso hoy en día, sigo teniendo la sensación de que nuestra historia con Francia no ha hecho más que empezar.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720416/devon-mx/articles/Kristina_Oleg-510_pozpiz.jpg" alt="Para mí la novia francesa encarna el arte de ser plenamente uno mismo sin dejar de mostrar un cierto refinamiento..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">En tu opinión, ¿en qué se diferencia la novia francesa de las demás?</h3>
+<p>Para mí, la novia francesa encarna el arte de ser plenamente uno mismo, sin dejar de mostrar un cierto refinamiento natural. Su estilo se refleja en hasta el más mínimo detalle, mientras que su naturalidad proviene de que vive plenamente el momento presente. Lo que más llama la atención de su belleza es la expresión de su mirada: esa vitalidad y esa presencia son las que marcan el tono de toda la celebración.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720416/devon-mx/articles/Kristina_Oleg-339_fjtx6c.jpg" alt="Aunque todavía no sabíamos si realmente queríamos celebrar una boda habl con una amiga que se acababa de casar. Me contó..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Hay alguna boda o alguna pareja que les haya servido de inspiración a la hora de planificar el gran día?</h3>
+<p>Aunque todavía no sabíamos si realmente queríamos celebrar una boda, hablé con una amiga que se acababa de casar. Me contó su experiencia con tanta calidez y sinceridad que, tras nuestra conversación, de repente sentí un verdadero deseo de vivir nuestra propia boda. Lo que más me llamó la atención fue la idea de celebrar una fiesta durante varios días y construir toda esa experiencia en torno a lo que realmente somos como pareja.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720417/devon-mx/articles/Kristina_Oleg-277_websize_fm9mzd.jpg" alt="Tambin me dijo con toda franqueza que la organización probablemente no sería fcil. Una boda requiere tiempo dedicación y..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>También me dijo con toda franqueza que la organización probablemente no sería fácil. Una boda requiere tiempo, dedicación y la capacidad de aceptar que, inevitablemente, algunas cosas no saldrán como estaba previsto. Pero una de sus frases me ha acompañado durante todo el proceso, como un mantra: “Simplemente organiza esta boda, ya que vale mucho la pena”. Lo que más me inspiró fue que pudiera decir eso a pesar de saber ya todos los retos que conllevaba. Ahora la entiendo aún mejor, y diría exactamente lo mismo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720417/devon-mx/articles/Kristina_Oleg-333_websize_vinadm.jpg" alt="Justo despus de la boda nos fuimos a Brasil. Ninguno de los dos había estado nunca antes en esa parte del mundo así que..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿A dónde fueron de luna de miel?</h3>
+<p>Justo después de la boda, nos fuimos a Brasil. Ninguno de los dos había estado nunca antes en esa parte del mundo, así que estábamos muy ilusionados. Todavía estábamos embelesados por la boda y, al mismo tiempo, ya nos rodeaban un sinfín de lugares nuevos y extraordinarios, lo que hizo que este viaje pareciera la prolongación natural de esa sensación de euforia. Río me cautivó por completo y, desde entonces, se ha convertido en uno de mis destinos favoritos del mundo.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720417/devon-mx/articles/Kristina_Oleg-738_websize_c9oo9b.jpg" alt="Sin exagerar nuestra boda ha sido uno de los momentos ms felices de nuestra vida hasta ahora. Rodeados de tanta belleza..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Qué simboliza esta boda para ustedes?</h3>
+<p>Sin exagerar, nuestra boda ha sido uno de los momentos más felices de nuestra vida hasta ahora. Rodeados de tanta belleza, nos descubrimos el uno al otro a un nivel aún más profundo y sentimos tanto amor que, por momentos, teníamos la sensación de estar solos en el mundo. Luego, al levantar la vista, veíamos a todas las personas a las que queremos celebrando la vida con nosotros, lo que hacía que esa sensación fuera aún más intensa.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720417/devon-mx/articles/Kristina_Oleg-381_websize_cj3vmw.jpg" alt="Un cuento de hadas en el que los corazones se abren." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Cómo lo resumirías en tres palabras?</h3>
+<p>Un cuento de hadas en el que los corazones se abren.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720417/devon-mx/articles/Kristina_Oleg-835_zcvbfq.jpg" alt="Me gustaría que cada uno hubiera podido sacar de estos días algo propio un momento especial en el que se sintiera..." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<h3 class="text-xl md:text-2xl font-medium text-black pt-2 font-sans">¿Qué te gustaría que tus invitados recordaran?</h3>
+<p>Me gustaría que cada uno hubiera podido sacar de estos días algo propio: un momento especial en el que se sintiera sinceramente feliz, ligero y despreocupado. En este período tan difícil para todos nosotros, me parece especialmente importante que esa calidez permanezca grabada en sus corazones durante mucho tiempo. Espero que puedan recordar nuestra boda casi como si volvieran a un magnífico sueño de una noche de verano, y que encuentren en esos recuerdos la fuerza para vivir, hacer planes, amar y volver a celebrar la vida.</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720417/devon-mx/articles/Kristina_Oleg-16_gohfku.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<p>La boda de Kristina y Oleg en el Château Grand-Lucé, en Sarthe</p>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720417/devon-mx/articles/Kristina_Oleg-65_avspr2.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720418/devon-mx/articles/Kristina_Oleg-97_u0myck.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720418/devon-mx/articles/Kristina_Oleg-133_websize_yzanag.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720418/devon-mx/articles/Kristina_Oleg-148_brtsam.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720418/devon-mx/articles/Kristina_Oleg-206_liwmkr.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720418/devon-mx/articles/Kristina_Oleg-360_meqvqm.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720418/devon-mx/articles/Kristina_Oleg-370_lftbfy.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720419/devon-mx/articles/Kristina_Oleg-219_phwa4t.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720419/devon-mx/articles/Kristina_Oleg-239_fuhqqy.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720419/devon-mx/articles/Kristina_Oleg-783_stoirh.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720419/devon-mx/articles/Kristina_Oleg-249_hoszjp.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720420/devon-mx/articles/Kristina_Oleg-265_websize_sdses8.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720420/devon-mx/articles/Kristina_Oleg-878_qkkc5h.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720420/devon-mx/articles/Kristina_Oleg-300_zw2j5n.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720420/devon-mx/articles/Kristina_Oleg-325_websize_fvgqxs.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720420/devon-mx/articles/Kristina_Oleg-707_tw9dfi.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720421/devon-mx/articles/Kristina_Oleg-184_websize_nmj8n5.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720421/devon-mx/articles/Kristina_Oleg-305_websize_tmiwbh.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720421/devon-mx/articles/Kristina_Oleg-847_eecktv.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720421/devon-mx/articles/Kristina_Oleg-146_websize_ygvnp6.jpg" alt="Gingers&#x27; Eye Photography." loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720421/devon-mx/articles/Kristina_Oleg-820_xseh27.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720421/devon-mx/articles/Kristina_Oleg-826_qoffe4.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720422/devon-mx/articles/Kristina_Oleg-392_dqprii.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720422/devon-mx/articles/Kristina_Oleg-873_z3pn10.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720422/devon-mx/articles/Kristina_Oleg-201_websize_wi3rzs.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720422/devon-mx/articles/Kristina_Oleg-875_n3yjgh.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720422/devon-mx/articles/Kristina_Oleg-898_xgc5az.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720423/devon-mx/articles/Kristina_Oleg-837_whdrrd.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720423/devon-mx/articles/Kristina_Oleg-469_vtktym.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720423/devon-mx/articles/Kristina_Oleg-609_teg71w.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720423/devon-mx/articles/Kristina_Oleg-585_ocelz4.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720423/devon-mx/articles/Kristina_Oleg-921_lhmpq4.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720423/devon-mx/articles/Kristina_Oleg-799_hinhzp.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720424/devon-mx/articles/Kristina_Oleg-793_dqmgso.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720424/devon-mx/articles/Kristina_Oleg-696_hnzx96.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720424/devon-mx/articles/Kristina_Oleg-691_n5xz2e.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720424/devon-mx/articles/Kristina_Oleg-694_up9d5s.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720425/devon-mx/articles/Kristina_Oleg-699_ogzvxc.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+<figure class="my-10"><img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720425/devon-mx/articles/Kristina_Oleg-765_yropwg.jpg" alt="La boda de Kristina y Oleg en el Château GrandLuc en Sarthe" loading="lazy" class="w-full h-auto"/><figcaption class="text-[11px] tracking-wide text-gray-500 mt-2 font-geometric uppercase">Gingers&#x27; Eye Photography.</figcaption></figure>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="como-llevar-botas-boho-con-jeans-faldas-y-vestidos-en-otono-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791633776/devon-mx/articles/botas-boho-negras-con-vestido-color-uva_owvgqz.jpg" alt="Las botas boho se llevan con jeans, faldas y vestidos en tendencia este otoño 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Las botas boho se llevan con jeans, faldas y vestidos en tendencia este otoño 2026</h3>
+                </a>
+                <a href="amal-clooney-vestido-dorado-gucci-y-zapatos-de-tacon-premios-albies-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720427/devon-mx/articles/amal-clooney-premios-albies-2026_pluvla.jpg" alt="Amal Clooney luce impactante con un vestido zapatos de tacón en el color MÁS elegante del otoño 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Moda</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Amal Clooney luce impactante con un vestido zapatos de tacón en el color MÁS elegante del otoño 2026</h3>
+                </a>
+                <a href="como-afecta-portal-10-10-y-luna-nueva-en-libra-del-10-de-octubre-2026.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720428/devon-mx/articles/GettyImages-2158225056_ldqvjj.jpg" alt="Cómo afectará a cada signo el Portal 10/10 y Luna Nueva en Libra del 10 de octubre 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Horócopo</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Cómo afectará a cada signo el Portal 10/10 y Luna Nueva en Libra del 10 de octubre 2026</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>
