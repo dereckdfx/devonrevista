@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las películas más esperadas del Festival de Cine de Morelia 2026 | Devon México y Latinoamérica</title>
+    <meta name="description" content="La 24.ª edición del Festival Internacional de Cine de Morelia ya está aquí. Conoce las películas que participan este año.">
+    <meta property="og:title" content="Las películas más esperadas del Festival de Cine de Morelia 2026 | Devon México y Latinoamérica">
+    <meta property="og:description" content="La 24.ª edición del Festival Internacional de Cine de Morelia ya está aquí. Conoce las películas que participan este año.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1792065714/devon-mx/articles/peliculas-del-festival-de-cine-de-morelia-2026_b5o4ph.jpg">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1792065714/devon-mx/articles/peliculas-del-festival-de-cine-de-morelia-2026_b5o4ph.jpg" alt="Las películas más esperadas del Festival de Cine de Morelia 2026" class="w-full h-auto max-h-[80vh] object-cover object-center"/>
+            </div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Red Carpet</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Las películas más esperadas del Festival de Cine de Morelia 2026</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">La 24.ª edición del Festival Internacional de Cine de Morelia ya está aquí. Conoce las películas que participan este año.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR MIGUEL VICENCIO</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">14 de octubre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>El Festival Internacional de Cine de Morelia 2026 llega del 16 al 25 de octubre para seguir impulsando el cine mexicano. Desde su primera edición celebrada en 2003, se ha consolidado como la plataforma centrada en reconocer las voces y proyectos que le dan forma a la industria del entretenimiento en el país.</p>
+<p>Con más de 90 títulos repartidos entre las cuatro secciones que conforman su programa, un repertorio con el 40% de participación de mujeres en la dirección, trabajos realizados por cineastas provenientes de pueblos originarios y la posibilidad de una nominación a los premios Oscar para los ganadores en algunas de las categorías del galardón, este año el FICM está listo para hacer historia. Repasamos las películas que no puedes perder en el Festival de Cine de Morelia 2026.</p>
+<p>Con Ceniza en la boca, Diego Luna expande su trayectoria por la temporada de premios de este año. La cinta –cuyo paso por el Festival de Cine de Cannes y San Sebastián colocó a Luna entre los representantes de México para esta temporada–, adapta la historia de la novela homónima de Brenda Navarro para abordar la historia de Lucila, una joven que junto a su hermano, Diego, decide viajar a España en busca de su madre con la esperanza de poder vivir sin el peso de sustituir el lugar de su mamá. Con temas como la migración, la soledad y el desarraigo, Ceniza en la boca ofrece una mirada a una realidad a la que cientos de familias latinoamericanas se enfrentan en el extranjero.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<p>Fernanda Tovar destaca por abordar la narrativa desde un punto de vista femenino. En el pasado, su trabajo en títulos como Quiero estrellarme en seco contra el parabrisas del amor y El fuego que hemos construido, demostraron la sensibilidad de Tovar para capturar historias arraigadas a la naturaleza humana frente a la cámara. Aunque después de su paso por la Semana de la Crítica del Festival de Cannes 2022 con Mi edad, la tuya y la edad del mundo y el Festival de Cine de Tribeca en 2024 Quiero estrellarme en seco contra el parabrisas del amor, las premiaciones no son un terreno desconocido para la cineasta; su más reciente apuesta, Chicas tristes, representa su salto a los largometrajes. La película sigue a dos nadadoras y las consecuencias de una agresión sexual. Tras ganar el Oso de Cristal y el Gran Prix del Jurado Internacional en la sección Generation 14plus en Berlinale y su paso por el Festival Internacional de Cine de San Sebastián, la película se sigue posicionando como uno de los estrenos más esperados de la temporada.</p>
+<p>A través de su trabajo, Nicolás Pereda se ha empeñado en encontrar un contraste entre el género de ficción y el documental. Con entregas como Verano de Goliat, Fauna y Lázaro de noche, ha construido una filmografía marcada por narrativas introspectivas que invitan a cuestionar el entorno en el que habitamos. Su trabajo ha estado presente en festivales como Cannes, Berlín, Venecia y Lorcano. En Lo demás es ruido continúa con la exploración de su estilo utilizando la comedia como el vehículo para contar la historia de Tere, una música que le ayuda a su amiga Rosa a prepararse para una entrevista en televisión. A la par, se presenta a Luisa, la tercera protagonista de la historia. La entrega se construye a través de temas como la amistad y el balance entre la vida personal de las músicas y su carrera en un estilo que apela a lo humano con el sello direccional que distingue a Pereda.</p>
+<p>Para su debut direccional, Nathalia Acevedo se dio a la tarea de adaptar Salón de belleza, la novela de Mario Bellatin que narra la vida de un peluquero que, ante una epidemia contagiosa, decide transformar su salón en el punto de reunión para aquellos que la sociedad rechaza por miedo a contagiarse. Con una pandemia reciente, la obra de ficción encuentra una realidad que Nathalia aborda al hablar sobre la muerte, la enfermedad y la importancia de la empatía. Así, Acevedo da el salto de la actuación a la dirección con un guion basado en una de las obras que han marcado su paso por la literatura contemporánea en español.</p>
+<p>Kate Del Castillo presenta Zumbido, el siguiente paso en su trayectoria dentro del cine, al que se adentra en su ópera prima como directora después de una carrera frente a la cámara. Con este cortometraje protagonizado por Diana Bovio, Ana Sofia Gatica, Martín Barba y Mauricio Isaac, Kate presenta la vida de Verónica, una actriz que decide alzar la voz y exponer la violencia que ha sufrido en su vida privada. Con su estreno en el Festival Internacional de Cine de Guadalajara, Zumbido continúa abriendo la conversación sobre una problemática necesaria de exponer. Para lograrlo, Kate recurrió a una serie de entrevistas de muchas mujeres con la intención de hacer de esta una historia colectiva que le permita alzar la voz.</p>
+<p>Bruno Santamaría Razo lleva la memoria familiar a la ficción con 6 meses en el edificio rosa con azul, una película que toma fragmentos de su infancia para fusionarlos con la ficción y así crear esta entrega con matices autobiográficos. La historia sigue a Bruno, un niño que se encuentra en el proceso de descubrir más sobre sí mismo a raíz de los sentimientos que tiene por su mejor amigo. La vida de Bruno colapsa cuando, en medio de esta exploración, su padre es diagnosticado con VIH. Después de una carrera de títulos mayormente documentales, el cineasta incursiona en un género distinto para señalar los prejuicios alrededor de esta enfermedad en una época marcada por el estigma y los recuerdos.</p>
+<p>Mayra Hermosillo vuelve a los festivales con Rubicón, el cortometraje con el que se incluye en la Selección Oficial de las películas que se presentarán en esta edición del Festival Internacional de Cine de Morelia. Aunque los detalles en su totalidad no han sido revelados, Mayra se suma a la lista de actores que dieron el salto a la dirección. Con Vainilla, su primer largometraje estrenado en 2025, Hermosillo llegó al Festival de Cine de Venecia de dicho año y recibió el Premio del Público a Largometraje Mexicano de Ficción en la edición anterior del FICM. Su regreso al festival demuestra la constancia de su transición de la actuación al detrás de cámaras desde una mirada autoral que se refuerza con cada entrega.</p>
+<p>Después de explorar el cortometraje, Ariel Gutiérrez llega al largometraje con Toda una vida, la película que sigue la vida de Armin, un adolescente que es víctima del acoso escolar en su entorno. Además de enfrentarse al bullying, el entorno de Armin sufre una ruptura en la familia cuando su madre desaparece, un suceso que lo lleva a asumir nuevas responsabilidades y madurar antes de tiempo. La importancia de esta obra radica en seguir alzando la voz sobre cómo el bullying puede impactar en el desarrollo de una persona.</p>
+<p>Suzanne Andrews Correa debuta en el largometraje con La cazadora. Aunque la cinta está marcada por una recreación ficticia desde la perspectiva de su creadora, toma la realidad como inspiración al reimaginar el caso de una mujer en Chihuahua que asesinó a dos conductores de autobús en 2013 tras ser señalados como los responsables de una serie de abusos sexuales a mujeres que utilizaban el transporte tras jornadas nocturnas en el trabajo. Con Adriana Paz, Jennifer Trejo y Teresa Sánchez como protagonistas, La cazadora llega a Morelia como una de las apuestas que abordan la realidad de nuestro país.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Todas las películas del Festival Internacional de Cine de Morelia 2026</h2>
+<p>Estas son todas las películas que se presentarán en el Festival Internacional de Cine de Morelia 2026:</p>
+<p>Cortometraje</p>
+<ul class="list-disc pl-6 space-y-2"><li>72 — Rafael Martínez-García</li><li>Esto no es el mar — Paula Ollivier Ortiz, Efrén Villa Cortés</li><li>Guardianas del sabor — Jocelyn Torres, Giuliana Bustos</li><li>Salvador Monarca — Rubí Marín López</li><li>El sueño de las luciérnagas — Porfirio López</li><li>Únhantani — Jonathan Yadir Barojas</li><li>Visiones infantiles — Felipe de Jesús Godoy Castillo</li></ul>
+<p>Largometraje</p>
+<ul class="list-disc pl-6 space-y-2"><li>Buenos días, buenas noches, buenas tardes — Adrián González-Camargo</li></ul>
+<p>Animación</p>
+<ul class="list-disc pl-6 space-y-2"><li>Aquí y allá — Amanda Woolrich Zárate</li><li>Blooky: The Book Who Wanted to Be Read — Pablo Díaz de León Hicks</li><li>Canción de noche — Karla Castañeda Ortega</li><li>Carry On! — Karla Isaura Velázquez Rocha</li><li>Cartas a los perdidos — Adriana Monteforte Lahera</li><li>Chabacano — Mauricio Hernández Serrano</li><li>Cuna de lobas — Emilia Schettino Bustamante</li><li>El canto del jaguar — Antonia Sofía Silva Alvarado</li><li>Farewell. — Ximena Álvarez Portilla</li><li>Little Nightmares - Broken Promises — Juan Jose Medina Dávalos, Sofía Catalina Carrillo Ramírez</li><li>Parsimonia — Rodrigo Suré</li><li>Puc Puc — Ariadna Galaz Vega, Jorge Peralta Galindo</li><li>Static — Nicky Obregón Aceves</li><li>Tara — Saúl Gabaldón Robles</li><li>The Boy and the Demon — Santiago Areán Viveros</li><li>Vagón de medianoche — Fatima Montserrat Castillo Gutiérrez, Eduardo Arandia Baltazar</li><li>Yugen — Nayelli Ojeda</li></ul>
+<p>Documental</p>
+<ul class="list-disc pl-6 space-y-2"><li>El brillo negro — Santiago Maza</li><li>En tu memoria — Mariel Cortés</li><li>Máscaras de tiempo — Sara Stephany Padilla</li><li>Miriam — Karla Condado</li><li>Nadie recuerda ese film — Andrés Pulido</li><li>Ni racaladxe&#x27; — Alma Yoari Cizana López, Patricia Matus Alonso</li><li>Rituales — Enrique Muñoz Rizo</li><li>Tajé — Ángel Linares</li><li>Tuvimos el deseo de romperlo todo — Daniel Hernández</li><li>Las tripas de la señora Tagle — Mariana Mendivil</li><li>Voces del bosque — Teresa Camou, Arturo López Barrera</li></ul>
+<p>Ficción</p>
+<ul class="list-disc pl-6 space-y-2"><li>1974 — José Esteban Pavlovich</li><li>Agridulce — María Guisa</li><li>Al día siguiente — Luis Enrique Vergara</li><li>Albatross — Amandine Thomas</li><li>Azucena — Tiaré Scanda Flores Coto</li><li>Brote en el concreto — Renata Elizondo</li><li>Carmen — Leire Aguilera Kelly</li><li>Carne — Adolfo Margulis</li><li>Concordia Norte — Hugo Montelongo</li><li>Contesta — María Fernanda Prieto</li><li>Cuando las niñas crecen — Daniela Soria</li><li>Cuando llegue a casa — Edgar Adrián</li><li>Cuerda manual — Gustavo Obregón</li><li>Dante — Julio Kassack</li><li>Diez de Mayo — Moctezuma</li><li>Eclipse — Rodrigo Aviña</li><li>El rostro — Jorge Sistos</li><li>Entre copas — Marta Hernaiz Pidal</li><li>Fin del verano — Francisco Sánchez</li><li>Helena con H — David Flores</li><li>Hongos silvestres — Isa Montalvo</li><li>La ruptura — César Galileo</li><li>Liena — Natalia Moguel</li><li>Marga en el DF — Gabriela Ortega</li><li>Mayor de edad — Lucía Díaz</li><li>Ñuuyii (La Tierra) — Itandehui Jansen</li><li>Quemadura de luna — Diego Sosa</li><li>Radiestesia — Jacinto Velasco</li><li>Rubicón — Mayra Hermosillo</li><li>Salí a caminar (volví a mi cuarto) — Roberto García</li><li>Satanáscabaña — Natalia Martínez</li><li>Sobremesa — Karla Luna Cantú</li><li>Todas las ventanas están cerradas — Jorge G. Camarena</li><li>Un dos tres por ti — Diana Castro</li><li>Valet Parking — Alo Valenzuela</li><li>Zumbido — Kate Del Castillo</li></ul>
+<ul class="list-disc pl-6 space-y-2"><li>El baile de las ánimas — Ramón Llaven</li><li>Forensita — Pablo Vaca</li><li>Hijas del bosque — Otilia Portillo Padua</li><li>Jaripeo — Efraín Mojica, Rebecca Zweig</li><li>Los mariachis perdidos — Francisco Ohem</li><li>Mickey — Dano García</li><li>Odisea nacional — Mariano Rentería</li><li>Querida Fátima — Lorena Gutiérrez, Rodrigo Reyes, Jesús Quintana</li><li>Reportaje — Nicolás Gutiérrez</li><li>Mi sangre es petróleo — Vania Carolina Quevedo</li><li>Traces of Home — Colette Ghunim</li><li>yātrā — Alejandro Rugama</li></ul>
+<ul class="list-disc pl-6 space-y-2"><li>6 meses en el edificio rosa con azul — Bruno Santamaría Razo</li><li>La cazadora — Suzanne Andrews Correa</li><li>Ceniza en la boca — Diego Luna</li><li>Chicas tristes — Fernanda Tovar</li><li>Contra la naturaleza — Axel Bertha</li><li>Lo demás es ruido — Nicolás Pereda</li><li>Los días de Poncho — Faustino Alanís</li><li>El jardín que soñamos — Joaquín del Paso</li><li>Los nuevos — Rodrigo Plá</li><li>Nosotros — Joaquín Ruano</li><li>Salón de belleza — Nathalia Acevedo</li><li>Toda una vida — Ariel Gutiérrez</li></ul>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="carrie-prime-video-reparto.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791893398/devon-mx/articles/summer-h-howell-carrie_bdaxgl.jpg" alt="Carrie: el reparto completo y personajes explicados de la serie de Prime Video" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Carrie: el reparto completo y personajes explicados de la serie de Prime Video</h3>
+                </a>
+                <a href="animals-netflix-pelicula.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791720407/devon-mx/articles/animals-netflix_ypr8um.jpg" alt="Animals: El final explicado de la película de Netflix con Ben Affleck" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Animals: El final explicado de la película de Netflix con Ben Affleck</h3>
+                </a>
+                <a href="adriana-paz-premier-animals-los-angeles-fotos-exclusivas.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1791461315/devon-mx/articles/adriana-paz-en-el-estreno-de-animals-los-angeles_lghh7j.jpg" alt="Adriana Paz presentó Animals en Los Ángeles con un vestido ecuatoriano. Así se preparó para la alfombra roja" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Adriana Paz presentó Animals en Los Ángeles con un vestido ecuatoriano. Así se preparó para la alfombra roja</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>
