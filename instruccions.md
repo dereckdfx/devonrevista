@@ -149,11 +149,11 @@ Patrón para todos los títulos (HOY, RUMBO AL MUNDIAL 2026…):
 
 ## Reglas generales para agregar contenido
 
-- Todas las imágenes son de `media.vogue.mx` con parámetros de resize en la URL
+- Todas las imágenes son de `upload.wikimedia.org` (Wikimedia Commons, con licencia libre) y el crédito se indica en el `<figcaption>` del artículo
 - Contenedor máximo: `max-w-7xl mx-auto px-6`
 - Grid principal: `grid-cols-1 md:grid-cols-3 gap-0 md:gap-8`
 - Subgrid artículos pequeños: `grid-cols-2 gap-6 md:gap-8`
 - Categorías siempre en MAYÚSCULAS, 9–10px, tracking 0.2em
 - Fechas siempre en minúsculas: "28 de mayo de 2026"
-- Autores siempre en MAYÚSCULAS con prefijo "POR"
+- Autores siempre en MAYÚSCULAS con prefijo "POR"; la firma de todo el sitio es `POR DEVON`
 - Secciones llevan `border-b border-gray-200` como separador inferior
