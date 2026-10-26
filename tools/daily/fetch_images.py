@@ -36,6 +36,16 @@ def strip_tags(s):
     return re.sub(r"<[^>]+>", "", s or "").strip()
 
 
+def clean_author(raw):
+    """Commons credits often trail into prose; keep just the name."""
+    name = re.sub(r"\s+", " ", strip_tags(raw)).strip("“”\"' ")
+    if "(" in name and len(name) > 24:
+        name = name.split("(")[0].strip(" ,;-")
+    if len(name) > 60:
+        name = name[:60].rsplit(" ", 1)[0]
+    return name.strip(" ,;-") or "Wikimedia Commons"
+
+
 def search(query, limit=28):
     params = {
         "action": "query", "format": "json", "formatversion": "2",
@@ -62,8 +72,7 @@ def search(query, limit=28):
         if not url:
             continue
         url = url.split("?")[0].replace("https://thumb.wikimedia.org/", "https://upload.wikimedia.org/")
-        author = strip_tags(meta.get("Artist", {}).get("value", "")) or "Wikimedia Commons"
-        author = re.sub(r"\s+", " ", author)[:48]
+        author = clean_author(meta.get("Artist", {}).get("value", ""))
         out.append({
             "url": url,
             "credit": f"{author} / Wikimedia Commons ({lic_raw})" if lic_raw else f"{author} / Wikimedia Commons",
