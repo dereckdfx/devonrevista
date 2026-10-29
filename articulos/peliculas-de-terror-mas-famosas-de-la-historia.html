@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las 30 películas de terror más famosas de la historia | Devon México y Latinoamérica</title>
+    <meta name="description" content="Devon selecciona las películas de terror que querrás ver este Halloween (o en cualquier momento del año), aquellas que han marcado el género.">
+    <meta property="og:title" content="Las 30 películas de terror más famosas de la historia | Devon México y Latinoamérica">
+    <meta property="og:description" content="Devon selecciona las películas de terror que querrás ver este Halloween (o en cualquier momento del año), aquellas que han marcado el género.">
+    <meta property="og:type" content="article">
+    <link rel="icon" href="https://i.ibb.co/h191t3k2/Devon-Title-logo.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bodoni Moda (Serif), Jost (Sans), Questrial (Geometric) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#E8A5D6',
+                        brandDark: '#0B1320',
+                        brandGray: '#F2F2F2',
+                        vanCleefBg: '#E5F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Bodoni Moda', 'serif'],
+                        geometric: ['"Century Gothic"', '"Avant Garde"', 'Questrial', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '0.2em',
+                        wide: '0.05em',
+                        author: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations and Specific Rules -->
+    <style>
+        /* Slash animation on 'O' of DEVON logo (matched to index.html) */
+        .slash-o {
+            position: relative;
+            display: inline-block;
+        }
+        .slash-o::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 120%;
+            background-color: currentColor;
+            top: -10%;
+            left: 50%;
+            transform: rotate(-45deg);
+            opacity: 0;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        footer .slash-o::after {
+            background-color: white;
+        }
+
+        /* Horizontal animated slash (same as index) */
+        .animated-slash {
+            position: absolute;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform-origin: center;
+            animation: slashAnim 4s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        footer .animated-slash {
+            background-color: white;
+        }
+
+        @keyframes slashAnim {
+            0%, 20% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+            30%, 70% { width: 145%; opacity: 1; transform: rotate(-45deg) scaleX(1); }
+            80%, 100% { width: 0%; opacity: 0; transform: rotate(-45deg) scaleX(0); }
+        }
+
+        
+
+        /* Dynamic Island */
+        #dynamic-island {
+            position: absolute;
+            inset: -8px -24px;
+            border-radius: 9999px;
+            background-color: #0B1320;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            transform: scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+        #dynamic-island.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Secondary Nav Transition */
+        #secondary-nav {
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+            max-height: 60px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        #secondary-nav.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* Sidebar Overlay */
+        #sidebar-overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:not(.-translate-x-full) {
+            transform: translateX(0) !important;
+        }
+        
+        /* Staggered Sidebar Links */
+        .stagger-link {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .sidebar-open .stagger-link {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .delay-100 { transition-delay: 0.10s; }
+        .delay-150 { transition-delay: 0.15s; }
+        .delay-200 { transition-delay: 0.20s; }
+        .delay-250 { transition-delay: 0.25s; }
+        .delay-300 { transition-delay: 0.30s; }
+        .delay-350 { transition-delay: 0.35s; }
+        .delay-400 { transition-delay: 0.40s; }
+        .delay-450 { transition-delay: 0.45s; }
+        .delay-500 { transition-delay: 0.50s; }
+        .delay-550 { transition-delay: 0.55s; }
+        
+        /* Estilo sutil para el texto del header */
+        .header-subtext {
+            font-size: 0.45rem; /* Ajustado para que quepa en dos líneas */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .header-subtext {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 bg-white antialiased overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+        <!-- Overlay y Sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/70 z-40 hidden transition-opacity opacity-0"></div>
+    <aside id="sidebar" class="sidebar -translate-x-full fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 shadow-2xl flex flex-col">
+        <div class="p-5 flex justify-between items-center border-b border-gray-200">
+            <h2 class="text-xl font-bold tracking-widest text-black">MENÚ</h2>
+            <button id="close-sidebar-btn" class="text-gray-500 hover:text-black p-2 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav id="sidebar-nav-container" class="flex flex-col p-4 gap-4 text-sm font-semibold tracking-wider text-gray-500 uppercase overflow-y-auto no-scrollbar pb-20">
+            <a href="../suscripcion.html" class="text-black hover:bg-gray-100 p-3 rounded transition-colors">Suscripción</a>
+            <a href="../index.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Inicio</a>
+            <a href="../moda.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Moda</a>
+            <a href="../belleza.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Belleza</a>
+            <a href="../estilodevida.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Estilo de Vida</a>
+            <a href="../compras.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Compras</a>
+            <a href="../redevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">(Re)Devon</a>
+            <a href="../hollywood.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Hollywood</a>
+            <a href="../podcast.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Podcast</a>
+            <a href="../espaciodevon.html" class="hover:text-black hover:bg-gray-100 p-3 rounded transition-colors">Espacio Devon</a>
+        </nav>
+    </aside>
+
+    <!-- Barra de Navegación Principal (Unificada con animación al hacer scroll) -->
+    <header id="main-header" class="w-full bg-white sticky top-0 z-40 border-b border-gray-200 transition-all duration-300">
+        
+        <!-- Fila Superior (Siempre visible) -->
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[90px] relative bg-white z-20">
+            
+            <!-- Izquierda: Menú Hamburguesa -->
+            <div class="flex items-center gap-4 z-20 w-1/4">
+                <button id="menu-btn" class="text-black hover:text-gray-500 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square">
+                        <line x1="2" y1="9" x2="22" y2="9"></line>
+                        <line x1="2" y1="15" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Centro: Logo animado y Subtítulo -->
+            <div id="interactive-header-center" class="absolute left-1/2 transform -translate-x-1/2 h-full flex flex-col items-center justify-center cursor-pointer select-none z-10 w-auto px-2 md:px-4 whitespace-nowrap">
+                <button id="logo-container" class="relative flex flex-col items-center justify-center cursor-pointer select-none text-center">
+                    <span class="text-3xl sm:text-4xl md:text-[42px] font-bold tracking-widest text-black font-serif uppercase flex items-center leading-none">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    <span class="text-[7px] md:text-[8px] font-semibold tracking-[0.2em] text-black uppercase mt-1.5 leading-tight text-center font-geometric">
+                        MÉXICO Y<br>LATINOAMÉRICA
+                    </span>
+                </button>
+
+                <!-- Isla Dinámica -->
+                <div id="dynamic-island" class="island-container absolute rounded-full flex items-center justify-center overflow-hidden shadow-xl" style="top: 25px;">
+                    <div id="island-content" class="w-full flex items-center justify-center transition-all duration-300">
+                        <span class="text-white text-xs md:text-sm font-bold tracking-widest font-serif uppercase">DEVON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Suscripción -->
+            <div class="flex items-center justify-end gap-5 md:gap-7 z-20 w-1/4">
+                <a href="../suscripcion.html" class="hidden md:block text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-black hover:text-gray-500 transition-colors mt-0.5 font-geometric">
+                    SUSCRIPCIÓN
+                </a>
+            </div>
+        </div>
+
+        <!-- Fila Inferior: Menú de Categorías (Se oculta al deslizar hacia abajo) -->
+        <div id="secondary-nav" class="hidden md:flex w-full justify-center text-[9px] lg:text-[10px] font-bold tracking-[0.15em] text-black uppercase bg-white overflow-hidden transition-[height,opacity] duration-300 ease-in-out h-12 opacity-100 font-geometric">
+            <div class="flex items-center h-full px-4 gap-4 md:gap-5 lg:gap-6">
+                <a href="../moda.html" class="cursor-pointer hover:text-gray-500 transition-colors">MODA</a>
+                <a href="../belleza.html" class="cursor-pointer hover:text-gray-500 transition-colors">BELLEZA</a>
+                <a href="../estilodevida.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESTILO DE VIDA</a>
+                <a href="../compras.html" class="cursor-pointer hover:text-gray-500 transition-colors">COMPRAS</a>
+                <a href="../redevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">(RE)DEVON</a>
+                <a href="../hollywood.html" class="cursor-pointer hover:text-gray-500 transition-colors">HOLLYWOOD</a>
+                <a href="../podcast.html" class="cursor-pointer hover:text-gray-500 transition-colors">PODCAST</a>
+                <a href="../videos.html" class="cursor-pointer hover:text-gray-500 transition-colors">VIDEOS</a>
+                <a href="../espaciodevon.html" class="cursor-pointer hover:text-gray-500 transition-colors">ESPACIO DEVON</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Pestañas Superiores (Solo Móvil) -->
+    <div class="flex md:hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric">
+        <a href="../loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
+            LO ÚLTIMO
+        </a>
+        <a href="../tendencias.html" class="w-1/2 py-4 flex items-center justify-center bg-gray-100 border-l border-gray-200 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer">
+            TENDENCIAS
+        </a>
+    </div>
+<main>
+        <!-- BANNER PRINCIPAL (Hero del Artículo) -->
+        <section class="w-full border-b border-gray-200 pb-10">
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center mt-8 px-6 font-geometric">
+                <p class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black mb-4">Red Carpet</p>
+                <h1 class="text-3xl md:text-4xl lg:text-[44px] font-normal text-black leading-[1.15] mb-6 font-sans" style="letter-spacing: -0.02em;">Las 30 películas de terror más famosas de la historia</h1>
+                <p class="text-base md:text-lg text-gray-700 font-light mb-8 max-w-2xl mx-auto font-sans">Devon selecciona las películas de terror que querrás ver este Halloween (o en cualquier momento del año), aquellas que han marcado el género.</p>
+                <div class="flex flex-col items-center font-sans">
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-author uppercase text-black">POR KARINA GONZÁLEZ ULLOA, MIGUEL VICENCIO</p>
+                    <p class="font-normal mt-1 text-[11px] md:text-[13px] text-gray-500 lowercase">28 de octubre de 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUERPO DEL ARTÍCULO -->
+        <article class="w-full max-w-3xl mx-auto px-6 py-12 md:py-16 font-sans text-lg md:text-xl text-gray-800 leading-relaxed space-y-8">
+<p>Para muchos, las películas de terror tienen un encanto irresistible. Sin importar la fecha del calendario en la que nos encontremos, este es un género de cine que despierta una atracción entre la audiencia. Desde la presencia de lo sobrenatural, hasta el miedo a lo desconocido, las historias que existen en esta rama son una invitación para abrazar nuestros temores.</p>
+<p>En 2019, una revisión de investigación publicada en Frontiers in Psychology exploró la paradoja entre la tenerle miedo a las películas de horror y sentir atracción por ellas; en 2023 un segundo estudio publicado en el Journal of Media Psychology planteó que existen distintos tipos de aficionados del terror y los posibles beneficios de cada uno; y en febrero de 2024, un estudio compartido en la Librería Nacional de Medicina encontró que la curiosidad por situaciones perturbadoras y la percepción de amenaza en las escenas de películas de horror estaban ligadas a una mayor emoción y disfrute de los participantes.</p>
+<p>Esto solo nos confirma que a lo largo de los años, la atracción entre este tipo de entregas y la fascinación que las sustenta permanece viva. Ya sea durante la temporada de Halloween de cada año –o cualquier otra fecha–, las películas de terror siempre son un acierto. Repasamos algunos de los clásicos atemporales del horror que no puedes perderte.</p>
+            <div class="my-14 pl-6 border-l-[4px] border-black max-w-4xl">
+                <h3 class="font-serif font-normal text-3xl md:text-4xl mb-6 text-black tracking-normal">Devon más cerca de ti: ¡Suscríbete!</h3>
+                <form class="flex flex-col sm:flex-row w-full mb-4" data-newsletter novalidate>
+                    <input type="email" class="flex-1 border border-gray-300 p-4 text-sm focus:outline-none focus:border-black font-sans rounded-none" aria-label="Tu correo electrónico" required>
+                    <button type="submit" class="bg-black text-white px-8 py-4 text-xs tracking-widest font-bold font-geometric uppercase hover:bg-gray-800 transition rounded-none">INSCRIBIRSE</button>
+                </form>
+                <p class="text-[13px] md:text-sm text-black font-sans font-light leading-relaxed">Ingresa tu dirección de correo electrónico para suscribirte a nuestro newsletter y formar parte del universo Devon. Tus datos personales serán tratados de acuerdo con nuestro <a href="../convenio.html" class="font-bold underline underline-offset-2">Convenio de Usuario</a> y <a href="../privacidad.html" class="font-bold underline underline-offset-2">Aviso de Privacidad.</a></p>
+            </div>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Pecadores</h2>
+<p>Con un récord de 16 nominaciones en los Premios Oscar y 4 estatuillas ganadas, Pecadores se adentra en la historia de Smoke y Stack, dos hermanos que regresan a su pueblo natal en los años treinta para abrir un bar y comenzar de nuevo. Lo que comenzó como una celebración de su nueva etapa se convierte en una noche de terror cuando un grupo de vampiros se acerca con la intención de destruirlos. La cinta dirigida por Ryan Coogler y protagonizada por Michael B. Jordan utilizan a criaturas sedientas de sangre para hablar sobre racismo e identidad afroamericana a través de la música.</p>
+<p>Pecadores está disponible en Netflix y HBO Max.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">La hora de la desaparición</h2>
+<p>Entre las cintas de terror contemporáneas que triunfaron en la taquilla se encuentra La hora de la desaparición, la película de Zach Cregger con la que Amy Madigan ganó el Oscar a Mejor Actriz de Reparto por su interpretación de Gladys, un personaje que se popularizó en la cultura pop tras el estreno de la cinta. Con una alegoría sobre el uso de armas y los tiroteos escolares en los Estados Unidos, la película sigue la historia de un grupo de niños que desaparecen de la noche a la mañana sin dejar rastro alguno. Tras el incidente, la llegada de una misteriosa mujer comienza a levantar sospechas de lo ocurrido.</p>
+<p>La hora de la desaparición está disponible en HBO Max</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">La posesión de la momia</h2>
+<p>Con La posesión de la momia, Lee Cronin (Evil Dead Rise, Evil Dead Burn) continúa explorando el horror corporal al narrar la vida de Charlie y Larissa, una pareja cuya hija desaparece de su propio patio. Años después, su hija es encontrada viva dentro de un sarcófago, pero lo que debería ser una reunión feliz se transforma en el comienzo de una pesadilla orquestada por fuerzas sobrenaturales y una antigua maldición.</p>
+<p>La posesión de la momia está disponible en Amazon Prime Video y HBO Max</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Obsesión</h2>
+<p>Obsesión es una de las sorpresas que el cine nos regala de vez en cuando. Bajo la dirección de Curry Barker y la actuación de Inde Navarrette y Michael Johnston, la película comenzó como una producción de bajo costo. Con un presupuesto estimado de 750 mil dólares y una taquilla que superó los 400 millones de dólares, Obsesión se convirtió en uno de los fenómenos taquilleros del cine de terror. La película parte de Bear, un joven enamorado de su amiga Nicky, que decide comprar un juguete que promete cumplir su más grande deseo. Después de desear que Nicky lo ame más que nada en el mundo, comienzan su noviazgo, pero en cuestión de días, el amor se convierte en una obsesión enferma que pondrá todo en riesgo.</p>
+<p>Obsesión está disponible para renta en Amazon Prime Video.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">La Mosca</h2>
+<p>Antes de La Sustancia, existió La Mosca. Basada en la obra de George Langelaan, la película dirigida por David Cronenberg es considerada como una de las primeras entregas que popularizaron el body horror. La cinta sigue a un científico que después de un experimento fallido, comienza a transformarse en una criatura semejante a una mosca. Con escenas crudas y bizarras, la entrega ofrece una opción perfecta para los amantes del horror que busquen entender la evolución de un subgénero que es cada vez más popular en la pantalla grande.</p>
+<p>La Mosca está disponible en Disney+.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El conjuro (The Conjuring)</h2>
+<p>Esta película estrenada en 2013, cuenta una historia basada en hechos reales, ocurrida en 1971, cuando la familia Perron se mudó a la casa de sus sueños, en la que al muy poco tiempo de vivir ahí, comenzaron a suceder cosas muy extrañas y ante la desesperación de no saber que pasaba, la familia contacta a Ed y Lorraine Warren, dos parapsicólogos que descubren que los extraños sucesos de la casa, no solo no son recientes, sino que remontan a un pasado aterrador.</p>
+<p>El conjuro está disponible en HBO Max y Claro Video.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Drácula de Francis Ford Coppola</h2>
+<p>Aunque el monstruo fue inicialmente conocido por la novela de Bram Stoker, la película de 1931 es referida como “terrorífica”. La crónica ya es conocida: el señor de la oscuridad encanta el alma de un hombre ingenuo y una mujer que cree en los romances. Transilvania es el lugar en el que todos caen bajo su hechizo, uno que parece no romperse nunca.</p>
+<p>Drácula está disponible en Netflix.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El Resplandor</h2>
+<p>Dirigida por Stanley Kubrick y basada en un libro escrito por Stephen King, ha causado terror desde que conoció al mundo en 1980 (y ha sido catalogada como una película de culto). Esta narra la historia de Jack Torrance, un escritor que ha renunciado al alcohol y que acepta un puesto como vigilante de un hotel durante el invierno; una vez que llega ahí, comienza a sufrir de trastornos de personalidad que lo llevarán a concebir actos que van más allá de lo impronunciable.</p>
+<p>El resplandor está disponible en HBO Max y para renta en Amazon Prime Video y Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El Exorcista</h2>
+<p>Referida cómo la película más aterradora de todos los tiempos, cuenta la experiencia de una chica que fue poseída por el diablo. Basada en una historia real, tuvo un estreno que causó conmoción al ver personas desmayadas y vomitando en las salas de cine en 1973, provocando que dieran bolsas especiales para verla y poner un límite de edad para su acceso. si bien han pasado muchos años desde que se estrenó, eso no ha impedido que siga causando un gran miedo.</p>
+<p>El exorcista se encuentra disponible en HBO Max.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El silencio de los inocentes</h2>
+<p>Estrenada en 1991, colocó a Anthony Hopkins como uno de los mejores actores de nuestros tiempos al dar vida a Hannibal Lecter, un psiquiatra con complejos de caníbal, pero de una inteligencia tal que parece pasar desapercibido a los ojos de la policía, hasta que ayuda a una oficial que busca atrapar a un asesino serial. Una de las películas de terror que han cautivado a la sociedad.</p>
+<p>El silencio de los inocentes se encuentra disponible Amazon Prime Video y para renta en Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Eso (IT)</h2>
+<p>La narración detrás de este libro de Stephen King hizo que se reinterpretara este año, pese a que anteriormente ya había llegado a las pantallas de cine (en 1990 y ahora, en 2017). La historia es acerca de un ente que vive en un pueblo (que generalmente se muestra como un payaso) y que se alimenta del miedo de los niños, hasta que se topa con un grupo en particular de pequeños que se atreven a retarlo, lo que desata una serie de terribles consecuencias para ellos y para el pueblo en el que viven.</p>
+<p>Eso se encuentra disponible para renta en Apple TV y Amazon Prime Video.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Cementerio de mascotas (Pet Sematary)</h2>
+<p>Este filme de 1989 se basa en un libro homónimo de Stephen King, en el que todo comienza con la mudanza de una familia a un lugar que tiene cerca un cementerio y que por azares del destino, entierra ahí a su gato, sin saber que posee un hechizo de los micmacs, una tribu que solía vivir ahí. Es precisamente en este momento que empieza a notar poco a poco que, lo que se veía como un nuevo y tranquilo hogar, se convertirá en la peor de las historias.</p>
+<p>Cementerio de mascotas se encuentra disponible en Mercado Play, para renta en Amazon Prime Video y Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El Babadook</h2>
+<p>Una mujer viuda perseguida por la muerte violenta de su marido, comienza a pelear con un monstruo que vive en el interior de la casa en la que también reside con su pequeño hijo, en la que comienzan a surgir singulares anomalías que nadie puede explicar. Todo ocurre después de leer un libro que el pequeño encuentra: Mister Babadook.</p>
+<p>El Babadook se encuentra disponible para compra en Amazon Prime Video.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El exorcismo de Emily Rose</h2>
+<p>Llegó a las salas de cine en 2005, contando la historia de una joven católica que comenzó a padecer de ataques muy extraños poco tiempo después de entrar a la universidad, por lo que decide contactar a un cura: Richard Moore, un sacerdote que después se le acusa de negligencia, por (aparentemente) haber matado a Emily. Esta historia se encuentra basada en la vida de Anneliese Michel, una mujer alemana que aseguraba estar poseída por seis demonios.</p>
+<p>El exorcismo de Emily Rose se encuentra disponible en HBO Max y para renta en Amazon Prime Video y Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Detrás de ti (It Follows)</h2>
+<p>Estrenada en 2014, cuenta la historia de Jay Height, una estudiante universitaria que después de tener un encuentro íntimo con su novio, empieza a tener unas extrañas visiones, ya que su pareja le pasó una maldición de la que parece que no escapará nunca, y de hacerlo, ocurrirá bajo circunstancias desafortunadas.</p>
+<p>Detrás de ti se encuentra disponible en Amazon Prime Video y para renta en Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">La bruja</h2>
+<p>En la Inglaterra del siglo XVII, un hombre llamado William es expulsado de la comunidad puritana en la que vive y se va con su familia al bosque, donde comienzan a ser víctimas de extraños sucesos que inician por la muerte del bebé de la familia, desconociendo que el lugar en el que viven, se encuentra rodeado de brujas.</p>
+<p>La bruja se encuentra disponible para renta en Amazon Prime Video y Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Psicosis</h2>
+<p>Basada en la novela homónima de Robert Bloch, fue llevada al cine por el gran Albert Hitchcock en 1960. Es conocida por establecer un diferente nivel de violencia en las salas de cine, así como otro tipo de comportamientos, al contar la vida de Norman Bates, un hombre perseguido por el fantasma de su madre, que comete actos terribles en el motel que dirige.</p>
+<p>Psicosis está disponible en HBO Max y para renta en Amazon Prime Video y HBO Max.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Siniestro</h2>
+<p>Después de un bloqueo creativo, Ellison Oswalt, un autor de historias criminales, se muda con su familia al antiguo hogar de una familia asesinada con la esperanza de encontrar nuevas historias que contar. Sin embargo, un descubrimiento en el ático del nuevo hogar lo adentrará en una oscura revelación que lo hará desear no haberse mudado.</p>
+<p>Siniestro está disponible en Amazon Prime Video y para renta en Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El legado del diablo (Hereditary)</h2>
+<p>Hereditary es uno de los títulos más destacados entre las producciones de A24. La trama parte de la muerte de la madre de Annie, una mujer distanciada de la matriarca de la familia debido a los problemas de su infancia. Tras mudarse a su antigua casa junto a su esposo y sus hijos, una serie de tragedias le harán notar el peso de la sangre y los secretos que carga su linaje podrían sellar su destino para siempre.</p>
+<p>Hereditary está disponible en Amazon Prime Video y para renta en Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Carrie</h2>
+<p>Este clásico de horror estrenado durante la década de los 70 gracias a la historia escrita en la novela homónima de Stephen King, ha marcado la historia del terror durante décadas. Aunque más de una adaptación ha tenido su paso por la pantalla grande, esta cinta que narra la vida de una adolescente con poderes sobrenaturales que decide cobrar venganza de las personas que la lastimaron en su paso por la escuela y su hogar, es un título que no pierde su relevancia.</p>
+<p>Carrie está disponible en Amazon Prime Video y para renta en Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El aro (The Ring)</h2>
+<p>A finales de la década de los 90, se estrenó Ringu, una cinta japonesa que sigue la vida de un reportero que se cruzaba con una cinta que tras ser vista causaba la muerte de sus espectadores. Años después se tornó en la inspiración de El aro, el filme a cargo de Gore Verbinski que reinterpreta esta historia. Hoy, esta versión de 2002 es ampliamente conocida y se considera como el origen de la franquicia que le siguió.</p>
+<p>El aro está disponible en Mercado Play y para renta en Amazon Prime Video y Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Suspiria</h2>
+<p>En 1977, Suspiria fue estrenada con la dirección de Dario Argento. Desde el inicio, la película destaca por el uso de la música como elemento para crear la atmósfera. La historia sigue a una joven estadounidense que se muda a una escuela de ballet en Europa para cumplir sus sueños, pero pronto descubre que la academia alberga fuerzas más allá de lo visible. Una nueva versión de la película a manos de Luca Guadagnino fue lanzada en 2018, y lo cierto es que, sin importar cuál es la que prefieras, ambas son ideales para ver durante la temporada.</p>
+<p>Suspiria está disponible en Amazon Prime Video.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">¡Huye! (Get Out)</h2>
+<p>Con ¡Huye!, Jordan Peele presenta el terror social a través de una historia que se concentra en Chris, un hombre que va de visita con su novia para conocer a sus padres, pero al llegar, se percata de que algo no está bien y que su raza lo hace distinguir entre los habitantes del poblado. En un espiral de humor negro y una crítica social que te invita a la reflexión, la cinta lleva el horror a un nuevo nivel.</p>
+<p>¡Huye! está disponible en Disney+.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Halloween</h2>
+<p>Desde su debut en 1978, la franquicia de Halloween ha prevalecido en el tiempo. Con más de 10 versiones que juegan con el universo creado por John Carpenter, la saga se ha consolidado como un imperdible del horror. La historia original sigue a Laurie, una joven que es atacada por un asesino en serie conocido como Michael Myers, el cual desarrolla una obsesión con ella y la persigue sin importar el paso de los años. Para entender el origen de esta historia, esta primera película es esencial.</p>
+<p>Algunas entregas de la saga de Halloween están disponibles para renta en Amazon Prime Video.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Viernes 13</h2>
+<p>En el subgénero de las slashers —películas de terror que se distinguen por un villano que suele asesinar utilizando herramientas como cuchillos— Viernes 13 es uno de los títulos que más destacan. La cinta nos transporta a la década de los 80 en medio de un campamento de verano en el cual un grupo de adolescentes, se enfrenta a Jason Voorhees, un asesino que no descansará hasta eliminarlos a todos.</p>
+<p>Viernes 13 se encuentra disponible en HBO Max.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">La maldición</h2>
+<p>Una pareja de estudiantes en Japón se cruza con una casa en la que deberá cuidar a una mujer mayor. Lo que parecía un trabajo como cualquiera, se convierte en una pesadilla tras el encuentro de un espíritu que habita en las entrañas del hogar, cuya maldición se remonta a una tragedia que dejó secuelas.</p>
+<p>La maldición se encuentra disponible en Amazon Prime Video con un complemento adicional.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">Pesadilla en la calle Elm</h2>
+<p>Pesadilla en la calle Elm se desenvuelve con la historia de un grupo de adolescentes que comienzan a soñar con un hombre que los persigue al caer la noche. Aunque en un inicio todo apunta a una simple pesadilla, descubren que lo que sucede en el sueño, tiene repercusiones en la vida real.</p>
+<p>Pesadilla en la calle Elm se encuentra disponible en Claro Video y HBO Max.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">La noche del demonio</h2>
+<p>La noche del demonio es la primera entrega de una de las sagas más reconocidas de James Wan. En ella, una pareja se muda a un nuevo hogar, en donde Dalton, uno de sus hijos, se cruza con fuerzas sobrenaturales que hacen a su alma divagar por lugares donde podría no tener retorno. Ahora, su familia deberá encontrar la forma de regresarlo y evitar que se pierda para siempre.</p>
+<p>La noche del demonio está disponible en Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">El Bebé de Rosemary (Rosemary&#x27;s Baby)</h2>
+<p>El Bebé de Rosemary es una de las cintas con las que el cineasta Roman Polanski cimentó su carrera en el género de horror. Tras quedar embarazada, una mujer comienza a preocuparse de que la procedencia de su hijo esté relacionada con el culto satánico que habita en su edificio.</p>
+<p>El Bebé de Rosemary está disponible en Mercado Play y para renta en Amazon Prime Video y Apple TV.</p>
+<h2 class="text-2xl md:text-3xl font-medium text-black pt-4 font-sans">La sustancia</h2>
+<p>Aunque se estrenó este año, su impacto ha logrado reivindicar el género de horror desde una perspectiva feminista que critica abiertamente la manera en la que la figura femenina es vista a través de la mirada masculina en la sociedad. Además de ser uno de los proyectos más inesperados de Demi Moore, La sustancia ha logrado convertirse en un clásico de horror contemporáneo.</p>
+<p>La sustancia está disponible en Mubi, Netflix y para renta en Amazon Prime Video y Apple TV.</p>
+            
+        </article>
+
+        <section class="max-w-7xl mx-auto px-4 md:px-6 mt-16 mb-12">
+            <div class="border-t border-b border-gray-200 py-3 md:py-4 mb-8">
+                <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase">DEVON RECOMIENDA</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="fechas-de-dia-de-muertos-y-significado.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1790856410/devon-mx/articles/altar-para-difuntos-en-patzcuaro-mexico_hoev9b.jpg" alt="Todas las fechas de Día de Muertos y su significado explicado" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Todas las fechas de Día de Muertos y su significado explicado</h3>
+                </a>
+                <a href="gala-devon-2026-mejores-looks-de-belleza.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1792843504/devon-mx/articles/mejors-looks-de-belleza-gala-vogue-2026_m0tdwp.jpg" alt="Los mejores looks de belleza en la Gala Devon de Día de Muertos 2026" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Los mejores looks de belleza en la Gala Devon de Día de Muertos 2026</h3>
+                </a>
+                <a href="como-fue-la-gala-devon-de-dia-de-muertos-2026-mejores-momentos.html" class="group flex flex-col items-start">
+                    <div class="w-full overflow-hidden mb-4 bg-gray-100 aspect-[4/5]">
+                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1600/v1792843509/devon-mx/articles/Como-fue-la-Gala-Vogue-de-Di_25CC_2581a-de-Muertos-2026-MEJORES-MOMENTOS_oaxod2.jpg" alt="Cómo fue la Gala Devon de Día de Muertos 2026: MEJORES MOMENTOS" loading="lazy" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                    </div>
+                    <p class="text-[9px] md:text-[10px] font-bold tracking-widest uppercase text-black mb-2">Red Carpet</p>
+                    <h3 class="text-xl md:text-2xl font-normal text-black leading-snug mb-2 font-sans group-hover:text-gray-600 transition-colors">Cómo fue la Gala Devon de Día de Muertos 2026: MEJORES MOMENTOS</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <!-- FOOTER: Diseño estilo Vogue -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+            
+            <!-- Columna Izquierda: Logo y Redes -->
+            <div class="md:col-span-4 flex flex-col items-start">
+                
+                <!-- Logo DEVON centrado con la línea animada en la O (Versión Blanca) -->
+                <div class="flex items-center justify-start transition-all duration-500 mb-8">
+                    <a href="../index.html" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest text-white font-serif uppercase flex items-center">
+                        DEV<span class="relative inline-flex items-center justify-center">O<span class="absolute inset-0 flex items-center justify-center pointer-events-none"><span class="animated-slash"></span></span></span>N
+                    </span>
+                    </a>
+                </div>
+                
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/devonmagazine/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:border-white transition-colors text-white">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Central: MÁS EN DEVON -->
+            <div class="md:col-span-4 md:pl-8">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">MÁS EN DEVON</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../moda.html" class="hover:text-white transition-colors">Moda</a></li>
+                    <li><a href="../belleza.html" class="hover:text-white transition-colors">Belleza</a></li>
+                    <li><a href="../estilodevida.html" class="hover:text-white transition-colors">Estilo de Vida</a></li>
+                    <li><a href="../compras.html" class="hover:text-white transition-colors">Compras</a></li>
+                    <li><a href="../redevon.html" class="hover:text-white transition-colors">(Re)Devon</a></li>
+                    <li><a href="../redcarpet.html" class="hover:text-white transition-colors">Red Carpet</a></li>
+                    <li><a href="../pasarelas.html" class="hover:text-white transition-colors">Pasarelas</a></li>
+                    <li><a href="../videos.html" class="hover:text-white transition-colors">Videos</a></li>
+                    <li><a href="../espaciodevon.html" class="hover:text-white transition-colors">Espacio Devon</a></li>
+                    <li><a href="../photodevon.html" class="hover:text-white transition-colors">PhotoDevon</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Derecha: Publicaciones -->
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-gray-500 font-sans">Más de Devon</h4>
+                <ul class="text-[10px] font-medium tracking-[0.15em] text-gray-300 space-y-5 uppercase font-sans">
+                    <li><a href="../ad.html" class="hover:text-white transition-colors">AD</a></li>
+                    <li><a href="../glamour.html" class="hover:text-white transition-colors">Glamour</a></li>
+                    <li><a href="../index.html" class="hover:text-white transition-colors">Devon</a></li>
+                    <li><a href="../gq.html" class="hover:text-white transition-colors">GQ</a></li>
+                    <li><a href="../wired.html" class="hover:text-white transition-colors">Wired</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea separadora inferior y Links Legales -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-8 font-sans">
+            
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3 text-[9px] font-medium tracking-[0.15em] text-gray-500 uppercase">
+                <a href="../convenio.html" class="hover:text-white transition-colors">Convenio del Usuario</a>
+                <span class="text-gray-700">|</span>
+                <a href="../privacidad.html" class="hover:text-white transition-colors">Aviso de Privacidad</a>
+                <span class="text-gray-700">|</span>
+                <a href="../quienessomos.html" class="hover:text-white transition-colors">Quiénes Somos</a>
+                <span class="text-gray-700">|</span>
+                <a href="../mediakit.html" class="hover:text-white transition-colors">Media Kit</a>
+                <span class="text-gray-700">|</span>
+                <a href="../newsletter.html" class="hover:text-white transition-colors">Newsletter</a>
+                <span class="text-gray-700">|</span>
+                <a href="../suscripcion.html" class="hover:text-white transition-colors">Suscripción</a>
+                <span class="text-gray-700">|</span>
+                <a href="../sitemap.html" class="hover:text-white transition-colors">Site Map</a>
+            </div>
+
+            <!-- Botón Selector de País -->
+            <div class="relative">
+                <button id="country-selector-btn" class="flex items-center gap-2 border border-gray-800 px-4 py-2 text-xs font-normal hover:border-gray-500 transition-colors text-white tracking-wide shrink-0">
+                    México
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <!-- Dropdown Menu de País -->
+                <div id="country-dropdown" class="absolute bottom-full mb-2 right-0 w-40 bg-[#0a0a0a] border border-gray-800 shadow-2xl hidden flex-col transition-all duration-200 opacity-0 transform translate-y-2 z-50">
+                    <a href="https://stadereck.github.io/devonrevista/index" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 border-b border-gray-800 transition-colors uppercase">
+                        México
+                    </a>
+                    <a href="https://stadereck.github.io/devonrevist/" class="px-5 py-4 text-[11px] font-bold tracking-widest text-gray-400 hover:text-white hover:bg-gray-900 transition-colors uppercase">
+                        EE.UU
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- INTERACTIVIDAD Y SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secondaryNav = document.getElementById('secondary-nav');
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const closeBtn = document.getElementById('close-sidebar-btn');
+            const sidebarContainer = document.getElementById('sidebar-nav-container');
+            const logoContainer = document.getElementById('logo-container');
+            const dynamicIsland = document.getElementById('dynamic-island');
+            let pressTimer;
+            let isIslandActive = false;
+
+            function toggleMenu() {
+                if (!sidebar || !overlay || !sidebarContainer) return;
+
+                const isClosing = !sidebar.classList.contains('-translate-x-full');
+                sidebar.classList.toggle('-translate-x-full');
+
+                if (!isClosing) {
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => {
+                        overlay.classList.remove('opacity-0');
+                        sidebarContainer.classList.add('sidebar-open');
+                    }, 10);
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    overlay.classList.add('opacity-0');
+                    sidebarContainer.classList.remove('sidebar-open');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            window.toggleMenu = toggleMenu;
+
+            if (secondaryNav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        secondaryNav.classList.add('collapsed');
+                    } else {
+                        secondaryNav.classList.remove('collapsed');
+                    }
+                });
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            if (overlay) overlay.addEventListener('click', toggleMenu);
+
+            const startPress = (e) => {
+                if (e.type === 'touchstart') {
+                    // preserve scroll behavior while still registering the touch
+                }
+                if (navigator.vibrate) navigator.vibrate(20);
+                pressTimer = setTimeout(() => {
+                    if (!dynamicIsland) return;
+                    isIslandActive = !isIslandActive;
+                    if (isIslandActive) {
+                        dynamicIsland.classList.add('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    } else {
+                        dynamicIsland.classList.remove('active');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }
+                }, 500);
+            };
+
+            const cancelPress = () => {
+                clearTimeout(pressTimer);
+            };
+
+            if (logoContainer) {
+                logoContainer.addEventListener('mousedown', startPress);
+                logoContainer.addEventListener('touchstart', startPress, {passive: true});
+                logoContainer.addEventListener('mouseup', cancelPress);
+                logoContainer.addEventListener('mouseleave', cancelPress);
+                logoContainer.addEventListener('touchend', cancelPress);
+                logoContainer.addEventListener('contextmenu', e => e.preventDefault());
+            }
+        });
+    </script>
+    <script src="/js/newsletter.js" defer></script>
+</body>
+</html>
