@@ -174,7 +174,7 @@
             transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
         }
     
-        /* Vogue World Milano hero (Vogue.mx-style mobile poster + player) */
+        /* Hero editorial Devon a pantalla completa */
         .vw-hero {
             position: relative;
             width: 100%;
@@ -490,263 +490,31 @@
 
 
     
-    <!-- Vogue World Milano hero: photo poster + WATCH NOW (Vogue.mx mobile) -->
-    <section class="w-full relative bg-black" aria-label="Devon World 2026 Milan Livestream">
+    <!-- Hero editorial Devon: póster a pantalla completa -->
+    <section class="w-full relative bg-black" aria-label="Historia principal de Devon">
       <div class="vw-hero is-poster" id="vw-hero">
-        <video
-          id="vogue-world-hero"
-          class="vw-main"
-          playsinline
-          preload="metadata"
-          poster="assets/vw-milano-poster.jpg"
-          title="¡Revive lo mejor de Devon World 2026 Milan Livestream!"
-        ></video>
-        <iframe
-          id="vogue-world-hero-embed"
-          class="vw-embed"
-          title="Devon World 2026 Milan Livestream"
-          data-src="https://player.cnevids.com/iframe/video/68dbb6bd777e2b57792927d3"
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-
-        <div class="vw-poster" id="vw-poster" role="button" tabindex="0" aria-label="Watch Now">
+        <a class="vw-poster" id="vw-poster" href="articulos/martine-rose-balenciaga-directora-creativa.html" aria-label="Martine Rose llega a Balenciaga: la primera directora creativa en 109 años de historia">
           <img
             class="vw-poster-media"
             id="vw-poster-img"
-            src="assets/vw-milano-poster.jpg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Jessica_Minh_Anh_at_Runway_on_the_Runway_Fashion_and_Sustainability_Show_2020.jpg/1920px-Jessica_Minh_Anh_at_Runway_on_the_Runway_Fashion_and_Sustainability_Show_2020.jpg"
             alt=""
             aria-hidden="true"
           />
           <div class="vw-poster-scrim" aria-hidden="true"></div>
           <div class="vw-poster-copy">
-            <span class="vw-tag">Fashion</span>
-            <p class="vw-headline">¡Revive lo mejor de Devon World 2026 Milan Livestream!</p>
-            <button type="button" class="vw-watch" id="vw-watch-btn">
+            <span class="vw-tag">MODA</span>
+            <p class="vw-headline">Martine Rose llega a Balenciaga: la primera directora creativa en 109 años de historia</p>
+            <span class="vw-watch">
               <svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path fill="currentColor" d="M0 0v14l12-7z"/></svg>
-              <span>Watch Now</span>
-            </button>
+              <span>Leer ahora</span>
+            </span>
           </div>
-        </div>
-
-        <div class="vw-chrome" id="vw-chrome" aria-hidden="true">
-          <div class="vw-chrome-title">¡Revive lo mejor de Devon World 2026 Milan Livestream!</div>
-          <div class="vw-bar">
-            <div class="vw-bar-row">
-              <button type="button" class="vw-btn" id="vw-playpause" aria-label="Pausa">
-                <svg id="vw-icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="3" width="5" height="18"></rect><rect x="14" y="3" width="5" height="18"></rect></svg>
-                <svg id="vw-icon-play" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17l14-8.5z"/></svg>
-              </button>
-              <span class="vw-time" id="vw-time">0:00 / 0:00</span>
-              <div class="vw-progress" id="vw-progress" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                <div class="vw-progress-track">
-                  <div class="vw-progress-fill" id="vw-progress-fill"></div>
-                  <div class="vw-progress-knob" id="vw-progress-knob"></div>
-                </div>
-              </div>
-              <div class="vw-bar-spacer">
-                <button type="button" class="vw-btn" id="vw-mute" aria-label="Silenciar">
-                  <svg id="vw-icon-vol" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-                    <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" stroke="none"></path>
-                    <path d="M16.5 8.5a5 5 0 0 1 0 7"></path>
-                    <path d="M18.5 6a8 8 0 0 1 0 12"></path>
-                  </svg>
-                  <svg id="vw-icon-muted" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-                    <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" stroke="none"></path>
-                    <path d="M19 9l-6 6M13 9l6 6"></path>
-                  </svg>
-                </button>
-                <button type="button" class="vw-btn" id="vw-fs" aria-label="Pantalla completa">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-                    <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        </a>
       </div>
     </section>
-    <script>
-      window.__devonVogueWorldHero = function () {
-        var SRC = "https://d2nig8ykak6ul6.cloudfront.net/out/v1/41206854f93f487c811a049dd0aa90c3/index.m3u8?start=2026-09-22T18%3A00%3A10.000%2B00%3A00&end=2026-09-22T18%3A38%3A24.000%2B00%3A00";
-        var EMBED = "https://player.cnevids.com/iframe/video/68dbb6bd777e2b57792927d3";
-        var hero = document.getElementById("vw-hero");
-        var video = document.getElementById("vogue-world-hero");
-        var embed = document.getElementById("vogue-world-hero-embed");
-        var poster = document.getElementById("vw-poster");
-        var watchBtn = document.getElementById("vw-watch-btn");
-        var chrome = document.getElementById("vw-chrome");
-        var playBtn = document.getElementById("vw-playpause");
-        var iconPause = document.getElementById("vw-icon-pause");
-        var iconPlay = document.getElementById("vw-icon-play");
-        var timeEl = document.getElementById("vw-time");
-        var progress = document.getElementById("vw-progress");
-        var fill = document.getElementById("vw-progress-fill");
-        var knob = document.getElementById("vw-progress-knob");
-        var muteBtn = document.getElementById("vw-mute");
-        var iconVol = document.getElementById("vw-icon-vol");
-        var iconMuted = document.getElementById("vw-icon-muted");
-        var fsBtn = document.getElementById("vw-fs");
-        if (!hero || !video || video.getAttribute("data-ready") === "1") return;
-        video.setAttribute("data-ready", "1");
-        video.removeAttribute("controls");
 
-        var hls = null;
-        var started = false;
-        var scrubbing = false;
-
-        function fmt(t) {
-          if (!isFinite(t) || t < 0) t = 0;
-          var s = Math.floor(t % 60);
-          var m = Math.floor(t / 60) % 60;
-          var h = Math.floor(t / 3600);
-          if (h > 0) return h + ":" + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
-          return m + ":" + String(s).padStart(2, "0");
-        }
-        function syncPlayIcons() {
-          var paused = video.paused;
-          if (iconPause) iconPause.classList.toggle("hidden", paused);
-          if (iconPlay) iconPlay.classList.toggle("hidden", !paused);
-          if (playBtn) playBtn.setAttribute("aria-label", paused ? "Reproducir" : "Pausa");
-        }
-        function syncMuteIcons() {
-          var muted = video.muted || video.volume === 0;
-          if (iconVol) iconVol.classList.toggle("hidden", muted);
-          if (iconMuted) iconMuted.classList.toggle("hidden", !muted);
-          if (muteBtn) muteBtn.setAttribute("aria-label", muted ? "Activar sonido" : "Silenciar");
-        }
-        function syncProgress() {
-          if (scrubbing) return;
-          var d = video.duration || 0;
-          var c = video.currentTime || 0;
-          var pct = d > 0 ? (c / d) * 100 : 0;
-          if (fill) fill.style.width = pct + "%";
-          if (knob) knob.style.left = pct + "%";
-          if (progress) progress.setAttribute("aria-valuenow", String(Math.round(pct)));
-          if (timeEl) timeEl.textContent = fmt(c) + " / " + fmt(d);
-        }
-        function showEmbed() {
-          hero.classList.remove("is-poster", "is-playing");
-          hero.classList.add("is-embed");
-          try { video.pause(); } catch (e) {}
-          video.removeAttribute("src");
-          while (video.firstChild) video.removeChild(video.firstChild);
-          if (embed) {
-            embed.src = embed.getAttribute("data-src") || EMBED;
-            embed.style.display = "block";
-          }
-        }
-        function attachSource() {
-          if (window.Hls && Hls.isSupported()) {
-            hls = new Hls({ enableWorker: true, maxBufferLength: 30 });
-            hls.loadSource(SRC);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.ERROR, function (_e, data) {
-              if (data && data.fatal) {
-                try { hls.destroy(); } catch (e) {}
-                showEmbed();
-              }
-            });
-          } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-            video.src = SRC;
-            video.addEventListener("error", showEmbed, { once: true });
-          } else {
-            showEmbed();
-          }
-        }
-        function enterPlaying() {
-          if (started) {
-            if (video.paused) video.play().catch(function () {});
-            return;
-          }
-          started = true;
-          hero.classList.remove("is-poster");
-          hero.classList.add("is-playing");
-          if (chrome) chrome.setAttribute("aria-hidden", "false");
-          var p = video.play();
-          if (p && p.catch) p.catch(function () {});
-          syncPlayIcons();
-        }
-        function togglePlay() {
-          if (!started) { enterPlaying(); return; }
-          if (video.paused) video.play().catch(function () {});
-          else video.pause();
-        }
-        function seekFromEvent(ev) {
-          var rect = progress.getBoundingClientRect();
-          var x = (ev.clientX != null ? ev.clientX : (ev.touches && ev.touches[0].clientX)) - rect.left;
-          var pct = Math.max(0, Math.min(1, x / rect.width));
-          if (video.duration) video.currentTime = pct * video.duration;
-          if (fill) fill.style.width = (pct * 100) + "%";
-          if (knob) knob.style.left = (pct * 100) + "%";
-        }
-
-        attachSource();
-
-        if (watchBtn) watchBtn.addEventListener("click", function (e) { e.stopPropagation(); enterPlaying(); });
-        if (poster) {
-          poster.addEventListener("click", function (e) {
-            if (e.target && e.target.closest && e.target.closest(".vw-watch")) return;
-            enterPlaying();
-          });
-          poster.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); enterPlaying(); }
-          });
-        }
-        if (playBtn) playBtn.addEventListener("click", function (e) { e.stopPropagation(); togglePlay(); });
-        if (muteBtn) muteBtn.addEventListener("click", function (e) {
-          e.stopPropagation();
-          video.muted = !video.muted;
-          syncMuteIcons();
-        });
-        if (fsBtn) fsBtn.addEventListener("click", function (e) {
-          e.stopPropagation();
-          var el = hero;
-          if (!document.fullscreenElement) {
-            (el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen || function () {}).call(el);
-          } else {
-            (document.exitFullscreen || document.webkitExitFullscreen || function () {}).call(document);
-          }
-        });
-        if (progress) {
-          progress.addEventListener("pointerdown", function (e) {
-            scrubbing = true;
-            progress.classList.add("is-scrubbing");
-            progress.setPointerCapture(e.pointerId);
-            seekFromEvent(e);
-          });
-          progress.addEventListener("pointermove", function (e) {
-            if (scrubbing) seekFromEvent(e);
-          });
-          progress.addEventListener("pointerup", function () {
-            scrubbing = false;
-            progress.classList.remove("is-scrubbing");
-          });
-          progress.addEventListener("pointercancel", function () {
-            scrubbing = false;
-            progress.classList.remove("is-scrubbing");
-          });
-        }
-
-        video.addEventListener("timeupdate", syncProgress);
-        video.addEventListener("loadedmetadata", syncProgress);
-        video.addEventListener("durationchange", syncProgress);
-        video.addEventListener("play", syncPlayIcons);
-        video.addEventListener("pause", syncPlayIcons);
-        video.addEventListener("volumechange", syncMuteIcons);
-        video.addEventListener("click", function () {
-          if (started) togglePlay();
-        });
-
-        syncPlayIcons();
-        syncMuteIcons();
-        syncProgress();
-      };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" onload="window.__devonVogueWorldHero && window.__devonVogueWorldHero()" onerror="window.__devonVogueWorldHero && window.__devonVogueWorldHero()"></script>
-
-<!-- Promo suscripción (móvil: donde va el ticker de Vogue) -->
+<!-- Promo suscripción (móvil) -->
     <a href="suscripcion.html" class="w-full flex items-center gap-3 px-4 py-3 bg-white border-b border-gray-200 hover:bg-gray-50 transition-colors no-underline text-black">
         <img
             src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1780770047/Devon_June_2026_N.231_Suscripcio%CC%81n_sddr6u.png"
@@ -762,12 +530,12 @@
 
     <!-- Banner Publicitario: Van Cleef & Arpels (desktop+) -->
     <div class="hidden md:flex w-full justify-center bg-white py-4 border-b border-gray-100">
-        <a href="https://www.vancleefarpels.com/mx/es/collections/jewelry/perlee.html?category=all&utm_source=vogue&utm_medium=DIS&utm_campaign=A-VCAMX-MX--JEWX-PERLEE-FY27-PERLEE--VOGUE_SUPER_BANNER&utm_content=A-AW-CPM-PR-DIR-ASP--3RD_PPS-VOGUE-SECTION-MUL-BANNER-970X250-VCA802-ES-NOTRACK---RICUSBN66AQ&dclid=CMi10YqyrZUDFYv4GAIdJ5Me1w&gad_source=7&gad_campaignid=23805853111" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.vancleefarpels.com/mx/es/collections/jewelry/perlee.html?category=all&utm_source=devon&utm_medium=DIS&utm_campaign=A-VCAMX-MX--JEWX-PERLEE-FY27-PERLEE--DEVON_SUPER_BANNER&utm_content=A-AW-CPM-PR-DIR-ASP--3RD_PPS-DEVON-SECTION-MUL-BANNER-970X250-VCA802-ES-NOTRACK---RICUSBN66AQ&dclid=CMi10YqyrZUDFYv4GAIdJ5Me1w&gad_source=7&gad_campaignid=23805853111" target="_blank" rel="noopener noreferrer">
             <img src="https://tpc.googlesyndication.com/simgad/10030194878189498349" alt="Van Cleef & Arpels – Colección Perlée" class="h-auto" style="max-width: 620px; width: 90vw;" />
         </a>
     </div>
 
-    <!-- Pestañas Superiores (ocultas: no forman parte del look móvil tipo Vogue) -->
+    <!-- Pestañas Superiores (ocultas: no forman parte del look móvil) -->
     <div class="hidden w-full text-[11px] font-semibold tracking-wider text-gray-500 uppercase font-geometric" aria-hidden="true">
         <a href="loultimo.html" class="w-1/2 py-4 flex items-center justify-center bg-white text-black border-b-2 border-black">
             LO ÚLTIMO
@@ -794,14 +562,14 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
 
                 <!-- Artículo Principal (Izquierda) -->
-                <div class="lg:col-span-6 cursor-pointer group" onclick="window.location.href='articulos/renata-notni-portada-devon-noviembre-2026.html'">
+                <div class="lg:col-span-6 cursor-pointer group" onclick="window.location.href='articulos/lujo-tercer-trimestre-2026-lvmh-kering-efecto-lipstick.html'">
                     <div class="relative overflow-hidden w-full h-[550px] lg:h-[100%] min-h-[750px]">
-                        <img src="https://media.vogue.mx/photos/6ad7ac7f54a323f0094da0d6/16:9/w_1600,c_limit/renata-notni-portada-vogue-noviembre-2026.jpg" alt="Renata Notni florece en la portada de Devon: “H…" class="absolute inset-0 w-full h-full object-cover object-top group-hover:opacity-95 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Boyes_and_Herd_clothing_store_interior_showing_shelves_n.d._%283200481108%29.jpg/1920px-Boyes_and_Herd_clothing_store_interior_showing_shelves_n.d._%283200481108%29.jpg" alt="El lujo no se recupera igual para todos: lo que revelan las cifras del tercer trimestre" class="absolute inset-0 w-full h-full object-cover object-top group-hover:opacity-95 transition-opacity duration-300"/>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent px-6 lg:px-10 pt-40 pb-10 text-white text-center font-geometric flex flex-col items-center">
-                            <p class="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mb-4 text-gray-200">ESTILO DE VIDA</p>
-                            <h3 class="text-2xl md:text-3xl lg:text-[34px] font-medium leading-[1.2] mb-6 max-w-lg">Renata Notni florece en la portada de Devon: “He cambiado tanto que me siento muy curiosa en redescubrir esta nueva versión de Renata”</h3>
-                            <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-300 mb-1">POR MARÍA DIEZ</p>
-                            <p class="text-[11px] font-normal text-gray-300">26 de octubre de 2026</p>
+                            <p class="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mb-4 text-gray-200">MODA</p>
+                            <h3 class="text-2xl md:text-3xl lg:text-[34px] font-medium leading-[1.2] mb-6 max-w-lg">El lujo no se recupera igual para todos: lo que revelan las cifras del tercer trimestre</h3>
+                            <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-300 mb-1">POR DEVON</p>
+                            <p class="text-[11px] font-normal text-gray-300">23 de noviembre de 2026</p>
                         </div>
                     </div>
                 </div>
@@ -809,39 +577,39 @@
                 <!-- Columna Central -->
                 <div class="lg:col-span-3 flex flex-col gap-10 font-geometric">
                     <!-- Devon Ficción (Usando hsl(0,0%,96%) en vez de #f4f4f4) -->
-                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/gala-devon-dia-de-muertos-colombia-2026.html'">
+                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/terciopelo-como-llevarlo-en-noviembre-2026.html'">
                         <div class="overflow-hidden aspect-[4/5] w-full mb-4 bg-[hsl(0,0%,96%)]">
-                            <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1790907291/devon-mx/articles/gala-dia-de-muertos-colombia-2026_tvsyj9.png" alt="Todo sobre la Gala Devon de Día de Muertos Colo…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Georges_Chakra_-_Haute_Couture_Spring-Summer_2010.jpg" alt="El terciopelo salió de la noche: cómo se lleva ahora, un martes cualquiera" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         </div>
-                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">GALA DEVON</p>
-                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">Todo sobre la Gala Devon de Día de Muertos Colombia 2026</h3>
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</p>
+                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">El terciopelo salió de la noche: cómo se lleva ahora, un martes cualquiera</h3>
                         <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR DEVON</p>
-                        <p class="text-[11px] font-normal text-gray-500">27 de octubre de 2026</p>
+                        <p class="text-[11px] font-normal text-gray-500">23 de noviembre de 2026</p>
                     </div>
 
                     <!-- Desintoxicar Verduras -->
-                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/gala-devon-2026-alfombra-roja.html'">
+                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/botas-tendencia-otono-invierno-2026-2027-cuatro-formas.html'">
                         <div class="overflow-hidden aspect-[4/5] w-full mb-4">
-                            <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1792757398/devon-mx/articles/luis-gerardo-mendez-karla-martinez-jessica-alba-renata-notni_gena3q.jpg" alt="Todas las celebridades en la alfombra roja de l…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Denim_Jeans_Pant.jpg/1920px-Denim_Jeans_Pant.jpg" alt="Cuatro maneras de llevar botas este invierno, según las pasarelas de otoño-invierno 2026/2027" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         </div>
-                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</p>
-                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">Todas las celebridades en la alfombra roja de la Gala Devon de Día de Muertos 2026</h3>
-                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR FERNANDA PÉREZ SÁNCHEZ</p>
-                        <p class="text-[11px] font-normal text-gray-500">25 de octubre de 2026</p>
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</p>
+                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3">Cuatro maneras de llevar botas este invierno, según las pasarelas de otoño-invierno 2026/2027</h3>
+                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR DEVON</p>
+                        <p class="text-[11px] font-normal text-gray-500">23 de noviembre de 2026</p>
                     </div>
                 </div>
 
                 <!-- Columna Derecha -->
                 <div class="lg:col-span-3 flex flex-col gap-10 font-geometric">
                     <!-- Mocasines Japoneses -->
-                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/fatima-bosch-en-la-gala-devon-de-dia-de-muertos-con-un-vestido-cafe-y-un-velo-bordado.html'">
+                    <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/teoria-del-rojo-inesperado-looks-noviembre-2026.html'">
                         <div class="overflow-hidden aspect-[4/5] w-full mb-4">
-                            <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1792757414/devon-mx/articles/fa_25CC_2581tima-bosch-en-la-gala-vogue-de-dia-de-muertos_lykngw.jpg" alt="Fátima Bosch deslumbra en la Gala Devon de Día …" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Fashion_week_edeline_lee_%281%29.jpg" alt="La teoría del rojo inesperado: el truco de estilo que resuelve un look de neutros" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         </div>
-                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">RED CARPET</p>
-                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3 underline decoration-1 underline-offset-4">Fátima Bosch deslumbra en la Gala Devon de Día de Muertos con un vestido café y un velo bordado</h3>
-                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR LUZ GARCÍA</p>
-                        <p class="text-[11px] font-normal text-gray-500">23 de octubre de 2026</p>
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-2">MODA</p>
+                        <h3 class="text-[15px] md:text-[17px] font-medium leading-[1.3] text-black mb-3 underline decoration-1 underline-offset-4">La teoría del rojo inesperado: el truco de estilo que resuelve un look de neutros</h3>
+                        <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-1">POR DEVON</p>
+                        <p class="text-[11px] font-normal text-gray-500">23 de noviembre de 2026</p>
                     </div>
 
                     <!-- Van Cleef Ad (Usando hsl(125,27%,92%) en vez de #E5F0E6) -->
@@ -855,7 +623,7 @@
             </div>
         </div>
 
-        <!-- Título VOGUE WORLD MILÁN 2026 -->
+        <!-- Título DEVON WORLD MILÁN 2026 -->
         <div class="max-w-7xl mx-auto px-6 mt-16 md:mt-24 mb-6">
             <div class="border-t border-b border-gray-200 py-3 md:py-4 flex justify-between items-center">
                 <h2 class="text-lg md:text-xl font-light tracking-wide text-gray-700 uppercase" style="font-family: 'Jost', sans-serif;">
@@ -872,49 +640,49 @@
             </div>
         </div>
 
-        <!-- Carrusel Vogue World Milán 2026 -->
+        <!-- Carrusel Devon World Milán 2026 -->
         <div class="w-full max-w-7xl mx-auto px-6 mb-12 overflow-hidden">
             <div id="venecia-scroll" class="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-8 pb-4 no-scrollbar scroll-smooth">
                 
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/gala-devon-2026-alfombra-roja.html'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/falda-de-cuadros-y-chaqueta-de-cuero-formula-de-invierno.html'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1792757398/devon-mx/articles/luis-gerardo-mendez-karla-martinez-jessica-alba-renata-notni_gena3q.jpg" alt="Todas las celebridades en la alfombra roja de la Gala Devon de Día de Muertos 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Hairstylist_at_Paris_Fashion_Week_2019.jpg/1920px-Hairstylist_at_Paris_Fashion_Week_2019.jpg" alt="Falda de cuadros con chaqueta de cuero: la fórmula que moderniza una prenda seria" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         <span class="absolute bottom-2 left-2 text-white drop-shadow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="1"></rect><rect x="7" y="9" width="14" height="12" rx="1" fill="rgba(0,0,0,0.25)"></rect></svg></span>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Todas las celebridades en la alfombra roja de la Gala Devon de Día de Muertos 2026</h3>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">MODA</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Falda de cuadros con chaqueta de cuero: la fórmula que moderniza una prenda seria</h3>
                 </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/fatima-bosch-en-la-gala-devon-de-dia-de-muertos-con-un-vestido-cafe-y-un-velo-bordado.html'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/abrigo-con-hombreras-la-silueta-del-invierno-2026.html'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1792757414/devon-mx/articles/fa_25CC_2581tima-bosch-en-la-gala-vogue-de-dia-de-muertos_lykngw.jpg" alt="Fátima Bosch deslumbra en la Gala Devon de Día de Muertos con un vestido café y un velo bordado" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Bobines_fil_Rouffignac.jpg/1920px-Bobines_fil_Rouffignac.jpg" alt="El abrigo con hombreras es el atajo más eficaz del invierno" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         <span class="absolute bottom-2 left-2 text-white drop-shadow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="1"></rect><rect x="7" y="9" width="14" height="12" rx="1" fill="rgba(0,0,0,0.25)"></rect></svg></span>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Fátima Bosch deslumbra en la Gala Devon de Día de Muertos con un vestido café y un velo bordado</h3>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">MODA</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">El abrigo con hombreras es el atajo más eficaz del invierno</h3>
                 </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/yalitza-aparicio-luce-elegante-con-vestido-boho-cafe-en-la-gala-devon-de-dia-de-muertos-20.html'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/eiza-gonzalez-baggy-jeans-y-tenis-cafe.html'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1792757473/devon-mx/articles/yalitza-aparicio-gala-vogue-de-dia-de-muertos-2026-look_rywzym.jpg" alt="Yalitza Aparicio luce elegante en la Gala Devon de Día de Muertos con un vestido boho café" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Seoul_Fashion_Week_2027_SS.jpg/1920px-Seoul_Fashion_Week_2027_SS.jpg" alt="Eiza González y el uniforme de día que resuelve noviembre: baggy jeans, camiseta blanca y tenis café" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Yalitza Aparicio luce elegante en la Gala Devon de Día de Muertos con un vestido boho café</h3>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">MODA</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Eiza González y el uniforme de día que resuelve noviembre: baggy jeans, camiseta blanca y tenis café</h3>
                 </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/jessica-alba-gala-devon-2026.html'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/jennifer-lopez-burdeos-de-piel-en-nueva-york.html'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1792757399/devon-mx/articles/jessica-alba-gala-vogue-de-dia-de-muertos-2026_nv0nvi.jpg" alt="Jessica Alba llega a la Gala Devon de Día de Muertos 2026 con el vestido negro más elegante de la noche" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Knitting_Wool.JPG/1920px-Knitting_Wool.JPG" alt="Jennifer Lopez y el burdeos total: gabardina de piel, seda líquida y medias de flores" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Jessica Alba llega a la Gala Devon de Día de Muertos 2026 con el vestido negro más elegante de la noche</h3>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">MODA</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Jennifer Lopez y el burdeos total: gabardina de piel, seda líquida y medias de flores</h3>
                 </div>
-                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/renata-notni-gala-devon-2026.html'">
+                <div class="w-[75%] sm:w-[45%] lg:w-[23.5%] flex-shrink-0 snap-start cursor-pointer group flex flex-col" onclick="window.location.href='articulos/penelope-cruz-pantalones-de-campana-y-camiseta-gris.html'">
                     <div class="relative overflow-hidden aspect-[4/5] w-full mb-3 bg-gray-100">
-                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1792757399/devon-mx/articles/renata-notni-gala-vogue-de-dia-de-muertos-2026_fueeat.jpg" alt="Renata Notni brilla en la alfombra roja de Gala de Día de Muertos 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Milan_Fashion_Week_2.jpg/1920px-Milan_Fashion_Week_2.jpg" alt="Penélope Cruz y los dos básicos que estilizan: pantalón de campana y camiseta gris" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                         
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">RED CARPET</p>
-                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Renata Notni brilla en la alfombra roja de Gala de Día de Muertos 2026</h3>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2 font-geometric">MODA</p>
+                    <h3 class="text-[13px] md:text-[15px] font-medium leading-snug text-black font-geometric">Penélope Cruz y los dos básicos que estilizan: pantalón de campana y camiseta gris</h3>
                 </div>
             </div>
         </div>
@@ -932,44 +700,44 @@
         <div class="w-full max-w-7xl mx-auto px-6 mb-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 font-geometric">
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/blusas-boho-de-zara-para-llevar-con-jeans-bootcut-en-otono-2026.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/latin-grammy-2026-alfombra-roja-las-vegas.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ae2838b5a42e8c05d7297f0/1:1/w_1600,c_limit/nuevas-blusas-boho-de-zara.jpg" alt="Las nuevas blusas boho para llevar con jeans bo…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sully_Japan_Premiere_Red_Carpet_%2829830422235%29.jpg/1920px-Sully_Japan_Premiere_Red_Carpet_%2829830422235%29.jpg" alt="Latin Grammy 2026: la alfombra de Las Vegas que mezcló corsés, esmóquines y sombrero texano" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Las nuevas blusas boho para llevar con jeans bootcut perfectos para otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR LUZ GARCÍA</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">28 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Latin Grammy 2026: la alfombra de Las Vegas que mezcló corsés, esmóquines y sombrero texano</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/como-llevar-zapatos-de-tacon-elegantes-de-zara-inspirados-en-carolina-herrera-para-otono-2.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/rosalia-latin-grammy-2026-vestido-blanco.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ae01674bbad9128db05c0b8/1:1/w_1600,c_limit/los-zapatos-de-tacon-de-zara-mas-elegantes-inspirados-en-carolina-herrera-para-otono-2026.jpg" alt="Los zapatos de tacón elegantes inspirados en Ca…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Paris_Haute_Couture_Spring-Summer_2012_n6.jpg" alt="El vestido blanco de Rosalía en los Latin Grammy: corsé, cuello de tul y silueta princesa" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Los zapatos de tacón elegantes inspirados en Carolina Herrera para otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MARÍA FERNANDA MARÍN</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">28 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">El vestido blanco de Rosalía en los Latin Grammy: corsé, cuello de tul y silueta princesa</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/como-llevar-clogs-de-los-70-que-regresan-con-jeans-acampanados-y-baggy-en-otono-2026.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/nathy-peluso-corset-negro-y-tul-blanco.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6a8636176f8ca43433247bd9/1:1/w_1600,c_limit/jeans-de-chlo%25C3%25A9-pre-fall-2026.JPG" alt="Los clogs de los 70 que regresan con jeans acam…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/New_Junon_evening_dress_%2851580%29.jpg/1920px-New_Junon_evening_dress_%2851580%29.jpg" alt="Nathy Peluso y el bicolor teatral: corsé negro, falda de tul blanco y una rosa roja" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Los clogs de los 70 que regresan con jeans acampanados y baggy en otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR RENATA JOFFRE</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">28 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Nathy Peluso y el bicolor teatral: corsé negro, falda de tul blanco y una rosa roja</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/otono-invierno-2026-ready-to-wear.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/karol-g-vestido-sirena-blanco-latin-grammy-2026.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1790942710/devon-mx/articles/moda-oton_25CC_2583o-invierno-2026-tendencias_ublio8.jpg" alt="Moda Otoño-Invierno 2026: ¿Qué se llevará? | Te…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/IRA-LANGEVIN-Origami-Fortune-3.jpg/1920px-IRA-LANGEVIN-Origami-Fortune-3.jpg" alt="Karol G y el vestido sirena de tul blanco con aire nupcial" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">MODA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Moda Otoño-Invierno 2026: ¿Qué se llevará? | Tendencias</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR LUZ GARCÍA</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">2 de septiembre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Karol G y el vestido sirena de tul blanco con aire nupcial</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
             </div>
         </div>
@@ -977,7 +745,7 @@
         <!-- Banner Publicitario: Van Cleef & Arpels (Inferior) -->
         <div class="w-full flex flex-col items-center justify-center mt-8 md:mt-12 mb-16 px-4">
             <span class="text-[8px] md:text-[9px] font-medium tracking-[0.3em] text-gray-300 uppercase mb-4 font-sans">PUBLICIDAD</span>
-            <a href="https://www.vancleefarpels.com/mx/es/collections/jewelry/perlee.html?category=all&utm_source=vogue&utm_medium=DIS&utm_campaign=A-VCAMX-MX--JEWX-PERLEE-FY27-PERLEE--VOGUE_SUPER_BANNER&utm_content=A-AW-CPM-PR-DIR-ASP--3RD_PPS-VOGUE-SECTION-MUL-BANNER-970X250-VCA802-ES-NOTRACK---RICUSBN66AQ&dclid=CMi10YqyrZUDFYv4GAIdJ5Me1w&gad_source=7&gad_campaignid=23805853111" target="_blank" rel="noopener noreferrer" class="flex justify-center w-full">
+            <a href="https://www.vancleefarpels.com/mx/es/collections/jewelry/perlee.html?category=all&utm_source=devon&utm_medium=DIS&utm_campaign=A-VCAMX-MX--JEWX-PERLEE-FY27-PERLEE--DEVON_SUPER_BANNER&utm_content=A-AW-CPM-PR-DIR-ASP--3RD_PPS-DEVON-SECTION-MUL-BANNER-970X250-VCA802-ES-NOTRACK---RICUSBN66AQ&dclid=CMi10YqyrZUDFYv4GAIdJ5Me1w&gad_source=7&gad_campaignid=23805853111" target="_blank" rel="noopener noreferrer" class="flex justify-center w-full">
                 <img src="https://tpc.googlesyndication.com/simgad/10030194878189498349" alt="Van Cleef & Arpels – Colección Perlée" class="h-auto w-full object-contain" style="max-width: 970px;" />
             </a>
         </div>
@@ -995,44 +763,44 @@
         <div class="w-full max-w-7xl mx-auto px-6 mb-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 font-geometric">
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/6-colores-de-unas-cromadas-que-son-tendencia-en-octubre-2026.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/sastreria-masculina-latin-grammy-2026.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ae24c5eb7061dd88ca37c47/1:1/w_1600,c_limit/un%25CC%2583as-cromadas-cafe.jpg" alt="¡Adiós, Glazed Donut Nails! 6 colores de uñas c…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Latin_Grammy_Nominees_09%27_Sin_Animo_De_Lucro_2.JPG/1920px-Latin_Grammy_Nominees_09%27_Sin_Animo_De_Lucro_2.JPG" alt="La mejor sastrería de los Latin Grammy fue masculina: tres looks para estudiar" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">¡Adiós, Glazed Donut Nails! 6 colores de uñas cromadas que son tendencia en octubre 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MARÍA DIEZ</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">28 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">La mejor sastrería de los Latin Grammy fue masculina: tres looks para estudiar</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/como-llevar-unas-con-manicura-lucent-en-otono-2026.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/governors-awards-2026-oscares-honorificos.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ae21c7d92fa0078fba4020b/1:1/w_1600,c_limit/Lucent%2520Nails%2520Nails%2520by%2520Mei.jpg" alt="Uñas con manicura Lucent, el estilo casi invisi…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Stage_at_the_Hugo_Award_Ceremony%2C_at_Worldcon_75_in_Helsinki_2017.jpg/1920px-Stage_at_the_Hugo_Award_Ceremony%2C_at_Worldcon_75_in_Helsinki_2017.jpg" alt="Los Óscar honoríficos abrieron la temporada: la cena del 15 de noviembre que nadie televisa" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Uñas con manicura Lucent, el estilo casi invisible que se lleva en otoño 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR JACQUELINE KILIKITA</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">28 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">RED CARPET</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Los Óscar honoríficos abrieron la temporada: la cena del 15 de noviembre que nadie televisa</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/perfumes-de-carolina-herrera-good-girl.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/glazed-skin-el-maquillaje-luminoso-que-regreso.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ae0ca69ba6ef8e1915d5def/1:1/w_1600,c_limit/perfumes-carolina-herrera.jpg" alt="Carolina Herrera Good Girl: La guía para conoce…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/HK_TST_Harbour_City_Cosmetic_products_booth_Aug-2012.JPG/1920px-HK_TST_Harbour_City_Cosmetic_products_booth_Aug-2012.JPG" alt="“Glazed skin”: el maquillaje luminoso de los noventa volvió, y empieza en el cuidado" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Carolina Herrera Good Girl: La guía para conocer todos los perfumes del tacón</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR CONÇETTA CIARLO</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">28 de octubre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">“Glazed skin”: el maquillaje luminoso de los noventa volvió, y empieza en el cuidado</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/3-razones-para-probar-el-corte-de-cabello-con-flequillo-frances-en-octubre-2026.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/millennium-frost-labios-escarchados-fiestas-2026.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ae13c2056df6a241ec25f54/1:1/w_1600,c_limit/flequillo-frances-4.jpg" alt="3 razones para probar el corte de cabello con f…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lipstick_and_other_cosmetic_equipment.jpg/1920px-Lipstick_and_other_cosmetic_equipment.jpg" alt="“Millennium Frost”: los labios escarchados con perfilado marrón que definen diciembre" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
                     <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">3 razones para probar el corte de cabello con flequillo francés que es tendencia en octubre 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MARÍA DIEZ</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">27 de octubre de 2026</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">“Millennium Frost”: los labios escarchados con perfilado marrón que definen diciembre</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
             </div>
         </div>
@@ -1050,42 +818,42 @@
         <div class="w-full max-w-7xl mx-auto px-6 mb-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 font-geometric">
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/horoscopo-de-hoy-jueves-29-de-octubre-de-2026.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/antiblush-el-colorete-invisible-de-la-temporada.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ad7be0297fdf1d5140f5ed4/1:1/w_1600,c_limit/horoscopo-de-hoy-jueves-29-de-octubre-de-2026.jpg" alt="Horóscopo de hoy: 29 de octubre de 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Products_on_display_at_Diptyque.jpg/1920px-Products_on_display_at_Diptyque.jpg" alt="El colorete invisible: por qué el “antiblush” se impuso tan rápido" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Horóscopo de hoy: 29 de octubre de 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MEREATH ASTROLOGY</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">29 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">El colorete invisible: por qué el “antiblush” se impuso tan rápido</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/horoscopo-de-hoy-miercoles-28-de-octubre-de-2026.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/colores-de-pelo-invierno-2026-mocha-balayage-cherry-cola.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ad7b9be68d64a617b47e4f1/1:1/w_1600,c_limit/horoscopo-de-hoy-miercoles-28-de-octubre-de-2026.jpg" alt="Horóscopo de hoy: 28 de octubre de 2026" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/A_hairdresser_at_work_in_Ivory_Coast.jpg/1920px-A_hairdresser_at_work_in_Ivory_Coast.jpg" alt="Mocha balayage, cherry cola y cobrizo suave: los colores de pelo del invierno" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Horóscopo de hoy: 28 de octubre de 2026</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR MEREATH ASTROLOGY</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">28 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Mocha balayage, cherry cola y cobrizo suave: los colores de pelo del invierno</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/amangiri-resort-utah.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/rizos-xxl-y-textura-el-giro-del-cabello-invierno-2026.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://media.vogue.mx/photos/6ae0da0097271814c143e5b9/1:1/w_1600,c_limit/amangiri-hotel.jpg" alt="Amangiri, el resort en medio del desierto donde…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/A_young_woman_with_long_curly_hair_-_DPLA_-_0565a85a9c3b976259f37884202566fa_%28page_1%29.jpg" alt="Rizos XXL y cortes versátiles: el cabello abandona el liso perfecto" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Amangiri, el resort en medio del desierto donde el lujo consiste en recuperar la capacidad de asombro</h3>
-                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR BRENDA DÍAZ DE LA VEGA</p>
-                    <p class="text-[11px] font-medium text-black mt-0.5">27 de octubre de 2026</p>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Rizos XXL y cortes versátiles: el cabello abandona el liso perfecto</h3>
+                    <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
+                    <p class="text-[11px] font-medium text-black mt-0.5">23 de noviembre de 2026</p>
                 </div>
                 <!-- Artículo -->
-                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/que-hacer-en-milan.html'">
+                <div class="cursor-pointer group flex flex-col" onclick="window.location.href='articulos/unas-espresso-gloss-y-cromo-marron-noviembre-2026.html'">
                     <div class="overflow-hidden aspect-square w-full mb-3">
-                        <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/f_auto,q_auto,c_limit,w_1200/v1790297561/devon-mx/articles/VOGUEMX-GUIA-MILAN_x3qusp.jpg" alt="Milán, la guía Devon para dejarse llevar por es…" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Norden_Cosmetics.jpg/1920px-Norden_Cosmetics.jpg" alt="Espresso gloss y cromo marrón: la manicura de noviembre, según una experta" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300"/>
                     </div>
-                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">ESTILO DE VIDA</p>
-                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Milán, la guía Devon para dejarse llevar por esta elegante ciudad italiana</h3>
+                    <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-black mb-2">BELLEZA</p>
+                    <h3 class="text-[13px] md:text-sm font-medium leading-snug text-black mb-3">Espresso gloss y cromo marrón: la manicura de noviembre, según una experta</h3>
                     <p class="text-[9px] font-bold tracking-[0.15em] uppercase text-black">POR DEVON</p>
                     <p class="text-[11px] font-medium text-black mt-0.5"></p>
                 </div>
@@ -1097,7 +865,7 @@
 
     </main>
 
-    <!-- FOOTER: Diseño estilo Vogue -->
+    <!-- FOOTER: Diseño editorial Devon -->
     <footer class="bg-black text-white pt-16 pb-8 border-t border-gray-900 mt-20">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
             
@@ -1300,7 +1068,7 @@
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
                 
-                // Animación colapso del Header (estilo Vogue)
+                // Animación colapso del Header (estilo editorial)
                 if (secondaryNav) {
                     if (scrollY > 20) {
                         secondaryNav.style.height = '0px';
