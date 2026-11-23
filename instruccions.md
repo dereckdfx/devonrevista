@@ -129,7 +129,7 @@ Patrón para todos los títulos (HOY, RUMBO AL MUNDIAL 2026…):
 - Grid 12 columnas desktop / 1 columna móvil
 - **Col izq (4)**: Logo DEVON blanco con `animated-slash` + ícono Instagram
 - **Col centro (4)**: "MÁS EN DEVON" — Moda, Belleza, Estilo de Vida, Compras, (Re)Devon, Red Carpet, Pasarelas, Videos, Espacio Devon, PhotoDevon
-- **Col der (4)**: "CONDÉ NAST MÉXICO" — AD, Glamour, Devon, GQ, Wired
+- **Col der (4)**: "Más de Devon" — AD, Glamour, Devon, GQ, Wired
 - **Franja inferior**: links legales (Convenio, Privacidad, Quiénes Somos, Media Kit, Newsletter, Suscripción, Site Map) + selector de país (México / EE.UU) con dropdown hacia arriba
 
 ---
@@ -149,7 +149,7 @@ Patrón para todos los títulos (HOY, RUMBO AL MUNDIAL 2026…):
 
 ## Reglas generales para agregar contenido
 
-- Todas las imágenes son de `media.vogue.mx` con parámetros de resize en la URL
+- Todas las imágenes vienen de Wikimedia Commons (licencia libre) con el crédito en el `<figcaption>`
 - Contenedor máximo: `max-w-7xl mx-auto px-6`
 - Grid principal: `grid-cols-1 md:grid-cols-3 gap-0 md:gap-8`
 - Subgrid artículos pequeños: `grid-cols-2 gap-6 md:gap-8`
