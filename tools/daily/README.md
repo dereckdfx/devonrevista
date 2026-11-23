@@ -5,7 +5,7 @@ Nada de aquí se despliega: Vercel solo sirve el HTML de la raíz y `api/`.
 
 ## Reglas que la tubería garantiza
 
-- **Ningún contenido de Vogue.** Ni artículos, ni imágenes, ni nombres de
+- **Ningún contenido de la revista anterior.** Ni artículos, ni imágenes, ni nombres de
   archivo, ni comentarios, ni parámetros de seguimiento.
 - **El diseño no se toca.** `article.tpl` es una página real del sitio con el
   contenido sustituido por tokens, así que el marcado, las clases de Tailwind y
