@@ -15,13 +15,27 @@ Nada de aquí se despliega: Vercel solo sirve el HTML de la raíz y `api/`.
   CC0, dominio público, CC BY o CC BY-SA, y el crédito aparece en el
   `<figcaption>` de cada figura.
 
+## Revisar las fotos antes de publicar
+
+La búsqueda de Commons casa con la página de descripción del archivo, no con lo
+que se ve en la foto, así que devuelve cosas como una noria llamada London Eye
+para `eye make-up model`. `fetch_images.py` filtra por tres vías —dos palabras
+de la consulta en el título del archivo, un patrón de casos recurrentes y
+`blocklist.json`—, pero ninguna sustituye a mirar el resultado.
+
+Después de cada `fetch_images.py`, abrir las fotos nuevas y, si alguna no sirve
+para una revista de moda, **añadir su URL a `blocklist.json`** en lugar de
+cambiar el texto de la nota. La lista es permanente: sin ella Commons devuelve
+la misma foto en la ronda siguiente.
+
 ## Orden de ejecución
 
 ```bash
 cd tools/daily
 
-# 1. (Opcional) Refrescar el banco de imágenes. Solo si pools.json cambió.
-python3 fetch_images.py pools.json imgcache.json 8
+# 1. (Opcional) Refrescar el banco de imágenes. Solo si pools.json o
+#    blocklist.json cambiaron; también purga del banco lo que haya en la lista.
+python3 fetch_images.py pools.json imgcache.json 9
 
 # 2. (Opcional) Regenerar la plantilla desde una página real del sitio.
 python3 extract_template.py
