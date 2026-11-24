@@ -24,8 +24,8 @@ NEWSLETTER = """            <div class="my-14 pl-6 border-l-[4px] border-black m
 
 # Which Commons pool feeds which kind of story.
 POOL_RULES = [
-    (r"catwalk|runway model|finale", "runway model"),
-    (r"runway|fashion show", "fashion show"),
+    (r"catwalk|runway model|finale", "fashion show models catwalk"),
+    (r"runway|fashion show", "runway model"),
     (r"paris fashion week|street style|fashion week", "fashion week"),
     (r"corset|satin|sheer|transparent|balloon skirt|voluminous", "haute couture dress"),
     (r"midi skirt|clothing store|retail|denim|jeans|vintage clothing", "denim jeans"),
@@ -90,8 +90,10 @@ def esc(text):
 
 
 CAT_EXTRA = {
-    "MODA": ["fashion show", "fashion week", "clothing store interior"],
-    "PASARELAS": ["runway model", "haute couture dress", "fashion show"],
+    "MODA": ["fashion week", "fashion show models catwalk", "clothing store interior",
+             "fashion show"],
+    "PASARELAS": ["fashion show models catwalk", "runway model", "haute couture dress",
+                  "fashion show"],
     "BELLEZA": ["woman long hair portrait", "hairdresser salon", "cosmetics products"],
     "ESTILO DE VIDA": ["mexico city street", "restaurant interior", "art museum interior",
                        "hotel swimming pool resort", "chapultepec park", "zocalo mexico city"],

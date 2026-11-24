@@ -6,47 +6,19 @@
    "portrait": true
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Evol_fashion_show.jpg/1920px-Evol_fashion_show.jpg",
-   "credit": "DrChigbo / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Olivia_Newton-John_Fashion_Show_Austin_Texas_1988.jpg",
+   "credit": "Larry D. Moore / Wikimedia Commons (CC BY 4.0)",
+   "portrait": false,
+   "match": 2
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Fashion_Show_at_Den_Brna_2022_195002.jpg/1920px-Fashion_Show_at_Den_Brna_2022_195002.jpg",
-   "credit": "Matej Grochal / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Fashion_Show_at_Den_Brna_2022_194930.jpg/1920px-Fashion_Show_at_Den_Brna_2022_194930.jpg",
-   "credit": "Matej Grochal / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Fashion_Show_at_Den_Brna_2022_195227.jpg/1920px-Fashion_Show_at_Den_Brna_2022_195227.jpg",
-   "credit": "Matej Grochal / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Fashion_Show_at_Den_Brna_2022_194918.jpg/1920px-Fashion_Show_at_Den_Brna_2022_194918.jpg",
-   "credit": "Matej Grochal / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Fashion_Show_at_Den_Brna_2022_194711.jpg/1920px-Fashion_Show_at_Den_Brna_2022_194711.jpg",
-   "credit": "Matej Grochal / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Fashion_Show_at_Den_Brna_2022_194724.jpg/1920px-Fashion_Show_at_Den_Brna_2022_194724.jpg",
-   "credit": "Matej Grochal / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Wikimania-2023-fashion-show-nanour-oby.jpg/1920px-Wikimania-2023-fashion-show-nanour-oby.jpg",
+   "credit": "Fuzheado / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
   }
  ],
  "runway model": [
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Leggy_model_on_the_runway_at_the_fashion_show_%28IMG_0124a%29_%283508948725%29.jpg",
-   "credit": "Frank Kovalchek from USA / Wikimedia Commons (CC BY 2.0)",
-   "portrait": true
-  },
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Yogita_Grover%2C_Well_Groomed_Fashion_Show_%285420850558%29.jpg/1920px-Yogita_Grover%2C_Well_Groomed_Fashion_Show_%285420850558%29.jpg",
    "credit": "Brendan / Wikimedia Commons (CC BY 2.0)",
@@ -63,14 +35,40 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Nensi_use_5.jpg",
-   "credit": "Iz23 / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Amandine_nyfw_runway_model.jpg",
+   "credit": "NicolasT534 / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Model_Posing_On_Typical_Studio_Set.jpg/1920px-Model_Posing_On_Typical_Studio_Set.jpg",
-   "credit": "Toglenn / Wikimedia Commons (CC BY-SA 3.0)",
-   "portrait": true
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Fashion_Model_Northampton_Clothes_Runway_Designer_2007_Image12.jpg",
+   "credit": "Jennifer Barnard / Wikimedia Commons (CC BY 2.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Afri_Art_Fashion_Show_Model.jpg/1920px-Afri_Art_Fashion_Show_Model.jpg",
+   "credit": "Thehopemonger / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 1
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Afri_Art_Fashion_Show_Model_2024.jpg/1920px-Afri_Art_Fashion_Show_Model_2024.jpg",
+   "credit": "Thehopemonger / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 1
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Afri_Art_Fashion_Show_Model_at_the_2023_event.jpg/1920px-Afri_Art_Fashion_Show_Model_at_the_2023_event.jpg",
+   "credit": "Thehopemonger / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 1
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Runway_show_in_New_York_1.jpg/1920px-Runway_show_in_New_York_1.jpg",
+   "credit": "IrinamykytiukELSAfairy / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 1
   }
  ],
  "haute couture dress": [
@@ -113,19 +111,15 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Freedom_Dress_by_Moroccan_Dutch_Fashion_Designer_Karim_Adduchi.jpg/1920px-Freedom_Dress_by_Moroccan_Dutch_Fashion_Designer_Karim_Adduchi.jpg",
    "credit": "ChristinaHelena / Wikimedia Commons (CC0)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Basil_Soda_Yellow_Dress_-_Paris_Haute_Couture_Spring-Summer_2012.jpg",
+   "credit": "CHRISTOPHER MACSURAK from Chicago, USA / Wikimedia Commons (CC BY 2.0)",
+   "portrait": true,
+   "match": 3
   }
  ],
  "fashion week": [
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Feeric_Fashion_Week_-_fashion_shows_1.jpg/1920px-Feeric_Fashion_Week_-_fashion_shows_1.jpg",
-   "credit": "Orgamea / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Fashion_week_edeline_lee_%281%29.jpg",
-   "credit": "Sound Healing 101 / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
-  },
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Hairstylist_at_Paris_Fashion_Week_2019.jpg/1920px-Hairstylist_at_Paris_Fashion_Week_2019.jpg",
    "credit": "Rohit Verma / Wikimedia Commons (CC BY-SA 4.0)",
@@ -155,6 +149,24 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Mercedes-Benz_Fashion_Week_in_NYC.jpg",
    "credit": "Tiraspolsky / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Yin_Haoyu_or_Patrick_Finkler_at_Balmain_FW23%2C_Paris_Fashion_Week%2C_March_2023_%281%29.jpg/1920px-Yin_Haoyu_or_Patrick_Finkler_at_Balmain_FW23%2C_Paris_Fashion_Week%2C_March_2023_%281%29.jpg",
+   "credit": "Olivia Smith / Wikimedia Commons (CC BY 2.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Fashion_Week_Photographers.jpg/1920px-Fashion_Week_Photographers.jpg",
+   "credit": "garryknight / Wikimedia Commons (CC BY 2.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Fashion_Week_2025.jpg",
+   "credit": "Onursafak83 / Wikimedia Commons (CC0)",
+   "portrait": true,
+   "match": 2
   }
  ],
  "textile weaving loom": [
@@ -197,6 +209,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Telar_-_Conversatorio_Las_Manos_que_Piensan_%28Textiles%29.jpg/1920px-Telar_-_Conversatorio_Las_Manos_que_Piensan_%28Textiles%29.jpg",
    "credit": "Ministerio de Cultura de la Nación / Wikimedia Commons (CC BY-SA 2.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Power_Loom_MOSI-11_Textile_gallery_5597.JPG/1920px-Power_Loom_MOSI-11_Textile_gallery_5597.JPG",
+   "credit": "Clem Rutter, Rochester, Kent. / Wikimedia Commons (CC BY 3.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "mexican textile embroidery": [
@@ -239,6 +257,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Pa%C3%B1uelos_bordados_Colectivo_Fuentes_Rojas-1.jpg/1920px-Pa%C3%B1uelos_bordados_Colectivo_Fuentes_Rojas-1.jpg",
    "credit": "Mapeadora / Wikimedia Commons (CC BY 4.0)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Textile_With_Bead_Embroidery_%28Mexico%29%2C_19th_century_%28CH_18313233%29.jpg/1920px-Textile_With_Bead_Embroidery_%28Mexico%29%2C_19th_century_%28CH_18313233%29.jpg",
+   "credit": "Unknown artistUnknown artist / Wikimedia Commons (Public domain)",
+   "portrait": false,
+   "match": 3
   }
  ],
  "artisan market mexico": [
@@ -281,6 +305,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/AsunctonAtzompa34.JPG/1920px-AsunctonAtzompa34.JPG",
    "credit": "AlejandroLinaresGarcia / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Handicraft_Market_Square.jpg",
+   "credit": "Habib.93.es / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 1
   }
  ],
  "wool yarn knitting": [
@@ -323,6 +353,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Colorful_wool_knitting_yarn_at_display_for_sale_in_shop_in_Leirvik%2C_Stord%2C_Norway_%28ullgarn%2C_strikkegarn_i_%22Ullkroken%22_garnbutikk%29_2018-03-09.jpg/1920px-Colorful_wool_knitting_yarn_at_display_for_sale_in_shop_in_Leirvik%2C_Stord%2C_Norway_%28ullgarn%2C_strikkegarn_i_%22Ullkroken%22_garnbutikk%29_2018-03-09.jpg",
    "credit": "Wolfmann / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Knitting_needles_and_yarn.jpg/1920px-Knitting_needles_and_yarn.jpg",
+   "credit": "Shisma / Wikimedia Commons (CC BY 4.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "denim jeans": [
@@ -342,11 +378,6 @@
    "portrait": true
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Julian_prince_dash_jeans_cut_in_factory.jpg/1920px-Julian_prince_dash_jeans_cut_in_factory.jpg",
-   "credit": "Denimgod / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Woman_in_denim_jeans_in_Paris_2007.jpg/1920px-Woman_in_denim_jeans_in_Paris_2007.jpg",
    "credit": "Mark Skipper / Wikimedia Commons (CC BY 2.0)",
    "portrait": true
@@ -360,6 +391,24 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Denim_Jeans_Pant.jpg/1920px-Denim_Jeans_Pant.jpg",
    "credit": "Fahad Faisal / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Crinkle_on_Denim_Jeans_Pant.JPG/1920px-Crinkle_on_Denim_Jeans_Pant.JPG",
+   "credit": "Fahad Faisal / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Denim_Jeans_Pant_QA_checking.JPG/1920px-Denim_Jeans_Pant_QA_checking.JPG",
+   "credit": "Fahad Faisal / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Denim_Jeans_Texture_%2837650502%29.jpeg",
+   "credit": "Theerawat Sangprakarn / Wikimedia Commons (CC BY 3.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "clothing store interior": [
@@ -402,6 +451,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Clothing_store_interior_LCCN2016824584.tif/lossy-page1-1920px-Clothing_store_interior_LCCN2016824584.tif.jpg",
    "credit": "National Photo Company Collection / Wikimedia Commons (Public domain)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Interior_of_clothing_store_mall.jpg/1920px-Interior_of_clothing_store_mall.jpg",
+   "credit": "BornToZucc / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 3
   }
  ],
  "sewing machine tailor": [
@@ -444,6 +499,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Bhura_Singh%27s_sewing_machine_02.jpg/1920px-Bhura_Singh%27s_sewing_machine_02.jpg",
    "credit": "Gurdeepdali / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/India_-_Varanasi_tailor_sewing_machine_-_1093.jpg/1920px-India_-_Varanasi_tailor_sewing_machine_-_1093.jpg",
+   "credit": "Jorge Royan / Wikimedia Commons (CC BY-SA 3.0)",
+   "portrait": false,
+   "match": 3
   }
  ],
  "cosmetics products": [
@@ -458,11 +519,6 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Norden_Cosmetics.jpg/1920px-Norden_Cosmetics.jpg",
-   "credit": "DanSibil / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Korean_cosmetic_products.jpg/1920px-Korean_cosmetic_products.jpg",
    "credit": "Jmh65890 / Wikimedia Commons (CC0)",
    "portrait": true
@@ -471,6 +527,36 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Young_woman_applying_skincare_products_in_a_bathroom.jpg/1920px-Young_woman_applying_skincare_products_in_a_bathroom.jpg",
    "credit": "Shixart1985 / Wikimedia Commons (CC BY 2.0)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Cosmetics_and_hygiene_products_from_company_%22Rituals%22_in_a_German_warehouse_%282023%29.jpg/1920px-Cosmetics_and_hygiene_products_from_company_%22Rituals%22_in_a_German_warehouse_%282023%29.jpg",
+   "credit": "Pittigrilli / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Cosmetics_and_hygiene_products_from_company_%22Rituals%22_in_a_German_warehouse_%282023%29_%28cropped%29.jpg/1920px-Cosmetics_and_hygiene_products_from_company_%22Rituals%22_in_a_German_warehouse_%282023%29_%28cropped%29.jpg",
+   "credit": "Pittigrilli / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cosmetic_product_vending_machine_1.jpg/1920px-Cosmetic_product_vending_machine_1.jpg",
+   "credit": "OhanaUnitedTalk page / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cosmetic_product_vending_machine_2.jpg/1920px-Cosmetic_product_vending_machine_2.jpg",
+   "credit": "OhanaUnitedTalk page / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Cosmetic_jar_with_light_pink_product_displayed_on_a_textured_background.jpg/1920px-Cosmetic_jar_with_light_pink_product_displayed_on_a_textured_background.jpg",
+   "credit": "Shixart1985 / Wikimedia Commons (CC BY 2.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "lipstick makeup": [
@@ -508,14 +594,21 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Vintage_Lipstick_at_the_Makeup_Museum_in_New_York_City.jpg/1920px-Vintage_Lipstick_at_the_Makeup_Museum_in_New_York_City.jpg",
    "credit": "Doreenb1 / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Makeup-beauty-lipstick-make-up_%2824030573540%29.jpg/1920px-Makeup-beauty-lipstick-make-up_%2824030573540%29.jpg",
+   "credit": "www.Pixel.la Free Stock Photos / Wikimedia Commons (CC0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Folio_Makeup_by_Razel_Pong_01.jpg",
+   "credit": "Jeffrey Avellanosa / Wikimedia Commons (CC BY-SA 2.0)",
+   "portrait": true,
+   "match": 1
   }
  ],
  "eye make-up model": [
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Jackie_Martinez_in_bed_01.jpg/1920px-Jackie_Martinez_in_bed_01.jpg",
-   "credit": "Mark J Sebastian / Wikimedia Commons (CC BY-SA 2.0)",
-   "portrait": false
-  },
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Model_with_eye_make-up_and_lipstick_03.jpg/1920px-Model_with_eye_make-up_and_lipstick_03.jpg",
    "credit": "gcardinal from Norway / Wikimedia Commons (CC BY 2.0)",
@@ -537,19 +630,10 @@
    "portrait": true
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Danica_Jordan_at_Exxxotica_New_Jersey_2010_%281%29.jpg/1920px-Danica_Jordan_at_Exxxotica_New_Jersey_2010_%281%29.jpg",
-   "credit": "J C from USA / Wikimedia Commons (CC BY-SA 2.0)",
-   "portrait": true
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/LG_washing_machines.jpg/1920px-LG_washing_machines.jpg",
-   "credit": "LG전자 / Wikimedia Commons (CC BY 2.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Golden_cat_eye_%28Unsplash%29.jpg/1920px-Golden_cat_eye_%28Unsplash%29.jpg",
-   "credit": "Mohamed Nohassi coopery / Wikimedia Commons (CC0)",
-   "portrait": false
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Maxim_Model_%288141087772%29.jpg",
+   "credit": "Eva Rinaldi / Wikimedia Commons (CC BY-SA 2.0)",
+   "portrait": true,
+   "match": 1
   }
  ],
  "hairdresser salon": [
@@ -577,6 +661,30 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hairdressers_from_Iran_11.jpg/1920px-Hairdressers_from_Iran_11.jpg",
    "credit": "Mostafameraji / Wikimedia Commons (CC0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Elmina_Hairdresser_Salon_B002.jpg/1920px-Elmina_Hairdresser_Salon_B002.jpg",
+   "credit": "Adam Jones on Flickr / Wikimedia Commons (CC BY-SA 2.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/W%C5%82oc%C5%82awek-Wzorcownia%2C_building_E_%28hairdresser_salon%29.JPG/1920px-W%C5%82oc%C5%82awek-Wzorcownia%2C_building_E_%28hairdresser_salon%29.JPG",
+   "credit": "Mariochom / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Hairdresser%27s_salon_in_Brastad_1.jpg/1920px-Hairdresser%27s_salon_in_Brastad_1.jpg",
+   "credit": "W.carter / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Hairdresser%27s_salon_in_Brastad_3.jpg/1920px-Hairdresser%27s_salon_in_Brastad_3.jpg",
+   "credit": "W.carter / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
   }
  ],
  "woman long hair portrait": [
@@ -604,9 +712,32 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Central_Asian_Women%27s_Adornment_and_Clothing._Two_Women_Wearing_Long_Robes._One_Woman%27s_Hair_Is_Arranged_in_Short%2C_Jewel-Bedecked_Braids%3B_the_Other_Has_Long%2C_Thick_Braids_Down_Her_Back_WDL11191.png",
    "credit": "Kun, Aleksandr L., 1840-1888 / Wikimedia Commons (Public domain)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Half-Length_Portrait_Study_of_a_Young_Woman_with_Long_Hair_MET_DP800732.jpg/1920px-Half-Length_Portrait_Study_of_a_Young_Woman_with_Long_Hair_MET_DP800732.jpg",
+   "credit": "Creator:Joseph van Aken / Wikimedia Commons (CC0)",
+   "portrait": true,
+   "match": 4
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Young_woman_with_long_black_hair_%2814_June_2018%29.jpg/1920px-Young_woman_with_long_black_hair_%2814_June_2018%29.jpg",
+   "credit": "Alex Neman / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 3
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pretty_woman_with_long_hair.jpg/1920px-Pretty_woman_with_long_hair.jpg",
+   "credit": "Vladimir Pustovit / Wikimedia Commons (CC BY 2.0)",
+   "portrait": true,
+   "match": 3
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/A_young_woman_with_long_curly_hair_-_DPLA_-_0565a85a9c3b976259f37884202566fa_%28page_2%29.jpg",
+   "credit": "Wikimedia Commons / Wikimedia Commons (Public domain)",
+   "portrait": true,
+   "match": 3
   }
  ],
- "silver jewelry taxco": [],
  "day of the dead": [
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Calaveras_skulls.jpg/1920px-Calaveras_skulls.jpg",
@@ -647,6 +778,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Ofrenda_a_los_difuntos_en_el_d%C3%ADa_de_muertos_en_Puebla.jpg/1920px-Ofrenda_a_los_difuntos_en_el_d%C3%ADa_de_muertos_en_Puebla.jpg",
    "credit": "AlexgarcesM / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Plastic_skull_%28ca._7_cm_high%29_with_engraved_ornaments%2C_resembling_the_%22Day_of_the_Dead%22_%28Dia_de_los_muertes%29_in_Mexico_No.2.jpg/1920px-Plastic_skull_%28ca._7_cm_high%29_with_engraved_ornaments%2C_resembling_the_%22Day_of_the_Dead%22_%28Dia_de_los_muertes%29_in_Mexico_No.2.jpg",
+   "credit": "Pittigrilli / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 1
   }
  ],
  "cempasuchil marigold": [
@@ -689,6 +826,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Tagetes_patula%2C_Burdwan%2C_West_Bengal%2C_India_13_01_2013.jpg/1920px-Tagetes_patula%2C_Burdwan%2C_West_Bengal%2C_India_13_01_2013.jpg",
    "credit": "JDP90 (Joydeep) / Wikimedia Commons (CC BY-SA 3.0)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Tagetes_erecta%2C_the_Aztec_marigold%2C_Mexican_marigold%2C_big_marigold%2C_cempaxochitl_or_cempas%C3%BAchil.jpg/1920px-Tagetes_erecta%2C_the_Aztec_marigold%2C_Mexican_marigold%2C_big_marigold%2C_cempaxochitl_or_cempas%C3%BAchil.jpg",
+   "credit": "পাপৰি বৰা / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
   }
  ],
  "zocalo mexico city": [
@@ -731,6 +874,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Obras_remodelaci%C3%B3n_Z%C3%B3calo_Ciudad_de_M%C3%A9xico_2017_-_2.jpg/1920px-Obras_remodelaci%C3%B3n_Z%C3%B3calo_Ciudad_de_M%C3%A9xico_2017_-_2.jpg",
    "credit": "Salvador alc / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Cleansing_at_zocalo_in_Mexico_City.jpg",
+   "credit": "Arpita Singh / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 3
   }
  ],
  "chapultepec park": [
@@ -773,6 +922,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Chapultepec_park_%283783477122%29.jpg",
    "credit": "Janice Waltzer from Owasso, USA / Wikimedia Commons (CC BY 2.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Park_Chapultepec_2022.jpg/1920px-Park_Chapultepec_2022.jpg",
+   "credit": "August Dominus / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "restaurant interior": [
@@ -782,23 +937,8 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Van_Gogh_-_Interior_of_a_restaurant.jpg/1920px-Van_Gogh_-_Interior_of_a_restaurant.jpg",
-   "credit": "Vincent van Gogh / Wikimedia Commons (Public domain)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Van_Gogh_-_Interieur_eines_Restaurants.jpeg/1920px-Van_Gogh_-_Interieur_eines_Restaurants.jpeg",
-   "credit": "Vincent van Gogh / Wikimedia Commons (Public domain)",
-   "portrait": false
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/The_Peninsula_Paris%27_Chinese_restaurant_LiLi%2C_12_August_2014.jpg/1920px-The_Peninsula_Paris%27_Chinese_restaurant_LiLi%2C_12_August_2014.jpg",
    "credit": "PPR 19 / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Interior_McDonald%27s_Restaurant_downtown_Saint_Johnsbury_September_2017.jpg",
-   "credit": "Artaxerxes / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
   },
   {
@@ -807,25 +947,45 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Interior_of_a_hut_with_straw_roof_in_a_coffee_restaurant_near_Li_Phi_Falls_-_Don_Khon_-_Laos.jpg/1920px-Interior_of_a_hut_with_straw_roof_in_a_coffee_restaurant_near_Li_Phi_Falls_-_Don_Khon_-_Laos.jpg",
-   "credit": "Basile Morin / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Interior_of_Bucci_Restaurant%2C_Brisbane.jpg/1920px-Interior_of_Bucci_Restaurant%2C_Brisbane.jpg",
    "credit": "Kgbo / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Interior_of_a_Chinese_restaurant_in_Kolkata.jpg/1920px-Interior_of_a_Chinese_restaurant_in_Kolkata.jpg",
+   "credit": "Kritzolina / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/St._Lawrence_restaurant_interior_dining_area_view.jpg/1920px-St._Lawrence_restaurant_interior_dining_area_view.jpg",
+   "credit": "Premeditated Chaos / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Empty_restaurant_interior_HC08164.jpg",
+   "credit": "Community Archives / Wikimedia Commons (CC0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Childs%27_Restaurant_building_interior_%2884200%29.jpg/1920px-Childs%27_Restaurant_building_interior_%2884200%29.jpg",
+   "credit": "Rhododendrites / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Subway_restaurant_interior%2C_Miami_FL_Sept_2022.jpg/1920px-Subway_restaurant_interior%2C_Miami_FL_Sept_2022.jpg",
+   "credit": "Phillip Pessar / Wikimedia Commons (CC BY 2.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "gourmet dish plate": [
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Thalassino_Youvetsi_close-up_-_Hellenic_Republic_AUD24.jpg/1920px-Thalassino_Youvetsi_close-up_-_Hellenic_Republic_AUD24.jpg",
    "credit": "Alpha / Wikimedia Commons (CC BY-SA 2.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Burger_and_fries_on_a_wooden_plate.jpg/1920px-Burger_and_fries_on_a_wooden_plate.jpg",
-   "credit": "Pattaya Patrol / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
   },
   {
@@ -840,11 +1000,6 @@
   }
  ],
  "art museum interior": [
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Morning%2C_Interior_-_Luce.jpeg/1920px-Morning%2C_Interior_-_Luce.jpeg",
-   "credit": "Maximilien Luce / Wikimedia Commons (Public domain)",
-   "portrait": false
-  },
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/NYC_-_Guggenheim_Museum.jpg/1920px-NYC_-_Guggenheim_Museum.jpg",
    "credit": "Jean-Christophe BENOIST / Wikimedia Commons (CC BY 3.0)",
@@ -879,6 +1034,18 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Solomon_R._Guggenheim_Museum.tif/lossy-page1-1920px-Solomon_R._Guggenheim_Museum.tif.jpg",
    "credit": "Framis / Wikimedia Commons (CC BY-SA 3.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Edgar_Degas_-_Interior_-_Google_Art_Project.jpg/1920px-Edgar_Degas_-_Interior_-_Google_Art_Project.jpg",
+   "credit": "Edgar Degas / Wikimedia Commons (Public domain)",
+   "portrait": false,
+   "match": 1
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mary_Ellen_Best_-_An_Interior_-_Google_Art_Project.jpg/1920px-Mary_Ellen_Best_-_An_Interior_-_Google_Art_Project.jpg",
+   "credit": "Mary Ellen Best / Wikimedia Commons (Public domain)",
+   "portrait": false,
+   "match": 1
   }
  ],
  "art nouveau poster mucha": [
@@ -921,6 +1088,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mucha_17.jpg",
    "credit": "Alphonse Mucha / Wikimedia Commons (Public domain)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Cycles_Waverley_affiche_Mucha_1898.jpg/1920px-Cycles_Waverley_affiche_Mucha_1898.jpg",
+   "credit": "Alphonse Mucha / Wikimedia Commons (Public domain)",
+   "portrait": false,
+   "match": 1
   }
  ],
  "hotel swimming pool resort": [
@@ -963,6 +1136,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/2018-01-12_Swimming_pool%2C_Alfagar%C2%AC_Resort_Hotel%2C_Albufeira_%283%29.JPG/1920px-2018-01-12_Swimming_pool%2C_Alfagar%C2%AC_Resort_Hotel%2C_Albufeira_%283%29.JPG",
    "credit": "Kolforn / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Tachibana_Bay_and_swimming_pool_of_Unzen_Resort_Hotel.jpg/1920px-Tachibana_Bay_and_swimming_pool_of_Unzen_Resort_Hotel.jpg",
+   "credit": "そらみみ / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 4
   }
  ],
  "red carpet premiere": [
@@ -1005,6 +1184,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Logan_Japan_Premiere_Red_Carpet-_James_Mangold_%26_Hugh_Jackman_%2837614636295%29.jpg/1920px-Logan_Japan_Premiere_Red_Carpet-_James_Mangold_%26_Hugh_Jackman_%2837614636295%29.jpg",
    "credit": "Dick Thomas Johnson from Tokyo, Japan / Wikimedia Commons (CC BY 2.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Star_Trek_Beyond_Japan_Premiere_Red_Carpet-_Simon_Pegg_%2831348253813%29.jpg/1920px-Star_Trek_Beyond_Japan_Premiere_Red_Carpet-_Simon_Pegg_%2831348253813%29.jpg",
+   "credit": "Dick Thomas Johnson from Tokyo, Japan / Wikimedia Commons (CC BY 2.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "latin grammy award": [
@@ -1022,11 +1207,6 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Christian_Sebastia_and_his_wife_at_the_2017_Latin_Grammy_Awards.jpg/1920px-Christian_Sebastia_and_his_wife_at_the_2017_Latin_Grammy_Awards.jpg",
    "credit": "IntegratedGen / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": true
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Phil_Greiss_Latin_Grammy.jpg/1920px-Phil_Greiss_Latin_Grammy.jpg",
-   "credit": "Henri Grace / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false
   },
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Las_Vegas_Latin_Grammy_2019.jpg/1920px-Las_Vegas_Latin_Grammy_2019.jpg",
@@ -1047,6 +1227,18 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/2023-11-16_Gala_de_los_Latin_Grammy%2C_23_%28cropped%29.jpg",
    "credit": "Junta de Andalucía / Wikimedia Commons (CC BY-SA 2.0)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/27th_Latin_GRAMMY_Awards_-_Red_Carpet_0091_-_Juan_Pablo_Vega_and_Estefan%C3%ADa_Pi%C3%B1eres.jpg/1920px-27th_Latin_GRAMMY_Awards_-_Red_Carpet_0091_-_Juan_Pablo_Vega_and_Estefan%C3%ADa_Pi%C3%B1eres.jpg",
+   "credit": "Jorge Jaramillo / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 3
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/27th_Latin_GRAMMY_Awards_-_Red_Carpet_0092_-_Juan_Pablo_Vega_and_Estefan%C3%ADa_Pi%C3%B1eres.jpg/1920px-27th_Latin_GRAMMY_Awards_-_Red_Carpet_0092_-_Juan_Pablo_Vega_and_Estefan%C3%ADa_Pi%C3%B1eres.jpg",
+   "credit": "Jorge Jaramillo / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 3
   }
  ],
  "award ceremony stage": [
@@ -1089,6 +1281,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/WikiBotevgrad_-_1st_award_ceremony_03.jpg",
    "credit": "Библиотека Ботевград / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Ravindra_Bharathi_Main_Stage_at_Telangana_State_Formation_Day_Awards_Ceremony_%282018%29.jpg/1920px-Ravindra_Bharathi_Main_Stage_at_Telangana_State_Formation_Day_Awards_Ceremony_%282018%29.jpg",
+   "credit": "Department of Language and Culture, Government of Telangana / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 3
   }
  ],
  "evening gown dress": [
@@ -1131,6 +1329,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Deep_petrol_blue_evening_gown_by_Sybil_Connolly.jpg/1920px-Deep_petrol_blue_evening_gown_by_Sybil_Connolly.jpg",
    "credit": "Hunt Museum and Eamonn O'Mahony / Wikimedia Commons (CC0)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Dress%2C_Woman%27s_%28Evening_Gown%3B_Flapper_Dress%29_%2848709928157%29.jpg/1920px-Dress%2C_Woman%27s_%28Evening_Gown%3B_Flapper_Dress%29_%2848709928157%29.jpg",
+   "credit": "Auckland Museum Collections from Auckland, Aotearoa New / Wikimedia Commons (CC BY 2.0)",
+   "portrait": true,
+   "match": 3
   }
  ],
  "television studio": [
@@ -1173,6 +1377,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/UEFA_Euro_2020_-_Television_studio_01.jpg/1920px-UEFA_Euro_2020_-_Television_studio_01.jpg",
    "credit": "Leif Jørgensen / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/UEFA_Euro_2020_-_Television_studio_02.jpg/1920px-UEFA_Euro_2020_-_Television_studio_02.jpg",
+   "credit": "Leif Jørgensen / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "american football game": [
@@ -1215,6 +1425,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Tommy_Devito_during_the_Syracuse-Maryland_football_game.jpg/1920px-Tommy_Devito_during_the_Syracuse-Maryland_football_game.jpg",
    "credit": "Twooeight / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": true
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/GT_Football_Spring_Game_2019_%28231%29.jpg/1920px-GT_Football_Spring_Game_2019_%28231%29.jpg",
+   "credit": "Thomson200 / Wikimedia Commons (CC0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "bogota colombia": [
@@ -1257,6 +1473,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Imagenes_de_alusi%C3%B3n%2C_Carteles%2C_Colombia_Pride_2026%2C_Bogot%C3%A1%2C_Colombia_%2876505%29.jpg/1920px-Imagenes_de_alusi%C3%B3n%2C_Carteles%2C_Colombia_Pride_2026%2C_Bogot%C3%A1%2C_Colombia_%2876505%29.jpg",
    "credit": "Sierraluisfer / Wikimedia Commons (CC BY-SA 3.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Imagenes_de_alusi%C3%B3n%2C_Carteles%2C_Colombia_Pride_2026%2C_Bogot%C3%A1%2C_Colombia_%2857775%29.jpg/1920px-Imagenes_de_alusi%C3%B3n%2C_Carteles%2C_Colombia_Pride_2026%2C_Bogot%C3%A1%2C_Colombia_%2857775%29.jpg",
+   "credit": "Sierraluisfer / Wikimedia Commons (CC BY-SA 3.0)",
+   "portrait": true,
+   "match": 2
   }
  ],
  "city skyline night": [
@@ -1299,6 +1521,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Qu%C3%A9bec_city_at_night%2C_view_from_L%C3%A9vis_city.jpg/1920px-Qu%C3%A9bec_city_at_night%2C_view_from_L%C3%A9vis_city.jpg",
    "credit": "Wilfredor / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/New_York_City_night_skyline_by_500px_1.jpg/1920px-New_York_City_night_skyline_by_500px_1.jpg",
+   "credit": "Sarah Meyer / Wikimedia Commons (CC BY 3.0)",
+   "portrait": false,
+   "match": 3
   }
  ],
  "theatre auditorium": [
@@ -1341,6 +1569,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Katowice_Silesian_Theatre_auditorium_2022.jpg/1920px-Katowice_Silesian_Theatre_auditorium_2022.jpg",
    "credit": "Adrian Tync / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Theatre_Royal_auditorium_-_geograph.org.uk_-_4336155.jpg",
+   "credit": "Gerald England / Wikimedia Commons (CC BY-SA 2.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "corridor school interior": [
@@ -1383,6 +1617,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_sign_n_visitors.jpg/1920px-HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_sign_n_visitors.jpg",
    "credit": "Szeluemens / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_n_visitors_03.jpg/1920px-HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_n_visitors_03.jpg",
+   "credit": "Szeluemens / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 3
   }
  ],
  "mexico city street": [
@@ -1425,6 +1665,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Mexico_City_street_%2820000615433%29.jpg/1920px-Mexico_City_street_%2820000615433%29.jpg",
    "credit": "sebaso from Berlin, Germany / Wikimedia Commons (CC BY-SA 2.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Mexico_City_street_%2820000617603%29.jpg/1920px-Mexico_City_street_%2820000617603%29.jpg",
+   "credit": "sebaso from Berlin, Germany / Wikimedia Commons (CC BY-SA 2.0)",
+   "portrait": false,
+   "match": 3
   }
  ],
  "pottery ceramics mexico": [
@@ -1467,6 +1713,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Industria_Ceramica_en_Dolores_Hidalgo.jpg",
    "credit": "Mi San Gabriel / Wikimedia Commons (CC BY-SA 3.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Seated_figure%2C_Veracruz%2C_Mexico%2C_800-1200_AD%2C_ceramic_-_Portland_Art_Museum_-_Portland%2C_Oregon_-_DSC09169.jpg/1920px-Seated_figure%2C_Veracruz%2C_Mexico%2C_800-1200_AD%2C_ceramic_-_Portland_Art_Museum_-_Portland%2C_Oregon_-_DSC09169.jpg",
+   "credit": "Daderot / Wikimedia Commons (Public domain)",
+   "portrait": true,
+   "match": 2
   }
  ],
  "linen cloth texture": [
@@ -1488,16 +1740,6 @@
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/ClothPack19.jpg/1920px-ClothPack19.jpg",
    "credit": "SpaceToast / Wikimedia Commons (Public domain)",
-   "portrait": true
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Delta_Blue_Label_Birdseye_Diapers_%285755509775%29.jpg",
-   "credit": "Boston Public Library / Wikimedia Commons (CC BY 2.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/The_American_Museum_journal_%28c1900-%281918%29%29_%2817972771120%29.jpg",
-   "credit": "Internet Archive Book Images / Wikimedia Commons (No restrictions)",
    "portrait": true
   }
  ],
@@ -1573,6 +1815,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/The_Sphere_at_The_Venetian_Resort_%2853098837453%29.jpg/1920px-The_Sphere_at_The_Venetian_Resort_%2853098837453%29.jpg",
    "credit": "Tomás Del Coro from Fabulous Las Vegas / Wikimedia Commons (CC BY-SA 2.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/The_Las_Vegas_Sphere%2C_Nevada_%2853349695459%29.jpg/1920px-The_Las_Vegas_Sphere%2C_Nevada_%2853349695459%29.jpg",
+   "credit": "Harold Litwiler from Orcutt/Istanbul, USA / Wikimedia Commons (CC BY-SA 2.0)",
+   "portrait": false,
+   "match": 1
   }
  ],
  "catrina costume parade": [
@@ -1615,6 +1863,68 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/2014_Fremont_Solstice_parade_-_Alice-Calavera_09_%2814502257602%29.jpg/1920px-2014_Fremont_Solstice_parade_-_Alice-Calavera_09_%2814502257602%29.jpg",
    "credit": "Joe Mabel / Wikimedia Commons (CC BY-SA 3.0)",
    "portrait": false
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/A_Catrina_custome_from_Day_of_the_Dead_parade_in_Mexico_city.jpg/1920px-A_Catrina_custome_from_Day_of_the_Dead_parade_in_Mexico_city.jpg",
+   "credit": "Rose04zr / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
+  }
+ ],
+ "fashion show models catwalk": [
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Twirling_model_in_miniskirt_and_tights_at_Mary_Quant_fashion_show%2C_Utrecht%2C_24_March_1969_crop.jpg",
+   "credit": "Jack de Nijs for Anefo / Wikimedia Commons (CC BY-SA 3.0 nl)",
+   "portrait": true,
+   "match": 3
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Four_Models_on_catwalk.jpg/1920px-Four_Models_on_catwalk.jpg",
+   "credit": "User:Thivierr / Wikimedia Commons (CC BY-SA 3.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Olympia_Fashion_Show_2010_%2848%29.jpg/1920px-Olympia_Fashion_Show_2010_%2848%29.jpg",
+   "credit": "I would appreciate being notified if you use my work / Wikimedia Commons (CC BY-SA 3.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Catwalk_fashion_week_westergas_2010.jpg/1920px-Catwalk_fashion_week_westergas_2010.jpg",
+   "credit": "Michiel / Wikimedia Commons (CC BY 2.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Catwalk_Amsterdam_Fashion_Week_2007.jpg/1920px-Catwalk_Amsterdam_Fashion_Week_2007.jpg",
+   "credit": "Guido van Nispen / Wikimedia Commons (CC BY-SA 2.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Lopen_catwalk_elite_model_wedstrijd_Spijkenisse.jpg",
+   "credit": "Peter van der Sluijs / Wikimedia Commons (CC BY-SA 3.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Adrie_Thom_Fashion_Show.jpg/1920px-Adrie_Thom_Fashion_Show.jpg",
+   "credit": "Adriethom123 / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/London_Fashion_Week_-_Roberta_Einer%27s_catwalk.jpg/1920px-London_Fashion_Week_-_Roberta_Einer%27s_catwalk.jpg",
+   "credit": "Himiller / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Olivia_Newton-John_Fashion_Show_Austin_Texas_1988.jpg",
+   "credit": "Larry D. Moore / Wikimedia Commons (CC BY 4.0)",
+   "portrait": false,
+   "match": 2
   }
  ]
 }
