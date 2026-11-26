@@ -21,7 +21,7 @@ OFF_REGISTER = re.compile(
     r"|model[._ ](airplane|aircraft|flying|landing)|(airport|former|landing)[._ ]runway"
     r"|letter[._ ]signed|imagined[._ ]by|^thumbnail"
     r"|aloe[._ ]vera|\bdiaper|\bsupply[._ ]food\b"
-    r"|mcdonald|burger[._ ]and[._ ]fries|washing[._ ]machine|cat[._ ]eye"
+    r"|mcdonald|burger[._ ]and[._ ]fries|washing[._ ]machine|vending[._ ]machine|cat[._ ]eye"
     r"|exxxotica|miss[._ ]sexy|den[._ ]brna)", re.I)
 
 

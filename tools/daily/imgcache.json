@@ -325,11 +325,6 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Skein_of_yarn_%28PSF%29.png/1920px-Skein_of_yarn_%28PSF%29.png",
-   "credit": "Pearson Scott Foresman / Wikimedia Commons (Public domain)",
-   "portrait": false
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Rainbow_yarn_for_knitting%2C_display_in_front_of_a_needlework_shop_in_Graz%2C_Austria%2C_GW23-100.jpg/1920px-Rainbow_yarn_for_knitting%2C_display_in_front_of_a_needlework_shop_in_Graz%2C_Austria%2C_GW23-100.jpg",
    "credit": "Lusi Lindwurm / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
@@ -358,6 +353,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Knitting_needles_and_yarn.jpg/1920px-Knitting_needles_and_yarn.jpg",
    "credit": "Shisma / Wikimedia Commons (CC BY 4.0)",
    "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Knitting_Yarn.jpg",
+   "credit": "Lisa-Marie / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
    "match": 2
   }
  ],
@@ -541,19 +542,19 @@
    "match": 2
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cosmetic_product_vending_machine_1.jpg/1920px-Cosmetic_product_vending_machine_1.jpg",
-   "credit": "OhanaUnitedTalk page / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true,
-   "match": 2
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cosmetic_product_vending_machine_2.jpg/1920px-Cosmetic_product_vending_machine_2.jpg",
-   "credit": "OhanaUnitedTalk page / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": true,
-   "match": 2
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Cosmetic_jar_with_light_pink_product_displayed_on_a_textured_background.jpg/1920px-Cosmetic_jar_with_light_pink_product_displayed_on_a_textured_background.jpg",
+   "credit": "Shixart1985 / Wikimedia Commons (CC BY 2.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Woman_reaches_for_a_cosmetic_product_in_a_display.jpg/1920px-Woman_reaches_for_a_cosmetic_product_in_a_display.jpg",
+   "credit": "Shixart1985 / Wikimedia Commons (CC BY 2.0)",
+   "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Clear_cosmetic_bag_organized_with_various_beauty_products_and_tools_on_a_soft_pink_background.jpg/1920px-Clear_cosmetic_bag_organized_with_various_beauty_products_and_tools_on_a_soft_pink_background.jpg",
    "credit": "Shixart1985 / Wikimedia Commons (CC BY 2.0)",
    "portrait": false,
    "match": 2
