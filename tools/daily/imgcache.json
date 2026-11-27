@@ -126,11 +126,6 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Riga_Fashion_Week.png",
-   "credit": "Riga fashion week / Wikimedia Commons (CC0)",
-   "portrait": true
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Seoul_Fashion_Week_2027_SS.jpg/1920px-Seoul_Fashion_Week_2027_SS.jpg",
    "credit": "Republic of Korea / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false
@@ -166,6 +161,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Fashion_Week_2025.jpg",
    "credit": "Onursafak83 / Wikimedia Commons (CC0)",
    "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Seoul_Fashion_Week_2027_SS_02.jpg/1920px-Seoul_Fashion_Week_2027_SS_02.jpg",
+   "credit": "Republic of Korea / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
    "match": 2
   }
  ],
@@ -374,11 +375,6 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Denim_Day%21_%2833925058310%29.jpg/1920px-Denim_Day%21_%2833925058310%29.jpg",
-   "credit": "Seattle City Council from Seattle / Wikimedia Commons (CC BY 2.0)",
-   "portrait": true
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Woman_in_denim_jeans_in_Paris_2007.jpg/1920px-Woman_in_denim_jeans_in_Paris_2007.jpg",
    "credit": "Mark Skipper / Wikimedia Commons (CC BY 2.0)",
    "portrait": true
@@ -394,12 +390,6 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Crinkle_on_Denim_Jeans_Pant.JPG/1920px-Crinkle_on_Denim_Jeans_Pant.JPG",
-   "credit": "Fahad Faisal / Wikimedia Commons (CC BY-SA 4.0)",
-   "portrait": false,
-   "match": 2
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Denim_Jeans_Pant_QA_checking.JPG/1920px-Denim_Jeans_Pant_QA_checking.JPG",
    "credit": "Fahad Faisal / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false,
@@ -408,6 +398,18 @@
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Denim_Jeans_Texture_%2837650502%29.jpeg",
    "credit": "Theerawat Sangprakarn / Wikimedia Commons (CC BY 3.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Close-Up_of_Denim_Jeans.jpg/1920px-Close-Up_of_Denim_Jeans.jpg",
+   "credit": "Partonez / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Broken_twill_denim_Wrangler_13MWZ_jeans_%282026-01-21%29.jpg/1920px-Broken_twill_denim_Wrangler_13MWZ_jeans_%282026-01-21%29.jpg",
+   "credit": "Olgierd Rudak / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false,
    "match": 2
   }
@@ -449,14 +451,15 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Clothing_store_interior_LCCN2016824584.tif/lossy-page1-1920px-Clothing_store_interior_LCCN2016824584.tif.jpg",
-   "credit": "National Photo Company Collection / Wikimedia Commons (Public domain)",
-   "portrait": false
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Interior_of_clothing_store_mall.jpg/1920px-Interior_of_clothing_store_mall.jpg",
    "credit": "BornToZucc / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": true,
+   "match": 3
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Ladies_clothing_store_interior.jpg/1920px-Ladies_clothing_store_interior.jpg",
+   "credit": "Hines Studio / Wikimedia Commons (Public domain)",
+   "portrait": false,
    "match": 3
   }
  ],
@@ -649,11 +652,6 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hairdresser_%22Carina%22_in_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg/1920px-Hairdresser_%22Carina%22_in_Tomasz%C3%B3w_Mazowiecki%2C_Poland.jpg",
-   "credit": "WrS.tm.pl / Wikimedia Commons (Public domain)",
-   "portrait": false
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Haircut_or_hair_Salon_From_Iran-_Canon_Photography-_Mostafa_Meraji-_fashion_Photo_01.jpg/1920px-Haircut_or_hair_Salon_From_Iran-_Canon_Photography-_Mostafa_Meraji-_fashion_Photo_01.jpg",
    "credit": "Mostafameraji / Wikimedia Commons (CC0)",
    "portrait": false
@@ -685,6 +683,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Hairdresser%27s_salon_in_Brastad_3.jpg/1920px-Hairdresser%27s_salon_in_Brastad_3.jpg",
    "credit": "W.carter / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": true,
+   "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Hairdresser%27s_salon_in_Brastad_2.jpg/1920px-Hairdresser%27s_salon_in_Brastad_2.jpg",
+   "credit": "W.carter / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
    "match": 2
   }
  ],
@@ -1032,20 +1036,21 @@
    "portrait": true
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Solomon_R._Guggenheim_Museum.tif/lossy-page1-1920px-Solomon_R._Guggenheim_Museum.tif.jpg",
-   "credit": "Framis / Wikimedia Commons (CC BY-SA 3.0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Edgar_Degas_-_Interior_-_Google_Art_Project.jpg/1920px-Edgar_Degas_-_Interior_-_Google_Art_Project.jpg",
-   "credit": "Edgar Degas / Wikimedia Commons (Public domain)",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Solomon_R._Guggenheim_Museum_-_New_York_City.jpg",
+   "credit": "Upstateherd / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false,
    "match": 1
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mary_Ellen_Best_-_An_Interior_-_Google_Art_Project.jpg/1920px-Mary_Ellen_Best_-_An_Interior_-_Google_Art_Project.jpg",
-   "credit": "Mary Ellen Best / Wikimedia Commons (Public domain)",
-   "portrait": false,
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/NYC%2C_Solomon_R._Guggenheim_Museum.jpg",
+   "credit": "Alessandra Boccone / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
+   "match": 1
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Ticket_of_Solomon_R._Guggenheim_Museum.jpg",
+   "credit": "Dquai / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
    "match": 1
   }
  ],
@@ -1076,11 +1081,6 @@
    "portrait": true
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Alphonse_Mucha_-_Job_-_Google_Art_Project.jpg/1920px-Alphonse_Mucha_-_Job_-_Google_Art_Project.jpg",
-   "credit": "Alphonse Mucha / Wikimedia Commons (Public domain)",
-   "portrait": true
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Alfons_Mucha_Salammbo.png",
    "credit": "Spiessens / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": true
@@ -1094,6 +1094,12 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Cycles_Waverley_affiche_Mucha_1898.jpg/1920px-Cycles_Waverley_affiche_Mucha_1898.jpg",
    "credit": "Alphonse Mucha / Wikimedia Commons (Public domain)",
    "portrait": false,
+   "match": 1
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Alphonse_Mucha_-_Zodiac%2C_1869.jpg/1920px-Alphonse_Mucha_-_Zodiac%2C_1869.jpg",
+   "credit": "Alphonse Mucha / Wikimedia Commons (Public domain)",
+   "portrait": true,
    "match": 1
   }
  ],
@@ -1542,11 +1548,6 @@
    "portrait": false
   },
   {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/St._Croix_Falls_Auditorium.jpg",
-   "credit": "McGhiever / Wikimedia Commons (CC BY-SA 3.0)",
-   "portrait": false
-  },
-  {
    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/TV_set_in_the_Auditorium_Theatre_1_%2832887997854%29.jpg",
    "credit": "swimfinfan from Chicago / Wikimedia Commons (CC BY-SA 2.0)",
    "portrait": true
@@ -1576,6 +1577,12 @@
    "credit": "Gerald England / Wikimedia Commons (CC BY-SA 2.0)",
    "portrait": false,
    "match": 2
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Auditorium_Theatre_%2811284674035%29.jpg/1920px-Auditorium_Theatre_%2811284674035%29.jpg",
+   "credit": "bradhoc from USA / Wikimedia Commons (CC BY 2.0)",
+   "portrait": false,
+   "match": 2
   }
  ],
  "corridor school interior": [
@@ -1587,16 +1594,6 @@
   {
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Iwaki_Izumi_Junior_High_School_interior.jpg/1920px-Iwaki_Izumi_Junior_High_School_interior.jpg",
    "credit": "Tictric / Wikimedia Commons (CC0)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/View_north%2C_interior%2C_first_floor_corridor_-_Israel_Putnam_School%2C_School_and_Oak_Streets%2C_Putnam%2C_Windham_County%2C_CT_HABS_CONN%2C8-PUT%2C2-10.tif/lossy-page1-1920px-View_north%2C_interior%2C_first_floor_corridor_-_Israel_Putnam_School%2C_School_and_Oak_Streets%2C_Putnam%2C_Windham_County%2C_CT_HABS_CONN%2C8-PUT%2C2-10.tif.jpg",
-   "credit": "Wikimedia Commons / Wikimedia Commons (Public domain)",
-   "portrait": false
-  },
-  {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/View_north%2C_interior%2C_second_floor_corridor_-_Israel_Putnam_School%2C_School_and_Oak_Streets%2C_Putnam%2C_Windham_County%2C_CT_HABS_CONN%2C8-PUT%2C2-17.tif/lossy-page1-1920px-View_north%2C_interior%2C_second_floor_corridor_-_Israel_Putnam_School%2C_School_and_Oak_Streets%2C_Putnam%2C_Windham_County%2C_CT_HABS_CONN%2C8-PUT%2C2-17.tif.jpg",
-   "credit": "Wikimedia Commons / Wikimedia Commons (Public domain)",
    "portrait": false
   },
   {
@@ -1623,6 +1620,18 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_n_visitors_03.jpg/1920px-HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_n_visitors_03.jpg",
    "credit": "Szeluemens / Wikimedia Commons (CC BY-SA 4.0)",
    "portrait": false,
+   "match": 3
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_n_visitors_02.jpg/1920px-HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_n_visitors_02.jpg",
+   "credit": "Szeluemens / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": false,
+   "match": 3
+  },
+  {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/HK_SYP_%E8%81%96%E9%A1%9E%E6%96%AF%E4%B8%AD%E5%AD%B8_St_Louis_School_open_day_Nov_2017_IX1_7th_floor_corridor_interior_n_visitors_04.jpg",
+   "credit": "Szeluemens / Wikimedia Commons (CC BY-SA 4.0)",
+   "portrait": true,
    "match": 3
   }
  ],
