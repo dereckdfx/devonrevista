@@ -18,6 +18,7 @@ BAD = re.compile(r"(logo|flag of|\bmap\b|coat of arms|\bicon\b|\.svg|diagram|cha
 OFF_REGISTER = re.compile(
     r"(van[._ ]?gogh|holofernes|\bjudith\b|\boil on canvas\b|\bpainting\b|\bportrait of\b"
     r"|museum[._ ]journal|\bengraving\b|\blithograph\b|\bwoodcut\b"
+    r"|google[._ ]art[._ ]project|lossy-page"
     r"|model[._ ](airplane|aircraft|flying|landing)|(airport|former|landing)[._ ]runway"
     r"|letter[._ ]signed|imagined[._ ]by|^thumbnail"
     r"|aloe[._ ]vera|\bdiaper|\bsupply[._ ]food\b"
